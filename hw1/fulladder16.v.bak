@@ -1,0 +1,12 @@
+module fulladder16(SUM, CO, A, B);
+    input [15:0]A, B;
+    output [15:0]SUM;
+    output CO;
+    wire c1, c2, c3;
+
+    fulladder adder1(.S(SUM[3:0]), .Cout(c1), .InA(A[3:0]), .InB(B[3:0]), .Cin(0));
+    fulladder adder2(.S(SUM[7:4]), .Cout(c2), .InA(A[7:4]), .InB(B[7:4]), .Cin(c1));
+    fulladder adder3(.S(SUM[11:8]), .Cout(c3), .InA(A[11:8]), .InB(B[11:8]), .Cin(c2));
+    fulladder adder4(.S(SUM[15:12]), .Cout(CO), .InA(A[15:12]), .InB(B[15:12]), .Cin(c3));
+
+endmodule
