@@ -1,20 +1,24 @@
 /**
  * Authors: Xuyi Ruan & Yudong Sun
- * Description: SH_1 contains logic to shift Left/Right by 1 bit.
+ * Description: SH_2 contains logic to shift Left/Right by 2 bit.
  * Module Contains: msb_module.v,
  *                  inner_module.v, 
  *                  lsb_module.v.
  *
  */
 
-module sh_1 (Out, In, Op, shamt);
+module sh_2 (Out, In, Op, shamt);
     input [15:0] In;
     input [1:0] Op;
     input shamt;
     output [15:0] Out;
+    
+    // 
+    // Op for inner_moduler has only 1-bit. ex. Op[1]
+    // 
    
     msb_module bit15(.Out(), .InA(), .InB(), .InC(), .InD(), .En(), .Op());
-    inner_module bit14(.Out(), .InA(), .InB(), .InC(), .En(), .Op());
+    msb_module bit14(.Out(), .InA(), .InB(), .InC(), .InD(), .En(), .Op());
     inner_module bit13(.Out(), .InA(), .InB(), .InC(), .En(), .Op());
     inner_module bit12(.Out(), .InA(), .InB(), .InC(), .En(), .Op());
     inner_module bit11(.Out(), .InA(), .InB(), .InC(), .En(), .Op());
@@ -27,7 +31,7 @@ module sh_1 (Out, In, Op, shamt);
     inner_module bit4(.Out(), .InA(), .InB(), .InC(), .En(), .Op());
     inner_module bit3(.Out(), .InA(), .InB(), .InC(), .En(), .Op());
     inner_module bit2(.Out(), .InA(), .InB(), .InC(), .En(), .Op());
-    inner_module bit1(.Out(), .InA(), .InB(), .InC(), .En(), .Op());
+    lsb_module bit1(.Out(), .InA(), .InB(), .InC(), .InD(), .En(), .Op());
     lsb_module bit0(.Out(), .InA(), .InB(), .InC(), .InD(), .En(), .Op());
 
 endmodule

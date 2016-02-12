@@ -1,4 +1,11 @@
-/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/nor2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/nor2.v
+/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/inner_module.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/inner_module.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module inner_module
+
+Top level modules:
+	inner_module
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/nor2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/nor2.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module nor2
 
@@ -67,5 +74,12 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 
 Top level modules:
 	mux2_1
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module lsb_module
+
+Top level modules:
+	lsb_module
 
 } {} {}}
