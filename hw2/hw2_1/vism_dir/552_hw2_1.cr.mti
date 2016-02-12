@@ -1,0 +1,106 @@
+/afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/inner_module.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/inner_module.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module inner_module
+
+Top level modules:
+	inner_module
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/nor2.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/nor2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module nor2
+
+Top level modules:
+	nor2
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/sh_8.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/sh_8.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module sh_8
+
+Top level modules:
+	sh_8
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/not1.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/not1.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module not1
+
+Top level modules:
+	not1
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/nand2.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/nand2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module nand2
+
+Top level modules:
+	nand2
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/shifter_hier.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/shifter_hier.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module shifter_hier
+
+Top level modules:
+	shifter_hier
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/shifter.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/shifter.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module shifter
+
+Top level modules:
+	shifter
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/msb_module.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/msb_module.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module msb_module
+
+Top level modules:
+	msb_module
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/dff.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/dff.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module dff
+
+Top level modules:
+	dff
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/mux2_1_tb.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/mux2_1_tb.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module mux2_1_tb
+
+Top level modules:
+	mux2_1_tb
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/shifter_hier_bench.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/shifter_hier_bench.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module shifter_hier_bench
+
+Top level modules:
+	shifter_hier_bench
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/sh_1.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/sh_1.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module sh_1
+
+Top level modules:
+	sh_1
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/clkrst.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/clkrst.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module clkrst
+
+Top level modules:
+	clkrst
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/mux2_1.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/mux2_1.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module mux2_1
+
+Top level modules:
+	mux2_1
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/lsb_module.v {1 {vlog -work libhw2_1 /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/vism_dir/lsb_module.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module lsb_module
+
+Top level modules:
+	lsb_module
+
+} {} {}}
