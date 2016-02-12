@@ -12,6 +12,13 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	nor2
 
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_8.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_8.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module sh_8
+
+Top level modules:
+	sh_8
+
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/not1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/not1.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module not1
@@ -54,6 +61,13 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	mux2_1_tb
 
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_1.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module sh_1
+
+Top level modules:
+	sh_1
+
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/clkrst.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/clkrst.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module clkrst
@@ -75,11 +89,25 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	mux2_1
 
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module sh_2
+
+Top level modules:
+	sh_2
+
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module lsb_module
 
 Top level modules:
 	lsb_module
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_4.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_4.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module sh_4
+
+Top level modules:
+	sh_4
 
 } {} {}}

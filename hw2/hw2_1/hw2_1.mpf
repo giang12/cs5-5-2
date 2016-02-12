@@ -188,7 +188,7 @@ UserTimeUnit = ns
 RunLength = 100 ns
 
 ; Maximum iterations that can be run without advancing simulation time
-IterationLimit = 5000
+IterationLimit = 1000
 
 ; Directives to license manager can be set either as single value or as
 ; space separated multi-values:
@@ -207,7 +207,7 @@ IterationLimit = 5000
 
 ; Stop the simulator after a VHDL assertion message
 ; 0 = Note  1 = Warning  2 = Error  3 = Failure  4 = Fatal
-BreakOnAssertion = 3
+BreakOnAssertion = 4
 
 ; VHDL assertion Message Format
 ; %S - Severity Level 
@@ -401,6 +401,7 @@ ConcurrentFileLimit = 40
 ; 0 = Continue  1 = Break  2 = Exit
 ; AssertionFailAction = 1
 
+DelayFileOpen = 1
 [lmc]
 ; ModelSim's interface to Logic Modeling's SmartModel SWIFT software
 libsm = $MODEL_TECH/libsm.sl
@@ -435,31 +436,39 @@ libhm = $MODEL_TECH/libhm.sl
 Project_Version = 5
 Project_DefaultLib = work
 Project_SortMethod = unused
-Project_Files_Count = 12
+Project_Files_Count = 16
 Project_File_0 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/inner_module.v
-Project_File_P_0 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455254439 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 0 dont_compile 0 cover_stmt 1
+Project_File_P_0 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455254439 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 0 dont_compile 0 cover_stmt 1
 Project_File_1 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/nor2.v
-Project_File_P_1 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247797 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 7 dont_compile 0 cover_stmt 1
-Project_File_2 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/not1.v
-Project_File_P_2 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247798 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 8 dont_compile 0 cover_stmt 1
-Project_File_3 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/nand2.v
-Project_File_P_3 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247797 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 6 dont_compile 0 cover_stmt 1
-Project_File_4 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/shifter_hier.v
-Project_File_P_4 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1454534861 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 4 dont_compile 0 cover_stmt 1
-Project_File_5 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/shifter.v
-Project_File_P_5 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455251469 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 5 dont_compile 0 cover_stmt 1
-Project_File_6 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/msb_module.v
-Project_File_P_6 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455254440 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 2 dont_compile 0 cover_stmt 1
-Project_File_7 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/mux2_1_tb.v
-Project_File_P_7 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247797 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 9 dont_compile 0 cover_stmt 1
-Project_File_8 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/clkrst.v
-Project_File_P_8 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1454710153 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 11 dont_compile 0 cover_stmt 1
-Project_File_9 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/shifter_hier_bench.v
-Project_File_P_9 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1454710418 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 10 dont_compile 0 cover_stmt 1
-Project_File_10 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/mux2_1.v
-Project_File_P_10 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247797 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 3 dont_compile 0 cover_stmt 1
-Project_File_11 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v
-Project_File_P_11 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455253158 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 1 dont_compile 0 cover_stmt 1
+Project_File_P_1 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247797 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 7 dont_compile 0 cover_stmt 1
+Project_File_2 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_8.v
+Project_File_P_2 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455296658 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 14 dont_compile 0 cover_stmt 1
+Project_File_3 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/not1.v
+Project_File_P_3 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247798 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 8 dont_compile 0 cover_stmt 1
+Project_File_4 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/nand2.v
+Project_File_P_4 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247797 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 6 dont_compile 0 cover_stmt 1
+Project_File_5 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/shifter_hier.v
+Project_File_P_5 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1454534861 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 4 dont_compile 0 cover_stmt 1
+Project_File_6 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/shifter.v
+Project_File_P_6 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455295176 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 5 dont_compile 0 cover_stmt 1
+Project_File_7 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/msb_module.v
+Project_File_P_7 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455254440 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 2 dont_compile 0 cover_stmt 1
+Project_File_8 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/mux2_1_tb.v
+Project_File_P_8 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247797 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 9 dont_compile 0 cover_stmt 1
+Project_File_9 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_1.v
+Project_File_P_9 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455296473 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 15 dont_compile 0 cover_stmt 1
+Project_File_10 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/clkrst.v
+Project_File_P_10 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1454710153 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 11 dont_compile 0 cover_stmt 1
+Project_File_11 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/shifter_hier_bench.v
+Project_File_P_11 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1454710418 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 10 dont_compile 0 cover_stmt 1
+Project_File_12 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/mux2_1.v
+Project_File_P_12 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455247797 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 3 dont_compile 0 cover_stmt 1
+Project_File_13 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_2.v
+Project_File_P_13 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455296609 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 12 dont_compile 0 cover_stmt 1
+Project_File_14 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v
+Project_File_P_14 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455253158 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 compile_to work vlog_upper 0 vlog_options {} compile_order 1 dont_compile 0 cover_stmt 1
+Project_File_15 = /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_4.v
+Project_File_P_15 = vlog_protect 0 file_type Verilog group_id 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1455296632 vlog_noload 0 vlog_disableopt 0 vlog_hazard 0 vlog_showsource 0 ood 0 vlog_options {} vlog_upper 0 compile_to work compile_order 13 dont_compile 0 cover_stmt 1
 Project_Sim_Count = 0
 Project_Folder_Count = 0
 Echo_Compile_Output = 0

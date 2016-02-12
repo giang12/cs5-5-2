@@ -1,113 +1,59 @@
-# Compile of shifter_hier_bench.v was successful.
+# //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
+# //
+# //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
+# //                         All Rights Reserved.
+# //                   UNPUBLISHED, LICENSED SOFTWARE.
+# //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+# //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
+# //
+# Loading project hw2_1
+# Compile of inner_module.v was successful.
+# Compile of lsb_module.v was successful.
+# Compile of msb_module.v was successful.
+# Compile of mux2_1.v was successful.
 # Compile of shifter_hier.v was successful.
-# Compile of nor2.v was successful.
-# Compile of nand2.v was successful.
-# Compile of sh_4.v was successful.
-# Compile of sh_2.v was successful.
-# Compile of sh_1.v was successful.
-# Compile of not1.v was successful.
-# Compile of mux2_1_tb.v was successful.
-# Compile of sh_8.v was successful.
 # Compile of shifter.v was successful.
-# Compile of clkrst.v was successful.
-# Compile of dff.v was successful.
-# Compile of lsb_module.v was successful.
-# Compile of mux2_1.v was successful.
-# Compile of msb_module.v was successful.
-# Compile of inner_module.v was successful.
-# 17 compiles, 0 failed with no errors. 
-# Compile of shifter_hier_bench.v was successful.
-# Compile of shifter_hier.v was successful.
-# Compile of nor2.v was successful.
 # Compile of nand2.v was successful.
-# Compile of sh_4.v was successful.
-# Compile of sh_2.v was successful.
-# Compile of sh_1.v was successful.
+# Compile of nor2.v was successful.
 # Compile of not1.v was successful.
 # Compile of mux2_1_tb.v was successful.
-# Compile of sh_8.v was successful.
-# Compile of shifter.v failed with 1 errors.
-# Compile of clkrst.v was successful.
-# Compile of dff.v was successful.
-# Compile of lsb_module.v was successful.
-# Compile of mux2_1.v was successful.
-# Compile of msb_module.v was successful.
-# Compile of inner_module.v was successful.
-# 17 compiles, 1 failed with 1 error. 
 # Compile of shifter_hier_bench.v was successful.
-# Compile of shifter_hier.v was successful.
-# Compile of nor2.v was successful.
-# Compile of nand2.v was successful.
-# Compile of sh_4.v was successful.
-# Compile of sh_2.v was successful.
-# Compile of sh_1.v was successful.
-# Compile of not1.v was successful.
-# Compile of mux2_1_tb.v was successful.
-# Compile of sh_8.v was successful.
-# Compile of shifter.v was successful.
 # Compile of clkrst.v was successful.
-# Compile of dff.v was successful.
-# Compile of lsb_module.v was successful.
-# Compile of mux2_1.v was successful.
-# Compile of msb_module.v was successful.
-# Compile of inner_module.v was successful.
-# 17 compiles, 0 failed with no errors. 
-vsim work.shifter_hier_bench
-# vsim work.shifter_hier_bench 
-# Loading work.shifter_hier_bench
-# Loading work.shifter_hier
-# Loading work.clkrst
-# Loading work.shifter
-# Loading work.sh_1
+# Compile of sh_2.v was successful.
+# Compile of sh_4.v was successful.
+# Compile of sh_8.v was successful.
+# Compile of sh_1.v was successful.
+# 16 compiles, 0 failed with no errors. 
+vsim work.msb_module
+# vsim work.msb_module 
 # Loading work.msb_module
 # Loading work.mux2_1
 # Loading work.not1
 # Loading work.nand2
 # Loading work.nor2
-# Loading work.inner_module
-# Loading work.lsb_module
-# Loading work.sh_2
-# Loading work.sh_4
-# ** Error: (vsim-3033) /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_1/shifter.v(15): Instantiation of 'sh_8' failed. The design unit was not found.
-#         Region: /shifter_hier_bench/DUT/s0
-#         Searched libraries:
-#             work
-# Error loading design
-# Compile of shifter_hier_bench.v was successful.
-# Compile of shifter_hier.v was successful.
-# Compile of nor2.v was successful.
-# Compile of nand2.v was successful.
-# Compile of sh_4.v was successful.
-# Compile of sh_2.v was successful.
-# Compile of sh_1.v was successful.
-# Compile of not1.v was successful.
-# Compile of mux2_1_tb.v was successful.
-# Compile of sh_8.v was successful.
-# Compile of shifter.v was successful.
-# Compile of clkrst.v was successful.
-# Compile of dff.v was successful.
-# Compile of lsb_module.v was successful.
-# Compile of mux2_1.v was successful.
-# Compile of msb_module.v was successful.
-# Compile of inner_module.v was successful.
-# 17 compiles, 0 failed with no errors. 
-# Load canceled
-# Compile of shifter_hier_bench.v was successful.
-# Compile of shifter_hier.v was successful.
-# Compile of nor2.v was successful.
-# Compile of nand2.v was successful.
-# Compile of sh_4.v was successful.
-# Compile of sh_2.v was successful.
-# Compile of sh_1.v was successful.
-# Compile of not1.v was successful.
-# Compile of mux2_1_tb.v was successful.
-# Compile of shifter.v was successful.
-# Compile of clkrst.v was successful.
-# Compile of dff.v was successful.
-# Compile of lsb_module.v was successful.
-# Compile of mux2_1.v was successful.
-# Compile of msb_module.v was successful.
-# Compile of inner_module.v was successful.
-# Compile of sh_8.v was successful.
-# 17 compiles, 0 failed with no errors. 
-# Load canceled
+do msb_module.do
+# .wave
+do msb_module.do
+# .wave
+restart
+run -all
+run -all
+run
+run -all
+do msb_module.do
+# .wave
+do msb_module.do
+# .source .process .signals .variables .dataflow .list .wave .memory .wave
+destroy .memory
+destroy .list
+destroy .signals
+destroy .process
+destroy .variables
+destroy .variables
+do msb_module.do
+# ** Error: Unknown switch: -r
+# Error in macro ./msb_module.do line 53
+# Unknown switch: -r
+#     while executing
+# "view wave -r *
+# "
