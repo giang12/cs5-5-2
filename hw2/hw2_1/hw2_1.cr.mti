@@ -82,13 +82,6 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	shifter_hier_bench
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/mux2_1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/mux2_1.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module mux2_1
-
-Top level modules:
-	mux2_1
-
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_2.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module sh_2
@@ -96,12 +89,12 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	sh_2
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/mux2_1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/mux2_1.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module lsb_module
+-- Compiling module mux2_1
 
 Top level modules:
-	lsb_module
+	mux2_1
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_4.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/sh_4.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -109,5 +102,12 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 
 Top level modules:
 	sh_4
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/lsb_module.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module lsb_module
+
+Top level modules:
+	lsb_module
 
 } {} {}}

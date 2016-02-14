@@ -7,6 +7,34 @@
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
 # Loading project hw2_1
+vsim work.msb_module
+# vsim work.msb_module 
+# Loading work.msb_module
+# Loading work.mux2_1
+# Loading work.not1
+# Loading work.nand2
+# Loading work.nor2
+do msb_module.do
+# ** Error: Unknown switch: -r
+# Error in macro ./msb_module.do line 53
+# Unknown switch: -r
+#     while executing
+# "view wave -r *
+# "
+do msb_module.do
+# ** Error: Unknown switch: -r
+# Error in macro ./msb_module.do line 53
+# Unknown switch: -r
+#     while executing
+# "view wave -r *
+# "
+do msb_module.do
+destroy .signals
+# .wave .source .process .signals .variables .dataflow .list .wave .memory
+destroy .signals
+do msb_module.do
+# .wave
+quit -sim
 # Compile of inner_module.v was successful.
 # Compile of lsb_module.v was successful.
 # Compile of msb_module.v was successful.
@@ -33,27 +61,27 @@ vsim work.msb_module
 # Loading work.nor2
 do msb_module.do
 # .wave
-do msb_module.do
-# .wave
-restart
+quit -sim
+vsim work.shifter_hier_bench
+# vsim work.shifter_hier_bench 
+# Loading work.shifter_hier_bench
+# Loading work.shifter_hier
+# Loading work.clkrst
+# Loading work.shifter
+# Loading work.sh_1
+# Loading work.msb_module
+# Loading work.mux2_1
+# Loading work.not1
+# Loading work.nand2
+# Loading work.nor2
+# Loading work.inner_module
+# Loading work.lsb_module
+# Loading work.sh_2
+# Loading work.sh_4
+# Loading work.sh_8
 run -all
-run -all
-run
-run -all
-do msb_module.do
-# .wave
-do msb_module.do
-# .source .process .signals .variables .dataflow .list .wave .memory .wave
-destroy .memory
-destroy .list
-destroy .signals
-destroy .process
-destroy .variables
-destroy .variables
-do msb_module.do
-# ** Error: Unknown switch: -r
-# Error in macro ./msb_module.do line 53
-# Unknown switch: -r
-#     while executing
-# "view wave -r *
-# "
+# TEST PASSED
+# ** Note: $finish    : /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/shifter_hier_bench.v(27)
+#    Time: 5 us  Iteration: 0  Instance: /shifter_hier_bench
+# 1
+# Break at /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1/shifter_hier_bench.v line 27

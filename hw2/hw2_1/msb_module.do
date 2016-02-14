@@ -24,13 +24,12 @@ force -freeze Op 2'b00 50
 
 # prevent glitch did OP operation first
 force -freeze Op 2'b10 100
-
 force -freeze InB 1'b0 100
 
 force -freeze InB 1'b1 150
 
 force -freeze InB 1'b0 200
-force -freeze InC 1'b0 200
+#force -freeze InC 1'b0 200
 force -freeze Op 2'b11 200
 
 force -freeze InA 1'b1 250
@@ -50,4 +49,4 @@ force -freeze Op 2'b00 350
 run 400
 
 # open the wave window
-view wave -r *
+view wave
