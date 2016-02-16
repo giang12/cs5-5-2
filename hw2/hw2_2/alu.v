@@ -27,7 +27,7 @@ module alu (A, B, Cin, Op, invA, invB, sign, Out, Ofl, Z);
          
         cla_16bit mod7(.OUT(adder_out), .Ofl(Ofl), .A(A_out), .B(B_out), .CI(Cin), .sign(sign));
         
-        mux4_1_16bit mod8(.out(mux4_1_out), .sel(Op[1:0]), .in0(and_out), .in1(or_out), .in2(xor_out), .in3(adder_out));
+        mux4_1_16bit mod8(.out(mux4_1_out), .sel(Op[1:0]), .in0(adder_out), .in1(or_out), .in2(xor_out), .in3(and_out));
         
         mux2_1_16bit mod9(.out(mux2_1_out), .in0(sh_out), .in1(mux4_1_out), .sel(Op[2]));
         

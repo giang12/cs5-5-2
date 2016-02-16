@@ -51,6 +51,7 @@ module alu_hier_bench;
 	B_pre_inv = $random;
 	Cin = $random;
 	Op = $random;
+	//Op = 3'b111;
 	invA = $random;
 	invB = $random;
 	//invA = 1'b1;

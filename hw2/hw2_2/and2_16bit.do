@@ -8,8 +8,8 @@ add wave -logic out
 
 
 # force the input signals
-force -freeze in1 16'b1111000011110000 0
-force -freeze in2 16'b0000111100001111 0
+force -freeze in1 16'hf378 0
+force -freeze in2 16'h1289 0
 
 force -freeze in2 16'b1111111111111111 50 
 force -freeze in2 16'b0000000000000000 100 

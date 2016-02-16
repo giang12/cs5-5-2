@@ -1,0 +1,68 @@
+Line 22: Bad keyword integer
+Line 27: Bad keyword initial
+Line 28: begin without always/case
+Line 38: Bad keyword if
+Line 41: Bad keyword else
+Line 48: Bad keyword posedge
+Line 48: Always without case(x)
+Line 62: Bad keyword negedge
+Line 74: appears to be shifting by non-constant value: B
+Line 75: Bad keyword if
+Line 81: appears to be shifting by non-constant value: B
+Line 82: Bad keyword if
+Line 88: Bad keyword for
+Line 91: appears to be shifting by non-constant value: B
+Line 92: Bad keyword if
+Line 99: appears to be shifting by non-constant value: B
+Line 100: Bad keyword if
+Line 108: Bad keyword if
+Line 110: Bad keyword if
+Line 113: Bad keyword else
+Line 115: Bad keyword if
+Line 123: Bad keyword if
+Line 130: Bad keyword if
+Line 138: Bad keyword if
+Line 144: Bad keyword if
+Line 145: begin without always/case
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/alu_hier_bench.v. Hash = -118537690
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/alu_hier.v. Hash = -431950574
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/alu.v. Hash = -792085164
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/and2_16bit.v. Hash = -1916813455
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/and2.v. Hash = -1219462153
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/cla_16bit.v. Hash = 320254560
+Line 20: Bad keyword integer
+Line 22: Bad keyword initial
+Line 23: begin without always/case
+Line 30: Expected '@' after 'always'
+Line 32: Bad keyword if
+Line 30: Always without case(x)
+Line 38: Bad keyword posedge
+Line 40: Bad keyword if
+Line 38: Always without case(x)
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/clkrst.v. Hash = -1591555750
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/clu_16bit.v. Hash = -940686617
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/clu_4bit.v. Hash = 949497561
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/fulladder_16bit.v. Hash = -2062611047
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/fulladder.v. Hash = 829224141
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/inner_module.v. Hash = 597390271
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/inverter_16bit.v. Hash = -857344200
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/lsb_module.v. Hash = 1437858038
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/msb_module.v. Hash = 1361180854
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/mux2_1_16bit.v. Hash = 240797270
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/mux2_1.v. Hash = 1238500392
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/mux4_1_16bit.v. Hash = -1788438025
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/mux4_1.v. Hash = -572671436
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/nand2.v. Hash = -834414918
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/nor2.v. Hash = -834415846
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/not1_16bit.v. Hash = 170944386
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/not1.v. Hash = 96545975
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/or2_16bit.v. Hash = -1917268106
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/or2.v. Hash = -1185908441
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/sh_1.v. Hash = -376742959
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/sh_2.v. Hash = 505042879
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/sh_4.v. Hash = 1726864366
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/sh_8.v. Hash = 765711123
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/shifter.v. Hash = -1277305856
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/xor2_16bit.v. Hash = 229898109
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/xor2.v. Hash = -1370458057
+End of file /u/x/u/xuyi/private/cs552/hw2/hw2_2/zero_detect.v. Hash = 393716365

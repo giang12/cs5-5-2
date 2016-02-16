@@ -9,76 +9,38 @@
 # //
 # Loading __work.alu_hier_bench
 # Loading __work.alu_hier
-# ** Error: (vsim-3033) alu_hier.v(26): Instantiation of 'clkrst' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT
-#         Searched libraries:
-#             __work
+# Loading __work.clkrst
 # Loading __work.alu
-# ** Error: (vsim-3033) alu.v(19): Instantiation of 'inverter_16bit' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(20): Instantiation of 'inverter_16bit' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(22): Instantiation of 'shifter' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0
-#         Searched libraries:
-#             __work
+# Loading __work.inverter_16bit
+# Loading __work.not1_16bit
+# Loading __work.not1
+# Loading __work.mux2_1
+# Loading __work.nand2
+# Loading __work.nor2
+# Loading __work.shifter
+# Loading __work.sh_1
+# Loading __work.msb_module
+# Loading __work.inner_module
+# Loading __work.lsb_module
+# Loading __work.sh_2
+# Loading __work.sh_4
+# Loading __work.sh_8
 # Loading __work.and2_16bit
 # Loading __work.and2
-# ** Error: (vsim-3033) alu.v(25): Instantiation of 'or2_16bit' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(26): Instantiation of 'xor2_16bit' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0
-#         Searched libraries:
-#             __work
+# Loading __work.or2_16bit
+# Loading __work.or2
+# Loading __work.xor2_16bit
+# Loading __work.xor2
 # Loading __work.cla_16bit
-# ** Error: (vsim-3033) cla_16bit.v(12): Instantiation of 'fulladder_16bit' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0/mod7
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) cla_16bit.v(13): Instantiation of 'clu_16bit' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0/mod7
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) cla_16bit.v(15): Instantiation of 'not1' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0/mod7
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) cla_16bit.v(18): Instantiation of 'not1' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0/mod7
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) cla_16bit.v(23): Instantiation of 'not1' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0/mod7
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) cla_16bit.v(24): Instantiation of 'not1' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0/mod7
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) cla_16bit.v(29): Instantiation of 'or2' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0/mod7
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) cla_16bit.v(30): Instantiation of 'or2' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0/mod7
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(30): Instantiation of 'mux4_1_16bit' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(32): Instantiation of 'mux2_1_16bit' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(35): Instantiation of 'zero_detect' failed. The design unit was not found.
-#         Region: /alu_hier_bench/DUT/a0
-#         Searched libraries:
-#             __work
-# Error loading design
+# Loading __work.fulladder_16bit
+# Loading __work.fulladder
+# Loading __work.clu_16bit
+# Loading __work.clu_4bit
+# Loading __work.mux4_1_16bit
+# Loading __work.mux4_1
+# Loading __work.mux2_1_16bit
+# Loading __work.zero_detect
+run -all
+# TEST PASSED
+# ** Note: $finish    : alu_hier_bench.v(42)
+#    Time: 5 us  Iteration: 0  Instance: /alu_hier_bench
