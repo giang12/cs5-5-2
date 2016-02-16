@@ -2,6 +2,7 @@ module fulladder_16bit(S, P, G, A, B, CI);
     input [15:0] A, B, CI;
     output [15:0] S, P, G;
 
+    
     fulladder fulladder0 (.S(S[0]), .P(P[0]), .G(G[0]), .InA(A[0]), .InB(B[0]), .Cin(CI[0]));
     fulladder fulladder1 (.S(S[1]), .P(P[1]), .G(G[1]), .InA(A[1]), .InB(B[1]), .Cin(CI[1]));
     fulladder fulladder2 (.S(S[2]), .P(P[2]), .G(G[2]), .InA(A[2]), .InB(B[2]), .Cin(CI[2]));
@@ -18,5 +19,7 @@ module fulladder_16bit(S, P, G, A, B, CI);
     fulladder fulladder13 (.S(S[13]), .P(P[13]), .G(G[13]), .InA(A[13]), .InB(B[13]), .Cin(CI[13]));
     fulladder fulladder14 (.S(S[14]), .P(P[14]), .G(G[14]), .InA(A[14]), .InB(B[14]), .Cin(CI[14]));
     fulladder fulladder15 (.S(S[15]), .P(P[15]), .G(G[15]), .InA(A[15]), .InB(B[15]), .Cin(CI[15]));
+   
     
+     
 endmodule
