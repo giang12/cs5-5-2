@@ -1,4 +1,4 @@
-module clu_16bit();
+module clu_16bit(CO, CI, P, G);
     input [15:0] P, G;
     input CI; 
     output [15:0] CO;

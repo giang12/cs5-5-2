@@ -2,10 +2,10 @@ m255
 cModel Technology
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_1
 valu
-IPi[2_gOG7]L8L[2_Of@Rm1
+I5VldWoUhBX6k?ej^n=TZe3
 V8Oda5UD<IbUB0c]QR0=P03
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
-w1454534882
+w1455606063
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/alu.v
 L0 1
 OE;L;5.8b;17
@@ -56,6 +56,17 @@ OE;L;5.8b;17
 r1
 31
 o-work work
+vcla_16bit
+I]j1faePadcEj`bE7?HGan0
+Vzm7jz?D6gCoI;PjMkCD8V2
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
+w1455606147
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/cla_16bit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
 vclaadder_4bit
 IiW5?ieBPUJ7>>XLgQkzVW2
 V2UCdF>]7Dn^nN8PgEnzP]2
@@ -78,6 +89,28 @@ OE;L;5.8b;17
 r1
 31
 o-work work
+vclu_16bit
+IL4j2>04=]^@m9__T;g7230
+VHHR@1aM:BjFcz5EQ]K[GD2
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
+w1455600302
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/clu_16bit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vclu_4bit
+I>?cKXn8ZQfXG;]5VB[JP]0
+V3Cn3m@TcFg_0eM8jhZhM33
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
+w1455597545
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/clu_4bit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
 vfulladder
 IRl;QWBjN;l`1lGYDaTZg20
 VULSAh_`;DjcITmUJ0>Ygo0
@@ -90,10 +123,10 @@ r1
 31
 o-work work
 vfulladder_16bit
-Iz2BISJgbcL;AHQXPin@0U1
+IhJ>[l4RQ8B<Eg1g__ZY]`0
 V32a>5];U1V;]C@_BiKmmZ1
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
-w1455588241
+w1455600303
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/fulladder_16bit.v
 L0 1
 OE;L;5.8b;17
@@ -221,6 +254,17 @@ OE;L;5.8b;17
 r1
 31
 o-work work
+vshifter
+IzAHPRc_ChFdbL8`>?92L00
+V9[T]c944DLDk@]Q2lI<AR2
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
+w1455603655
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/shifter.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
 vxor2
 IoN:gD>Ni6Rmk1HaUoZ=Cf1
 VDoV:08AbEo<zTX3m?QOXb1
@@ -238,6 +282,17 @@ VOg]AoRdQPe]IP:jW;_JGU2
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
 w1455579378
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/xor2_16bit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vzero_detect
+Icad=dnN]6S>=JXF0C`j=03
+VWE2a`oZ`F2NKKiIFN1B@k1
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
+w1455605806
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/zero_detect.v
 L0 1
 OE;L;5.8b;17
 r1

@@ -3,8 +3,8 @@ module clu_4bit(PG, GG, CI, CO, P, G);
     input CI;
     output [3:0] CO;
     output PG, GG;
-    wire w1, w2, w3 w4;
-    wire c1, c2, c3 ,c4    
+    wire w1, w2, w3, w4;
+    wire c1, c2, c3, c4;    
  
     wire w5, w6, w7, w8, w9, w10, w11, w12, w13, w14;
 
@@ -41,9 +41,9 @@ module clu_4bit(PG, GG, CI, CO, P, G);
 
        
 
-    or2 mod8(.in1(G[3]), .in2(w7), .out(w13));
-    or2 mod8(.in1(w9), .in2(w12), .out(w14));
-    or2 mod8(.in1(w13), .in2(w14), .out(GG));
+    or2 mod18(.in1(G[3]), .in2(w7), .out(w13));
+    or2 mod19(.in1(w9), .in2(w12), .out(w14));
+    or2 mod20(.in1(w13), .in2(w14), .out(GG));
 
 
 endmodule
