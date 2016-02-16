@@ -1,0 +1,83 @@
+# //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
+# //
+# //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
+# //                         All Rights Reserved.
+# //                   UNPUBLISHED, LICENSED SOFTWARE.
+# //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+# //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
+# //
+# Loading project hw2_2
+# Compile of alu.v was successful.
+# Compile of alu_hier.v was successful.
+# Compile of alu_hier_bench.v was successful.
+# Compile of claadder_4bit.v was successful.
+# Compile of clkrst.v was successful.
+# Compile of inverter_16bit.v was successful.
+# Compile of mux2_1.v was successful.
+# Compile of not1.v was successful.
+# Compile of not1_16bit.v was successful.
+# Compile of nor2.v was successful.
+# Compile of nand2.v was successful.
+# Compile of and2_16bit.v was successful.
+# Compile of and2.v was successful.
+# Compile of or2_16bit.v was successful.
+# Compile of or2.v was successful.
+# 15 compiles, 0 failed with no errors. 
+vsim work.or2_16bit
+# vsim work.or2_16bit 
+# Loading work.or2_16bit
+# Loading work.or2
+do or2_16bit.do
+# .wave
+quit -sim
+# Compile of xor2.v was successful.
+# Compile of xor2_16bit.v was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim work.xor2_16bit
+# vsim work.xor2_16bit 
+# Loading work.xor2_16bit
+# Loading work.xor2
+do xor2_16bit.do
+# .wave
+quit -sim
+# Compile of mux4_1.v was successful.
+# Compile of mux4_1_16bit.v was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim work.mux4_1_16bit
+# vsim work.mux4_1_16bit 
+# Loading work.mux4_1_16bit
+# Loading work.mux4_1
+# Loading work.mux2_1
+# Loading work.not1
+# Loading work.nand2
+# Loading work.nor2
+do mux4_1_16bit.do
+# ** Error: No objects found matching "in4"
+# Error in macro ./mux4_1_16bit.do line 8
+# No objects found matching "in4"
+#     while executing
+# "add wave -logic in4
+# "
+do mux4_1_16bit.do
+# ** Error: No objects found matching "in4"
+# Error in macro ./mux4_1_16bit.do line 8
+# No objects found matching "in4"
+#     while executing
+# "add wave -logic in4
+# "
+do mux4_1_16bit.do
+# .wave
+do mux4_1_16bit.do
+# .wave
+quit -sim
+# Compile of mux2_1_16bit.v was successful.
+vsim work.mux2_1_16bit
+# vsim work.mux2_1_16bit 
+# Loading work.mux2_1_16bit
+# Loading work.mux2_1
+# Loading work.not1
+# Loading work.nand2
+# Loading work.nor2
+do mux2_1_16bit.do
+# .wave
+quit -sim
