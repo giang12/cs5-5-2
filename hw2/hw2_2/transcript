@@ -29,11 +29,8 @@
 # Compile of fulladder.v was successful.
 # Compile of fulladder_16bit.v was successful.
 # 21 compiles, 0 failed with no errors. 
-vsim work.fulladder_16bit
 # vsim work.fulladder_16bit 
 # Loading work.fulladder_16bit
 # Loading work.fulladder
 # Loading work.xor2
 # Loading work.and2
-do fulladder_16bit.do
-# .wave
