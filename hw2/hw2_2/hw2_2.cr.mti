@@ -5,12 +5,26 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	not1_16bit
 
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/or2_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/or2_16bit.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module or2_16bit
+
+Top level modules:
+	or2_16bit
+
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/alu_hier_bench.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/alu_hier_bench.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module alu_hier_bench
 
 Top level modules:
 	alu_hier_bench
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/xor2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/xor2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module xor2
+
+Top level modules:
+	xor2
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/nand2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/nand2.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -40,12 +54,19 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	and2
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/nor2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/nor2.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/mux4_1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/mux4_1.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module nor2
+-- Compiling module mux4_1
 
 Top level modules:
-	nor2
+	mux4_1
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/xor2_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/xor2_16bit.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module xor2_16bit
+
+Top level modules:
+	xor2_16bit
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/alu_hier.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/alu_hier.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -54,12 +75,26 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	alu_hier
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/and2_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/and2_16bit.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/mux2_1_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/mux2_1_16bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module and2_16bit
+-- Compiling module mux2_1_16bit
 
 Top level modules:
-	and2_16bit
+	mux2_1_16bit
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/nor2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/nor2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module nor2
+
+Top level modules:
+	nor2
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/alu.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/alu.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module alu
+
+Top level modules:
+	alu
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/not1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/not1.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -68,19 +103,33 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	not1
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/claadder_4bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/claadder_4bit.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/and2_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/and2_16bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module claadder_4bit
+-- Compiling module and2_16bit
 
 Top level modules:
-	claadder_4bit
+	and2_16bit
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/alu.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/alu.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/fulladder.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/fulladder.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module alu
+-- Compiling module fulladder
 
 Top level modules:
-	alu
+	fulladder
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/or2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/or2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module or2
+
+Top level modules:
+	or2
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/mux4_1_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/mux4_1_16bit.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module mux4_1_16bit
+
+Top level modules:
+	mux4_1_16bit
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/inverter_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/inverter_16bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004

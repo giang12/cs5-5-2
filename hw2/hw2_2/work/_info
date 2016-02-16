@@ -78,6 +78,28 @@ OE;L;5.8b;17
 r1
 31
 o-work work
+vfulladder
+IRl;QWBjN;l`1lGYDaTZg20
+VULSAh_`;DjcITmUJ0>Ygo0
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
+w1455586611
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/fulladder.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vfulladder_16bit
+Iz2BISJgbcL;AHQXPin@0U1
+V32a>5];U1V;]C@_BiKmmZ1
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2
+w1455588241
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/fulladder_16bit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
 vinverter_16bit
 IWXW<CoSl;RWWTZ7<cEUU31
 VVGNAR`Ah25:>7VJ[PzDUd3
