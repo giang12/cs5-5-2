@@ -38,4 +38,11 @@ The project will be completed in groups of two.
 02/21: Update all READMEs  
 
 
+## Good stuffs: 
+
+1. extract/compress tar files:   
+
+Extract: `tar -xvf file.tar`  
+Compress: `tar -cvf hw1.tar hw1/`  
+
 
