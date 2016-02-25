@@ -1,0 +1,19 @@
+# Compile of and3.v was successful.
+# Compile of clkrst.v was successful.
+# Compile of decoder_3_8.v was successful.
+# Compile of dff.v was successful.
+# Compile of dff_16bit.v was successful.
+# Compile of mux2_1_16bit.v was successful.
+# Compile of mux4_1_16bit.v was successful.
+# Compile of rf.v was successful.
+# Compile of rf_16bit.v was successful.
+# Compile of rf_bench.v was successful.
+# Compile of rf_hier.v was successful.
+# 11 compiles, 0 failed with no errors. 
+vsim work.and3
+# vsim work.and3 
+# Loading work.and3
+do and3.do
+# .wave
+do and3.do
+# .wave
