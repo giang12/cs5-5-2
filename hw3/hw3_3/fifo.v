@@ -16,7 +16,6 @@ module fifo(/*AUTOARG*/
    output [63:0] data_out;
    output        fifo_empty;
    output        fifo_full;
-   output        data_out_valid;
    output        err;
    
    //your code here
