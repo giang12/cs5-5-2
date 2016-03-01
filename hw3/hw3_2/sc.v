@@ -10,6 +10,25 @@ module sc( clk, rst, ctr_rst, out, err);
    output err;
 
    // your code
+   wire [2:0] state;
+   wire [2:0] next_state;
+
+   statereg state_reg(
+     .state(state),
+     .next_state(next_state),
+     .Clk(clk),
+     .Reset(rst)
+   );
+
+   statelogic st_logic(
+     .next_state(next_state),
+     .Out(out),
+     .state(state),
+     .InA(ctr_rst)
+     .err(err)
+   );
+
+
 endmodule
 
 // DUMMY LINE FOR REV CONTROL :1:
