@@ -24,7 +24,7 @@ module sc( clk, rst, ctr_rst, out, err);
      .next_state(next_state),
      .Out(out),
      .state(state),
-     .InA(ctr_rst)
+     .InA(ctr_rst),
      .err(err)
    );
 

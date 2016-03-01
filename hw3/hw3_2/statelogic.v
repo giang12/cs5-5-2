@@ -3,7 +3,7 @@ module statelogic (next_state, Out, state, InA, err);
 input InA;
 input [2:0] state;
 output [2:0] next_state;
-output Out[2:0];
+output [2:0] Out;
 output err;
 reg [2:0] next_state;
 reg err;
