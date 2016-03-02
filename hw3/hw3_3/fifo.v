@@ -19,6 +19,29 @@ module fifo(/*AUTOARG*/
    output        err;
    
    //your code here
+    statelogic fifo_logic(.data_in_valid_ctr(),
+                          .write_ptr(), 
+                          .read_ptr(), 
+                          .next_state(), 
+                          .fifo_empty(), 
+                          .fifo_full(), 
+                          .err(), 
+                          .state(), 
+                          .data_in_valid(), 
+                          .pop_fifo());
+    statereg state_reg(   .state(), 
+                          .next_state(), 
+                          .Clk(), 
+                          .Reset());
+    fifo_reg fifo_reg(    .data_out(), 
+                          .data_in(), 
+                          .write_ptr(), 
+                          .read_ptr(), 
+                          .data_in_valid_ctr(), 
+                          .rst(), 
+                          .clk());
+
+
 
 endmodule
 // DUMMY LINE FOR REV CONTROL :1:
