@@ -6,33 +6,3 @@
 # //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
-# Loading project hw3_3
-# Compile of fifo.v failed with 1 errors.
-# Compile of statereg.v was successful.
-# 2 compiles, 1 failed with 1 error. 
-# Compile of fifo.v failed with 1 errors.
-# Compile of or2.v was successful.
-# 2 compiles, 1 failed with 1 error. 
-# Compile of fifo.v failed with 1 errors.
-# Compile of fifo_reg.v failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors. 
-# Compile of fifo.v failed with 1 errors.
-# Compile of fifo_reg.v was successful.
-# 2 compiles, 1 failed with 1 error. 
-vsim work.fifo_reg
-# vsim work.fifo_reg 
-# Loading work.fifo_reg
-# Loading work.decoder2_4
-# Loading work.and2
-# Loading work.or2
-# Loading work.reg_64bit
-# Loading work.reg_16bit
-# Loading work.dff
-# Loading work.mux2_1_16bit
-# Loading work.mux2_1
-# Loading work.not1
-# Loading work.nand2
-# Loading work.nor2
-# Loading work.mux4_1_64bit
-# Loading work.mux4_1_16bit
-# Loading work.mux4_1
