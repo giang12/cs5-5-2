@@ -95,9 +95,10 @@ begin
       fifo_full <= 1'b0;
       fifo_empty <= 1'b1;
    end
+   
    6'b0_0_0_001:
    begin
-      next_state <= 3'b000;
+      next_state <= 3'b001;
       err <= 1'b0;
       wp <= wp;
       rp <= rp;
@@ -115,7 +116,7 @@ begin
    end
    6'b0_1_0_001:
    begin
-      next_state <= 3'b001;
+      next_state <= 3'b010;
       err <= 1'b0;
       wp <= wp + 1;
       rp <= rp;
@@ -131,6 +132,7 @@ begin
       fifo_full <= 1'b0;
       fifo_empty <= 1'b0;
    end
+   
    6'b1_0_0_001:
    begin
       next_state <= 3'b000;
@@ -167,6 +169,7 @@ begin
       fifo_full <= 1'b0;
       fifo_empty <= 1'b1;
    end
+   
    6'b0_0_0_010:
    begin
       next_state <= 3'b010;
@@ -311,6 +314,7 @@ begin
       fifo_full <= 1'b0;
       fifo_empty <= 1'b1;
    end
+   
    6'b0_0_0_100:
    begin
       next_state <= 3'b100;

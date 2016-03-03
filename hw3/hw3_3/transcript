@@ -1,11 +1,1434 @@
-# //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
-# //
-# //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
-# //                         All Rights Reserved.
-# //                   UNPUBLISHED, LICENSED SOFTWARE.
-# //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
-# //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
-# //
-# Loading project meow
-# reading /afs/cs.wisc.edu/s/mentor-2004/common/modeltech-5.8b/linux/../modelsim.ini
-# Loading project hw3_3
+# Compile of dff.v was successful.
+# Compile of fifo.v was successful.
+# Compile of fifo_bench.v was successful.
+# Compile of mux4_1.v was successful.
+# Compile of mux4_1_16bit.v was successful.
+# Compile of mux4_1_64bit.v was successful.
+# Compile of reg_16bit.v was successful.
+# Compile of reg_64bit.v was successful.
+# Compile of reg_64bit_tb.v was successful.
+# Compile of mux2_1_16bit.v was successful.
+# Compile of or2.v was successful.
+# Compile of decoder2_4.v was successful.
+# Compile of mux2_1.v was successful.
+# Compile of not1.v was successful.
+# Compile of clkrst.v was successful.
+# Compile of statereg.v was successful.
+# Compile of nor2.v was successful.
+# Compile of fifo_reg.v was successful.
+# Compile of and2.v was successful.
+# Compile of nand2.v was successful.
+# Compile of statelogic.v failed with 1 errors.
+# Compile of fifo_hier.v was successful.
+# 22 compiles, 1 failed with 1 error. 
+# Compile of dff.v was successful.
+# Compile of fifo.v was successful.
+# Compile of fifo_bench.v was successful.
+# Compile of mux4_1.v was successful.
+# Compile of mux4_1_16bit.v was successful.
+# Compile of mux4_1_64bit.v was successful.
+# Compile of reg_16bit.v was successful.
+# Compile of reg_64bit.v was successful.
+# Compile of reg_64bit_tb.v was successful.
+# Compile of mux2_1_16bit.v was successful.
+# Compile of or2.v was successful.
+# Compile of decoder2_4.v was successful.
+# Compile of mux2_1.v was successful.
+# Compile of not1.v was successful.
+# Compile of clkrst.v was successful.
+# Compile of statereg.v was successful.
+# Compile of nor2.v was successful.
+# Compile of fifo_reg.v was successful.
+# Compile of and2.v was successful.
+# Compile of nand2.v was successful.
+# Compile of statelogic.v was successful.
+# Compile of fifo_hier.v was successful.
+# 22 compiles, 0 failed with no errors. 
+vsim work.fifo_bench
+# vsim work.fifo_bench 
+# Loading work.fifo_bench
+# Loading work.fifo_hier
+# Loading work.clkrst
+# Loading work.fifo
+# Loading work.statelogic
+# Loading work.statereg
+# Loading work.dff
+# Loading work.fifo_reg
+# Loading work.decoder2_4
+# Loading work.and2
+# Loading work.or2
+# Loading work.reg_64bit
+# Loading work.reg_16bit
+# Loading work.mux2_1_16bit
+# Loading work.mux2_1
+# Loading work.not1
+# Loading work.nand2
+# Loading work.nor2
+# Loading work.mux4_1_64bit
+# Loading work.mux4_1_16bit
+# Loading work.mux4_1
+# ** Warning: (vsim-3017) /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo.v(35): [TFMPC] - Too few port connections. Expected 11, found 9.
+#         Region: /fifo_bench/DUT/fifo0/fifo_logic
+# ** Warning: (vsim-3722) /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo.v(35): [TFMPC] - Missing connection for port 'state'.
+run -all
+# 
+# Cycle:    0 data_in: 0000000000000000, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:    1 data_in: 0000000000000000, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:    2 data_in: 0000000000000000, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    2 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:    3 data_in: 462df78c76d457ed, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 462df78c76d457ed, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle    3 - Data out error. data_out = 0000000000000000, expcted data_out = 462df78c76d457ed
+# 
+# Cycle:    4 data_in: d513d2aae2f784c5, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    4 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:    5 data_in: 47ecdb8f8932d612, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: d513d2aae2f784c5, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    5 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle    5 - Data out error. data_out = 0000000000000000, expcted data_out = d513d2aae2f784c5
+# 
+# Cycle:    6 data_in: e2ca4ec5f4007ae8, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    6 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:    7 data_in: b2a7266596ab582d, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: b2a7266596ab582d, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    7 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle    7 - Data out error. data_out = 0000000000000000, expcted data_out = b2a7266596ab582d
+# 
+# Cycle:    8 data_in: 10642120c03b2280, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    8 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:    9 data_in: 8983b813cb203e96, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    9 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   10 data_in: eaa62ad5359fdd6b, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   11 data_in: e7c572cf0effe91d, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   11 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   12 data_in: 9e314c3ce5730aca, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 8983b813cb203e96, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   12 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   12 - Data out error. data_out = 0000000000000000, expcted data_out = 8983b813cb203e96
+# 
+# Cycle:   13 data_in: ec4b34d820c4b341, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   13 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   14 data_in: 5b0265b675c50deb, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: e7c572cf0effe91d, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   14 - Data out error. data_out = 0000000000000000, expcted data_out = e7c572cf0effe91d
+# 
+# Cycle:   15 data_in: 150fdd2ade7502bc, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   16 data_in: 27f2554f42f24185, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 150fdd2ade7502bc, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   16 - Data out error. data_out = 0000000000000000, expcted data_out = 150fdd2ade7502bc
+# 
+# Cycle:   17 data_in: 0aaa4b15bf23327e, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 27f2554f42f24185, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   17 - Data out error. data_out = 0000000000000000, expcted data_out = 27f2554f42f24185
+# 
+# Cycle:   18 data_in: 2635fb4c31230762, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   19 data_in: dbcd60b77c6da9f8, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   20 data_in: 44de3789adcbc05b, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   20 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   20 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   21 data_in: a8c7fc51ebfec0d7, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 0aaa4b15bf23327e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   21 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   21 - Data out error. data_out = 0000000000000000, expcted data_out = 0aaa4b15bf23327e
+# 
+# Cycle:   22 data_in: 6457edc8e12ccec2, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 2635fb4c31230762, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   22 - Data out error. data_out = 0000000000000000, expcted data_out = 2635fb4c31230762
+# 
+# Cycle:   23 data_in: bf05007e090cdb12, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   24 data_in: e9ebf6d30fd28f1f, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   24 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   25 data_in: 248b4b492dda595b, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   25 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   25 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   26 data_in: c33f38862c156358, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: dbcd60b77c6da9f8, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   26 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   26 - Data out error. data_out = 0000000000000000, expcted data_out = dbcd60b77c6da9f8
+# 
+# Cycle:   27 data_in: 937dbc267d3599fa, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   28 data_in: d9d292b39799a82f, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   28 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   28 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   29 data_in: e59b36cb7bf8fdf7, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 44de3789adcbc05b, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   29 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   29 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   29 - Data out error. data_out = 0000000000000000, expcted data_out = 44de3789adcbc05b
+# 
+# Cycle:   30 data_in: f682e2ed14cfc129, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   31 data_in: efbe94dfda8ae2b5, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   31 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   32 data_in: 15090b2ae8740cd0, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: bf05007e090cdb12, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   32 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   32 - Data out error. data_out = 0000000000000000, expcted data_out = bf05007e090cdb12
+# 
+# Cycle:   33 data_in: cd5ebc9a6e5daddc, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   34 data_in: 2779e94e2b0eed56, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   34 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   35 data_in: 9c0e8a385b6fb9b6, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: e9ebf6d30fd28f1f, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   35 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   35 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   35 - Data out error. data_out = 0000000000000000, expcted data_out = e9ebf6d30fd28f1f
+# 
+# Cycle:   36 data_in: 49c65d934a74bf94, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: d9d292b39799a82f, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   36 - Data out error. data_out = 0000000000000000, expcted data_out = d9d292b39799a82f
+# 
+# Cycle:   37 data_in: a6fcde4d6dcb69db, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: efbe94dfda8ae2b5, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   37 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   37 - Data out error. data_out = 0000000000000000, expcted data_out = efbe94dfda8ae2b5
+# 
+# Cycle:   38 data_in: 653b49cabb45e276, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 2779e94e2b0eed56, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   38 - Data out error. data_out = 0000000000000000, expcted data_out = 2779e94e2b0eed56
+# 
+# Cycle:   39 data_in: 02749b04a3071a46, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: a6fcde4d6dcb69db, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   39 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   39 - Data out error. data_out = 0000000000000000, expcted data_out = a6fcde4d6dcb69db
+# 
+# Cycle:   40 data_in: 44018d88da6ebab4, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   40 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   41 data_in: 975c9c2ee3c530c7, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   41 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   42 data_in: 149e0729fea7a6fd, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   42 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   43 data_in: 9eb7c63ded3408da, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   43 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   44 data_in: 5d7199bab9f50473, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 02749b04a3071a46, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   44 - Data out error. data_out = 0000000000000000, expcted data_out = 02749b04a3071a46
+# 
+# Cycle:   45 data_in: 8d24f61a6a8e05d5, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   45 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   46 data_in: 603921c04b273796, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   46 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   47 data_in: 6e5f0fdc3e99837d, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 8d24f61a6a8e05d5, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   47 - Data out error. data_out = 0000000000000000, expcted data_out = 8d24f61a6a8e05d5
+# 
+# Cycle:   48 data_in: ed8d80db3f5a9b7e, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: ed8d80db3f5a9b7e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   48 - Data out error. data_out = 0000000000000000, expcted data_out = ed8d80db3f5a9b7e
+# 
+# Cycle:   49 data_in: b0bcee61fd28e4fa, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: b0bcee61fd28e4fa, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   49 - Data out error. data_out = 0000000000000000, expcted data_out = b0bcee61fd28e4fa
+# 
+# Cycle:   50 data_in: a863965043779186, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   51 data_in: 60b175c1949a8a29, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   51 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   52 data_in: b98c427325b27b4b, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: a863965043779186, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   52 - Data out error. data_out = 0000000000000000, expcted data_out = a863965043779186
+# 
+# Cycle:   53 data_in: d44b80a82758d14e, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   54 data_in: f33466e6070bb90e, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   54 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   55 data_in: c6b5f48d155a1d2a, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 60b175c1949a8a29, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   55 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   55 - Data out error. data_out = 0000000000000000, expcted data_out = 60b175c1949a8a29
+# 
+# Cycle:   56 data_in: 6464e3c8bccfa879, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   56 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   57 data_in: e3b7aec735a0c96b, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   57 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   58 data_in: 5c8295b96216abc4, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   58 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   59 data_in: c33390863fbb3b7f, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   59 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   60 data_in: dece5ebd19452132, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   61 data_in: 54a879a96543cfca, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: d44b80a82758d14e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   61 - Data out error. data_out = 0000000000000000, expcted data_out = d44b80a82758d14e
+# 
+# Cycle:   62 data_in: 85e51e0bfd8b6afb, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: f33466e6070bb90e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   62 - Data out error. data_out = 0000000000000000, expcted data_out = f33466e6070bb90e
+# 
+# Cycle:   63 data_in: bab148751b60e536, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   64 data_in: d73fb4ae4465e788, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   64 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   65 data_in: 9684e02d1444df28, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   65 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   65 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   66 data_in: 06b3050d8f1cf61e, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 54a879a96543cfca, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   66 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   66 - Data out error. data_out = 0000000000000000, expcted data_out = 54a879a96543cfca
+# 
+# Cycle:   67 data_in: c3761c8668ae1bd1, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 85e51e0bfd8b6afb, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   67 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   67 - Data out error. data_out = 0000000000000000, expcted data_out = 85e51e0bfd8b6afb
+# 
+# Cycle:   68 data_in: 29efe9536c44f9d8, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   69 data_in: 8273e204f166fae2, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: bab148751b60e536, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   69 - Data out error. data_out = 0000000000000000, expcted data_out = bab148751b60e536
+# 
+# Cycle:   70 data_in: dc0344b8093e4d12, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   71 data_in: 15890f2bd0c5dca1, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   71 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   72 data_in: 50d5f9a113b55527, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   72 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   72 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   73 data_in: cb5c80962c2d2358, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: d73fb4ae4465e788, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   73 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   73 - Data out error. data_out = 0000000000000000, expcted data_out = d73fb4ae4465e788
+# 
+# Cycle:   74 data_in: d8ace2b1cb227096, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 8273e204f166fae2, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   74 - Data out error. data_out = 0000000000000000, expcted data_out = 8273e204f166fae2
+# 
+# Cycle:   75 data_in: 7ab11bf5158b2b2b, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: dc0344b8093e4d12, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   75 - Data out error. data_out = 0000000000000000, expcted data_out = dc0344b8093e4d12
+# 
+# Cycle:   76 data_in: d3a8e4a74249ff84, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 15890f2bd0c5dca1, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   76 - Data out error. data_out = 0000000000000000, expcted data_out = 15890f2bd0c5dca1
+# 
+# Cycle:   77 data_in: 6de5bbdba4da5649, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 7ab11bf5158b2b2b, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   77 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   77 - Data out error. data_out = 0000000000000000, expcted data_out = 7ab11bf5158b2b2b
+# 
+# Cycle:   78 data_in: 1546dd2ad0bc5ea1, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   78 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   79 data_in: be75427c41a10583, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   79 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   80 data_in: b7dfaa6fb455f268, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   80 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   81 data_in: 207691401c719738, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: d3a8e4a74249ff84, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   81 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   81 - Data out error. data_out = 0000000000000000, expcted data_out = d3a8e4a74249ff84
+# 
+# Cycle:   82 data_in: 602831c0e2bf1ac5, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   82 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   83 data_in: 1e1c873cd86a6ab0, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 6de5bbdba4da5649, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   83 - Data out error. data_out = 0000000000000000, expcted data_out = 6de5bbdba4da5649
+# 
+# Cycle:   84 data_in: f0b14ee10aec3515, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: f0b14ee10aec3515, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   84 - Data out error. data_out = 0000000000000000, expcted data_out = f0b14ee10aec3515
+# 
+# Cycle:   85 data_in: c336048664b5e3c9, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   86 data_in: ad67e25ac69da28d, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   87 data_in: b8ade671060a5d0c, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: c336048664b5e3c9, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   87 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   87 - Data out error. data_out = 0000000000000000, expcted data_out = c336048664b5e3c9
+# 
+# Cycle:   88 data_in: cf14ce9efbdfc2f7, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   88 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   89 data_in: d00b12a0902a3a20, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: ad67e25ac69da28d, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   89 - Data out error. data_out = 0000000000000000, expcted data_out = ad67e25ac69da28d
+# 
+# Cycle:   90 data_in: 86dcf00d6e8af5dd, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: b8ade671060a5d0c, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   90 - Data out error. data_out = 0000000000000000, expcted data_out = b8ade671060a5d0c
+# 
+# Cycle:   91 data_in: fef064fdcf63da9e, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 86dcf00d6e8af5dd, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   91 - Data out error. data_out = 0000000000000000, expcted data_out = 86dcf00d6e8af5dd
+# 
+# Cycle:   92 data_in: 71c129e381c39a03, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: fef064fdcf63da9e, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   92 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   92 - Data out error. data_out = 0000000000000000, expcted data_out = fef064fdcf63da9e
+# 
+# Cycle:   93 data_in: ca9cbc9522119f44, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   94 data_in: 7c1e5bf8297a1552, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   94 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   95 data_in: 236afd464219e784, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   95 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   96 data_in: 352d616a0beac117, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 71c129e381c39a03, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   96 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   96 - Data out error. data_out = 0000000000000000, expcted data_out = 71c129e381c39a03
+# 
+# Cycle:   97 data_in: b05202603e6f0f7c, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   97 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   98 data_in: 92831e25d31dfea6, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 7c1e5bf8297a1552, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   98 - Data out error. data_out = 0000000000000000, expcted data_out = 7c1e5bf8297a1552
+# 
+# Cycle:   99 data_in: 8a64b014a48f7c49, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 8a64b014a48f7c49, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   99 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   99 - Data out error. data_out = 0000000000000000, expcted data_out = 8a64b014a48f7c49
+# 
+# Cycle:  100 data_in: 23907547ae68305c, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  101 data_in: 6851e5d0da058ab4, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  101 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  102 data_in: b522406a03e9b707, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: b522406a03e9b707, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  102 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  102 - Data out error. data_out = 0000000000000000, expcted data_out = b522406a03e9b707
+# 
+# Cycle:  103 data_in: 39e48173a5e79e4b, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  103 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  104 data_in: 64e165c9520eefa4, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  105 data_in: 33836567ea5814d4, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  106 data_in: 24d2bf4941103982, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  107 data_in: 49b16f938e054c1c, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  107 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle  107 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  108 data_in: aed72e5de471f8c8, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  108 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle  108 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  109 data_in: 1c8d7f3995a9a82b, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 64e165c9520eefa4, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  109 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle  109 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  109 - Data out error. data_out = 0000000000000000, expcted data_out = 64e165c9520eefa4
+# 
+# Cycle:  110 data_in: e82b96d02c848959, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  111 data_in: 535277a66d8b87db, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 33836567ea5814d4, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  111 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle  111 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  111 - Data out error. data_out = 0000000000000000, expcted data_out = 33836567ea5814d4
+# 
+# Cycle:  112 data_in: b4e8d66987e44c0f, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 24d2bf4941103982, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  112 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  112 - Data out error. data_out = 0000000000000000, expcted data_out = 24d2bf4941103982
+# 
+# Cycle:  113 data_in: 67d735cf62fd49c5, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  113 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  114 data_in: 3b83cd77b4f9a469, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 49b16f938e054c1c, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  114 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  114 - Data out error. data_out = 0000000000000000, expcted data_out = 49b16f938e054c1c
+# 
+# Cycle:  115 data_in: e20e9ac44ddd4d9b, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 535277a66d8b87db, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  115 - Data out error. data_out = 0000000000000000, expcted data_out = 535277a66d8b87db
+# 
+# Cycle:  116 data_in: 984d5a30c378ee86, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 984d5a30c378ee86, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  116 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  116 - Data out error. data_out = 0000000000000000, expcted data_out = 984d5a30c378ee86
+# 
+# Cycle:  117 data_in: 038787076a15f5d4, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  117 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  118 data_in: 00f25f0145e28b8b, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 00f25f0145e28b8b, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  118 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  118 - Data out error. data_out = 0000000000000000, expcted data_out = 00f25f0145e28b8b
+# 
+# Cycle:  119 data_in: e2ecdac5611d9fc2, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  119 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  120 data_in: 57fbb9afb302da66, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 57fbb9afb302da66, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  120 - Data out error. data_out = 0000000000000000, expcted data_out = 57fbb9afb302da66
+# 
+# Cycle:  121 data_in: f78576ef8376ac06, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  122 data_in: 304e4d60f7723eee, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: f78576ef8376ac06, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  122 - Data out error. data_out = 0000000000000000, expcted data_out = f78576ef8376ac06
+# 
+# Cycle:  123 data_in: 14b43729322f7d64, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  124 data_in: 40aaf5813715156e, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 304e4d60f7723eee, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  124 - Data out error. data_out = 0000000000000000, expcted data_out = 304e4d60f7723eee
+# 
+# Cycle:  125 data_in: d57800aa786271f0, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  125 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  126 data_in: 472e958ebe9bbc7d, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 14b43729322f7d64, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  126 - Data out error. data_out = 0000000000000000, expcted data_out = 14b43729322f7d64
+# 
+# Cycle:  127 data_in: 77ebb1efd4b5e6a9, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 40aaf5813715156e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  127 - Data out error. data_out = 0000000000000000, expcted data_out = 40aaf5813715156e
+# 
+# Cycle:  128 data_in: 5cd20db925029b4a, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: d57800aa786271f0, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  128 - Data out error. data_out = 0000000000000000, expcted data_out = d57800aa786271f0
+# 
+# Cycle:  129 data_in: 28c6275132dc4165, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  129 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  130 data_in: b8ea3a719d12083a, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 77ebb1efd4b5e6a9, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  130 - Data out error. data_out = 0000000000000000, expcted data_out = 77ebb1efd4b5e6a9
+# 
+# Cycle:  131 data_in: beda447d1513dd2a, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 5cd20db925029b4a, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  131 - Data out error. data_out = 0000000000000000, expcted data_out = 5cd20db925029b4a
+# 
+# Cycle:  132 data_in: e4a800c976de6bed, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  132 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  133 data_in: e696e8cdeda71cdb, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  133 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  134 data_in: 5e983dbdd14820a2, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  135 data_in: bd86f47ba86c5e50, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 28c6275132dc4165, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  135 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle  135 - Data out error. data_out = 0000000000000000, expcted data_out = 28c6275132dc4165
+# 
+# Cycle:  136 data_in: ae23ce5c7b7b89f6, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: beda447d1513dd2a, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  136 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  136 - Data out error. data_out = 0000000000000000, expcted data_out = beda447d1513dd2a
+# 
+# Cycle:  137 data_in: ddd146bb644605c8, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: e4a800c976de6bed, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  137 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  137 - Data out error. data_out = 0000000000000000, expcted data_out = e4a800c976de6bed
+# 
+# Cycle:  138 data_in: e70f98ce0671030c, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: bd86f47ba86c5e50, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  138 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  138 - Data out error. data_out = 0000000000000000, expcted data_out = bd86f47ba86c5e50
+# 
+# Cycle:  139 data_in: d9b8c0b35ca26fb9, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  140 data_in: 9cfc7a39066cf10c, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  141 data_in: 271c434e02fbf905, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  141 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  142 data_in: 46e7538d847fb208, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 46e7538d847fb208, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  142 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  142 - Data out error. data_out = 0000000000000000, expcted data_out = 46e7538d847fb208
+# 
+# Cycle:  143 data_in: 7af6abf548590990, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  143 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  144 data_in: 12a90325a005a640, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  144 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  145 data_in: 94ded82916cbf92d, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 12a90325a005a640, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  145 - Data out error. data_out = 0000000000000000, expcted data_out = 12a90325a005a640
+# 
+# Cycle:  146 data_in: 2876695060272dc0, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  147 data_in: 7a87aff5faf32ef5, data_in_valid: 1, pop_fifo: 0
+# TEST FAILED
+# ** Note: $finish    : /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo_bench.v(1384)
+#    Time: 14700 ns  Iteration: 1  Instance: /fifo_bench
+# 1
+# Break at /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo_bench.v line 1384
+quit -sim
+# Compile of dff.v was successful.
+# Compile of fifo.v failed with 1 errors.
+# Compile of fifo_bench.v was successful.
+# Compile of mux4_1.v was successful.
+# Compile of mux4_1_16bit.v was successful.
+# Compile of mux4_1_64bit.v was successful.
+# Compile of reg_16bit.v was successful.
+# Compile of reg_64bit.v was successful.
+# Compile of reg_64bit_tb.v was successful.
+# Compile of mux2_1_16bit.v was successful.
+# Compile of or2.v was successful.
+# Compile of decoder2_4.v was successful.
+# Compile of mux2_1.v was successful.
+# Compile of not1.v was successful.
+# Compile of clkrst.v was successful.
+# Compile of statereg.v was successful.
+# Compile of nor2.v was successful.
+# Compile of fifo_reg.v was successful.
+# Compile of and2.v was successful.
+# Compile of nand2.v was successful.
+# Compile of statelogic.v was successful.
+# Compile of fifo_hier.v was successful.
+# 22 compiles, 1 failed with 1 error. 
+# Compile of dff.v was successful.
+# Compile of fifo.v was successful.
+# Compile of fifo_bench.v was successful.
+# Compile of mux4_1.v was successful.
+# Compile of mux4_1_16bit.v was successful.
+# Compile of mux4_1_64bit.v was successful.
+# Compile of reg_16bit.v was successful.
+# Compile of reg_64bit.v was successful.
+# Compile of reg_64bit_tb.v was successful.
+# Compile of mux2_1_16bit.v was successful.
+# Compile of or2.v was successful.
+# Compile of decoder2_4.v was successful.
+# Compile of mux2_1.v was successful.
+# Compile of not1.v was successful.
+# Compile of clkrst.v was successful.
+# Compile of statereg.v was successful.
+# Compile of nor2.v was successful.
+# Compile of fifo_reg.v was successful.
+# Compile of and2.v was successful.
+# Compile of nand2.v was successful.
+# Compile of statelogic.v was successful.
+# Compile of fifo_hier.v was successful.
+# 22 compiles, 0 failed with no errors. 
+# Load canceled
+# Break key hit 
+vsim work.fifo
+# vsim work.fifo 
+# Loading work.fifo
+# Loading work.statelogic
+# Loading work.statereg
+# Loading work.dff
+# Loading work.fifo_reg
+# Loading work.decoder2_4
+# Loading work.and2
+# Loading work.or2
+# Loading work.reg_64bit
+# Loading work.reg_16bit
+# Loading work.mux2_1_16bit
+# Loading work.mux2_1
+# Loading work.not1
+# Loading work.nand2
+# Loading work.nor2
+# Loading work.mux4_1_64bit
+# Loading work.mux4_1_16bit
+# Loading work.mux4_1
+# ** Warning: (vsim-3017) /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo.v(36): [TFMPC] - Too few port connections. Expected 11, found 10.
+#         Region: /fifo/fifo_logic
+quit -sim
+vsim work.fifo_bench
+# vsim work.fifo_bench 
+# Loading work.fifo_bench
+# Loading work.fifo_hier
+# Loading work.clkrst
+# Loading work.fifo
+# Loading work.statelogic
+# Loading work.statereg
+# Loading work.dff
+# Loading work.fifo_reg
+# Loading work.decoder2_4
+# Loading work.and2
+# Loading work.or2
+# Loading work.reg_64bit
+# Loading work.reg_16bit
+# Loading work.mux2_1_16bit
+# Loading work.mux2_1
+# Loading work.not1
+# Loading work.nand2
+# Loading work.nor2
+# Loading work.mux4_1_64bit
+# Loading work.mux4_1_16bit
+# Loading work.mux4_1
+# ** Warning: (vsim-3017) /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo.v(36): [TFMPC] - Too few port connections. Expected 11, found 10.
+#         Region: /fifo_bench/DUT/fifo0/fifo_logic
+quit -sim
+# Compile of dff.v was successful.
+# Compile of fifo.v was successful.
+# Compile of fifo_bench.v was successful.
+# Compile of mux4_1.v was successful.
+# Compile of mux4_1_16bit.v was successful.
+# Compile of mux4_1_64bit.v was successful.
+# Compile of reg_16bit.v was successful.
+# Compile of reg_64bit.v was successful.
+# Compile of reg_64bit_tb.v was successful.
+# Compile of mux2_1_16bit.v was successful.
+# Compile of or2.v was successful.
+# Compile of decoder2_4.v was successful.
+# Compile of mux2_1.v was successful.
+# Compile of not1.v was successful.
+# Compile of clkrst.v was successful.
+# Compile of statereg.v was successful.
+# Compile of nor2.v was successful.
+# Compile of fifo_reg.v was successful.
+# Compile of and2.v was successful.
+# Compile of nand2.v was successful.
+# Compile of statelogic.v was successful.
+# Compile of fifo_hier.v was successful.
+# 22 compiles, 0 failed with no errors. 
+vsim work.fifo_bench
+# vsim work.fifo_bench 
+# Loading work.fifo_bench
+# Loading work.fifo_hier
+# Loading work.clkrst
+# Loading work.fifo
+# Loading work.statelogic
+# Loading work.statereg
+# Loading work.dff
+# Loading work.fifo_reg
+# Loading work.decoder2_4
+# Loading work.and2
+# Loading work.or2
+# Loading work.reg_64bit
+# Loading work.reg_16bit
+# Loading work.mux2_1_16bit
+# Loading work.mux2_1
+# Loading work.not1
+# Loading work.nand2
+# Loading work.nor2
+# Loading work.mux4_1_64bit
+# Loading work.mux4_1_16bit
+# Loading work.mux4_1
+run -all
+# 
+# Cycle:    0 data_in: 0000000000000000, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:    1 data_in: 0000000000000000, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:    2 data_in: 0000000000000000, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    2 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:    3 data_in: 462df78c76d457ed, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 462df78c76d457ed, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle    3 - Data out error. data_out = 0000000000000000, expcted data_out = 462df78c76d457ed
+# 
+# Cycle:    4 data_in: d513d2aae2f784c5, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    4 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:    5 data_in: 47ecdb8f8932d612, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: d513d2aae2f784c5, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    5 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle    5 - Data out error. data_out = 0000000000000000, expcted data_out = d513d2aae2f784c5
+# 
+# Cycle:    6 data_in: e2ca4ec5f4007ae8, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    6 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:    7 data_in: b2a7266596ab582d, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: b2a7266596ab582d, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    7 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle    7 - Data out error. data_out = 0000000000000000, expcted data_out = b2a7266596ab582d
+# 
+# Cycle:    8 data_in: 10642120c03b2280, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    8 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:    9 data_in: 8983b813cb203e96, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle    9 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   10 data_in: eaa62ad5359fdd6b, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   11 data_in: e7c572cf0effe91d, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   11 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   12 data_in: 9e314c3ce5730aca, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 8983b813cb203e96, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   12 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   12 - Data out error. data_out = 0000000000000000, expcted data_out = 8983b813cb203e96
+# 
+# Cycle:   13 data_in: ec4b34d820c4b341, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   13 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   14 data_in: 5b0265b675c50deb, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: e7c572cf0effe91d, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   14 - Data out error. data_out = 0000000000000000, expcted data_out = e7c572cf0effe91d
+# 
+# Cycle:   15 data_in: 150fdd2ade7502bc, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   16 data_in: 27f2554f42f24185, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 150fdd2ade7502bc, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   16 - Data out error. data_out = 0000000000000000, expcted data_out = 150fdd2ade7502bc
+# 
+# Cycle:   17 data_in: 0aaa4b15bf23327e, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 27f2554f42f24185, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   17 - Data out error. data_out = 0000000000000000, expcted data_out = 27f2554f42f24185
+# 
+# Cycle:   18 data_in: 2635fb4c31230762, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   19 data_in: dbcd60b77c6da9f8, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   20 data_in: 44de3789adcbc05b, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   20 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   20 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   21 data_in: a8c7fc51ebfec0d7, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 0aaa4b15bf23327e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   21 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   21 - Data out error. data_out = 0000000000000000, expcted data_out = 0aaa4b15bf23327e
+# 
+# Cycle:   22 data_in: 6457edc8e12ccec2, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 2635fb4c31230762, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   22 - Data out error. data_out = 0000000000000000, expcted data_out = 2635fb4c31230762
+# 
+# Cycle:   23 data_in: bf05007e090cdb12, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   24 data_in: e9ebf6d30fd28f1f, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   24 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   25 data_in: 248b4b492dda595b, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   25 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   25 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   26 data_in: c33f38862c156358, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: dbcd60b77c6da9f8, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   26 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   26 - Data out error. data_out = 0000000000000000, expcted data_out = dbcd60b77c6da9f8
+# 
+# Cycle:   27 data_in: 937dbc267d3599fa, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   28 data_in: d9d292b39799a82f, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   28 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   28 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   29 data_in: e59b36cb7bf8fdf7, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 44de3789adcbc05b, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   29 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   29 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   29 - Data out error. data_out = 0000000000000000, expcted data_out = 44de3789adcbc05b
+# 
+# Cycle:   30 data_in: f682e2ed14cfc129, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   31 data_in: efbe94dfda8ae2b5, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   31 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   32 data_in: 15090b2ae8740cd0, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: bf05007e090cdb12, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   32 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   32 - Data out error. data_out = 0000000000000000, expcted data_out = bf05007e090cdb12
+# 
+# Cycle:   33 data_in: cd5ebc9a6e5daddc, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   34 data_in: 2779e94e2b0eed56, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   34 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   35 data_in: 9c0e8a385b6fb9b6, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: e9ebf6d30fd28f1f, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   35 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   35 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   35 - Data out error. data_out = 0000000000000000, expcted data_out = e9ebf6d30fd28f1f
+# 
+# Cycle:   36 data_in: 49c65d934a74bf94, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: d9d292b39799a82f, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   36 - Data out error. data_out = 0000000000000000, expcted data_out = d9d292b39799a82f
+# 
+# Cycle:   37 data_in: a6fcde4d6dcb69db, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: efbe94dfda8ae2b5, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   37 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   37 - Data out error. data_out = 0000000000000000, expcted data_out = efbe94dfda8ae2b5
+# 
+# Cycle:   38 data_in: 653b49cabb45e276, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 2779e94e2b0eed56, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   38 - Data out error. data_out = 0000000000000000, expcted data_out = 2779e94e2b0eed56
+# 
+# Cycle:   39 data_in: 02749b04a3071a46, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: a6fcde4d6dcb69db, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   39 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   39 - Data out error. data_out = 0000000000000000, expcted data_out = a6fcde4d6dcb69db
+# 
+# Cycle:   40 data_in: 44018d88da6ebab4, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   40 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   41 data_in: 975c9c2ee3c530c7, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   41 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   42 data_in: 149e0729fea7a6fd, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   42 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   43 data_in: 9eb7c63ded3408da, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   43 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   44 data_in: 5d7199bab9f50473, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 02749b04a3071a46, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   44 - Data out error. data_out = 0000000000000000, expcted data_out = 02749b04a3071a46
+# 
+# Cycle:   45 data_in: 8d24f61a6a8e05d5, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   45 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   46 data_in: 603921c04b273796, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   46 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   47 data_in: 6e5f0fdc3e99837d, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 8d24f61a6a8e05d5, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   47 - Data out error. data_out = 0000000000000000, expcted data_out = 8d24f61a6a8e05d5
+# 
+# Cycle:   48 data_in: ed8d80db3f5a9b7e, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: ed8d80db3f5a9b7e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   48 - Data out error. data_out = 0000000000000000, expcted data_out = ed8d80db3f5a9b7e
+# 
+# Cycle:   49 data_in: b0bcee61fd28e4fa, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: b0bcee61fd28e4fa, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   49 - Data out error. data_out = 0000000000000000, expcted data_out = b0bcee61fd28e4fa
+# 
+# Cycle:   50 data_in: a863965043779186, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   51 data_in: 60b175c1949a8a29, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   51 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   52 data_in: b98c427325b27b4b, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: a863965043779186, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   52 - Data out error. data_out = 0000000000000000, expcted data_out = a863965043779186
+# 
+# Cycle:   53 data_in: d44b80a82758d14e, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   54 data_in: f33466e6070bb90e, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   54 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   55 data_in: c6b5f48d155a1d2a, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 60b175c1949a8a29, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   55 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   55 - Data out error. data_out = 0000000000000000, expcted data_out = 60b175c1949a8a29
+# 
+# Cycle:   56 data_in: 6464e3c8bccfa879, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   56 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   57 data_in: e3b7aec735a0c96b, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   57 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   58 data_in: 5c8295b96216abc4, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   58 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   59 data_in: c33390863fbb3b7f, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   59 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   60 data_in: dece5ebd19452132, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   61 data_in: 54a879a96543cfca, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: d44b80a82758d14e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   61 - Data out error. data_out = 0000000000000000, expcted data_out = d44b80a82758d14e
+# 
+# Cycle:   62 data_in: 85e51e0bfd8b6afb, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: f33466e6070bb90e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   62 - Data out error. data_out = 0000000000000000, expcted data_out = f33466e6070bb90e
+# 
+# Cycle:   63 data_in: bab148751b60e536, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   64 data_in: d73fb4ae4465e788, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   64 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   65 data_in: 9684e02d1444df28, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   65 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   65 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   66 data_in: 06b3050d8f1cf61e, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 54a879a96543cfca, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   66 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   66 - Data out error. data_out = 0000000000000000, expcted data_out = 54a879a96543cfca
+# 
+# Cycle:   67 data_in: c3761c8668ae1bd1, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 85e51e0bfd8b6afb, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   67 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   67 - Data out error. data_out = 0000000000000000, expcted data_out = 85e51e0bfd8b6afb
+# 
+# Cycle:   68 data_in: 29efe9536c44f9d8, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   69 data_in: 8273e204f166fae2, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: bab148751b60e536, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   69 - Data out error. data_out = 0000000000000000, expcted data_out = bab148751b60e536
+# 
+# Cycle:   70 data_in: dc0344b8093e4d12, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   71 data_in: 15890f2bd0c5dca1, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   71 - FULL logic : full = 0, expected full = 1
+# 
+# Cycle:   72 data_in: 50d5f9a113b55527, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   72 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle   72 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   73 data_in: cb5c80962c2d2358, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: d73fb4ae4465e788, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle   73 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle   73 - Data out error. data_out = 0000000000000000, expcted data_out = d73fb4ae4465e788
+# 
+# Cycle:   74 data_in: d8ace2b1cb227096, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 8273e204f166fae2, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   74 - Data out error. data_out = 0000000000000000, expcted data_out = 8273e204f166fae2
+# 
+# Cycle:   75 data_in: 7ab11bf5158b2b2b, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: dc0344b8093e4d12, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   75 - Data out error. data_out = 0000000000000000, expcted data_out = dc0344b8093e4d12
+# 
+# Cycle:   76 data_in: d3a8e4a74249ff84, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 15890f2bd0c5dca1, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   76 - Data out error. data_out = 0000000000000000, expcted data_out = 15890f2bd0c5dca1
+# 
+# Cycle:   77 data_in: 6de5bbdba4da5649, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 7ab11bf5158b2b2b, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   77 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   77 - Data out error. data_out = 0000000000000000, expcted data_out = 7ab11bf5158b2b2b
+# 
+# Cycle:   78 data_in: 1546dd2ad0bc5ea1, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   78 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   79 data_in: be75427c41a10583, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   79 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   80 data_in: b7dfaa6fb455f268, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   80 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   81 data_in: 207691401c719738, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: d3a8e4a74249ff84, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   81 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   81 - Data out error. data_out = 0000000000000000, expcted data_out = d3a8e4a74249ff84
+# 
+# Cycle:   82 data_in: 602831c0e2bf1ac5, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   82 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   83 data_in: 1e1c873cd86a6ab0, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 6de5bbdba4da5649, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   83 - Data out error. data_out = 0000000000000000, expcted data_out = 6de5bbdba4da5649
+# 
+# Cycle:   84 data_in: f0b14ee10aec3515, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: f0b14ee10aec3515, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   84 - Data out error. data_out = 0000000000000000, expcted data_out = f0b14ee10aec3515
+# 
+# Cycle:   85 data_in: c336048664b5e3c9, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   86 data_in: ad67e25ac69da28d, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   87 data_in: b8ade671060a5d0c, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: c336048664b5e3c9, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   87 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   87 - Data out error. data_out = 0000000000000000, expcted data_out = c336048664b5e3c9
+# 
+# Cycle:   88 data_in: cf14ce9efbdfc2f7, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   88 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   89 data_in: d00b12a0902a3a20, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: ad67e25ac69da28d, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   89 - Data out error. data_out = 0000000000000000, expcted data_out = ad67e25ac69da28d
+# 
+# Cycle:   90 data_in: 86dcf00d6e8af5dd, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: b8ade671060a5d0c, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   90 - Data out error. data_out = 0000000000000000, expcted data_out = b8ade671060a5d0c
+# 
+# Cycle:   91 data_in: fef064fdcf63da9e, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 86dcf00d6e8af5dd, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   91 - Data out error. data_out = 0000000000000000, expcted data_out = 86dcf00d6e8af5dd
+# 
+# Cycle:   92 data_in: 71c129e381c39a03, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: fef064fdcf63da9e, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   92 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   92 - Data out error. data_out = 0000000000000000, expcted data_out = fef064fdcf63da9e
+# 
+# Cycle:   93 data_in: ca9cbc9522119f44, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:   94 data_in: 7c1e5bf8297a1552, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   94 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   95 data_in: 236afd464219e784, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   95 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   96 data_in: 352d616a0beac117, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 71c129e381c39a03, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   96 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   96 - Data out error. data_out = 0000000000000000, expcted data_out = 71c129e381c39a03
+# 
+# Cycle:   97 data_in: b05202603e6f0f7c, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   97 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:   98 data_in: 92831e25d31dfea6, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 7c1e5bf8297a1552, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle   98 - Data out error. data_out = 0000000000000000, expcted data_out = 7c1e5bf8297a1552
+# 
+# Cycle:   99 data_in: 8a64b014a48f7c49, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 8a64b014a48f7c49, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle   99 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle   99 - Data out error. data_out = 0000000000000000, expcted data_out = 8a64b014a48f7c49
+# 
+# Cycle:  100 data_in: 23907547ae68305c, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  101 data_in: 6851e5d0da058ab4, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  101 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  102 data_in: b522406a03e9b707, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: b522406a03e9b707, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  102 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  102 - Data out error. data_out = 0000000000000000, expcted data_out = b522406a03e9b707
+# 
+# Cycle:  103 data_in: 39e48173a5e79e4b, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  103 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  104 data_in: 64e165c9520eefa4, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  105 data_in: 33836567ea5814d4, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  106 data_in: 24d2bf4941103982, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  107 data_in: 49b16f938e054c1c, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  107 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle  107 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  108 data_in: aed72e5de471f8c8, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  108 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle  108 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  109 data_in: 1c8d7f3995a9a82b, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 64e165c9520eefa4, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  109 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle  109 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  109 - Data out error. data_out = 0000000000000000, expcted data_out = 64e165c9520eefa4
+# 
+# Cycle:  110 data_in: e82b96d02c848959, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  111 data_in: 535277a66d8b87db, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 33836567ea5814d4, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  111 - FULL logic : full = 0, expected full = 1
+# MINORCHECK : In cycle  111 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  111 - Data out error. data_out = 0000000000000000, expcted data_out = 33836567ea5814d4
+# 
+# Cycle:  112 data_in: b4e8d66987e44c0f, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 24d2bf4941103982, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  112 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  112 - Data out error. data_out = 0000000000000000, expcted data_out = 24d2bf4941103982
+# 
+# Cycle:  113 data_in: 67d735cf62fd49c5, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  113 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  114 data_in: 3b83cd77b4f9a469, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 49b16f938e054c1c, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  114 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  114 - Data out error. data_out = 0000000000000000, expcted data_out = 49b16f938e054c1c
+# 
+# Cycle:  115 data_in: e20e9ac44ddd4d9b, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 535277a66d8b87db, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  115 - Data out error. data_out = 0000000000000000, expcted data_out = 535277a66d8b87db
+# 
+# Cycle:  116 data_in: 984d5a30c378ee86, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 984d5a30c378ee86, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  116 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  116 - Data out error. data_out = 0000000000000000, expcted data_out = 984d5a30c378ee86
+# 
+# Cycle:  117 data_in: 038787076a15f5d4, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  117 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  118 data_in: 00f25f0145e28b8b, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 00f25f0145e28b8b, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  118 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  118 - Data out error. data_out = 0000000000000000, expcted data_out = 00f25f0145e28b8b
+# 
+# Cycle:  119 data_in: e2ecdac5611d9fc2, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  119 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  120 data_in: 57fbb9afb302da66, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 57fbb9afb302da66, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  120 - Data out error. data_out = 0000000000000000, expcted data_out = 57fbb9afb302da66
+# 
+# Cycle:  121 data_in: f78576ef8376ac06, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  122 data_in: 304e4d60f7723eee, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: f78576ef8376ac06, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  122 - Data out error. data_out = 0000000000000000, expcted data_out = f78576ef8376ac06
+# 
+# Cycle:  123 data_in: 14b43729322f7d64, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  124 data_in: 40aaf5813715156e, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 304e4d60f7723eee, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  124 - Data out error. data_out = 0000000000000000, expcted data_out = 304e4d60f7723eee
+# 
+# Cycle:  125 data_in: d57800aa786271f0, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  125 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  126 data_in: 472e958ebe9bbc7d, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 14b43729322f7d64, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  126 - Data out error. data_out = 0000000000000000, expcted data_out = 14b43729322f7d64
+# 
+# Cycle:  127 data_in: 77ebb1efd4b5e6a9, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 40aaf5813715156e, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  127 - Data out error. data_out = 0000000000000000, expcted data_out = 40aaf5813715156e
+# 
+# Cycle:  128 data_in: 5cd20db925029b4a, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: d57800aa786271f0, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  128 - Data out error. data_out = 0000000000000000, expcted data_out = d57800aa786271f0
+# 
+# Cycle:  129 data_in: 28c6275132dc4165, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  129 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  130 data_in: b8ea3a719d12083a, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 77ebb1efd4b5e6a9, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  130 - Data out error. data_out = 0000000000000000, expcted data_out = 77ebb1efd4b5e6a9
+# 
+# Cycle:  131 data_in: beda447d1513dd2a, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: 5cd20db925029b4a, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  131 - Data out error. data_out = 0000000000000000, expcted data_out = 5cd20db925029b4a
+# 
+# Cycle:  132 data_in: e4a800c976de6bed, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  132 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  133 data_in: e696e8cdeda71cdb, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  133 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  134 data_in: 5e983dbdd14820a2, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  135 data_in: bd86f47ba86c5e50, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 28c6275132dc4165, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 1
+# MINORCHECK : In cycle  135 - FULL logic : full = 0, expected full = 1
+# ERRORCHECK : In cycle  135 - Data out error. data_out = 0000000000000000, expcted data_out = 28c6275132dc4165
+# 
+# Cycle:  136 data_in: ae23ce5c7b7b89f6, data_in_valid: 1, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: beda447d1513dd2a, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  136 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  136 - Data out error. data_out = 0000000000000000, expcted data_out = beda447d1513dd2a
+# 
+# Cycle:  137 data_in: ddd146bb644605c8, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: e4a800c976de6bed, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  137 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  137 - Data out error. data_out = 0000000000000000, expcted data_out = e4a800c976de6bed
+# 
+# Cycle:  138 data_in: e70f98ce0671030c, data_in_valid: 0, pop_fifo: 1
+#     data_out: 0000000000000000, Expected data_out: bd86f47ba86c5e50, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  138 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  138 - Data out error. data_out = 0000000000000000, expcted data_out = bd86f47ba86c5e50
+# 
+# Cycle:  139 data_in: d9b8c0b35ca26fb9, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  140 data_in: 9cfc7a39066cf10c, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  141 data_in: 271c434e02fbf905, data_in_valid: 0, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  141 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  142 data_in: 46e7538d847fb208, data_in_valid: 1, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 46e7538d847fb208, fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  142 - EMPTY logic : empty = 1, expected empty = 0
+# ERRORCHECK : In cycle  142 - Data out error. data_out = 0000000000000000, expcted data_out = 46e7538d847fb208
+# 
+# Cycle:  143 data_in: 7af6abf548590990, data_in_valid: 0, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 1, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  143 - EMPTY logic : empty = 0, expected empty = 1
+# 
+# Cycle:  144 data_in: 12a90325a005a640, data_in_valid: 1, pop_fifo: 0
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 1, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# MINORCHECK : In cycle  144 - EMPTY logic : empty = 1, expected empty = 0
+# 
+# Cycle:  145 data_in: 94ded82916cbf92d, data_in_valid: 0, pop_fifo: 0
+#     data_out: 0000000000000000, Expected data_out: 12a90325a005a640, fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# ERRORCHECK : In cycle  145 - Data out error. data_out = 0000000000000000, expcted data_out = 12a90325a005a640
+# 
+# Cycle:  146 data_in: 2876695060272dc0, data_in_valid: 1, pop_fifo: 1
+#     (data_out NOT CHECKED in this cycle) fifo_empty: 0, Expected fifo_empty: 0, fifo_full: 0, Expected fifo_full: 0
+# 
+# Cycle:  147 data_in: 7a87aff5faf32ef5, data_in_valid: 1, pop_fifo: 0
+# TEST FAILED
+# ** Note: $finish    : /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo_bench.v(1384)
+#    Time: 14700 ns  Iteration: 1  Instance: /fifo_bench
+# 1
+# Break at /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo_bench.v line 1384
