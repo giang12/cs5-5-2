@@ -19,29 +19,36 @@ module fifo(/*AUTOARG*/
    output        err;
 
    //your code here
-    statelogic fifo_logic(.data_in_valid_ctr(),
-                          .write_ptr(), 
-                          .read_ptr(), 
-                          .next_state(), 
-                          .fifo_empty(), 
-                          .fifo_full(), 
-                          .err(), 
-                          .state(), 
-                          .data_in_valid(), 
-                          .pop_fifo());
-    statereg state_reg(   .state(), 
-                          .next_state(), 
-                          .Clk(), 
-                          .Reset());
-    fifo_reg fifo_reg(    .data_out(), 
-                          .data_in(), 
-                          .write_ptr(), 
-                          .read_ptr(), 
-                          .data_in_valid(),
-                          .fifo_full(),
-                          .fifo_empty(), 
-                          .rst(), 
-                          .clk());
+   wire [2:0] state;
+   wire [2:0] next_state;
+   wire [1:0] wp;
+   wire [1:0] rp;
+
+   statelogic fifo_logic(.next_state(next_state),
+                          .wp(wp), 
+                          .rp(rp), 
+                          .err(err), 
+                          .fifo_empty(fifo_empty), 
+                          .fifo_full(fifo_full), 
+                          .rst(rst), 
+                          .data_in_valid(data_in_valid),  
+                          .pop_fifo(pop_fifo),
+                          .state(state));
+
+    statereg state_reg(   .state(state), 
+                          .next_state(next_state), 
+                          .Clk(clk), 
+                          .Reset(rst));
+
+    fifo_reg fifo_reg(    .data_out(data_out), 
+                          .data_in(data_in), 
+                          .write_ptr(wp), 
+                          .read_ptr(rp),
+                          .data_in_valid(data_in_valid),
+                          .fifo_full(fifo_full),
+                          .fifo_empty(fifo_empty), 
+                          .rst(rst), 
+                          .clk(clk));
 
 
 
