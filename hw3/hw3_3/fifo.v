@@ -38,7 +38,8 @@ module fifo(/*AUTOARG*/
                           .write_ptr(), 
                           .read_ptr(), 
                           .data_in_valid(),
-                          .fifo_full(), 
+                          .fifo_full(),
+                          .fifo_empty(), 
                           .rst(), 
                           .clk());
 

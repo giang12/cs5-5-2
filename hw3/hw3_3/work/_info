@@ -67,6 +67,17 @@ F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo_hier.v
 L0 7
 OE;L;5.8b;17
 o-work work
+vfifo_reg
+IoP9g_;YcDlYL_XCH:E_CL3
+V?ZSn@DJYa8E@cg8Zm=`PQ1
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3
+w1456975755
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo_reg.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
 vmux2_1
 IJQzE?n395T^D]Nm?BYHPm1
 VSMWlHGMLlT2J=DG7^^YGz3
@@ -155,6 +166,17 @@ OE;L;5.8b;17
 r1
 31
 o-work work
+vor2
+IP]^337S95_f1kKYdfL6GA1
+V8M6R_>BLmfl5WmaQZ<c4j2
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3
+w1456975504
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/or2.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
 vreg_16bit
 V4W7E2FcfVOcH`89Am0V3?2
 r1
@@ -189,10 +211,10 @@ L0 1
 OE;L;5.8b;17
 o-work work
 vstatereg
-IQI9<[Mmg5mWzhe?P1nKz?1
-V]=bEUbOE8RPEE=`UCm7NJ2
+IBF[oZXHLS@`4cg5`:EBOP0
+VI2_GnL:D6Uzaz@_z:J<Z81
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3
-w1456872086
+w1456872836
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/statereg.v
 L0 1
 OE;L;5.8b;17

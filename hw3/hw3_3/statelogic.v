@@ -1,4 +1,4 @@
-module statelogic (data_in_valid_ctr, write_ptr, read_ptr, next_state, fifo_empty, fifo_full, err, state, data_in_valid, pop_fifo);
+module statelogic (write_ptr, read_ptr, next_state, fifo_empty, fifo_full, err, state, data_in_valid, pop_fifo);
     // from fifo mod
     input data_in_valid, pop_fifo;
     
@@ -6,8 +6,8 @@ module statelogic (data_in_valid_ctr, write_ptr, read_ptr, next_state, fifo_empt
     output fifo_empty, fifo_full, err;
 
     // to fifo reg
-    output data_in_valid_ctr;
     output [1:0] write_ptr, read_ptr;
+    output fifo_full, fifo_empty;
     
     /****** State FSM control IOs ******/    
     input [2:0] state;
