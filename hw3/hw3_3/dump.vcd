@@ -1,5 +1,5 @@
 $date
-	Thu Mar  3 09:47:47 2016
+	Thu Mar  3 10:23:31 2016
 $end
 $version
 	ModelSim Version 5.8b
@@ -378,12 +378,12 @@ $var wire 1 c! rp [0] $end
 $scope module fifo_ctr $end
 $var wire 1 U! rst $end
 $var wire 1 T! clk $end
-$var wire 1 R! wr_en $end
-$var wire 1 S! rd_en $end
-$var reg 1 d! buf_empty $end
-$var reg 1 e! buf_full $end
-$var reg 2 f! rd_ptr [1:0] $end
-$var reg 2 g! wr_ptr [1:0] $end
+$var wire 1 R! data_in_valid $end
+$var wire 1 S! pop_fifo $end
+$var reg 1 d! fifo_empty $end
+$var reg 1 e! fifo_full $end
+$var reg 2 f! rp [1:0] $end
+$var reg 2 g! wp [1:0] $end
 $var reg 1 h! err $end
 $var reg 3 i! fifo_counter [2:0] $end
 $upscope $end

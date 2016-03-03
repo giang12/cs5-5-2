@@ -1,32 +1,19 @@
-`define BUF_WIDTH 6    // BUF_SIZE = 16 -> BUF_WIDTH = 4, no. of bits to be used in pointer
-`define BUF_SIZE ( 1<<`BUF_WIDTH )
+module fifo_ctr( clk, rst, data_in_valid, pop_fifo, fifo_empty, fifo_full, rp, wp, err);
 
-module fifo_ctr( clk, rst, wr_en, rd_en, buf_empty, buf_full, rd_ptr, wr_ptr, err);
-
-input                 rst, clk, wr_en, rd_en;   
-// reset, system clock, write enable and read enable.
-//input [7:0]           buf_in;                   
-// data input to be pushed to buffer
-//output[7:0]           buf_out;                  
-// port to output the data using pop.
-output                buf_empty, buf_full;      
-// buffer empty and full indication 
-//output[`BUF_WIDTH :0] fifo_counter;             
-// number of data pushed in to buffer   
-
-// added inputs outputs
-output [1:0] rd_ptr, wr_ptr;
+input                 rst, clk, data_in_valid, pop_fifo;   
+output                fifo_empty, fifo_full;      
+output [1:0]          rp, wp;
 output err;
 
-reg                   buf_empty, buf_full;
+reg         fifo_empty, fifo_full;
 reg[2:0]    fifo_counter;
-reg[1:0]  rd_ptr, wr_ptr;           // pointer to read and write addresses   
+reg[1:0]    wp, rp;         
 reg err;
 
 always @(fifo_counter)
 begin
-   buf_empty = (fifo_counter==0);
-   buf_full = (fifo_counter== 4);
+   fifo_empty = (fifo_counter==0);
+   fifo_full = (fifo_counter== 4);
 
 end
 
@@ -36,60 +23,32 @@ begin
        fifo_counter <= 0;
        err <= 0;
    end
-   else if( (!buf_full && wr_en) && ( !buf_empty && rd_en ) )
+   else if( (!fifo_full && data_in_valid) && ( !fifo_empty && pop_fifo ) )
        fifo_counter <= fifo_counter;
 
-   else if( !buf_full && wr_en )
+   else if( !fifo_full && data_in_valid )
        fifo_counter <= fifo_counter + 1;
 
-   else if( !buf_empty && rd_en )
+   else if( !fifo_empty && pop_fifo )
        fifo_counter <= fifo_counter - 1;
    else
       fifo_counter <= fifo_counter;
 end
 
-/**
-always @( posedge clk or posedge rst)
-begin
-   if( rst )
-      buf_out <= 0;
-   else
-   begin
-      if( rd_en && !buf_empty )
-         buf_out <= buf_mem[rd_ptr];
-
-      else
-         buf_out <= buf_out;
-
-   end
-end
-
-always @(posedge clk)
-begin
-
-   if( wr_en && !buf_full )
-      buf_mem[ wr_ptr ] <= buf_in;
-
-   else
-      buf_mem[ wr_ptr ] <= buf_mem[ wr_ptr ];
-end
-
-**/
-
 always@(posedge clk or posedge rst)
 begin
    if( rst )
    begin
-      wr_ptr <= 0;
-      rd_ptr <= 0;
+      wp <= 0;
+      rp <= 0;
    end
    else
    begin
-      if( !buf_full && wr_en )    wr_ptr <= wr_ptr + 1;
-          else  wr_ptr <= wr_ptr;
+      if( !fifo_full && data_in_valid)    wp <= wp + 1;
+          else  wp <= wp;
 
-      if( !buf_empty && rd_en )   rd_ptr <= rd_ptr + 1;
-      else rd_ptr <= rd_ptr;
+      if( !fifo_empty && pop_fifo )   rp <= rp + 1;
+      else rp <= rp;
    end
 
 end

@@ -26,12 +26,12 @@ module fifo(/*AUTOARG*/
 
     fifo_ctr fifo_ctr(    .clk(clk), 
                           .rst(rst), 
-                          .wr_en(data_in_valid), 
-                          .rd_en(pop_fifo), 
-                          .buf_empty(fifo_empty), 
-                          .buf_full(fifo_full),
-                          .rd_ptr(rp), 
-                          .wr_ptr(wp),
+                          .data_in_valid(data_in_valid), 
+                          .pop_fifo(pop_fifo), 
+                          .fifo_empty(fifo_empty), 
+                          .fifo_full(fifo_full),
+                          .rp(rp), 
+                          .wp(wp),
                           .err(err));
     
     statereg state_reg(   .state(state), 
