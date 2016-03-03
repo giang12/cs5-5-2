@@ -46,10 +46,10 @@ r1
 31
 o-work work
 vfifo
-ITB;0cU2iQh?CDbbbN:57a1
+I[jeWR@Uh^L_S8j29?I5Cd0
 Vkez:7FNDZ;`5THH_CLT:O2
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3
-w1456981171
+w1457019061
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo.v
 L0 4
 OE;L;5.8b;17
@@ -63,6 +63,17 @@ d/afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3
 w1456806162
 F/afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo_bench.v
 L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vfifo_ctr
+IE=m1P6O115=L[SX^bJ<8:3
+V^TC5Q_1bjfZ5X^]@JPI[N2
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3
+w1457019488
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo_ctr.v
+L0 4
 OE;L;5.8b;17
 r1
 31

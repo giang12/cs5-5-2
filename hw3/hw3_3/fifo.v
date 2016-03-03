@@ -24,17 +24,16 @@ module fifo(/*AUTOARG*/
    wire [1:0] wp;
    wire [1:0] rp;
 
-   statelogic fifo_logic(.next_state(next_state),
-                          .wp(wp), 
-                          .rp(rp), 
-                          .err(err), 
-                          .fifo_empty(fifo_empty), 
-                          .fifo_full(fifo_full), 
+    fifo_ctr fifo_ctr(    .clk(clk), 
                           .rst(rst), 
-                          .data_in_valid(data_in_valid),  
-                          .pop_fifo(pop_fifo),
-                          .state(state));
-
+                          .wr_en(data_in_valid), 
+                          .rd_en(pop_fifo), 
+                          .buf_empty(fifo_empty), 
+                          .buf_full(fifo_full),
+                          .rd_ptr(rp), 
+                          .wr_ptr(wp),
+                          .err(err));
+    
     statereg state_reg(   .state(state), 
                           .next_state(next_state), 
                           .Clk(clk), 
