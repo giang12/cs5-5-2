@@ -1,0 +1,21 @@
+Using directory /u/x/u/xuyi/private/cs552/hw3/hw3_1
+Vcheckout output files in .vcheck.out
+Checking file and2.v
+Checking file and3.v
+Checking file clkrst.v
+Checking file decoder3_8.v
+Checking file dff_16bit_tb.v
+Checking file dff_16bit.v
+Checking file dff.v
+Checking file mux2_1_16bit.v
+Checking file mux2_1.v
+Checking file mux4_1_16bit.v
+Checking file mux4_1.v
+Checking file mux8_1_16bit.v
+Checking file nand2.v
+Checking file nor2.v
+Checking file not1.v
+Checking file rf_16bit.v
+Checking file rf_bench.v
+Checking file rf_hier.v
+Checking file rf.v
