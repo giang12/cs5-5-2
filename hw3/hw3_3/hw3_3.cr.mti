@@ -1,4 +1,11 @@
-/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/decoder2_4.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/decoder2_4.v
+/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/or2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/or2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module or2
+
+Top level modules:
+	or2
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/decoder2_4.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/decoder2_4.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module decoder2_4
 
@@ -47,6 +54,20 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	mux4_1
 
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/statereg.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/statereg.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module statereg
+
+Top level modules:
+	statereg
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo_reg.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo_reg.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module fifo_reg
+
+Top level modules:
+	fifo_reg
+
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/mux2_1_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/mux2_1_16bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module mux2_1_16bit
@@ -68,13 +89,6 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	not1
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/mux4_1_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/mux4_1_16bit.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module mux4_1_16bit
-
-Top level modules:
-	mux4_1_16bit
-
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/reg_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/reg_16bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module reg_16bit
@@ -82,12 +96,12 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	reg_16bit
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/reg_64bit_tb.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/reg_64bit_tb.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/mux4_1_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/mux4_1_16bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module reg_64bit_tb
+-- Compiling module mux4_1_16bit
 
 Top level modules:
-	reg_64bit_tb
+	mux4_1_16bit
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/nand2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/nand2.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -96,10 +110,17 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	nand2
 
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/reg_64bit_tb.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/reg_64bit_tb.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module reg_64bit_tb
+
+Top level modules:
+	reg_64bit_tb
+
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo.v {0 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module fifo
-** Error: /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo.v(23): Undefined variable: data_out_valid.
+** Error: /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo.v(48): Undefined variable: data_out_valid.
 ** Error: /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo.v(6): Identifier must be declared with a port mode: data_out_valid.
 
 } {4.0 6.0} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/mux4_1_64bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/mux4_1_64bit.v
