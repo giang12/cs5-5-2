@@ -79,11 +79,11 @@ r1
 31
 o-work work
 vfifo_reg
-IoP9g_;YcDlYL_XCH:E_CL3
+I0LogQN`C]iI;k@Tnk9Jmz2
 V?ZSn@DJYa8E@cg8Zm=`PQ1
-d/afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3
-w1456977939
-F/afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw3/hw3_3/fifo_reg.v
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3
+w1456983760
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/fifo_reg.v
 L0 1
 OE;L;5.8b;17
 r1
@@ -222,10 +222,10 @@ r1
 31
 o-work work
 vstatelogic
-Iom076CF;GOU285;hKZL5Z3
+I=lU[`=QGC8TLXeU]CJ4<;3
 V8<Y1M5oQU_2O<mPVJ@>7?1
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3
-w1456981171
+w1456983162
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw3/hw3_3/statelogic.v
 L0 1
 OE;L;5.8b;17
