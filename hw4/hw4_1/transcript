@@ -28,42 +28,6 @@
 # Loading __work.xor2_3bit
 # Loading __work.xor2
 # Loading __work.or3
-# ** Warning: (vsim-3015) rf_bypass.v(46): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'out'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor0
-# ** Warning: (vsim-3015) rf_bypass.v(46): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in1'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor0
-# ** Warning: (vsim-3015) rf_bypass.v(46): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in2'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor0
-# ** Warning: (vsim-3015) rf_bypass.v(47): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'out'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor1
-# ** Warning: (vsim-3015) rf_bypass.v(47): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in1'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor1
-# ** Warning: (vsim-3015) rf_bypass.v(47): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in2'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor1
-# ** Warning: (vsim-3015) rf_bypass.v(48): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'out'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor2
-# ** Warning: (vsim-3015) rf_bypass.v(48): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in1'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor2
-# ** Warning: (vsim-3015) rf_bypass.v(48): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in2'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor2
-# ** Warning: (vsim-3015) rf_bypass.v(50): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'out'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor3
-# ** Warning: (vsim-3015) rf_bypass.v(50): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in1'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor3
-# ** Warning: (vsim-3015) rf_bypass.v(50): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in2'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor3
-# ** Warning: (vsim-3015) rf_bypass.v(51): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'out'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor4
-# ** Warning: (vsim-3015) rf_bypass.v(51): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in1'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor4
-# ** Warning: (vsim-3015) rf_bypass.v(51): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in2'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor4
-# ** Warning: (vsim-3015) rf_bypass.v(52): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'out'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor5
-# ** Warning: (vsim-3015) rf_bypass.v(52): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in1'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor5
-# ** Warning: (vsim-3015) rf_bypass.v(52): [PCDPC] - Port size (3 or 3) does not match connection size (1) for port 'in2'.
-#         Region: /rf_bypass_hier_bench/DUT/rf_b_0/xor5
 run -all
 # Simulation 1000 cycles
 # Cycle:    0 R1 Sel: 4 R1 Data:     0 Expected R1 Data:     0 R2 Sel: 1 R2 Data:     0 Expected R2 data:     0 W Sel: 3 W Data: 54793 W Enable: 1

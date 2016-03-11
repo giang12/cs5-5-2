@@ -43,13 +43,8 @@ module rf_bypass (
     mux2_1_16bit mux0(.out(read1data), .in0(rf_read1data), .in1(writedata), .sel(bypass1sel));
     mux2_1_16bit mux1(.out(read2data), .in0(rf_read2data), .in1(writedata), .sel(bypass2sel));
     // initialize 2x xor2_3bit
-    xor2_3bit xor0(.out(w0[0]), .in1(writeregsel[0]), .in2(read1regsel[0]));
-    xor2_3bit xor1(.out(w0[1]), .in1(writeregsel[1]), .in2(read1regsel[1]));
-    xor2_3bit xor2(.out(w0[2]), .in1(writeregsel[2]), .in2(read1regsel[2]));
-
-    xor2_3bit xor3(.out(w1[0]), .in1(writeregsel[0]), .in2(read2regsel[0]));
-    xor2_3bit xor4(.out(w1[1]), .in1(writeregsel[1]), .in2(read2regsel[1]));
-    xor2_3bit xor5(.out(w1[2]), .in1(writeregsel[2]), .in2(read2regsel[2]));
+    xor2_3bit xor0(.out(w0), .in1(writeregsel), .in2(read1regsel));
+    xor2_3bit xor1(.out(w1), .in1(writeregsel), .in2(read2regsel));
     // initialize 2x or3
     
     or3 or_0(.out(w2), .in1(w0[0]), .in2(w0[1]), .in3(w0[2]));
