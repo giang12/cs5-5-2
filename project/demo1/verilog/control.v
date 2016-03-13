@@ -1,4 +1,4 @@
-module control (RegWriteEn, MemEn, MemWr, SignedExt, ALUCtr, Branch, Jump, Exception, Op, Cin, invA, invB, sign, instr1, instr2);
+module control (RegDst, RegDataSrc, ALUSrc1, ALUSrc2, RegWriteEn, MemEn, MemWr, SignedExt, ALUCtr, Branch, Jump, Exception, Op, Cin, invA, invB, sign, instr1, instr2);
     input [4:0] instr1;
     input [1:0] instr2;
     output [1:0] RegDst;
@@ -20,10 +20,10 @@ module control (RegWriteEn, MemEn, MemWr, SignedExt, ALUCtr, Branch, Jump, Excep
             ALUCtr, 
             Branch, 
             Jump, 
-            Exception;
-            Cin;
-            invA;
-            invB;
+            Exception,
+            Cin,
+            invA,
+            invB,
             sign;
     
     reg     RegWriteEn,
@@ -33,10 +33,10 @@ module control (RegWriteEn, MemEn, MemWr, SignedExt, ALUCtr, Branch, Jump, Excep
             ALUCtr, 
             Branch, 
             Jump, 
-            Exception;
-            Cin;
-            invA;
-            invB;
+            Exception,
+            Cin,
+            invA,
+            invB,
             sign;
 
 always @ (instr1 or instr2)
