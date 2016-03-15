@@ -67,6 +67,17 @@ OE;L;5.8b;17
 r1
 31
 o-work work
+vdecode
+IGHciL@om:jQc7d@jH6FMI2
+V_dY3=ENLJb9Zab_WQFnIJ0
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog
+w1458029505
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/decode.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
 vdff
 IDX1IR`Dk[;SUJ;F<;6i_G1
 V;GC@fJC4l9bF1doI@Q2XK3
@@ -106,6 +117,17 @@ VBdoAIFd1JY^lRcXU;U8SF1
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog
 w1457841841
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/ext_mod8_16.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vfetch
+I4nWbfAJnSM2DnD_c90dLA0
+VHZ9ZkKg<bU:Bb]aiH7`CU1
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog
+w1458022374
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/fetch.v
 L0 1
 OE;L;5.8b;17
 r1
@@ -183,6 +205,17 @@ VBYVgRF5`7nBjzHO_AQOdW2
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog
 w1457809377
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux4_1_16bit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vmux4_1_4bit
+I;j6mgeUCXOhkY8MFaob[H1
+V@ONN`TULF62FnM4IB8LZL2
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog
+w1458026467
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux4_1_4bit.v
 L0 1
 OE;L;5.8b;17
 r1
