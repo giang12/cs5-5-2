@@ -10,13 +10,14 @@ module decode(  // control mod
     output [2:0] RegDataSrc, ALUSrc1, ALUSrc2, Op;
     output MemEn, MemWr, ALUCtr, Branch, Jump, Exception, Cin, invA, invB, sign;
     wire [1:0] RegDst;
-    wire RegWriteEn, SignedExt; 
+    wire SignedExt; 
 
     // register file
     input [15:0] writedata;
     output [15:0] read1data, read2data;
     wire [3:0] writeregsel; //TODO
     wire err; // TODO ???
+    wire write;
 
     // ext modules
     output [15:0] instrEightExt, instrElevenExt, instrFiveExt; 
@@ -26,7 +27,7 @@ module decode(  // control mod
                         .RegDataSrc(RegDataSrc), 
                         .ALUSrc1(ALUSrc1), 
                         .ALUSrc2(ALUSrc2), 
-                        .RegWriteEn(RegWriteEn), 
+                        .RegWriteEn(write), 
                         .MemEn(MemEn), 
                         .MemWr(MemWr), 
                         .SignedExt(SignedExt), 
@@ -44,7 +45,7 @@ module decode(  // control mod
                         .instr2(instr[1:0]));
 
     // 16 * 8 register file
-    rf rf0 (
+    rf regFile0 (
                         // Outputs
                         .read1data(read1data), 
                         .read2data(read2data), 
@@ -55,8 +56,8 @@ module decode(  // control mod
                         .read1regsel(instr[10:8]), 
                         .read2regsel(instr[7:5]), 
                         .writeregsel(writeregsel[2:0]), 
-                        .writedata(writedata), 
-                        .write(RegWriteEn));
+                        .writedata(writedata),
+                        .write(write));
 
     
     mux4_1_4bit mux0 (  // output
