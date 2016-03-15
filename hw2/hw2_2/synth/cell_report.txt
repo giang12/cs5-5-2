@@ -1,0 +1,60 @@
+ 
+****************************************
+Report : cell
+Design : alu
+Version: B-2008.09-SP3
+Date   : Thu Mar 10 23:16:30 2016
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U1                        INVX1           gscl45nm        1.407900  
+U2                        INVX1           gscl45nm        1.407900  
+U3                        INVX1           gscl45nm        1.407900  
+U4                        INVX1           gscl45nm        1.407900  
+U5                        INVX1           gscl45nm        1.407900  
+U6                        INVX1           gscl45nm        1.407900  
+U7                        INVX4           gscl45nm        3.285100  
+U8                        INVX1           gscl45nm        1.407900  
+U9                        INVX1           gscl45nm        1.407900  
+U10                       INVX1           gscl45nm        1.407900  
+U11                       INVX1           gscl45nm        1.407900  
+U12                       INVX1           gscl45nm        1.407900  
+U13                       INVX1           gscl45nm        1.407900  
+U14                       BUFX2           gscl45nm        2.346500  
+U15                       BUFX2           gscl45nm        2.346500  
+U16                       INVX2           gscl45nm        1.877200  
+U17                       INVX1           gscl45nm        1.407900  
+U18                       INVX1           gscl45nm        1.407900  
+U19                       BUFX2           gscl45nm        2.346500  
+U20                       BUFX2           gscl45nm        2.346500  
+U21                       INVX8           gscl45nm        3.285100  
+U22                       INVX8           gscl45nm        3.285100  
+U23                       INVX8           gscl45nm        3.285100  
+U24                       INVX8           gscl45nm        3.285100  
+mod1                      inverter_16bit_1                340.711795
+                                                                    h
+mod2                      inverter_16bit_0                329.448595
+                                                                    h
+mod3                      shifter                         3044.818348
+                                                                    h
+mod4                      and2_16bit                      45.052799 h
+mod5                      or2_16bit                       45.052799 h
+mod6                      xor2_16bit                      75.087997 h
+mod7                      cla_16bit                       645.287484
+                                                                    h
+mod8                      mux4_1_16bit                    856.003182
+                                                                    h
+mod9                      mux2_1_16bit                    295.658995
+                                                                    h
+mod10                     zero_detect                     99.960898 h
+--------------------------------------------------------------------------------
+Total 34 cells                                            5824.482191
+1

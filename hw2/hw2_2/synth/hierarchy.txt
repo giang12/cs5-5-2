@@ -1,0 +1,92 @@
+ 
+****************************************
+Report : hierarchy
+Design : alu
+Version: B-2008.09-SP3
+Date   : Thu Mar 10 23:04:26 2016
+****************************************
+
+alu
+    and2_16bit
+        and2
+            GTECH_AND2                     gtech
+    cla_16bit
+        and2
+            ...
+        clu_16bit
+            clu_4bit
+                and2
+                    ...
+                or2
+                    GTECH_OR2              gtech
+        fulladder_16bit
+            fulladder
+                and2
+                    ...
+                xor2
+                    GTECH_XOR2             gtech
+        not1
+            GTECH_NOT                      gtech
+        or2
+            ...
+    inverter_16bit
+        mux2_1
+            nand2
+                GTECH_AND2                 gtech
+                GTECH_NOT                  gtech
+            nor2
+                GTECH_NOT                  gtech
+                GTECH_OR2                  gtech
+            not1
+                ...
+        not1_16bit
+            not1
+                ...
+    mux2_1_16bit
+        mux2_1
+            ...
+    mux4_1_16bit
+        mux4_1
+            mux2_1
+                ...
+    or2_16bit
+        or2
+            ...
+    shifter
+        sh_1
+            inner_module
+                mux2_1
+                    ...
+            lsb_module
+                mux2_1
+                    ...
+            msb_module
+                mux2_1
+                    ...
+        sh_2
+            inner_module
+                ...
+            lsb_module
+                ...
+            msb_module
+                ...
+        sh_4
+            inner_module
+                ...
+            lsb_module
+                ...
+            msb_module
+                ...
+        sh_8
+            lsb_module
+                ...
+            msb_module
+                ...
+    xor2_16bit
+        xor2
+            ...
+    zero_detect
+        GTECH_NOT                          gtech
+        or2
+            ...
+1
