@@ -161,7 +161,7 @@ begin
         RegDst <= 2'b01;
         RegDataSrc <= 3'b001;
         ALUSrc1 <= 3'b000;
-        ALUSrc2 <= 3'b001;
+        ALUSrc2 <= 3'b110;
         RegWriteEn <= 1'b1;
         MemEn <= 1'b0;
         MemWr <= 1'bx;
@@ -169,7 +169,7 @@ begin
         Branch <= 1'b0;
         Jump <= 1'b0;
         Exception <= 1'b0;
-        Op <= 3'b010;
+        Op <= 3'b000;
         Cin <= 1'b0;
         invA <= 1'b0;
         invB <= 1'b0;
@@ -373,7 +373,7 @@ begin
         RegDst <= 2'b00;
         RegDataSrc <= 3'b001;
         ALUSrc1 <= 3'b000;
-        ALUSrc2 <= 3'b000;
+        ALUSrc2 <= 3'b101;
         RegWriteEn <= 1'b1;
         MemEn <= 1'b0;
         MemWr <= 1'bx;
@@ -381,7 +381,7 @@ begin
         Branch <= 1'b0;
         Jump <= 1'b0;
         Exception <= 1'b0;
-        Op <= 3'b010;
+        Op <= 3'b000;
         Cin <= 1'b0;
         invA <= 1'b0;
         invB <= 1'b0;
@@ -677,7 +677,46 @@ begin
         invB <= 1'bx;
         sign <= 1'bx;
       end
-      //TODO  HALT, NOP, Siic, NOP/RIT
+      7'b00001_xx:
+      begin
+        RegDst <= 2'bxx;
+        RegDataSrc <= 3'bxxx;
+        ALUSrc1 <= 3'bxxx;
+        ALUSrc2 <= 3'bxxx;
+        RegWriteEn <= 1'b0;
+        MemEn <= 1'b0;
+        MemWr <= 1'bx;
+        SignedExt <= 1'bx;
+        Branch <= 1'b0;
+        Jump <= 1'b0;
+        Exception <= 1'b0;
+        Op <= 3'bxxx;
+        Cin <= 1'bx;
+        invA <= 1'bx;
+        invB <= 1'bx;
+        sign <= 1'bx;
+      end
+      7'b00000_xx:
+      begin
+        RegDst <= 2'bxx;
+        RegDataSrc <= 3'bxxx;
+        ALUSrc1 <= 3'bxxx;
+        ALUSrc2 <= 3'bxxx;
+        RegWriteEn <= 1'b0;
+        MemEn <= 1'b0;
+        MemWr <= 1'bx;
+        SignedExt <= 1'bx;
+        Branch <= 1'bx;
+        Jump <= 1'bx;
+        Exception <= 1'b1;
+        Op <= 3'bxxx;
+        Cin <= 1'bx;
+        invA <= 1'bx;
+        invB <= 1'bx;
+        sign <= 1'bx;
+      end
+     
+     //TODO Siic, NOP/RIT
 
 
      default:
