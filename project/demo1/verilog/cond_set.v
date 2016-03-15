@@ -6,7 +6,7 @@ module cond_set(set, instr, zero, cout, alu_out_msb);
 
 always @ (zero, cout, alu_out_msb, instr)
 begin
-    casex({instr,zero,cout,alu_out_mst})
+    casex({instr,zero,cout,alu_out_msb})
       5'b000xx:
       begin
         set <= 16'b0000_0000_0000_0000;
