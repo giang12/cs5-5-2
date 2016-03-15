@@ -4,7 +4,7 @@ module writeback(write_data, RegDataSrc, mem_data_out, alu_out, imm_8_ext, pc_pl
   input [15:0] mem_data_out;
   input [15:0] alu_out;
   input [15:0] imm_8_ext;
-  input [15:0] pc_plus_two
+  input [15:0] pc_plus_two;
   input [15:0] cond_set;
   output [15:0] write_data;
   

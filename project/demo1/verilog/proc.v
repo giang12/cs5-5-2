@@ -38,15 +38,15 @@ module proc (/*AUTOARG*/
     wire [15:0] Out, set;
     wire [15:0] mem_data_out; 
     wire [15:0] write_data;
-
+    wire [15:0] instr;
   
-    fetch fetch0(   .instr(), //TODO
+    fetch fetch0(   .instr(instr), //TODO get
                     .pcCurrent(pc), 
                     .pcPlusTwo(pc_plus_two), 
                     .pcNext(next_pc), 
                     .clk(clk), 
                     .rst(rst), 
-                    .dump(dump) // TODO ???
+                    .dump(dump) // TODO get
               );
     
     decode decode0 (  // control mod
@@ -64,7 +64,7 @@ module proc (/*AUTOARG*/
                     .invB(invB), 
                     .sign(sign), 
                     .dump(dump),
-                    .instr(), //TODO
+                    .instr(instr), //TODO get
                     // register file 
                     .read1data(read_data_1), 
                     .read2data(read_data_2), 
@@ -81,7 +81,7 @@ module proc (/*AUTOARG*/
                     .Out(Out), 
                     .set(set), 
                     // Inputs
-                    .instr(), //TODO
+                    .instr(instr), //TODO get
                     .pc_plus_two(pc_plus_two), 
                     .pc(pc), 
                     .read_data_1(read_data_1), 
@@ -101,7 +101,7 @@ module proc (/*AUTOARG*/
                 );
 
 
-    memory memory1( .readData(mem_data_out), 
+    memory memory0( .readData(mem_data_out), 
                     .aluResult(Out), 
                     .writeData(read_data_2), 
                     .MemEn(MemEn), 
