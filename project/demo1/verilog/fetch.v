@@ -7,7 +7,8 @@ module fetch(instr, pcCurrent, pcPlusTwo, pcNext, clk, rst, dump);
 
     wire [15:0] pcCurrent;
     wire dump_n; 
-    wire Ofl;
+    wire Ofl_dummy;
+    wire Cout_dummy;
     assign dump_n = ~dump;
     // initialize modules
     // PC 16bit register
@@ -27,7 +28,8 @@ module fetch(instr, pcCurrent, pcPlusTwo, pcNext, clk, rst, dump);
                             .rst(rst));
     
     cla_16bit adder0(       .OUT(pcPlusTwo),
-                            .Ofl(Ofl),
+                            .Ofl(Ofl_dummy),
+                            .Cout(Cout_dummy),
                             .A(pcCurrent),
                             .B(16'b0000_0000_0000_0010), // pc + 2
                             .CI(1'b0),
