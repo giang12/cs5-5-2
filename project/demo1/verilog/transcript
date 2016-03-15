@@ -1,4 +1,3 @@
-# vsim -lib __work -c proc_hier_bench 
 # //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
 # //
 # //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
@@ -7,75 +6,5 @@
 # //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
-# Loading __work.proc_hier_bench
-# Loading __work.proc_hier
-# Loading __work.clkrst
-# Loading __work.proc
-# Loading __work.fetch
-# Loading __work.reg_16bit
-# Loading __work.dff
-# Loading __work.mux2_1_16bit
-# Loading __work.mux2_1
-# Loading __work.not1
-# Loading __work.nand2
-# Loading __work.nor2
-# Loading __work.memory2c
-# Loading __work.cla_16bit
-# Loading __work.fulladder_16bit
-# Loading __work.fulladder
-# Loading __work.xor2
-# Loading __work.and2
-# Loading __work.clu_16bit
-# Loading __work.clu_4bit
-# Loading __work.or2
-# Loading __work.decode
-# Loading __work.special_control
-# Loading __work.control
-# Loading __work.rf
-# Loading __work.decoder3_8
-# Loading __work.and3
-# Loading __work.dff_16bit
-# Loading __work.mux8_1_16bit
-# Loading __work.mux4_1_16bit
-# Loading __work.mux4_1
-# Loading __work.mux4_1_4bit
-# Loading __work.ext_mod8_16
-# Loading __work.ext_mod11_16
-# Loading __work.ext_mod5_16
-# Loading __work.execution
-# Loading __work.sf_left8bit
-# Loading __work.alu
-# Loading __work.inverter_16bit
-# ** Error: (vsim-3033) inverter_16bit.v(15): Instantiation of 'not1_16bit' failed. The design unit was not found.
-#         Region: /proc_hier_bench/DUT/p0/exec/alu0/mod1
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) inverter_16bit.v(15): Instantiation of 'not1_16bit' failed. The design unit was not found.
-#         Region: /proc_hier_bench/DUT/p0/exec/alu0/mod2
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(23): Instantiation of 'shifter' failed. The design unit was not found.
-#         Region: /proc_hier_bench/DUT/p0/exec/alu0
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(25): Instantiation of 'and2_16bit' failed. The design unit was not found.
-#         Region: /proc_hier_bench/DUT/p0/exec/alu0
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(26): Instantiation of 'or2_16bit' failed. The design unit was not found.
-#         Region: /proc_hier_bench/DUT/p0/exec/alu0
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(27): Instantiation of 'xor2_16bit' failed. The design unit was not found.
-#         Region: /proc_hier_bench/DUT/p0/exec/alu0
-#         Searched libraries:
-#             __work
-# ** Error: (vsim-3033) alu.v(36): Instantiation of 'zero_detect' failed. The design unit was not found.
-#         Region: /proc_hier_bench/DUT/p0/exec/alu0
-#         Searched libraries:
-#             __work
-# Loading __work.cond_set
-# Loading __work.pc_ctr
-# Loading __work.memory
-# Loading __work.writeback
-# Error loading design
+# vsim -view dataset=dump.wlf 
+# dump.wlf opened as dataset "dataset"

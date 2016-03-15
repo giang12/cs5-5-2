@@ -87,7 +87,7 @@ module proc (/*AUTOARG*/
                     .read_data_1(read_data_1), 
                     .read_data_2(read_data_2), 
                     .imm_5_ext(imm_5_ext), 
-                    .imm8_ext(imm_8_ext), 
+                    .imm_8_ext(imm_8_ext), 
                     .imm_11_ext(imm_11_ext), 
                     .ALUSrc1(ALUSrc1), 
                     .ALUSrc2(ALUSrc2), 
