@@ -23,76 +23,102 @@ module proc (/*AUTOARG*/
    
    
    /* your code here */
-    fetch fetch0(   .instr(), 
-                    .pcCurrent(), 
-                    .pcPlusTwo(), 
-                    .pcNext(), 
-                    .clk(), 
-                    .rst(), 
-                    .dump());
 
+    wire [15:0] pc, pc_plus_two;
+    wire MemEn, MemWr;
+    wire Exception;
+    wire [2:0] RegDataSrc;
+    wire [2:0] ALUSrc1, ALUSrc2;
+    wire [2:0] Op;
+    wire branch, jump;
+    wire Cin, invA, invB, sign, dump;
+    wire [15:0] read_data_1, read_data_2;
+    wire [15:0] imm_5_ext, imm_8_ext, imm_11_ext;
+    wire [15:0] next_pc;
+    wire [15:0] Out, set;
+    wire [15:0] mem_data_out; 
+    wire [15:0] write_data;
+
+  
+    fetch fetch0(   .instr(), //TODO
+                    .pcCurrent(pc), 
+                    .pcPlusTwo(pc_plus_two), 
+                    .pcNext(next_pc), 
+                    .clk(clk), 
+                    .rst(rst), 
+                    .dump(dump) // TODO ???
+              );
+    
     decode decode0 (  // control mod
-                    .RegDataSrc(), 
-                    .ALUSrc1(), 
-                    .ALUSrc2(), 
-                    .Op(), 
-                    .MemEn(), 
-                    .MemWr(), 
-                    .Branch(), 
-                    .Jump(), 
-                    .Exception(), 
-                    .Cin(), 
-                    .invA(), 
-                    .invB(), 
-                    .sign(), 
-                    .instr(), 
+                    .RegDataSrc(RegDataSrc), 
+                    .ALUSrc1(ALUSrc1), 
+                    .ALUSrc2(AluSrc2), 
+                    .Op(Op), 
+                    .MemEn(MemEn), 
+                    .MemWr(MemWr), 
+                    .Branch(branch), 
+                    .Jump(jump), 
+                    .Exception(Exception), 
+                    .Cin(Cin), 
+                    .invA(invA), 
+                    .invB(invB), 
+                    .sign(sign), 
+                    .dump(dump),
+                    .instr(), //TODO
                     // register file 
-                    .read1data(), 
-                    .read2data(), 
-                    .writedata(),
+                    .read1data(read_data_1), 
+                    .read2data(read_data_2), 
+                    .writedata(write_data),
                     // ext module
-                    .instrEightExt(), 
-                    .instrElevenExt(), 
-                    .instrFiveExt()
+                    .instrEightExt(imm_8_ext), 
+                    .instrElevenExt(imm_11_ext), 
+                    .instrFiveExt(imm_5_ext)
+                );        
+
+    execution exec (
+                    // Outputs
+                    .next_pc(next_pc), 
+                    .Out(Out), 
+                    .set(set), 
+                    // Inputs
+                    .instr(), //TODO
+                    .pc_plus_two(pc_plus_two), 
+                    .pc(pc), 
+                    .read_data_1(read_data_1), 
+                    .read_data_2(read_data_2), 
+                    .imm_5_ext(imm_5_ext), 
+                    .imm8_ext(imm_8_ext), 
+                    .imm_11_ext(imm_11_ext), 
+                    .ALUSrc1(ALUSrc1), 
+                    .ALUSrc2(ALUSrc2), 
+                    .Op(Op), 
+                    .Cin(Cin), 
+                    .invA(invA), 
+                    .invB(invB), 
+                    .sign(sign), 
+                    .jump(jump), 
+                    .branch(branch)
                 );
 
-    execution exec (.next_pc(), 
-                    .Out(), 
-                    .set(), 
-                    .instr(), 
-                    .pc_plus_two(), 
-                    .pc(), 
-                    .read_data_1(), 
-                    .read_data_2(), 
-                    .imm_5_ext(), 
-                    .imm8_ext(), 
-                    .imm_11_ext(), 
-                    .ALUSrc1(), 
-                    .ALUSrc2(), 
-                    .Op(), 
-                    .Cin(), 
-                    .invA(), 
-                    .invB(), 
-                    .sign(), 
-                    .jump(), 
-                    .branch());
 
-    memory memory0( .readData(), 
-                    .aluResult(), 
-                    .writeData(), 
-                    .MemEn(), 
-                    .MemWr(), 
-                    .halt(), 
-                    .clk(), 
-                    .rst());
- 
-    writeback wb(   .write_data(), 
-                    .RegDataSrc(), 
-                    .mem_data_out(), 
-                    .alu_out(), 
-                    .imm_8_ext(), 
-                    .pc_plus_two(), 
-                    .cond_set());
+    memory memory1( .readData(mem_data_out), 
+                    .aluResult(Out), 
+                    .writeData(read_data_2), 
+                    .MemEn(MemEn), 
+                    .MemWr(MemWr), 
+                    .halt(dump), //TODO ???
+                    .clk(clk), 
+                    .rst(rst)
+                );
+
+    writeback wb(   .write_data(write_data), 
+                    .RegDataSrc(RegDataSrc), 
+                    .mem_data_out(mem_data_out), 
+                    .alu_out(Out), 
+                    .imm_8_ext(imm_8_ext), 
+                    .pc_plus_two(pc_plus_two), 
+                    .cond_set(set)
+                 );
 
 endmodule // proc
 // DUMMY LINE FOR REV CONTROL :0:
