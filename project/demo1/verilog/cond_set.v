@@ -31,13 +31,18 @@ begin
       begin
         set <= 1'b0;
       end
-     5'b11x0x:
+      5'b11x0x:
       begin
         set <= 1'b0;
       end
-     5'b11x1x:
+      5'b11x1x:
       begin
         set <= 1'b1;
+      end
+      
+      default:
+      begin
+        set <= 1'bx;
       end
     endcase
 end   

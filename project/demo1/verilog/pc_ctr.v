@@ -55,6 +55,11 @@ begin
       begin
         pc_src <= 3'b010;
       end
+      
+      default:
+      begin
+        pc_src <= 3'bxxx;
+      end
     endcase
 end
 endmodule
