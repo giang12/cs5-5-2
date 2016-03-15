@@ -1,5 +1,5 @@
 module decode(  // control mod
-                RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, ALUCtr, Branch, Jump, Exception, Cin, invA, invB, sign, instr, 
+                RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Exception, Cin, invA, invB, sign, instr, 
                 // register file 
                 read1data, read2data, writedata,
                 // ext module
@@ -8,7 +8,7 @@ module decode(  // control mod
     // control module
     input [15:0] instr;
     output [2:0] RegDataSrc, ALUSrc1, ALUSrc2, Op;
-    output MemEn, MemWr, ALUCtr, Branch, Jump, Exception, Cin, invA, invB, sign;
+    output MemEn, MemWr, Branch, Jump, Exception, Cin, invA, invB, sign;
     wire [1:0] RegDst;
     wire SignedExt; 
 
@@ -30,8 +30,7 @@ module decode(  // control mod
                         .RegWriteEn(write), 
                         .MemEn(MemEn), 
                         .MemWr(MemWr), 
-                        .SignedExt(SignedExt), 
-                        .ALUCtr(ALUCtr), 
+                        .SignedExt(SignedExt),  
                         .Branch(Branch), 
                         .Jump(Jump), 
                         .Exception(Exception), 
