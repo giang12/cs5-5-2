@@ -35,6 +35,7 @@ module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_da
   wire [2:0] pc_src;
   wire [15:0] branch_target;
   wire ofl_disposal;
+  wire cout;
 
   
 
@@ -77,11 +78,11 @@ module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_da
           .in6(16'bxxxx_xxxx_xxxx_xxxx),
           .in7(16'bxxxx_xxxx_xxxx_xxxx)
         );
-
   alu alu0(
           // Outputs
           .Out(alu_out),
           .Ofl(ofl),
+          .Cout(cout),
           .Z(zero),
           // Inputs
           .A(alu_src_1),
@@ -93,6 +94,7 @@ module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_da
           .sign(sign)
         );
 
+  
   // Two other sub control units
   cond_set cond_set0(
           // Outputs
@@ -100,7 +102,7 @@ module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_da
           // Inputs
           .instr(instr[12:11]),
           .zero(zero),
-          .ofl(ofl),
+          .cout(cout),
           .alu_out_msb(alu_out[15])
         );
 
