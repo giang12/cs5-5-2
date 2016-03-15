@@ -1,115 +1,18 @@
-# Compile of clkrst.v was successful.
-# Compile of dff.v was successful.
-# Compile of memory2c.syn.v was successful.
-# Compile of memory2c.v was successful.
-# Compile of proc.v was successful.
-# Compile of proc_hier.v was successful.
-# Compile of proc_hier_bench.v was successful.
-# Compile of sign_ext8_16.v was successful.
-# 8 compiles, 0 failed with no errors. 
-vsim work.sign_ext8_16
-# vsim work.sign_ext8_16 
-# Loading work.sign_ext8_16
-do sign_ext8_16.do
-# .wave
-quit -sim
-# Compile of sign_ext11_16.v was successful.
-vsim work.sign_ext11_16
-# vsim work.sign_ext11_16 
-# Loading work.sign_ext11_16
-do sing_ext11_16.do
-# Cannot open macro file: sing_ext11_16.do
-do sign_ext11_16.do
-# .wave
-quit -sim
-# Compile of zero_ext8_16.v was successful.
-# Compile of sign_ext5_16.v was successful.
-# 2 compiles, 0 failed with no errors. 
-# Compile of clkrst.v was successful.
-# Compile of dff.v was successful.
-# Compile of memory2c.syn.v was successful.
-# Compile of memory2c.v was successful.
-# Compile of proc.v was successful.
-# Compile of proc_hier.v was successful.
-# Compile of proc_hier_bench.v was successful.
-# Compile of sign_ext8_16.v was successful.
-# Compile of sign_ext11_16.v was successful.
-# Compile of zero_ext8_16.v was successful.
-# Compile of sign_ext5_16.v was successful.
-# Compile of nand2.v was successful.
-# Compile of nor2.v was successful.
-# Compile of not1.v was successful.
-# Compile of mux4_1_16bit.v was successful.
-# Compile of mux8_1_16bit.v was successful.
-# Compile of mux4_1.v was successful.
-# Compile of mux2_1.v was successful.
-# Compile of mux2_1_16bit.v was successful.
-# 19 compiles, 0 failed with no errors. 
-vsim work.mux8_1_16bit
-# vsim work.mux8_1_16bit 
-# Loading work.mux8_1_16bit
-# Loading work.mux4_1_16bit
-# Loading work.mux4_1
-# Loading work.mux2_1
-# Loading work.not1
-# Loading work.nand2
-# Loading work.nor2
-# Loading work.mux2_1_16bit
-exit
-quit vsim
-# unknown switch: vsim
-quit.sim
-# invalid command name "quit.sim"
-quit -sim
-# Compile of sf_left8bit.v was successful.
-vsim work.sf_left8bit
-# vsim work.sf_left8bit 
-# Loading work.sf_left8bit
-do sf_left8bit.do
-# .wave
-quit -sim
-# Compile of and2.v was successful.
-# Compile of clkrst.v was successful.
-# Compile of clu_4bit.v was successful.
-# Compile of clu_16bit.v was successful.
-# Compile of dff.v was successful.
-# Compile of fulladder.v was successful.
-# Compile of fulladder_16bit.v was successful.
-# Compile of memory2c.syn.v was successful.
-# Compile of memory2c.v was successful.
-# Compile of mux2_1.v was successful.
-# Compile of mux2_1_16bit.v was successful.
-# Compile of mux4_1.v was successful.
-# Compile of mux4_1_16bit.v was successful.
-# Compile of mux8_1_16bit.v was successful.
-# Compile of nand2.v was successful.
-# Compile of nor2.v was successful.
-# Compile of not1.v was successful.
-# Compile of or2.v was successful.
-# Compile of proc.v was successful.
-# Compile of proc_hier.v was successful.
-# Compile of proc_hier_bench.v was successful.
-# Compile of sf_left8bit.v was successful.
-# Compile of sign_ext5_16.v was successful.
-# Compile of sign_ext8_16.v was successful.
-# Compile of sign_ext11_16.v was successful.
-# Compile of xor2.v was successful.
-# Compile of zero_ext8_16.v was successful.
-# 27 compiles, 0 failed with no errors. 
-# Compile of cla_16bit.v was successful.
-vsim work.clkrst
-# vsim work.clkrst 
-# Loading work.clkrst
-quit -sim
-vsim work.cla_16bit
-# vsim work.cla_16bit 
-# Loading work.cla_16bit
-# Loading work.fulladder_16bit
-# Loading work.fulladder
-# Loading work.xor2
-# Loading work.and2
-# Loading work.clu_16bit
-# Loading work.clu_4bit
-# Loading work.or2
-# Loading work.not1
+# //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
+# //
+# //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
+# //                         All Rights Reserved.
+# //                   UNPUBLISHED, LICENSED SOFTWARE.
+# //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+# //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
+# //
+# Loading project proc_demo1
+# Compile of control.v failed with 1 errors.
+# Compile of control.v failed with 1 errors.
+# Compile of control.v was successful.
+vsim work.control
+# vsim work.control 
+# Loading work.control
+quit -vsim
+# unknown switch: -vsim
 quit -sim

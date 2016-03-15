@@ -1,0 +1,14 @@
+Line 7: Bad keyword integer
+Line 13: Bad keyword initial
+Line 15: Expected '@' after 'always'
+Line 17: Bad keyword initial
+Line 15: Always without case(x)
+Line 29: Bad keyword posedge
+Line 32: Bad keyword if
+Line 34: Bad keyword else
+Line 40: Bad keyword if
+Line 46: Bad keyword if
+Line 47: Bad keyword if
+Line 49: Bad keyword else
+Line 29: Always without case(x)
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/dff_16bit_tb.v. Hash = -833924503

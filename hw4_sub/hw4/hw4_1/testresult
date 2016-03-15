@@ -1,0 +1,78 @@
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/and2.v. Hash = -1219462153
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/and3.v. Hash = -855380166
+Line 20: Bad keyword integer
+Line 22: Bad keyword initial
+Line 23: begin without always/case
+Line 30: Expected '@' after 'always'
+Line 32: Bad keyword if
+Line 30: Always without case(x)
+Line 37: Bad keyword posedge
+Line 39: Bad keyword if
+Line 37: Always without case(x)
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/clkrst.v. Hash = -1591555750
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/decoder3_8.v. Hash = 595870912
+Line 7: Bad keyword integer
+Line 13: Bad keyword initial
+Line 15: Expected '@' after 'always'
+Line 17: Bad keyword initial
+Line 15: Always without case(x)
+Line 29: Bad keyword posedge
+Line 32: Bad keyword if
+Line 34: Bad keyword else
+Line 40: Bad keyword if
+Line 46: Bad keyword if
+Line 47: Bad keyword if
+Line 49: Bad keyword else
+Line 29: Always without case(x)
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/dff_16bit_tb.v. Hash = -833924503
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/dff_16bit.v. Hash = -854524290
+Line 17: Bad keyword posedge
+Line 17: Always without case(x)
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/dff.v. Hash = -892621943
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/mux2_1_16bit.v. Hash = 240797270
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/mux2_1.v. Hash = 1238500392
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/mux4_1_16bit.v. Hash = -1788438025
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/mux4_1.v. Hash = -572671436
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/mux8_1_16bit.v. Hash = 2135804131
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/nand2.v. Hash = -834414918
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/nor2.v. Hash = -834415846
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/not1.v. Hash = 96545975
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/or3.v. Hash = 1292101289
+Line 20: Bad keyword integer
+Line 49: Bad keyword initial
+Line 50: begin without always/case
+Line 66: Bad keyword posedge
+Line 88: Bad keyword if
+Line 101: Bad keyword if
+Line 101: Bad keyword !==
+Line 102: Bad keyword !==
+Line 108: Bad keyword if
+Line 109: Bad keyword if
+Line 112: Bad keyword else
+Line 66: Always without case(x)
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/rf_bench.v. Hash = 1040903485
+Line 20: Bad keyword integer
+Line 21: Bad keyword integer
+Line 48: Bad keyword initial
+Line 49: begin without always/case
+Line 67: Bad keyword posedge
+Line 85: Bad keyword if
+Line 102: Bad keyword if
+Line 102: Bad keyword !==
+Line 103: Bad keyword !==
+Line 108: Bad keyword if
+Line 108: Bad keyword ===
+Line 112: Bad keyword if
+Line 112: Bad keyword ===
+Line 112: Bad keyword ===
+Line 117: Bad keyword if
+Line 118: Bad keyword if
+Line 121: Bad keyword else
+Line 67: Always without case(x)
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/rf_bypass_hier_bench.v. Hash = -1845250343
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/rf_bypass_hier.v. Hash = 793575957
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/rf_bypass.v. Hash = 544721500
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/rf_hier.v. Hash = 793575957
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/rf.v. Hash = -1012481045
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/xor2_3bit.v. Hash = 764804840
+End of file /u/x/u/xuyi/private/cs552/hw4/hw4_1/xor2.v. Hash = -1370458057
