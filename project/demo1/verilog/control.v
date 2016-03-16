@@ -234,7 +234,7 @@ begin
       end
       7'b10011_xx:
       begin
-        RegDst <= 2'b01;
+        RegDst <= 2'b10;
         RegDataSrc <= 3'b001;
         ALUSrc1 <= 3'b000;
         ALUSrc2 <= 3'b001;
