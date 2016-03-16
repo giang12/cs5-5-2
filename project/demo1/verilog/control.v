@@ -586,7 +586,7 @@ begin
         RegDst <= 2'b10;
         RegDataSrc <= 3'b001;
         ALUSrc1 <= 3'b001;
-        ALUSrc2 <= 3'b100;
+        ALUSrc2 <= 3'b010;
         RegWriteEn <= 1'b1;
         MemEn <= 1'b0;
         MemWr <= 1'bx;
