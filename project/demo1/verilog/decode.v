@@ -2,7 +2,9 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
                 // register file 
                 clk, rst, read1data, read2data, writedata,
                 // ext module
-                instrEightExt, instrElevenExt, instrFiveExt
+                instrEightExt, instrElevenExt, instrFiveExt,
+                // btr module
+                btr_out
                 );
     // control module
     input [15:0] instr;
@@ -15,7 +17,10 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
     input clk, rst;
     input [15:0] writedata;
     output [15:0] read1data, read2data;
-    wire [3:0] writeregsel; //TODO
+    wire [15:0] reg1_data, reg2_data;
+    assign read1data = reg1_data;
+    assign read2data = reg2_data;
+    wire [3:0] writeregsel; 
     wire err; // TODO ???
     wire write;
     
@@ -23,6 +28,8 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
   
     // ext modules
     output [15:0] instrEightExt, instrElevenExt, instrFiveExt; 
+    output [15:0] btr_out;
+    
     // modules initialization
     special_control special_control0(
                         .dump(dump),
@@ -53,8 +60,8 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
     // 16 * 8 register file
     rf regFile0 (
                         // Outputs
-                        .read1data(read1data), 
-                        .read2data(read2data), 
+                        .read1data(reg1_data), 
+                        .read2data(reg2_data), 
                         .err(err),
                         // Inputs
                         .clk(clk), 
@@ -88,5 +95,8 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
     ext_mod5_16 ext2 (  .out(instrFiveExt), 
                         .sel(SignedExt), 
                         .in(instr[4:0]));
-
+    btr_mod btr0 (
+                        .out(btr_out),
+                        .in(reg1_data)
+                    );
 endmodule

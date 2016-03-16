@@ -253,7 +253,26 @@ begin
       end
       //R Type
       //TODO BTR
-      
+      7'b11001_xx:
+      begin
+        RegDst <= 2'b00;
+        RegDataSrc <= 3'b101;
+        ALUSrc1 <= 3'bxxx;
+        ALUSrc2 <= 3'bxxx;
+        RegWriteEn <= 1'b1;
+        MemEn <= 1'b0;
+        MemWr <= 1'bx;
+        SignedExt <= 1'bx;
+        Branch <= 1'b0;
+        Jump <= 1'b0;
+        Exception <= 1'b0;
+        Op <= 3'bxxx;
+        Cin <= 1'bx;
+        invA <= 1'bx;
+        invB <= 1'bx;
+        sign <= 1'bx;
+      end
+     
       7'b11011_00:
       begin
         RegDst <= 2'b00;

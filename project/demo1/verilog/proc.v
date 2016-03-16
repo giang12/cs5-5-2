@@ -34,6 +34,7 @@ module proc (/*AUTOARG*/
     wire Cin, invA, invB, sign, dump;
     wire [15:0] read_data_1, read_data_2;
     wire [15:0] imm_5_ext, imm_8_ext, imm_11_ext;
+    wire [15:0] btr_out;
     wire [15:0] next_pc;
     wire [15:0] Out, set;
     wire [15:0] mem_data_out; 
@@ -75,7 +76,8 @@ module proc (/*AUTOARG*/
                     // ext module
                     .instrEightExt(imm_8_ext), 
                     .instrElevenExt(imm_11_ext), 
-                    .instrFiveExt(imm_5_ext)
+                    .instrFiveExt(imm_5_ext),
+                    .btr_out(btr_out)
                 );        
 
     execution exec (
@@ -118,7 +120,8 @@ module proc (/*AUTOARG*/
                     .RegDataSrc(RegDataSrc), 
                     .mem_data_out(mem_data_out), 
                     .alu_out(Out), 
-                    .imm_8_ext(imm_8_ext), 
+                    .imm_8_ext(imm_8_ext),
+                    .btr_out(btr_out), 
                     .pc_plus_two(pc_plus_two), 
                     .cond_set(set)
                  );
