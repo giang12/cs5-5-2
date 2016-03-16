@@ -9,19 +9,19 @@ module fetch(instr, pcCurrent, pcPlusTwo, pcNext, clk, rst, dump);
     wire dump_n; 
     wire Ofl_dummy;
     wire Cout_dummy;
-    assign dump_n = ~dump;
+    // assign dump_n = ~dump;
     // initialize modules
     // PC 16bit register
     reg_16bit pc0(          .out(pcCurrent), 
                             .in(pcNext), 
-                            .en(dump_n), // disable pc reg when dump ??
+                            .en(1'b1), // disable pc reg when dump ??
                             .rst(rst), 
                             .clk(clk));
     // instruction mem
     memory2c instrctionMem( .data_out(instr),
                             .data_in(16'b0),
                             .addr(pcCurrent),
-                            .enable(dump_n), // disable mem when dump
+                            .enable(1'b1), // disable mem when dump
                             .wr(1'b0),
                             .createdump(1'b0),
                             .clk(clk),

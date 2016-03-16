@@ -1,6 +1,6 @@
 module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Exception, Cin, invA, invB, sign, dump, instr, 
                 // register file 
-                read1data, read2data, writedata,
+                clk, rst, read1data, read2data, writedata,
                 // ext module
                 instrEightExt, instrElevenExt, instrFiveExt
                 );
@@ -12,11 +12,13 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
     wire SignedExt; 
 
     // register file
+    input clk, rst;
     input [15:0] writedata;
     output [15:0] read1data, read2data;
     wire [3:0] writeregsel; //TODO
     wire err; // TODO ???
     wire write;
+    
     
   
     // ext modules

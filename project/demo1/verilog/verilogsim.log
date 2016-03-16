@@ -1,7 +1,9 @@
-SIMLOG:: Cycle           4 PC:     0000 I:     0000 R: x   x     xxxx M: x x     xxxx     xxxx
+SIMLOG:: Cycle           4 PC:     0000 I:     c161 R: 1   1     0061 M: 0 0     xxxx     0000
+SIMLOG:: Cycle           5 PC:     0002 I:     a14f R: 1   2     8030 M: 0 0     8030     0000
+SIMLOG:: Cycle           6 PC:     0004 I:     0000 R: 0   x     xxxx M: 0 0     xxxx     0000
 SIMLOG:: Processor halted
 
-SIMLOG:: sim_cycles           4
+SIMLOG:: sim_cycles           6
 
-SIMLOG:: inst_count           1
+SIMLOG:: inst_count           3
 

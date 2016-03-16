@@ -17,6 +17,8 @@ entity decode is
         sign            : out    vl_logic;
         dump            : out    vl_logic;
         instr           : in     vl_logic_vector(15 downto 0);
+        clk             : in     vl_logic;
+        rst             : in     vl_logic;
         read1data       : out    vl_logic_vector(15 downto 0);
         read2data       : out    vl_logic_vector(15 downto 0);
         writedata       : in     vl_logic_vector(15 downto 0);
