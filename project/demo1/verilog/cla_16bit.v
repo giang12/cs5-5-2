@@ -8,7 +8,7 @@ module cla_16bit(OUT, Ofl, Cout, A, B, CI, sign);
     wire w4, w5;    
     wire [15:0] sum;
     assign OUT = sum;
-    assign Cout = w3;
+    assign Cout = w3[15];
     wire w6, w7, w8, w9, w10, w11, w12, w13, w14, w15;
 
     fulladder_16bit mod1(.S(sum), .P(w1), .G(w2), .A(A), .B(B), .CI({w3[14:0], CI}));

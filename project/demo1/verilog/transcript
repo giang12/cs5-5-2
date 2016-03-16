@@ -1,3 +1,4 @@
+# vsim -lib __work -c proc_hier_bench 
 # //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
 # //
 # //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
@@ -6,5 +7,73 @@
 # //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
-# vsim -view dataset=dump.wlf 
-# dump.wlf opened as dataset "dataset"
+# Loading __work.proc_hier_bench
+# Loading __work.proc_hier
+# Loading __work.clkrst
+# Loading __work.proc
+# Loading __work.fetch
+# Loading __work.mux2_1_16bit
+# Loading __work.mux2_1
+# Loading __work.not1
+# Loading __work.nand2
+# Loading __work.nor2
+# Loading __work.reg_16bit
+# Loading __work.dff
+# Loading __work.memory2c
+# Loading __work.cla_16bit
+# Loading __work.fulladder_16bit
+# Loading __work.fulladder
+# Loading __work.xor2
+# Loading __work.and2
+# Loading __work.clu_16bit
+# Loading __work.clu_4bit
+# Loading __work.or2
+# Loading __work.decode
+# Loading __work.special_control
+# Loading __work.control
+# Loading __work.rf
+# Loading __work.decoder3_8
+# Loading __work.and3
+# Loading __work.dff_16bit
+# Loading __work.mux8_1_16bit
+# Loading __work.mux4_1_16bit
+# Loading __work.mux4_1
+# Loading __work.mux4_1_4bit
+# Loading __work.ext_mod8_16
+# Loading __work.ext_mod11_16
+# Loading __work.ext_mod5_16
+# Loading __work.btr_mod
+# Loading __work.execution
+# Loading __work.sf_left8bit
+# Loading __work.alu
+# Loading __work.inverter_16bit
+# Loading __work.not1_16bit
+# Loading __work.shifter
+# Loading __work.sh_1
+# Loading __work.msb_module
+# Loading __work.inner_module
+# Loading __work.lsb_module
+# Loading __work.sh_2
+# Loading __work.sh_4
+# Loading __work.sh_8
+# Loading __work.and2_16bit
+# Loading __work.or2_16bit
+# Loading __work.xor2_16bit
+# Loading __work.zero_detect
+# Loading __work.cond_set
+# Loading __work.pc_ctr
+# Loading __work.memory
+# Loading __work.writeback
+# ** Warning: (vsim-3015) decode.v(83): [PCDPC] - Port size (4 or 4) does not match connection size (3) for port 'in0'.
+#         Region: /proc_hier_bench/DUT/p0/decode0/mux0
+# ** Warning: (vsim-3015) decode.v(83): [PCDPC] - Port size (4 or 4) does not match connection size (3) for port 'in1'.
+#         Region: /proc_hier_bench/DUT/p0/decode0/mux0
+# ** Warning: (vsim-3015) decode.v(83): [PCDPC] - Port size (4 or 4) does not match connection size (3) for port 'in2'.
+#         Region: /proc_hier_bench/DUT/p0/decode0/mux0
+# ** Warning: (vsim-3015) decode.v(83): [PCDPC] - Port size (4 or 4) does not match connection size (3) for port 'in3'.
+#         Region: /proc_hier_bench/DUT/p0/decode0/mux0
+run -all
+# Hello world...simulation starting
+# See verilogsim.log and verilogsim.trace for output
+# ** Note: $finish    : proc_hier_bench.v(96)
+#    Time: 800 ns  Iteration: 0  Instance: /proc_hier_bench

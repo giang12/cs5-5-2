@@ -24,6 +24,7 @@ entity decode is
         writedata       : in     vl_logic_vector(15 downto 0);
         instreightext   : out    vl_logic_vector(15 downto 0);
         instrelevenext  : out    vl_logic_vector(15 downto 0);
-        instrfiveext    : out    vl_logic_vector(15 downto 0)
+        instrfiveext    : out    vl_logic_vector(15 downto 0);
+        btr_out         : out    vl_logic_vector(15 downto 0)
     );
 end decode;
