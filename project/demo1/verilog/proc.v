@@ -46,7 +46,8 @@ module proc (/*AUTOARG*/
                     .pcNext(next_pc), 
                     .clk(clk), 
                     .rst(rst), 
-                    .dump(dump) // TODO get
+                    .dump(dump), // TODO get
+                    .exception(Exception)// TODO: make sure expection output 0 in the very first clk cycle.
               );
     
     decode decode0 (  // control mod

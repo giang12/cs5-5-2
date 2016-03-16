@@ -8,6 +8,7 @@ entity fetch is
         pcnext          : in     vl_logic_vector(15 downto 0);
         clk             : in     vl_logic;
         rst             : in     vl_logic;
-        dump            : in     vl_logic
+        dump            : in     vl_logic;
+        exception       : in     vl_logic
     );
 end fetch;
