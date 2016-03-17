@@ -1,4 +1,4 @@
-module cond_set(set, instr, zero, cout, alu_out_msb);
+module cond_set_old(set, instr, zero, cout, alu_out_msb);
     input zero, cout, alu_out_msb;
     input [1:0] instr;
     output [15:0] set;

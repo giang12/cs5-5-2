@@ -77,10 +77,10 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
                         .out(writeregsel),
                         // inputs
                         .sel(RegDst), 
-                        .in0(instr[4:2]), 
-                        .in1(instr[7:5]), 
-                        .in2(instr[10:8]), 
-                        .in3(3'b111));
+                        .in0({{1'bx},{instr[4:2]}}), 
+                        .in1({{1'bx},{instr[7:5]}}), 
+                        .in2({{1'bx},{instr[10:8]}}), 
+                        .in3({{1'bx},{3'b111}}));
 
 
     

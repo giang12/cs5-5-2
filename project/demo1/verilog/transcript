@@ -64,16 +64,8 @@
 # Loading __work.pc_ctr
 # Loading __work.memory
 # Loading __work.writeback
-# ** Warning: (vsim-3015) decode.v(83): [PCDPC] - Port size (4 or 4) does not match connection size (3) for port 'in0'.
-#         Region: /proc_hier_bench/DUT/p0/decode0/mux0
-# ** Warning: (vsim-3015) decode.v(83): [PCDPC] - Port size (4 or 4) does not match connection size (3) for port 'in1'.
-#         Region: /proc_hier_bench/DUT/p0/decode0/mux0
-# ** Warning: (vsim-3015) decode.v(83): [PCDPC] - Port size (4 or 4) does not match connection size (3) for port 'in2'.
-#         Region: /proc_hier_bench/DUT/p0/decode0/mux0
-# ** Warning: (vsim-3015) decode.v(83): [PCDPC] - Port size (4 or 4) does not match connection size (3) for port 'in3'.
-#         Region: /proc_hier_bench/DUT/p0/decode0/mux0
 run -all
 # Hello world...simulation starting
 # See verilogsim.log and verilogsim.trace for output
 # ** Note: $finish    : proc_hier_bench.v(96)
-#    Time: 10 us  Iteration: 0  Instance: /proc_hier_bench
+#    Time: 58300 ns  Iteration: 0  Instance: /proc_hier_bench
