@@ -479,8 +479,8 @@ begin
         Exception <= 1'b0;
         Op <= 3'b100;
         Cin <= 1'b1;
-        invA <= 1'b1;
-        invB <= 1'b0;
+        invA <= 1'b0;
+        invB <= 1'b1;
         sign <= 1'b1;
       end
       7'b11111_xx:

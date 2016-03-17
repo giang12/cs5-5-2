@@ -142,6 +142,8 @@ module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_da
           .instr(instr[12:11]),
           .zero(zero),
           .cout(cout),
+          .alu_src_1_msb(alu_src_1[15]),
+          .alu_src_2_msb(alu_src_2[15]),
           .alu_out_msb(alu_out[15])
         );
 
