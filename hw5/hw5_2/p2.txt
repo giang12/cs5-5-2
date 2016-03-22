@@ -1,0 +1,10 @@
+// Write your answer to Problem 2 (b) and (c) here
+
+a) Write an assembly program to demonstrate why branch prediction is necessary and useful. Write your code in p2.asm.
+
+
+b) Write an explanation of your program and how branch prediction helps in p2.txt.
+
+
+c) Will branch prediction always take only 1 cycle? Write your answer in p2.txt.
+
