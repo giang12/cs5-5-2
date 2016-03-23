@@ -1,0 +1,663 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 20
+Design : fulladder_16bit
+Version: B-2008.09-SP3
+Date   : Wed Mar 23 04:34:54 2016
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: B<0> (input port clocked by vclk)
+  Endpoint: S<0> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<0> (in)                                0.04       0.14 r
+  fulladder0/InB (fulladder_15)            0.00       0.14 r
+  fulladder0/mod1/in1 (xor2_47)            0.00       0.14 r
+  fulladder0/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder0/mod1/out (xor2_47)            0.00       0.20 r
+  fulladder0/mod2/in2 (xor2_46)            0.00       0.20 r
+  fulladder0/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder0/mod2/out (xor2_46)            0.00       0.24 f
+  fulladder0/S (fulladder_15)              0.00       0.24 f
+  S<0> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<1> (input port clocked by vclk)
+  Endpoint: S<1> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<1> (in)                                0.04       0.14 r
+  fulladder1/InB (fulladder_14)            0.00       0.14 r
+  fulladder1/mod1/in1 (xor2_44)            0.00       0.14 r
+  fulladder1/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder1/mod1/out (xor2_44)            0.00       0.20 r
+  fulladder1/mod2/in2 (xor2_43)            0.00       0.20 r
+  fulladder1/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder1/mod2/out (xor2_43)            0.00       0.24 f
+  fulladder1/S (fulladder_14)              0.00       0.24 f
+  S<1> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<2> (input port clocked by vclk)
+  Endpoint: S<2> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<2> (in)                                0.04       0.14 r
+  fulladder2/InB (fulladder_13)            0.00       0.14 r
+  fulladder2/mod1/in1 (xor2_41)            0.00       0.14 r
+  fulladder2/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder2/mod1/out (xor2_41)            0.00       0.20 r
+  fulladder2/mod2/in2 (xor2_40)            0.00       0.20 r
+  fulladder2/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder2/mod2/out (xor2_40)            0.00       0.24 f
+  fulladder2/S (fulladder_13)              0.00       0.24 f
+  S<2> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<3> (input port clocked by vclk)
+  Endpoint: S<3> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<3> (in)                                0.04       0.14 r
+  fulladder3/InB (fulladder_12)            0.00       0.14 r
+  fulladder3/mod1/in1 (xor2_38)            0.00       0.14 r
+  fulladder3/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder3/mod1/out (xor2_38)            0.00       0.20 r
+  fulladder3/mod2/in2 (xor2_37)            0.00       0.20 r
+  fulladder3/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder3/mod2/out (xor2_37)            0.00       0.24 f
+  fulladder3/S (fulladder_12)              0.00       0.24 f
+  S<3> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<4> (input port clocked by vclk)
+  Endpoint: S<4> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<4> (in)                                0.04       0.14 r
+  fulladder4/InB (fulladder_11)            0.00       0.14 r
+  fulladder4/mod1/in1 (xor2_35)            0.00       0.14 r
+  fulladder4/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder4/mod1/out (xor2_35)            0.00       0.20 r
+  fulladder4/mod2/in2 (xor2_34)            0.00       0.20 r
+  fulladder4/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder4/mod2/out (xor2_34)            0.00       0.24 f
+  fulladder4/S (fulladder_11)              0.00       0.24 f
+  S<4> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<5> (input port clocked by vclk)
+  Endpoint: S<5> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<5> (in)                                0.04       0.14 r
+  fulladder5/InB (fulladder_10)            0.00       0.14 r
+  fulladder5/mod1/in1 (xor2_32)            0.00       0.14 r
+  fulladder5/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder5/mod1/out (xor2_32)            0.00       0.20 r
+  fulladder5/mod2/in2 (xor2_31)            0.00       0.20 r
+  fulladder5/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder5/mod2/out (xor2_31)            0.00       0.24 f
+  fulladder5/S (fulladder_10)              0.00       0.24 f
+  S<5> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<6> (input port clocked by vclk)
+  Endpoint: S<6> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<6> (in)                                0.04       0.14 r
+  fulladder6/InB (fulladder_9)             0.00       0.14 r
+  fulladder6/mod1/in1 (xor2_29)            0.00       0.14 r
+  fulladder6/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder6/mod1/out (xor2_29)            0.00       0.20 r
+  fulladder6/mod2/in2 (xor2_28)            0.00       0.20 r
+  fulladder6/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder6/mod2/out (xor2_28)            0.00       0.24 f
+  fulladder6/S (fulladder_9)               0.00       0.24 f
+  S<6> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<7> (input port clocked by vclk)
+  Endpoint: S<7> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<7> (in)                                0.04       0.14 r
+  fulladder7/InB (fulladder_8)             0.00       0.14 r
+  fulladder7/mod1/in1 (xor2_26)            0.00       0.14 r
+  fulladder7/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder7/mod1/out (xor2_26)            0.00       0.20 r
+  fulladder7/mod2/in2 (xor2_25)            0.00       0.20 r
+  fulladder7/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder7/mod2/out (xor2_25)            0.00       0.24 f
+  fulladder7/S (fulladder_8)               0.00       0.24 f
+  S<7> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<8> (input port clocked by vclk)
+  Endpoint: S<8> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<8> (in)                                0.04       0.14 r
+  fulladder8/InB (fulladder_7)             0.00       0.14 r
+  fulladder8/mod1/in1 (xor2_23)            0.00       0.14 r
+  fulladder8/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder8/mod1/out (xor2_23)            0.00       0.20 r
+  fulladder8/mod2/in2 (xor2_22)            0.00       0.20 r
+  fulladder8/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder8/mod2/out (xor2_22)            0.00       0.24 f
+  fulladder8/S (fulladder_7)               0.00       0.24 f
+  S<8> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<9> (input port clocked by vclk)
+  Endpoint: S<9> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<9> (in)                                0.04       0.14 r
+  fulladder9/InB (fulladder_6)             0.00       0.14 r
+  fulladder9/mod1/in1 (xor2_20)            0.00       0.14 r
+  fulladder9/mod1/U1/Y (XOR2X1)            0.06       0.20 r
+  fulladder9/mod1/out (xor2_20)            0.00       0.20 r
+  fulladder9/mod2/in2 (xor2_19)            0.00       0.20 r
+  fulladder9/mod2/U1/Y (XOR2X1)            0.03       0.24 f
+  fulladder9/mod2/out (xor2_19)            0.00       0.24 f
+  fulladder9/S (fulladder_6)               0.00       0.24 f
+  S<9> (out)                               0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<10> (input port clocked by vclk)
+  Endpoint: S<10> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<10> (in)                               0.04       0.14 r
+  fulladder10/InB (fulladder_5)            0.00       0.14 r
+  fulladder10/mod1/in1 (xor2_17)           0.00       0.14 r
+  fulladder10/mod1/U1/Y (XOR2X1)           0.06       0.20 r
+  fulladder10/mod1/out (xor2_17)           0.00       0.20 r
+  fulladder10/mod2/in2 (xor2_16)           0.00       0.20 r
+  fulladder10/mod2/U1/Y (XOR2X1)           0.03       0.24 f
+  fulladder10/mod2/out (xor2_16)           0.00       0.24 f
+  fulladder10/S (fulladder_5)              0.00       0.24 f
+  S<10> (out)                              0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<11> (input port clocked by vclk)
+  Endpoint: S<11> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<11> (in)                               0.04       0.14 r
+  fulladder11/InB (fulladder_4)            0.00       0.14 r
+  fulladder11/mod1/in1 (xor2_14)           0.00       0.14 r
+  fulladder11/mod1/U1/Y (XOR2X1)           0.06       0.20 r
+  fulladder11/mod1/out (xor2_14)           0.00       0.20 r
+  fulladder11/mod2/in2 (xor2_13)           0.00       0.20 r
+  fulladder11/mod2/U1/Y (XOR2X1)           0.03       0.24 f
+  fulladder11/mod2/out (xor2_13)           0.00       0.24 f
+  fulladder11/S (fulladder_4)              0.00       0.24 f
+  S<11> (out)                              0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<12> (input port clocked by vclk)
+  Endpoint: S<12> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<12> (in)                               0.04       0.14 r
+  fulladder12/InB (fulladder_3)            0.00       0.14 r
+  fulladder12/mod1/in1 (xor2_11)           0.00       0.14 r
+  fulladder12/mod1/U1/Y (XOR2X1)           0.06       0.20 r
+  fulladder12/mod1/out (xor2_11)           0.00       0.20 r
+  fulladder12/mod2/in2 (xor2_10)           0.00       0.20 r
+  fulladder12/mod2/U1/Y (XOR2X1)           0.03       0.24 f
+  fulladder12/mod2/out (xor2_10)           0.00       0.24 f
+  fulladder12/S (fulladder_3)              0.00       0.24 f
+  S<12> (out)                              0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<13> (input port clocked by vclk)
+  Endpoint: S<13> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<13> (in)                               0.04       0.14 r
+  fulladder13/InB (fulladder_2)            0.00       0.14 r
+  fulladder13/mod1/in1 (xor2_8)            0.00       0.14 r
+  fulladder13/mod1/U1/Y (XOR2X1)           0.06       0.20 r
+  fulladder13/mod1/out (xor2_8)            0.00       0.20 r
+  fulladder13/mod2/in2 (xor2_7)            0.00       0.20 r
+  fulladder13/mod2/U1/Y (XOR2X1)           0.03       0.24 f
+  fulladder13/mod2/out (xor2_7)            0.00       0.24 f
+  fulladder13/S (fulladder_2)              0.00       0.24 f
+  S<13> (out)                              0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<14> (input port clocked by vclk)
+  Endpoint: S<14> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<14> (in)                               0.04       0.14 r
+  fulladder14/InB (fulladder_1)            0.00       0.14 r
+  fulladder14/mod1/in1 (xor2_5)            0.00       0.14 r
+  fulladder14/mod1/U1/Y (XOR2X1)           0.06       0.20 r
+  fulladder14/mod1/out (xor2_5)            0.00       0.20 r
+  fulladder14/mod2/in2 (xor2_4)            0.00       0.20 r
+  fulladder14/mod2/U1/Y (XOR2X1)           0.03       0.24 f
+  fulladder14/mod2/out (xor2_4)            0.00       0.24 f
+  fulladder14/S (fulladder_1)              0.00       0.24 f
+  S<14> (out)                              0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: B<15> (input port clocked by vclk)
+  Endpoint: S<15> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<15> (in)                               0.04       0.14 r
+  fulladder15/InB (fulladder_0)            0.00       0.14 r
+  fulladder15/mod1/in1 (xor2_2)            0.00       0.14 r
+  fulladder15/mod1/U1/Y (XOR2X1)           0.06       0.20 r
+  fulladder15/mod1/out (xor2_2)            0.00       0.20 r
+  fulladder15/mod2/in2 (xor2_1)            0.00       0.20 r
+  fulladder15/mod2/U1/Y (XOR2X1)           0.03       0.24 f
+  fulladder15/mod2/out (xor2_1)            0.00       0.24 f
+  fulladder15/S (fulladder_0)              0.00       0.24 f
+  S<15> (out)                              0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: P<0> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.04       0.14 r
+  fulladder0/InA (fulladder_15)            0.00       0.14 r
+  fulladder0/mod4/in1 (xor2_45)            0.00       0.14 r
+  fulladder0/mod4/U1/Y (XOR2X1)            0.04       0.19 r
+  fulladder0/mod4/out (xor2_45)            0.00       0.19 r
+  fulladder0/P (fulladder_15)              0.00       0.19 r
+  P<0> (out)                               0.00       0.19 r
+  data arrival time                                   0.19
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.19
+  -----------------------------------------------------------
+  slack (MET)                                         0.71
+
+
+  Startpoint: A<1> (input port clocked by vclk)
+  Endpoint: P<1> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<1> (in)                                0.04       0.14 r
+  fulladder1/InA (fulladder_14)            0.00       0.14 r
+  fulladder1/mod4/in1 (xor2_42)            0.00       0.14 r
+  fulladder1/mod4/U1/Y (XOR2X1)            0.04       0.19 r
+  fulladder1/mod4/out (xor2_42)            0.00       0.19 r
+  fulladder1/P (fulladder_14)              0.00       0.19 r
+  P<1> (out)                               0.00       0.19 r
+  data arrival time                                   0.19
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.19
+  -----------------------------------------------------------
+  slack (MET)                                         0.71
+
+
+  Startpoint: A<2> (input port clocked by vclk)
+  Endpoint: P<2> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<2> (in)                                0.04       0.14 r
+  fulladder2/InA (fulladder_13)            0.00       0.14 r
+  fulladder2/mod4/in1 (xor2_39)            0.00       0.14 r
+  fulladder2/mod4/U1/Y (XOR2X1)            0.04       0.19 r
+  fulladder2/mod4/out (xor2_39)            0.00       0.19 r
+  fulladder2/P (fulladder_13)              0.00       0.19 r
+  P<2> (out)                               0.00       0.19 r
+  data arrival time                                   0.19
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.19
+  -----------------------------------------------------------
+  slack (MET)                                         0.71
+
+
+  Startpoint: A<3> (input port clocked by vclk)
+  Endpoint: P<3> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<3> (in)                                0.04       0.14 r
+  fulladder3/InA (fulladder_12)            0.00       0.14 r
+  fulladder3/mod4/in1 (xor2_36)            0.00       0.14 r
+  fulladder3/mod4/U1/Y (XOR2X1)            0.04       0.19 r
+  fulladder3/mod4/out (xor2_36)            0.00       0.19 r
+  fulladder3/P (fulladder_12)              0.00       0.19 r
+  P<3> (out)                               0.00       0.19 r
+  data arrival time                                   0.19
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.19
+  -----------------------------------------------------------
+  slack (MET)                                         0.71
+
+
+1

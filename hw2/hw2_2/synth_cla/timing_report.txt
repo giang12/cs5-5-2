@@ -1,0 +1,1740 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 20
+Design : cla_16bit
+Version: B-2008.09-SP3
+Date   : Wed Mar 23 04:26:24 2016
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: Ofl (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock vclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.10       0.10 r
+  A<0> (in)                                               0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)                             0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)                      0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)                      0.00       0.12 r
+  mod1/fulladder0/mod4/U5/Y (AND2X2)                      0.03       0.15 r
+  mod1/fulladder0/mod4/U6/Y (INVX1)                       0.01       0.16 f
+  mod1/fulladder0/mod4/U1/Y (AND2X2)                      0.04       0.20 f
+  mod1/fulladder0/mod4/U2/Y (INVX1)                       0.00       0.20 r
+  mod1/fulladder0/mod4/out (xor2_45)                      0.00       0.20 r
+  mod1/fulladder0/P (fulladder_15)                        0.00       0.20 r
+  mod1/P<0> (fulladder_16bit)                             0.00       0.20 r
+  mod2/P<0> (clu_16bit)                                   0.00       0.20 r
+  mod2/clu0/P<0> (clu_4bit_3)                             0.00       0.20 r
+  mod2/clu0/mod1/in1 (and2_51)                            0.00       0.20 r
+  mod2/clu0/mod1/U1/Y (AND2X2)                            0.03       0.23 r
+  mod2/clu0/mod1/out (and2_51)                            0.00       0.23 r
+  mod2/clu0/mod2/in2 (or2_27)                             0.00       0.23 r
+  mod2/clu0/mod2/U1/Y (OR2X2)                             0.04       0.27 r
+  mod2/clu0/mod2/out (or2_27)                             0.00       0.27 r
+  mod2/clu0/mod3/in2 (and2_50)                            0.00       0.27 r
+  mod2/clu0/mod3/U1/Y (AND2X2)                            0.03       0.30 r
+  mod2/clu0/mod3/out (and2_50)                            0.00       0.30 r
+  mod2/clu0/mod4/in2 (or2_26)                             0.00       0.30 r
+  mod2/clu0/mod4/U1/Y (OR2X2)                             0.04       0.34 r
+  mod2/clu0/mod4/out (or2_26)                             0.00       0.34 r
+  mod2/clu0/mod5/in2 (and2_49)                            0.00       0.34 r
+  mod2/clu0/mod5/U1/Y (AND2X2)                            0.03       0.37 r
+  mod2/clu0/mod5/out (and2_49)                            0.00       0.37 r
+  mod2/clu0/mod6/in2 (or2_25)                             0.00       0.37 r
+  mod2/clu0/mod6/U1/Y (OR2X2)                             0.04       0.41 r
+  mod2/clu0/mod6/out (or2_25)                             0.00       0.41 r
+  mod2/clu0/mod7/in2 (and2_48)                            0.00       0.41 r
+  mod2/clu0/mod7/U1/Y (AND2X2)                            0.03       0.44 r
+  mod2/clu0/mod7/out (and2_48)                            0.00       0.44 r
+  mod2/clu0/mod8/in2 (or2_24)                             0.00       0.44 r
+  mod2/clu0/mod8/U1/Y (OR2X2)                             0.04       0.48 r
+  mod2/clu0/mod8/out (or2_24)                             0.00       0.48 r
+  mod2/clu0/CO<3> (clu_4bit_3)                            0.00       0.48 r
+  mod2/clu1/CI (clu_4bit_2)                               0.00       0.48 r
+  mod2/clu1/mod1/in2 (and2_38)                            0.00       0.48 r
+  mod2/clu1/mod1/U1/Y (AND2X2)                            0.03       0.52 r
+  mod2/clu1/mod1/out (and2_38)                            0.00       0.52 r
+  mod2/clu1/mod2/in2 (or2_20)                             0.00       0.52 r
+  mod2/clu1/mod2/U1/Y (OR2X2)                             0.04       0.55 r
+  mod2/clu1/mod2/out (or2_20)                             0.00       0.55 r
+  mod2/clu1/mod3/in2 (and2_37)                            0.00       0.55 r
+  mod2/clu1/mod3/U1/Y (AND2X2)                            0.03       0.59 r
+  mod2/clu1/mod3/out (and2_37)                            0.00       0.59 r
+  mod2/clu1/mod4/in2 (or2_19)                             0.00       0.59 r
+  mod2/clu1/mod4/U1/Y (OR2X2)                             0.04       0.63 r
+  mod2/clu1/mod4/out (or2_19)                             0.00       0.63 r
+  mod2/clu1/mod5/in2 (and2_36)                            0.00       0.63 r
+  mod2/clu1/mod5/U1/Y (AND2X2)                            0.03       0.66 r
+  mod2/clu1/mod5/out (and2_36)                            0.00       0.66 r
+  mod2/clu1/mod6/in2 (or2_18)                             0.00       0.66 r
+  mod2/clu1/mod6/U1/Y (OR2X2)                             0.04       0.70 r
+  mod2/clu1/mod6/out (or2_18)                             0.00       0.70 r
+  mod2/clu1/mod7/in2 (and2_35)                            0.00       0.70 r
+  mod2/clu1/mod7/U1/Y (AND2X2)                            0.03       0.73 r
+  mod2/clu1/mod7/out (and2_35)                            0.00       0.73 r
+  mod2/clu1/mod8/in2 (or2_17)                             0.00       0.73 r
+  mod2/clu1/mod8/U1/Y (OR2X2)                             0.04       0.77 r
+  mod2/clu1/mod8/out (or2_17)                             0.00       0.77 r
+  mod2/clu1/CO<3> (clu_4bit_2)                            0.00       0.77 r
+  mod2/clu2/CI (clu_4bit_1)                               0.00       0.77 r
+  mod2/clu2/mod1/in2 (and2_25)                            0.00       0.77 r
+  mod2/clu2/mod1/U1/Y (AND2X2)                            0.03       0.80 r
+  mod2/clu2/mod1/out (and2_25)                            0.00       0.80 r
+  mod2/clu2/mod2/in2 (or2_13)                             0.00       0.80 r
+  mod2/clu2/mod2/U1/Y (OR2X2)                             0.04       0.84 r
+  mod2/clu2/mod2/out (or2_13)                             0.00       0.84 r
+  mod2/clu2/mod3/in2 (and2_24)                            0.00       0.84 r
+  mod2/clu2/mod3/U1/Y (AND2X2)                            0.03       0.87 r
+  mod2/clu2/mod3/out (and2_24)                            0.00       0.87 r
+  mod2/clu2/mod4/in2 (or2_12)                             0.00       0.87 r
+  mod2/clu2/mod4/U1/Y (OR2X2)                             0.04       0.91 r
+  mod2/clu2/mod4/out (or2_12)                             0.00       0.91 r
+  mod2/clu2/mod5/in2 (and2_23)                            0.00       0.91 r
+  mod2/clu2/mod5/U1/Y (AND2X2)                            0.03       0.94 r
+  mod2/clu2/mod5/out (and2_23)                            0.00       0.94 r
+  mod2/clu2/mod6/in2 (or2_11)                             0.00       0.94 r
+  mod2/clu2/mod6/U1/Y (OR2X2)                             0.04       0.98 r
+  mod2/clu2/mod6/out (or2_11)                             0.00       0.98 r
+  mod2/clu2/mod7/in2 (and2_22)                            0.00       0.98 r
+  mod2/clu2/mod7/U1/Y (AND2X1)                            0.03       1.01 r
+  mod2/clu2/mod7/out (and2_22)                            0.00       1.01 r
+  mod2/clu2/mod8/in2 (or2_10)                             0.00       1.01 r
+  mod2/clu2/mod8/U1/Y (OR2X2)                             0.04       1.05 r
+  mod2/clu2/mod8/out (or2_10)                             0.00       1.05 r
+  mod2/clu2/CO<3> (clu_4bit_1)                            0.00       1.05 r
+  mod2/clu3/CI (clu_4bit_0)                               0.00       1.05 r
+  mod2/clu3/mod1/in2 (and2_12)                            0.00       1.05 r
+  mod2/clu3/mod1/U1/Y (AND2X2)                            0.03       1.09 r
+  mod2/clu3/mod1/out (and2_12)                            0.00       1.09 r
+  mod2/clu3/mod2/in2 (or2_6)                              0.00       1.09 r
+  mod2/clu3/mod2/U1/Y (OR2X2)                             0.04       1.13 r
+  mod2/clu3/mod2/out (or2_6)                              0.00       1.13 r
+  mod2/clu3/mod3/in2 (and2_11)                            0.00       1.13 r
+  mod2/clu3/mod3/U1/Y (AND2X2)                            0.03       1.16 r
+  mod2/clu3/mod3/out (and2_11)                            0.00       1.16 r
+  mod2/clu3/mod4/in2 (or2_5)                              0.00       1.16 r
+  mod2/clu3/mod4/U1/Y (OR2X2)                             0.04       1.20 r
+  mod2/clu3/mod4/out (or2_5)                              0.00       1.20 r
+  mod2/clu3/mod5/in2 (and2_10)                            0.00       1.20 r
+  mod2/clu3/mod5/U1/Y (AND2X2)                            0.03       1.23 r
+  mod2/clu3/mod5/out (and2_10)                            0.00       1.23 r
+  mod2/clu3/mod6/in2 (or2_4)                              0.00       1.23 r
+  mod2/clu3/mod6/U1/Y (OR2X2)                             0.04       1.28 r
+  mod2/clu3/mod6/out (or2_4)                              0.00       1.28 r
+  mod2/clu3/CO<2> (clu_4bit_0)                            0.00       1.28 r
+  mod2/CO<14> (clu_16bit)                                 0.00       1.28 r
+  mod1/CI<15> (fulladder_16bit)                           0.00       1.28 r
+  mod1/fulladder15/Cin (fulladder_0)                      0.00       1.28 r
+  mod1/fulladder15/mod1/in2 (xor2_2)                      0.00       1.28 r
+  mod1/fulladder15/mod1/U1/Y (XOR2X1)                     0.04       1.32 r
+  mod1/fulladder15/mod1/out (xor2_2)                      0.00       1.32 r
+  mod1/fulladder15/mod2/in2 (xor2_1)                      0.00       1.32 r
+  mod1/fulladder15/mod2/U2/Y (XNOR2X1)                    0.04       1.36 r
+  mod1/fulladder15/mod2/out (xor2_1)                      0.00       1.36 r
+  mod1/fulladder15/S (fulladder_0)                        0.00       1.36 r
+  mod1/S<15> (fulladder_16bit)                            0.00       1.36 r
+  mod5/in1 (not1_2)                                       0.00       1.36 r
+  mod5/U1/Y (INVX1)                                       0.02       1.39 f
+  mod5/out (not1_2)                                       0.00       1.39 f
+  mod7/in2 (and2_72)                                      0.00       1.39 f
+  mod7/U1/Y (AND2X2)                                      0.03       1.42 f
+  mod7/out (and2_72)                                      0.00       1.42 f
+  mod8/in2 (and2_71)                                      0.00       1.42 f
+  mod8/U1/Y (AND2X2)                                      0.03       1.45 f
+  mod8/out (and2_71)                                      0.00       1.45 f
+  mod14/in2 (or2_29)                                      0.00       1.45 f
+  mod14/U4/Y (INVX1)                                      0.00       1.45 r
+  mod14/U1/Y (AND2X2)                                     0.03       1.48 r
+  mod14/U2/Y (INVX1)                                      0.01       1.49 f
+  mod14/out (or2_29)                                      0.00       1.49 f
+  mod15/in1 (or2_28)                                      0.00       1.49 f
+  mod15/U1/Y (OR2X2)                                      0.04       1.53 f
+  mod15/out (or2_28)                                      0.00       1.53 f
+  Ofl (out)                                               0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock vclk (rise edge)                                  1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.63
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<15> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock vclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.10       0.10 r
+  A<0> (in)                                               0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)                             0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)                      0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)                      0.00       0.12 r
+  mod1/fulladder0/mod4/U5/Y (AND2X2)                      0.03       0.15 r
+  mod1/fulladder0/mod4/U6/Y (INVX1)                       0.01       0.16 f
+  mod1/fulladder0/mod4/U1/Y (AND2X2)                      0.04       0.20 f
+  mod1/fulladder0/mod4/U2/Y (INVX1)                       0.00       0.20 r
+  mod1/fulladder0/mod4/out (xor2_45)                      0.00       0.20 r
+  mod1/fulladder0/P (fulladder_15)                        0.00       0.20 r
+  mod1/P<0> (fulladder_16bit)                             0.00       0.20 r
+  mod2/P<0> (clu_16bit)                                   0.00       0.20 r
+  mod2/clu0/P<0> (clu_4bit_3)                             0.00       0.20 r
+  mod2/clu0/mod1/in1 (and2_51)                            0.00       0.20 r
+  mod2/clu0/mod1/U1/Y (AND2X2)                            0.03       0.23 r
+  mod2/clu0/mod1/out (and2_51)                            0.00       0.23 r
+  mod2/clu0/mod2/in2 (or2_27)                             0.00       0.23 r
+  mod2/clu0/mod2/U1/Y (OR2X2)                             0.04       0.27 r
+  mod2/clu0/mod2/out (or2_27)                             0.00       0.27 r
+  mod2/clu0/mod3/in2 (and2_50)                            0.00       0.27 r
+  mod2/clu0/mod3/U1/Y (AND2X2)                            0.03       0.30 r
+  mod2/clu0/mod3/out (and2_50)                            0.00       0.30 r
+  mod2/clu0/mod4/in2 (or2_26)                             0.00       0.30 r
+  mod2/clu0/mod4/U1/Y (OR2X2)                             0.04       0.34 r
+  mod2/clu0/mod4/out (or2_26)                             0.00       0.34 r
+  mod2/clu0/mod5/in2 (and2_49)                            0.00       0.34 r
+  mod2/clu0/mod5/U1/Y (AND2X2)                            0.03       0.37 r
+  mod2/clu0/mod5/out (and2_49)                            0.00       0.37 r
+  mod2/clu0/mod6/in2 (or2_25)                             0.00       0.37 r
+  mod2/clu0/mod6/U1/Y (OR2X2)                             0.04       0.41 r
+  mod2/clu0/mod6/out (or2_25)                             0.00       0.41 r
+  mod2/clu0/mod7/in2 (and2_48)                            0.00       0.41 r
+  mod2/clu0/mod7/U1/Y (AND2X2)                            0.03       0.44 r
+  mod2/clu0/mod7/out (and2_48)                            0.00       0.44 r
+  mod2/clu0/mod8/in2 (or2_24)                             0.00       0.44 r
+  mod2/clu0/mod8/U1/Y (OR2X2)                             0.04       0.48 r
+  mod2/clu0/mod8/out (or2_24)                             0.00       0.48 r
+  mod2/clu0/CO<3> (clu_4bit_3)                            0.00       0.48 r
+  mod2/clu1/CI (clu_4bit_2)                               0.00       0.48 r
+  mod2/clu1/mod1/in2 (and2_38)                            0.00       0.48 r
+  mod2/clu1/mod1/U1/Y (AND2X2)                            0.03       0.52 r
+  mod2/clu1/mod1/out (and2_38)                            0.00       0.52 r
+  mod2/clu1/mod2/in2 (or2_20)                             0.00       0.52 r
+  mod2/clu1/mod2/U1/Y (OR2X2)                             0.04       0.55 r
+  mod2/clu1/mod2/out (or2_20)                             0.00       0.55 r
+  mod2/clu1/mod3/in2 (and2_37)                            0.00       0.55 r
+  mod2/clu1/mod3/U1/Y (AND2X2)                            0.03       0.59 r
+  mod2/clu1/mod3/out (and2_37)                            0.00       0.59 r
+  mod2/clu1/mod4/in2 (or2_19)                             0.00       0.59 r
+  mod2/clu1/mod4/U1/Y (OR2X2)                             0.04       0.63 r
+  mod2/clu1/mod4/out (or2_19)                             0.00       0.63 r
+  mod2/clu1/mod5/in2 (and2_36)                            0.00       0.63 r
+  mod2/clu1/mod5/U1/Y (AND2X2)                            0.03       0.66 r
+  mod2/clu1/mod5/out (and2_36)                            0.00       0.66 r
+  mod2/clu1/mod6/in2 (or2_18)                             0.00       0.66 r
+  mod2/clu1/mod6/U1/Y (OR2X2)                             0.04       0.70 r
+  mod2/clu1/mod6/out (or2_18)                             0.00       0.70 r
+  mod2/clu1/mod7/in2 (and2_35)                            0.00       0.70 r
+  mod2/clu1/mod7/U1/Y (AND2X2)                            0.03       0.73 r
+  mod2/clu1/mod7/out (and2_35)                            0.00       0.73 r
+  mod2/clu1/mod8/in2 (or2_17)                             0.00       0.73 r
+  mod2/clu1/mod8/U1/Y (OR2X2)                             0.04       0.77 r
+  mod2/clu1/mod8/out (or2_17)                             0.00       0.77 r
+  mod2/clu1/CO<3> (clu_4bit_2)                            0.00       0.77 r
+  mod2/clu2/CI (clu_4bit_1)                               0.00       0.77 r
+  mod2/clu2/mod1/in2 (and2_25)                            0.00       0.77 r
+  mod2/clu2/mod1/U1/Y (AND2X2)                            0.03       0.80 r
+  mod2/clu2/mod1/out (and2_25)                            0.00       0.80 r
+  mod2/clu2/mod2/in2 (or2_13)                             0.00       0.80 r
+  mod2/clu2/mod2/U1/Y (OR2X2)                             0.04       0.84 r
+  mod2/clu2/mod2/out (or2_13)                             0.00       0.84 r
+  mod2/clu2/mod3/in2 (and2_24)                            0.00       0.84 r
+  mod2/clu2/mod3/U1/Y (AND2X2)                            0.03       0.87 r
+  mod2/clu2/mod3/out (and2_24)                            0.00       0.87 r
+  mod2/clu2/mod4/in2 (or2_12)                             0.00       0.87 r
+  mod2/clu2/mod4/U1/Y (OR2X2)                             0.04       0.91 r
+  mod2/clu2/mod4/out (or2_12)                             0.00       0.91 r
+  mod2/clu2/mod5/in2 (and2_23)                            0.00       0.91 r
+  mod2/clu2/mod5/U1/Y (AND2X2)                            0.03       0.94 r
+  mod2/clu2/mod5/out (and2_23)                            0.00       0.94 r
+  mod2/clu2/mod6/in2 (or2_11)                             0.00       0.94 r
+  mod2/clu2/mod6/U1/Y (OR2X2)                             0.04       0.98 r
+  mod2/clu2/mod6/out (or2_11)                             0.00       0.98 r
+  mod2/clu2/mod7/in2 (and2_22)                            0.00       0.98 r
+  mod2/clu2/mod7/U1/Y (AND2X1)                            0.03       1.01 r
+  mod2/clu2/mod7/out (and2_22)                            0.00       1.01 r
+  mod2/clu2/mod8/in2 (or2_10)                             0.00       1.01 r
+  mod2/clu2/mod8/U1/Y (OR2X2)                             0.04       1.05 r
+  mod2/clu2/mod8/out (or2_10)                             0.00       1.05 r
+  mod2/clu2/CO<3> (clu_4bit_1)                            0.00       1.05 r
+  mod2/clu3/CI (clu_4bit_0)                               0.00       1.05 r
+  mod2/clu3/mod1/in2 (and2_12)                            0.00       1.05 r
+  mod2/clu3/mod1/U1/Y (AND2X2)                            0.03       1.09 r
+  mod2/clu3/mod1/out (and2_12)                            0.00       1.09 r
+  mod2/clu3/mod2/in2 (or2_6)                              0.00       1.09 r
+  mod2/clu3/mod2/U1/Y (OR2X2)                             0.04       1.13 r
+  mod2/clu3/mod2/out (or2_6)                              0.00       1.13 r
+  mod2/clu3/mod3/in2 (and2_11)                            0.00       1.13 r
+  mod2/clu3/mod3/U1/Y (AND2X2)                            0.03       1.16 r
+  mod2/clu3/mod3/out (and2_11)                            0.00       1.16 r
+  mod2/clu3/mod4/in2 (or2_5)                              0.00       1.16 r
+  mod2/clu3/mod4/U1/Y (OR2X2)                             0.04       1.20 r
+  mod2/clu3/mod4/out (or2_5)                              0.00       1.20 r
+  mod2/clu3/mod5/in2 (and2_10)                            0.00       1.20 r
+  mod2/clu3/mod5/U1/Y (AND2X2)                            0.03       1.23 r
+  mod2/clu3/mod5/out (and2_10)                            0.00       1.23 r
+  mod2/clu3/mod6/in2 (or2_4)                              0.00       1.23 r
+  mod2/clu3/mod6/U1/Y (OR2X2)                             0.04       1.28 r
+  mod2/clu3/mod6/out (or2_4)                              0.00       1.28 r
+  mod2/clu3/CO<2> (clu_4bit_0)                            0.00       1.28 r
+  mod2/CO<14> (clu_16bit)                                 0.00       1.28 r
+  mod1/CI<15> (fulladder_16bit)                           0.00       1.28 r
+  mod1/fulladder15/Cin (fulladder_0)                      0.00       1.28 r
+  mod1/fulladder15/mod1/in2 (xor2_2)                      0.00       1.28 r
+  mod1/fulladder15/mod1/U1/Y (XOR2X1)                     0.04       1.32 r
+  mod1/fulladder15/mod1/out (xor2_2)                      0.00       1.32 r
+  mod1/fulladder15/mod2/in2 (xor2_1)                      0.00       1.32 r
+  mod1/fulladder15/mod2/U2/Y (XNOR2X1)                    0.04       1.36 r
+  mod1/fulladder15/mod2/out (xor2_1)                      0.00       1.36 r
+  mod1/fulladder15/S (fulladder_0)                        0.00       1.36 r
+  mod1/S<15> (fulladder_16bit)                            0.00       1.36 r
+  U1/Y (BUFX2)                                            0.03       1.40 r
+  OUT<15> (out)                                           0.00       1.40 r
+  data arrival time                                                  1.40
+
+  clock vclk (rise edge)                                  1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -1.40
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.50
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<14> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock vclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.10       0.10 r
+  A<0> (in)                                               0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)                             0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)                      0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)                      0.00       0.12 r
+  mod1/fulladder0/mod4/U5/Y (AND2X2)                      0.03       0.15 r
+  mod1/fulladder0/mod4/U6/Y (INVX1)                       0.01       0.16 f
+  mod1/fulladder0/mod4/U1/Y (AND2X2)                      0.04       0.20 f
+  mod1/fulladder0/mod4/U2/Y (INVX1)                       0.00       0.20 r
+  mod1/fulladder0/mod4/out (xor2_45)                      0.00       0.20 r
+  mod1/fulladder0/P (fulladder_15)                        0.00       0.20 r
+  mod1/P<0> (fulladder_16bit)                             0.00       0.20 r
+  mod2/P<0> (clu_16bit)                                   0.00       0.20 r
+  mod2/clu0/P<0> (clu_4bit_3)                             0.00       0.20 r
+  mod2/clu0/mod1/in1 (and2_51)                            0.00       0.20 r
+  mod2/clu0/mod1/U1/Y (AND2X2)                            0.03       0.23 r
+  mod2/clu0/mod1/out (and2_51)                            0.00       0.23 r
+  mod2/clu0/mod2/in2 (or2_27)                             0.00       0.23 r
+  mod2/clu0/mod2/U1/Y (OR2X2)                             0.04       0.27 r
+  mod2/clu0/mod2/out (or2_27)                             0.00       0.27 r
+  mod2/clu0/mod3/in2 (and2_50)                            0.00       0.27 r
+  mod2/clu0/mod3/U1/Y (AND2X2)                            0.03       0.30 r
+  mod2/clu0/mod3/out (and2_50)                            0.00       0.30 r
+  mod2/clu0/mod4/in2 (or2_26)                             0.00       0.30 r
+  mod2/clu0/mod4/U1/Y (OR2X2)                             0.04       0.34 r
+  mod2/clu0/mod4/out (or2_26)                             0.00       0.34 r
+  mod2/clu0/mod5/in2 (and2_49)                            0.00       0.34 r
+  mod2/clu0/mod5/U1/Y (AND2X2)                            0.03       0.37 r
+  mod2/clu0/mod5/out (and2_49)                            0.00       0.37 r
+  mod2/clu0/mod6/in2 (or2_25)                             0.00       0.37 r
+  mod2/clu0/mod6/U1/Y (OR2X2)                             0.04       0.41 r
+  mod2/clu0/mod6/out (or2_25)                             0.00       0.41 r
+  mod2/clu0/mod7/in2 (and2_48)                            0.00       0.41 r
+  mod2/clu0/mod7/U1/Y (AND2X2)                            0.03       0.44 r
+  mod2/clu0/mod7/out (and2_48)                            0.00       0.44 r
+  mod2/clu0/mod8/in2 (or2_24)                             0.00       0.44 r
+  mod2/clu0/mod8/U1/Y (OR2X2)                             0.04       0.48 r
+  mod2/clu0/mod8/out (or2_24)                             0.00       0.48 r
+  mod2/clu0/CO<3> (clu_4bit_3)                            0.00       0.48 r
+  mod2/clu1/CI (clu_4bit_2)                               0.00       0.48 r
+  mod2/clu1/mod1/in2 (and2_38)                            0.00       0.48 r
+  mod2/clu1/mod1/U1/Y (AND2X2)                            0.03       0.52 r
+  mod2/clu1/mod1/out (and2_38)                            0.00       0.52 r
+  mod2/clu1/mod2/in2 (or2_20)                             0.00       0.52 r
+  mod2/clu1/mod2/U1/Y (OR2X2)                             0.04       0.55 r
+  mod2/clu1/mod2/out (or2_20)                             0.00       0.55 r
+  mod2/clu1/mod3/in2 (and2_37)                            0.00       0.55 r
+  mod2/clu1/mod3/U1/Y (AND2X2)                            0.03       0.59 r
+  mod2/clu1/mod3/out (and2_37)                            0.00       0.59 r
+  mod2/clu1/mod4/in2 (or2_19)                             0.00       0.59 r
+  mod2/clu1/mod4/U1/Y (OR2X2)                             0.04       0.63 r
+  mod2/clu1/mod4/out (or2_19)                             0.00       0.63 r
+  mod2/clu1/mod5/in2 (and2_36)                            0.00       0.63 r
+  mod2/clu1/mod5/U1/Y (AND2X2)                            0.03       0.66 r
+  mod2/clu1/mod5/out (and2_36)                            0.00       0.66 r
+  mod2/clu1/mod6/in2 (or2_18)                             0.00       0.66 r
+  mod2/clu1/mod6/U1/Y (OR2X2)                             0.04       0.70 r
+  mod2/clu1/mod6/out (or2_18)                             0.00       0.70 r
+  mod2/clu1/mod7/in2 (and2_35)                            0.00       0.70 r
+  mod2/clu1/mod7/U1/Y (AND2X2)                            0.03       0.73 r
+  mod2/clu1/mod7/out (and2_35)                            0.00       0.73 r
+  mod2/clu1/mod8/in2 (or2_17)                             0.00       0.73 r
+  mod2/clu1/mod8/U1/Y (OR2X2)                             0.04       0.77 r
+  mod2/clu1/mod8/out (or2_17)                             0.00       0.77 r
+  mod2/clu1/CO<3> (clu_4bit_2)                            0.00       0.77 r
+  mod2/clu2/CI (clu_4bit_1)                               0.00       0.77 r
+  mod2/clu2/mod1/in2 (and2_25)                            0.00       0.77 r
+  mod2/clu2/mod1/U1/Y (AND2X2)                            0.03       0.80 r
+  mod2/clu2/mod1/out (and2_25)                            0.00       0.80 r
+  mod2/clu2/mod2/in2 (or2_13)                             0.00       0.80 r
+  mod2/clu2/mod2/U1/Y (OR2X2)                             0.04       0.84 r
+  mod2/clu2/mod2/out (or2_13)                             0.00       0.84 r
+  mod2/clu2/mod3/in2 (and2_24)                            0.00       0.84 r
+  mod2/clu2/mod3/U1/Y (AND2X2)                            0.03       0.87 r
+  mod2/clu2/mod3/out (and2_24)                            0.00       0.87 r
+  mod2/clu2/mod4/in2 (or2_12)                             0.00       0.87 r
+  mod2/clu2/mod4/U1/Y (OR2X2)                             0.04       0.91 r
+  mod2/clu2/mod4/out (or2_12)                             0.00       0.91 r
+  mod2/clu2/mod5/in2 (and2_23)                            0.00       0.91 r
+  mod2/clu2/mod5/U1/Y (AND2X2)                            0.03       0.94 r
+  mod2/clu2/mod5/out (and2_23)                            0.00       0.94 r
+  mod2/clu2/mod6/in2 (or2_11)                             0.00       0.94 r
+  mod2/clu2/mod6/U1/Y (OR2X2)                             0.04       0.98 r
+  mod2/clu2/mod6/out (or2_11)                             0.00       0.98 r
+  mod2/clu2/mod7/in2 (and2_22)                            0.00       0.98 r
+  mod2/clu2/mod7/U1/Y (AND2X1)                            0.03       1.01 r
+  mod2/clu2/mod7/out (and2_22)                            0.00       1.01 r
+  mod2/clu2/mod8/in2 (or2_10)                             0.00       1.01 r
+  mod2/clu2/mod8/U1/Y (OR2X2)                             0.04       1.05 r
+  mod2/clu2/mod8/out (or2_10)                             0.00       1.05 r
+  mod2/clu2/CO<3> (clu_4bit_1)                            0.00       1.05 r
+  mod2/clu3/CI (clu_4bit_0)                               0.00       1.05 r
+  mod2/clu3/mod1/in2 (and2_12)                            0.00       1.05 r
+  mod2/clu3/mod1/U1/Y (AND2X2)                            0.03       1.09 r
+  mod2/clu3/mod1/out (and2_12)                            0.00       1.09 r
+  mod2/clu3/mod2/in2 (or2_6)                              0.00       1.09 r
+  mod2/clu3/mod2/U1/Y (OR2X2)                             0.04       1.13 r
+  mod2/clu3/mod2/out (or2_6)                              0.00       1.13 r
+  mod2/clu3/mod3/in2 (and2_11)                            0.00       1.13 r
+  mod2/clu3/mod3/U1/Y (AND2X2)                            0.03       1.16 r
+  mod2/clu3/mod3/out (and2_11)                            0.00       1.16 r
+  mod2/clu3/mod4/in2 (or2_5)                              0.00       1.16 r
+  mod2/clu3/mod4/U1/Y (OR2X2)                             0.04       1.20 r
+  mod2/clu3/mod4/out (or2_5)                              0.00       1.20 r
+  mod2/clu3/U3/Y (BUFX2)                                  0.04       1.23 r
+  mod2/clu3/CO<1> (clu_4bit_0)                            0.00       1.23 r
+  mod2/CO<13> (clu_16bit)                                 0.00       1.23 r
+  mod1/CI<14> (fulladder_16bit)                           0.00       1.23 r
+  mod1/fulladder14/Cin (fulladder_1)                      0.00       1.23 r
+  mod1/fulladder14/mod1/in2 (xor2_5)                      0.00       1.23 r
+  mod1/fulladder14/mod1/U2/Y (XNOR2X1)                    0.04       1.28 r
+  mod1/fulladder14/mod1/out (xor2_5)                      0.00       1.28 r
+  mod1/fulladder14/mod2/in2 (xor2_4)                      0.00       1.28 r
+  mod1/fulladder14/mod2/U2/Y (XNOR2X1)                    0.03       1.31 r
+  mod1/fulladder14/mod2/out (xor2_4)                      0.00       1.31 r
+  mod1/fulladder14/S (fulladder_1)                        0.00       1.31 r
+  mod1/S<14> (fulladder_16bit)                            0.00       1.31 r
+  OUT<14> (out)                                           0.00       1.31 r
+  data arrival time                                                  1.31
+
+  clock vclk (rise edge)                                  1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -1.31
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.41
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<13> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock vclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.10       0.10 r
+  A<0> (in)                                               0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)                             0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)                      0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)                      0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)                       0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)                      0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)                       0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)                      0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)                       0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)                      0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)                        0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)                             0.00       0.21 f
+  mod2/P<0> (clu_16bit)                                   0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)                             0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)                            0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)                            0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)                            0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)                             0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)                             0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)                             0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)                            0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)                            0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)                            0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)                             0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)                             0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)                             0.00       0.35 f
+  mod2/clu0/mod5/in2 (and2_49)                            0.00       0.35 f
+  mod2/clu0/mod5/U1/Y (AND2X2)                            0.03       0.38 f
+  mod2/clu0/mod5/out (and2_49)                            0.00       0.38 f
+  mod2/clu0/mod6/in2 (or2_25)                             0.00       0.38 f
+  mod2/clu0/mod6/U1/Y (OR2X2)                             0.04       0.42 f
+  mod2/clu0/mod6/out (or2_25)                             0.00       0.42 f
+  mod2/clu0/mod7/in2 (and2_48)                            0.00       0.42 f
+  mod2/clu0/mod7/U1/Y (AND2X2)                            0.04       0.45 f
+  mod2/clu0/mod7/out (and2_48)                            0.00       0.45 f
+  mod2/clu0/mod8/in2 (or2_24)                             0.00       0.45 f
+  mod2/clu0/mod8/U1/Y (OR2X2)                             0.04       0.49 f
+  mod2/clu0/mod8/out (or2_24)                             0.00       0.49 f
+  mod2/clu0/CO<3> (clu_4bit_3)                            0.00       0.49 f
+  mod2/clu1/CI (clu_4bit_2)                               0.00       0.49 f
+  mod2/clu1/mod1/in2 (and2_38)                            0.00       0.49 f
+  mod2/clu1/mod1/U1/Y (AND2X2)                            0.03       0.52 f
+  mod2/clu1/mod1/out (and2_38)                            0.00       0.52 f
+  mod2/clu1/mod2/in2 (or2_20)                             0.00       0.52 f
+  mod2/clu1/mod2/U1/Y (OR2X2)                             0.04       0.56 f
+  mod2/clu1/mod2/out (or2_20)                             0.00       0.56 f
+  mod2/clu1/mod3/in2 (and2_37)                            0.00       0.56 f
+  mod2/clu1/mod3/U1/Y (AND2X2)                            0.03       0.59 f
+  mod2/clu1/mod3/out (and2_37)                            0.00       0.59 f
+  mod2/clu1/mod4/in2 (or2_19)                             0.00       0.59 f
+  mod2/clu1/mod4/U1/Y (OR2X2)                             0.04       0.63 f
+  mod2/clu1/mod4/out (or2_19)                             0.00       0.63 f
+  mod2/clu1/mod5/in2 (and2_36)                            0.00       0.63 f
+  mod2/clu1/mod5/U1/Y (AND2X2)                            0.04       0.67 f
+  mod2/clu1/mod5/out (and2_36)                            0.00       0.67 f
+  mod2/clu1/mod6/in2 (or2_18)                             0.00       0.67 f
+  mod2/clu1/mod6/U1/Y (OR2X2)                             0.04       0.70 f
+  mod2/clu1/mod6/out (or2_18)                             0.00       0.70 f
+  mod2/clu1/mod7/in2 (and2_35)                            0.00       0.70 f
+  mod2/clu1/mod7/U1/Y (AND2X2)                            0.03       0.74 f
+  mod2/clu1/mod7/out (and2_35)                            0.00       0.74 f
+  mod2/clu1/mod8/in2 (or2_17)                             0.00       0.74 f
+  mod2/clu1/mod8/U1/Y (OR2X2)                             0.04       0.77 f
+  mod2/clu1/mod8/out (or2_17)                             0.00       0.77 f
+  mod2/clu1/CO<3> (clu_4bit_2)                            0.00       0.77 f
+  mod2/clu2/CI (clu_4bit_1)                               0.00       0.77 f
+  mod2/clu2/mod1/in2 (and2_25)                            0.00       0.77 f
+  mod2/clu2/mod1/U1/Y (AND2X2)                            0.03       0.81 f
+  mod2/clu2/mod1/out (and2_25)                            0.00       0.81 f
+  mod2/clu2/mod2/in2 (or2_13)                             0.00       0.81 f
+  mod2/clu2/mod2/U1/Y (OR2X2)                             0.04       0.84 f
+  mod2/clu2/mod2/out (or2_13)                             0.00       0.84 f
+  mod2/clu2/mod3/in2 (and2_24)                            0.00       0.84 f
+  mod2/clu2/mod3/U1/Y (AND2X2)                            0.04       0.88 f
+  mod2/clu2/mod3/out (and2_24)                            0.00       0.88 f
+  mod2/clu2/mod4/in2 (or2_12)                             0.00       0.88 f
+  mod2/clu2/mod4/U1/Y (OR2X2)                             0.04       0.92 f
+  mod2/clu2/mod4/out (or2_12)                             0.00       0.92 f
+  mod2/clu2/mod5/in2 (and2_23)                            0.00       0.92 f
+  mod2/clu2/mod5/U1/Y (AND2X2)                            0.03       0.95 f
+  mod2/clu2/mod5/out (and2_23)                            0.00       0.95 f
+  mod2/clu2/mod6/in2 (or2_11)                             0.00       0.95 f
+  mod2/clu2/mod6/U1/Y (OR2X2)                             0.04       0.99 f
+  mod2/clu2/mod6/out (or2_11)                             0.00       0.99 f
+  mod2/clu2/mod7/in2 (and2_22)                            0.00       0.99 f
+  mod2/clu2/mod7/U1/Y (AND2X1)                            0.03       1.02 f
+  mod2/clu2/mod7/out (and2_22)                            0.00       1.02 f
+  mod2/clu2/mod8/in2 (or2_10)                             0.00       1.02 f
+  mod2/clu2/mod8/U1/Y (OR2X2)                             0.04       1.06 f
+  mod2/clu2/mod8/out (or2_10)                             0.00       1.06 f
+  mod2/clu2/CO<3> (clu_4bit_1)                            0.00       1.06 f
+  mod2/clu3/CI (clu_4bit_0)                               0.00       1.06 f
+  mod2/clu3/mod1/in2 (and2_12)                            0.00       1.06 f
+  mod2/clu3/mod1/U1/Y (AND2X2)                            0.03       1.09 f
+  mod2/clu3/mod1/out (and2_12)                            0.00       1.09 f
+  mod2/clu3/mod2/in2 (or2_6)                              0.00       1.09 f
+  mod2/clu3/mod2/U1/Y (OR2X2)                             0.04       1.13 f
+  mod2/clu3/mod2/out (or2_6)                              0.00       1.13 f
+  mod2/clu3/U2/Y (BUFX2)                                  0.04       1.17 f
+  mod2/clu3/CO<0> (clu_4bit_0)                            0.00       1.17 f
+  mod2/CO<12> (clu_16bit)                                 0.00       1.17 f
+  mod1/CI<13> (fulladder_16bit)                           0.00       1.17 f
+  mod1/fulladder13/Cin (fulladder_2)                      0.00       1.17 f
+  mod1/fulladder13/mod1/in2 (xor2_8)                      0.00       1.17 f
+  mod1/fulladder13/mod1/U2/Y (XNOR2X1)                    0.04       1.21 r
+  mod1/fulladder13/mod1/out (xor2_8)                      0.00       1.21 r
+  mod1/fulladder13/mod2/in2 (xor2_7)                      0.00       1.21 r
+  mod1/fulladder13/mod2/U2/Y (XNOR2X1)                    0.03       1.24 r
+  mod1/fulladder13/mod2/out (xor2_7)                      0.00       1.24 r
+  mod1/fulladder13/S (fulladder_2)                        0.00       1.24 r
+  mod1/S<13> (fulladder_16bit)                            0.00       1.24 r
+  OUT<13> (out)                                           0.00       1.24 r
+  data arrival time                                                  1.24
+
+  clock vclk (rise edge)                                  1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -1.24
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.34
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<12> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock vclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.10       0.10 r
+  A<0> (in)                                               0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)                             0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)                      0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)                      0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)                       0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)                      0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)                       0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)                      0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)                       0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)                      0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)                        0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)                             0.00       0.21 f
+  mod2/P<0> (clu_16bit)                                   0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)                             0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)                            0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)                            0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)                            0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)                             0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)                             0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)                             0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)                            0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)                            0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)                            0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)                             0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)                             0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)                             0.00       0.35 f
+  mod2/clu0/mod5/in2 (and2_49)                            0.00       0.35 f
+  mod2/clu0/mod5/U1/Y (AND2X2)                            0.03       0.38 f
+  mod2/clu0/mod5/out (and2_49)                            0.00       0.38 f
+  mod2/clu0/mod6/in2 (or2_25)                             0.00       0.38 f
+  mod2/clu0/mod6/U1/Y (OR2X2)                             0.04       0.42 f
+  mod2/clu0/mod6/out (or2_25)                             0.00       0.42 f
+  mod2/clu0/mod7/in2 (and2_48)                            0.00       0.42 f
+  mod2/clu0/mod7/U1/Y (AND2X2)                            0.04       0.45 f
+  mod2/clu0/mod7/out (and2_48)                            0.00       0.45 f
+  mod2/clu0/mod8/in2 (or2_24)                             0.00       0.45 f
+  mod2/clu0/mod8/U1/Y (OR2X2)                             0.04       0.49 f
+  mod2/clu0/mod8/out (or2_24)                             0.00       0.49 f
+  mod2/clu0/CO<3> (clu_4bit_3)                            0.00       0.49 f
+  mod2/clu1/CI (clu_4bit_2)                               0.00       0.49 f
+  mod2/clu1/mod1/in2 (and2_38)                            0.00       0.49 f
+  mod2/clu1/mod1/U1/Y (AND2X2)                            0.03       0.52 f
+  mod2/clu1/mod1/out (and2_38)                            0.00       0.52 f
+  mod2/clu1/mod2/in2 (or2_20)                             0.00       0.52 f
+  mod2/clu1/mod2/U1/Y (OR2X2)                             0.04       0.56 f
+  mod2/clu1/mod2/out (or2_20)                             0.00       0.56 f
+  mod2/clu1/mod3/in2 (and2_37)                            0.00       0.56 f
+  mod2/clu1/mod3/U1/Y (AND2X2)                            0.03       0.59 f
+  mod2/clu1/mod3/out (and2_37)                            0.00       0.59 f
+  mod2/clu1/mod4/in2 (or2_19)                             0.00       0.59 f
+  mod2/clu1/mod4/U1/Y (OR2X2)                             0.04       0.63 f
+  mod2/clu1/mod4/out (or2_19)                             0.00       0.63 f
+  mod2/clu1/mod5/in2 (and2_36)                            0.00       0.63 f
+  mod2/clu1/mod5/U1/Y (AND2X2)                            0.04       0.67 f
+  mod2/clu1/mod5/out (and2_36)                            0.00       0.67 f
+  mod2/clu1/mod6/in2 (or2_18)                             0.00       0.67 f
+  mod2/clu1/mod6/U1/Y (OR2X2)                             0.04       0.70 f
+  mod2/clu1/mod6/out (or2_18)                             0.00       0.70 f
+  mod2/clu1/mod7/in2 (and2_35)                            0.00       0.70 f
+  mod2/clu1/mod7/U1/Y (AND2X2)                            0.03       0.74 f
+  mod2/clu1/mod7/out (and2_35)                            0.00       0.74 f
+  mod2/clu1/mod8/in2 (or2_17)                             0.00       0.74 f
+  mod2/clu1/mod8/U1/Y (OR2X2)                             0.04       0.77 f
+  mod2/clu1/mod8/out (or2_17)                             0.00       0.77 f
+  mod2/clu1/CO<3> (clu_4bit_2)                            0.00       0.77 f
+  mod2/clu2/CI (clu_4bit_1)                               0.00       0.77 f
+  mod2/clu2/mod1/in2 (and2_25)                            0.00       0.77 f
+  mod2/clu2/mod1/U1/Y (AND2X2)                            0.03       0.81 f
+  mod2/clu2/mod1/out (and2_25)                            0.00       0.81 f
+  mod2/clu2/mod2/in2 (or2_13)                             0.00       0.81 f
+  mod2/clu2/mod2/U1/Y (OR2X2)                             0.04       0.84 f
+  mod2/clu2/mod2/out (or2_13)                             0.00       0.84 f
+  mod2/clu2/mod3/in2 (and2_24)                            0.00       0.84 f
+  mod2/clu2/mod3/U1/Y (AND2X2)                            0.04       0.88 f
+  mod2/clu2/mod3/out (and2_24)                            0.00       0.88 f
+  mod2/clu2/mod4/in2 (or2_12)                             0.00       0.88 f
+  mod2/clu2/mod4/U1/Y (OR2X2)                             0.04       0.92 f
+  mod2/clu2/mod4/out (or2_12)                             0.00       0.92 f
+  mod2/clu2/mod5/in2 (and2_23)                            0.00       0.92 f
+  mod2/clu2/mod5/U1/Y (AND2X2)                            0.03       0.95 f
+  mod2/clu2/mod5/out (and2_23)                            0.00       0.95 f
+  mod2/clu2/mod6/in2 (or2_11)                             0.00       0.95 f
+  mod2/clu2/mod6/U1/Y (OR2X2)                             0.04       0.99 f
+  mod2/clu2/mod6/out (or2_11)                             0.00       0.99 f
+  mod2/clu2/mod7/in2 (and2_22)                            0.00       0.99 f
+  mod2/clu2/mod7/U1/Y (AND2X1)                            0.03       1.02 f
+  mod2/clu2/mod7/out (and2_22)                            0.00       1.02 f
+  mod2/clu2/mod8/in2 (or2_10)                             0.00       1.02 f
+  mod2/clu2/mod8/U1/Y (OR2X2)                             0.04       1.06 f
+  mod2/clu2/mod8/out (or2_10)                             0.00       1.06 f
+  mod2/clu2/CO<3> (clu_4bit_1)                            0.00       1.06 f
+  mod2/U3/Y (BUFX2)                                       0.04       1.10 f
+  mod2/CO<11> (clu_16bit)                                 0.00       1.10 f
+  mod1/CI<12> (fulladder_16bit)                           0.00       1.10 f
+  mod1/fulladder12/Cin (fulladder_3)                      0.00       1.10 f
+  mod1/fulladder12/mod1/in2 (xor2_11)                     0.00       1.10 f
+  mod1/fulladder12/mod1/U2/Y (XNOR2X1)                    0.04       1.14 r
+  mod1/fulladder12/mod1/out (xor2_11)                     0.00       1.14 r
+  mod1/fulladder12/mod2/in2 (xor2_10)                     0.00       1.14 r
+  mod1/fulladder12/mod2/U2/Y (XNOR2X1)                    0.03       1.17 r
+  mod1/fulladder12/mod2/out (xor2_10)                     0.00       1.17 r
+  mod1/fulladder12/S (fulladder_3)                        0.00       1.17 r
+  mod1/S<12> (fulladder_16bit)                            0.00       1.17 r
+  OUT<12> (out)                                           0.00       1.17 r
+  data arrival time                                                  1.17
+
+  clock vclk (rise edge)                                  1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -1.17
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.27
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<11> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock vclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.10       0.10 r
+  A<0> (in)                                               0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)                             0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)                      0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)                      0.00       0.12 r
+  mod1/fulladder0/mod4/U5/Y (AND2X2)                      0.03       0.15 r
+  mod1/fulladder0/mod4/U6/Y (INVX1)                       0.01       0.16 f
+  mod1/fulladder0/mod4/U1/Y (AND2X2)                      0.04       0.20 f
+  mod1/fulladder0/mod4/U2/Y (INVX1)                       0.00       0.20 r
+  mod1/fulladder0/mod4/out (xor2_45)                      0.00       0.20 r
+  mod1/fulladder0/P (fulladder_15)                        0.00       0.20 r
+  mod1/P<0> (fulladder_16bit)                             0.00       0.20 r
+  mod2/P<0> (clu_16bit)                                   0.00       0.20 r
+  mod2/clu0/P<0> (clu_4bit_3)                             0.00       0.20 r
+  mod2/clu0/mod1/in1 (and2_51)                            0.00       0.20 r
+  mod2/clu0/mod1/U1/Y (AND2X2)                            0.03       0.23 r
+  mod2/clu0/mod1/out (and2_51)                            0.00       0.23 r
+  mod2/clu0/mod2/in2 (or2_27)                             0.00       0.23 r
+  mod2/clu0/mod2/U1/Y (OR2X2)                             0.04       0.27 r
+  mod2/clu0/mod2/out (or2_27)                             0.00       0.27 r
+  mod2/clu0/mod3/in2 (and2_50)                            0.00       0.27 r
+  mod2/clu0/mod3/U1/Y (AND2X2)                            0.03       0.30 r
+  mod2/clu0/mod3/out (and2_50)                            0.00       0.30 r
+  mod2/clu0/mod4/in2 (or2_26)                             0.00       0.30 r
+  mod2/clu0/mod4/U1/Y (OR2X2)                             0.04       0.34 r
+  mod2/clu0/mod4/out (or2_26)                             0.00       0.34 r
+  mod2/clu0/mod5/in2 (and2_49)                            0.00       0.34 r
+  mod2/clu0/mod5/U1/Y (AND2X2)                            0.03       0.37 r
+  mod2/clu0/mod5/out (and2_49)                            0.00       0.37 r
+  mod2/clu0/mod6/in2 (or2_25)                             0.00       0.37 r
+  mod2/clu0/mod6/U1/Y (OR2X2)                             0.04       0.41 r
+  mod2/clu0/mod6/out (or2_25)                             0.00       0.41 r
+  mod2/clu0/mod7/in2 (and2_48)                            0.00       0.41 r
+  mod2/clu0/mod7/U1/Y (AND2X2)                            0.03       0.44 r
+  mod2/clu0/mod7/out (and2_48)                            0.00       0.44 r
+  mod2/clu0/mod8/in2 (or2_24)                             0.00       0.44 r
+  mod2/clu0/mod8/U1/Y (OR2X2)                             0.04       0.48 r
+  mod2/clu0/mod8/out (or2_24)                             0.00       0.48 r
+  mod2/clu0/CO<3> (clu_4bit_3)                            0.00       0.48 r
+  mod2/clu1/CI (clu_4bit_2)                               0.00       0.48 r
+  mod2/clu1/mod1/in2 (and2_38)                            0.00       0.48 r
+  mod2/clu1/mod1/U1/Y (AND2X2)                            0.03       0.52 r
+  mod2/clu1/mod1/out (and2_38)                            0.00       0.52 r
+  mod2/clu1/mod2/in2 (or2_20)                             0.00       0.52 r
+  mod2/clu1/mod2/U1/Y (OR2X2)                             0.04       0.55 r
+  mod2/clu1/mod2/out (or2_20)                             0.00       0.55 r
+  mod2/clu1/mod3/in2 (and2_37)                            0.00       0.55 r
+  mod2/clu1/mod3/U1/Y (AND2X2)                            0.03       0.59 r
+  mod2/clu1/mod3/out (and2_37)                            0.00       0.59 r
+  mod2/clu1/mod4/in2 (or2_19)                             0.00       0.59 r
+  mod2/clu1/mod4/U1/Y (OR2X2)                             0.04       0.63 r
+  mod2/clu1/mod4/out (or2_19)                             0.00       0.63 r
+  mod2/clu1/mod5/in2 (and2_36)                            0.00       0.63 r
+  mod2/clu1/mod5/U1/Y (AND2X2)                            0.03       0.66 r
+  mod2/clu1/mod5/out (and2_36)                            0.00       0.66 r
+  mod2/clu1/mod6/in2 (or2_18)                             0.00       0.66 r
+  mod2/clu1/mod6/U1/Y (OR2X2)                             0.04       0.70 r
+  mod2/clu1/mod6/out (or2_18)                             0.00       0.70 r
+  mod2/clu1/mod7/in2 (and2_35)                            0.00       0.70 r
+  mod2/clu1/mod7/U1/Y (AND2X2)                            0.03       0.73 r
+  mod2/clu1/mod7/out (and2_35)                            0.00       0.73 r
+  mod2/clu1/mod8/in2 (or2_17)                             0.00       0.73 r
+  mod2/clu1/mod8/U1/Y (OR2X2)                             0.04       0.77 r
+  mod2/clu1/mod8/out (or2_17)                             0.00       0.77 r
+  mod2/clu1/CO<3> (clu_4bit_2)                            0.00       0.77 r
+  mod2/clu2/CI (clu_4bit_1)                               0.00       0.77 r
+  mod2/clu2/mod1/in2 (and2_25)                            0.00       0.77 r
+  mod2/clu2/mod1/U1/Y (AND2X2)                            0.03       0.80 r
+  mod2/clu2/mod1/out (and2_25)                            0.00       0.80 r
+  mod2/clu2/mod2/in2 (or2_13)                             0.00       0.80 r
+  mod2/clu2/mod2/U1/Y (OR2X2)                             0.04       0.84 r
+  mod2/clu2/mod2/out (or2_13)                             0.00       0.84 r
+  mod2/clu2/mod3/in2 (and2_24)                            0.00       0.84 r
+  mod2/clu2/mod3/U1/Y (AND2X2)                            0.03       0.87 r
+  mod2/clu2/mod3/out (and2_24)                            0.00       0.87 r
+  mod2/clu2/mod4/in2 (or2_12)                             0.00       0.87 r
+  mod2/clu2/mod4/U1/Y (OR2X2)                             0.04       0.91 r
+  mod2/clu2/mod4/out (or2_12)                             0.00       0.91 r
+  mod2/clu2/mod5/in2 (and2_23)                            0.00       0.91 r
+  mod2/clu2/mod5/U1/Y (AND2X2)                            0.03       0.94 r
+  mod2/clu2/mod5/out (and2_23)                            0.00       0.94 r
+  mod2/clu2/mod6/in2 (or2_11)                             0.00       0.94 r
+  mod2/clu2/mod6/U1/Y (OR2X2)                             0.04       0.98 r
+  mod2/clu2/mod6/out (or2_11)                             0.00       0.98 r
+  mod2/clu2/U1/Y (BUFX2)                                  0.03       1.02 r
+  mod2/clu2/U2/Y (INVX1)                                  0.01       1.03 f
+  mod2/clu2/U3/Y (INVX1)                                  0.01       1.04 r
+  mod2/clu2/CO<2> (clu_4bit_1)                            0.00       1.04 r
+  mod2/CO<10> (clu_16bit)                                 0.00       1.04 r
+  mod1/CI<11> (fulladder_16bit)                           0.00       1.04 r
+  mod1/fulladder11/Cin (fulladder_4)                      0.00       1.04 r
+  mod1/fulladder11/mod1/in2 (xor2_14)                     0.00       1.04 r
+  mod1/fulladder11/mod1/U2/Y (XNOR2X1)                    0.04       1.08 r
+  mod1/fulladder11/mod1/out (xor2_14)                     0.00       1.08 r
+  mod1/fulladder11/mod2/in2 (xor2_13)                     0.00       1.08 r
+  mod1/fulladder11/mod2/U2/Y (XNOR2X1)                    0.03       1.11 r
+  mod1/fulladder11/mod2/out (xor2_13)                     0.00       1.11 r
+  mod1/fulladder11/S (fulladder_4)                        0.00       1.11 r
+  mod1/S<11> (fulladder_16bit)                            0.00       1.11 r
+  OUT<11> (out)                                           0.00       1.11 r
+  data arrival time                                                  1.11
+
+  clock vclk (rise edge)                                  1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -1.11
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.21
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<10> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock vclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.10       0.10 r
+  A<0> (in)                                               0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)                             0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)                      0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)                      0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)                       0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)                      0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)                       0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)                      0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)                       0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)                      0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)                        0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)                             0.00       0.21 f
+  mod2/P<0> (clu_16bit)                                   0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)                             0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)                            0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)                            0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)                            0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)                             0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)                             0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)                             0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)                            0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)                            0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)                            0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)                             0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)                             0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)                             0.00       0.35 f
+  mod2/clu0/mod5/in2 (and2_49)                            0.00       0.35 f
+  mod2/clu0/mod5/U1/Y (AND2X2)                            0.03       0.38 f
+  mod2/clu0/mod5/out (and2_49)                            0.00       0.38 f
+  mod2/clu0/mod6/in2 (or2_25)                             0.00       0.38 f
+  mod2/clu0/mod6/U1/Y (OR2X2)                             0.04       0.42 f
+  mod2/clu0/mod6/out (or2_25)                             0.00       0.42 f
+  mod2/clu0/mod7/in2 (and2_48)                            0.00       0.42 f
+  mod2/clu0/mod7/U1/Y (AND2X2)                            0.04       0.45 f
+  mod2/clu0/mod7/out (and2_48)                            0.00       0.45 f
+  mod2/clu0/mod8/in2 (or2_24)                             0.00       0.45 f
+  mod2/clu0/mod8/U1/Y (OR2X2)                             0.04       0.49 f
+  mod2/clu0/mod8/out (or2_24)                             0.00       0.49 f
+  mod2/clu0/CO<3> (clu_4bit_3)                            0.00       0.49 f
+  mod2/clu1/CI (clu_4bit_2)                               0.00       0.49 f
+  mod2/clu1/mod1/in2 (and2_38)                            0.00       0.49 f
+  mod2/clu1/mod1/U1/Y (AND2X2)                            0.03       0.52 f
+  mod2/clu1/mod1/out (and2_38)                            0.00       0.52 f
+  mod2/clu1/mod2/in2 (or2_20)                             0.00       0.52 f
+  mod2/clu1/mod2/U1/Y (OR2X2)                             0.04       0.56 f
+  mod2/clu1/mod2/out (or2_20)                             0.00       0.56 f
+  mod2/clu1/mod3/in2 (and2_37)                            0.00       0.56 f
+  mod2/clu1/mod3/U1/Y (AND2X2)                            0.03       0.59 f
+  mod2/clu1/mod3/out (and2_37)                            0.00       0.59 f
+  mod2/clu1/mod4/in2 (or2_19)                             0.00       0.59 f
+  mod2/clu1/mod4/U1/Y (OR2X2)                             0.04       0.63 f
+  mod2/clu1/mod4/out (or2_19)                             0.00       0.63 f
+  mod2/clu1/mod5/in2 (and2_36)                            0.00       0.63 f
+  mod2/clu1/mod5/U1/Y (AND2X2)                            0.04       0.67 f
+  mod2/clu1/mod5/out (and2_36)                            0.00       0.67 f
+  mod2/clu1/mod6/in2 (or2_18)                             0.00       0.67 f
+  mod2/clu1/mod6/U1/Y (OR2X2)                             0.04       0.70 f
+  mod2/clu1/mod6/out (or2_18)                             0.00       0.70 f
+  mod2/clu1/mod7/in2 (and2_35)                            0.00       0.70 f
+  mod2/clu1/mod7/U1/Y (AND2X2)                            0.03       0.74 f
+  mod2/clu1/mod7/out (and2_35)                            0.00       0.74 f
+  mod2/clu1/mod8/in2 (or2_17)                             0.00       0.74 f
+  mod2/clu1/mod8/U1/Y (OR2X2)                             0.04       0.77 f
+  mod2/clu1/mod8/out (or2_17)                             0.00       0.77 f
+  mod2/clu1/CO<3> (clu_4bit_2)                            0.00       0.77 f
+  mod2/clu2/CI (clu_4bit_1)                               0.00       0.77 f
+  mod2/clu2/mod1/in2 (and2_25)                            0.00       0.77 f
+  mod2/clu2/mod1/U1/Y (AND2X2)                            0.03       0.81 f
+  mod2/clu2/mod1/out (and2_25)                            0.00       0.81 f
+  mod2/clu2/mod2/in2 (or2_13)                             0.00       0.81 f
+  mod2/clu2/mod2/U1/Y (OR2X2)                             0.04       0.84 f
+  mod2/clu2/mod2/out (or2_13)                             0.00       0.84 f
+  mod2/clu2/mod3/in2 (and2_24)                            0.00       0.84 f
+  mod2/clu2/mod3/U1/Y (AND2X2)                            0.04       0.88 f
+  mod2/clu2/mod3/out (and2_24)                            0.00       0.88 f
+  mod2/clu2/mod4/in2 (or2_12)                             0.00       0.88 f
+  mod2/clu2/mod4/U1/Y (OR2X2)                             0.04       0.92 f
+  mod2/clu2/mod4/out (or2_12)                             0.00       0.92 f
+  mod2/clu2/U5/Y (BUFX2)                                  0.04       0.95 f
+  mod2/clu2/CO<1> (clu_4bit_1)                            0.00       0.95 f
+  mod2/CO<9> (clu_16bit)                                  0.00       0.95 f
+  mod1/CI<10> (fulladder_16bit)                           0.00       0.95 f
+  mod1/fulladder10/Cin (fulladder_5)                      0.00       0.95 f
+  mod1/fulladder10/mod1/in2 (xor2_17)                     0.00       0.95 f
+  mod1/fulladder10/mod1/U2/Y (XNOR2X1)                    0.04       1.00 r
+  mod1/fulladder10/mod1/out (xor2_17)                     0.00       1.00 r
+  mod1/fulladder10/mod2/in2 (xor2_16)                     0.00       1.00 r
+  mod1/fulladder10/mod2/U2/Y (XNOR2X1)                    0.03       1.03 r
+  mod1/fulladder10/mod2/out (xor2_16)                     0.00       1.03 r
+  mod1/fulladder10/S (fulladder_5)                        0.00       1.03 r
+  mod1/S<10> (fulladder_16bit)                            0.00       1.03 r
+  OUT<10> (out)                                           0.00       1.03 r
+  data arrival time                                                  1.03
+
+  clock vclk (rise edge)                                  1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -1.03
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.13
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<9> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)       0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)        0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)       0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)        0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)       0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)        0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)       0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)         0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)              0.00       0.21 f
+  mod2/P<0> (clu_16bit)                    0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)              0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)             0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)             0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)             0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)              0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)              0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)              0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)             0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)             0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)             0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)              0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)              0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)              0.00       0.35 f
+  mod2/clu0/mod5/in2 (and2_49)             0.00       0.35 f
+  mod2/clu0/mod5/U1/Y (AND2X2)             0.03       0.38 f
+  mod2/clu0/mod5/out (and2_49)             0.00       0.38 f
+  mod2/clu0/mod6/in2 (or2_25)              0.00       0.38 f
+  mod2/clu0/mod6/U1/Y (OR2X2)              0.04       0.42 f
+  mod2/clu0/mod6/out (or2_25)              0.00       0.42 f
+  mod2/clu0/mod7/in2 (and2_48)             0.00       0.42 f
+  mod2/clu0/mod7/U1/Y (AND2X2)             0.04       0.45 f
+  mod2/clu0/mod7/out (and2_48)             0.00       0.45 f
+  mod2/clu0/mod8/in2 (or2_24)              0.00       0.45 f
+  mod2/clu0/mod8/U1/Y (OR2X2)              0.04       0.49 f
+  mod2/clu0/mod8/out (or2_24)              0.00       0.49 f
+  mod2/clu0/CO<3> (clu_4bit_3)             0.00       0.49 f
+  mod2/clu1/CI (clu_4bit_2)                0.00       0.49 f
+  mod2/clu1/mod1/in2 (and2_38)             0.00       0.49 f
+  mod2/clu1/mod1/U1/Y (AND2X2)             0.03       0.52 f
+  mod2/clu1/mod1/out (and2_38)             0.00       0.52 f
+  mod2/clu1/mod2/in2 (or2_20)              0.00       0.52 f
+  mod2/clu1/mod2/U1/Y (OR2X2)              0.04       0.56 f
+  mod2/clu1/mod2/out (or2_20)              0.00       0.56 f
+  mod2/clu1/mod3/in2 (and2_37)             0.00       0.56 f
+  mod2/clu1/mod3/U1/Y (AND2X2)             0.03       0.59 f
+  mod2/clu1/mod3/out (and2_37)             0.00       0.59 f
+  mod2/clu1/mod4/in2 (or2_19)              0.00       0.59 f
+  mod2/clu1/mod4/U1/Y (OR2X2)              0.04       0.63 f
+  mod2/clu1/mod4/out (or2_19)              0.00       0.63 f
+  mod2/clu1/mod5/in2 (and2_36)             0.00       0.63 f
+  mod2/clu1/mod5/U1/Y (AND2X2)             0.04       0.67 f
+  mod2/clu1/mod5/out (and2_36)             0.00       0.67 f
+  mod2/clu1/mod6/in2 (or2_18)              0.00       0.67 f
+  mod2/clu1/mod6/U1/Y (OR2X2)              0.04       0.70 f
+  mod2/clu1/mod6/out (or2_18)              0.00       0.70 f
+  mod2/clu1/mod7/in2 (and2_35)             0.00       0.70 f
+  mod2/clu1/mod7/U1/Y (AND2X2)             0.03       0.74 f
+  mod2/clu1/mod7/out (and2_35)             0.00       0.74 f
+  mod2/clu1/mod8/in2 (or2_17)              0.00       0.74 f
+  mod2/clu1/mod8/U1/Y (OR2X2)              0.04       0.77 f
+  mod2/clu1/mod8/out (or2_17)              0.00       0.77 f
+  mod2/clu1/CO<3> (clu_4bit_2)             0.00       0.77 f
+  mod2/clu2/CI (clu_4bit_1)                0.00       0.77 f
+  mod2/clu2/mod1/in2 (and2_25)             0.00       0.77 f
+  mod2/clu2/mod1/U1/Y (AND2X2)             0.03       0.81 f
+  mod2/clu2/mod1/out (and2_25)             0.00       0.81 f
+  mod2/clu2/mod2/in2 (or2_13)              0.00       0.81 f
+  mod2/clu2/mod2/U1/Y (OR2X2)              0.04       0.84 f
+  mod2/clu2/mod2/out (or2_13)              0.00       0.84 f
+  mod2/clu2/U4/Y (BUFX2)                   0.03       0.88 f
+  mod2/clu2/CO<0> (clu_4bit_1)             0.00       0.88 f
+  mod2/CO<8> (clu_16bit)                   0.00       0.88 f
+  mod1/CI<9> (fulladder_16bit)             0.00       0.88 f
+  mod1/fulladder9/Cin (fulladder_6)        0.00       0.88 f
+  mod1/fulladder9/mod1/in2 (xor2_20)       0.00       0.88 f
+  mod1/fulladder9/mod1/U2/Y (XNOR2X1)      0.04       0.92 r
+  mod1/fulladder9/mod1/out (xor2_20)       0.00       0.92 r
+  mod1/fulladder9/mod2/in2 (xor2_19)       0.00       0.92 r
+  mod1/fulladder9/mod2/U2/Y (XNOR2X1)      0.03       0.95 r
+  mod1/fulladder9/mod2/out (xor2_19)       0.00       0.95 r
+  mod1/fulladder9/S (fulladder_6)          0.00       0.95 r
+  mod1/S<9> (fulladder_16bit)              0.00       0.95 r
+  OUT<9> (out)                             0.00       0.95 r
+  data arrival time                                   0.95
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.95
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.05
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<8> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)       0.00       0.12 r
+  mod1/fulladder0/mod4/U5/Y (AND2X2)       0.03       0.15 r
+  mod1/fulladder0/mod4/U6/Y (INVX1)        0.01       0.16 f
+  mod1/fulladder0/mod4/U1/Y (AND2X2)       0.04       0.20 f
+  mod1/fulladder0/mod4/U2/Y (INVX1)        0.00       0.20 r
+  mod1/fulladder0/mod4/out (xor2_45)       0.00       0.20 r
+  mod1/fulladder0/P (fulladder_15)         0.00       0.20 r
+  mod1/P<0> (fulladder_16bit)              0.00       0.20 r
+  mod2/P<0> (clu_16bit)                    0.00       0.20 r
+  mod2/clu0/P<0> (clu_4bit_3)              0.00       0.20 r
+  mod2/clu0/mod1/in1 (and2_51)             0.00       0.20 r
+  mod2/clu0/mod1/U1/Y (AND2X2)             0.03       0.23 r
+  mod2/clu0/mod1/out (and2_51)             0.00       0.23 r
+  mod2/clu0/mod2/in2 (or2_27)              0.00       0.23 r
+  mod2/clu0/mod2/U1/Y (OR2X2)              0.04       0.27 r
+  mod2/clu0/mod2/out (or2_27)              0.00       0.27 r
+  mod2/clu0/mod3/in2 (and2_50)             0.00       0.27 r
+  mod2/clu0/mod3/U1/Y (AND2X2)             0.03       0.30 r
+  mod2/clu0/mod3/out (and2_50)             0.00       0.30 r
+  mod2/clu0/mod4/in2 (or2_26)              0.00       0.30 r
+  mod2/clu0/mod4/U1/Y (OR2X2)              0.04       0.34 r
+  mod2/clu0/mod4/out (or2_26)              0.00       0.34 r
+  mod2/clu0/mod5/in2 (and2_49)             0.00       0.34 r
+  mod2/clu0/mod5/U1/Y (AND2X2)             0.03       0.37 r
+  mod2/clu0/mod5/out (and2_49)             0.00       0.37 r
+  mod2/clu0/mod6/in2 (or2_25)              0.00       0.37 r
+  mod2/clu0/mod6/U1/Y (OR2X2)              0.04       0.41 r
+  mod2/clu0/mod6/out (or2_25)              0.00       0.41 r
+  mod2/clu0/mod7/in2 (and2_48)             0.00       0.41 r
+  mod2/clu0/mod7/U1/Y (AND2X2)             0.03       0.44 r
+  mod2/clu0/mod7/out (and2_48)             0.00       0.44 r
+  mod2/clu0/mod8/in2 (or2_24)              0.00       0.44 r
+  mod2/clu0/mod8/U1/Y (OR2X2)              0.04       0.48 r
+  mod2/clu0/mod8/out (or2_24)              0.00       0.48 r
+  mod2/clu0/CO<3> (clu_4bit_3)             0.00       0.48 r
+  mod2/clu1/CI (clu_4bit_2)                0.00       0.48 r
+  mod2/clu1/mod1/in2 (and2_38)             0.00       0.48 r
+  mod2/clu1/mod1/U1/Y (AND2X2)             0.03       0.52 r
+  mod2/clu1/mod1/out (and2_38)             0.00       0.52 r
+  mod2/clu1/mod2/in2 (or2_20)              0.00       0.52 r
+  mod2/clu1/mod2/U1/Y (OR2X2)              0.04       0.55 r
+  mod2/clu1/mod2/out (or2_20)              0.00       0.55 r
+  mod2/clu1/mod3/in2 (and2_37)             0.00       0.55 r
+  mod2/clu1/mod3/U1/Y (AND2X2)             0.03       0.59 r
+  mod2/clu1/mod3/out (and2_37)             0.00       0.59 r
+  mod2/clu1/mod4/in2 (or2_19)              0.00       0.59 r
+  mod2/clu1/mod4/U1/Y (OR2X2)              0.04       0.63 r
+  mod2/clu1/mod4/out (or2_19)              0.00       0.63 r
+  mod2/clu1/mod5/in2 (and2_36)             0.00       0.63 r
+  mod2/clu1/mod5/U1/Y (AND2X2)             0.03       0.66 r
+  mod2/clu1/mod5/out (and2_36)             0.00       0.66 r
+  mod2/clu1/mod6/in2 (or2_18)              0.00       0.66 r
+  mod2/clu1/mod6/U1/Y (OR2X2)              0.04       0.70 r
+  mod2/clu1/mod6/out (or2_18)              0.00       0.70 r
+  mod2/clu1/mod7/in2 (and2_35)             0.00       0.70 r
+  mod2/clu1/mod7/U1/Y (AND2X2)             0.03       0.73 r
+  mod2/clu1/mod7/out (and2_35)             0.00       0.73 r
+  mod2/clu1/mod8/in2 (or2_17)              0.00       0.73 r
+  mod2/clu1/mod8/U1/Y (OR2X2)              0.04       0.77 r
+  mod2/clu1/mod8/out (or2_17)              0.00       0.77 r
+  mod2/clu1/CO<3> (clu_4bit_2)             0.00       0.77 r
+  mod2/U1/Y (INVX1)                        0.01       0.78 f
+  mod2/U2/Y (INVX1)                        0.01       0.79 r
+  mod2/CO<7> (clu_16bit)                   0.00       0.79 r
+  mod1/CI<8> (fulladder_16bit)             0.00       0.79 r
+  mod1/fulladder8/Cin (fulladder_7)        0.00       0.79 r
+  mod1/fulladder8/mod1/in2 (xor2_23)       0.00       0.79 r
+  mod1/fulladder8/mod1/U2/Y (XNOR2X1)      0.04       0.84 r
+  mod1/fulladder8/mod1/out (xor2_23)       0.00       0.84 r
+  mod1/fulladder8/mod2/in2 (xor2_22)       0.00       0.84 r
+  mod1/fulladder8/mod2/U2/Y (XNOR2X1)      0.03       0.87 r
+  mod1/fulladder8/mod2/out (xor2_22)       0.00       0.87 r
+  mod1/fulladder8/S (fulladder_7)          0.00       0.87 r
+  mod1/S<8> (fulladder_16bit)              0.00       0.87 r
+  OUT<8> (out)                             0.00       0.87 r
+  data arrival time                                   0.87
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.87
+  -----------------------------------------------------------
+  slack (MET)                                         0.03
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<7> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)       0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)        0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)       0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)        0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)       0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)        0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)       0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)         0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)              0.00       0.21 f
+  mod2/P<0> (clu_16bit)                    0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)              0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)             0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)             0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)             0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)              0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)              0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)              0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)             0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)             0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)             0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)              0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)              0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)              0.00       0.35 f
+  mod2/clu0/mod5/in2 (and2_49)             0.00       0.35 f
+  mod2/clu0/mod5/U1/Y (AND2X2)             0.03       0.38 f
+  mod2/clu0/mod5/out (and2_49)             0.00       0.38 f
+  mod2/clu0/mod6/in2 (or2_25)              0.00       0.38 f
+  mod2/clu0/mod6/U1/Y (OR2X2)              0.04       0.42 f
+  mod2/clu0/mod6/out (or2_25)              0.00       0.42 f
+  mod2/clu0/mod7/in2 (and2_48)             0.00       0.42 f
+  mod2/clu0/mod7/U1/Y (AND2X2)             0.04       0.45 f
+  mod2/clu0/mod7/out (and2_48)             0.00       0.45 f
+  mod2/clu0/mod8/in2 (or2_24)              0.00       0.45 f
+  mod2/clu0/mod8/U1/Y (OR2X2)              0.04       0.49 f
+  mod2/clu0/mod8/out (or2_24)              0.00       0.49 f
+  mod2/clu0/CO<3> (clu_4bit_3)             0.00       0.49 f
+  mod2/clu1/CI (clu_4bit_2)                0.00       0.49 f
+  mod2/clu1/mod1/in2 (and2_38)             0.00       0.49 f
+  mod2/clu1/mod1/U1/Y (AND2X2)             0.03       0.52 f
+  mod2/clu1/mod1/out (and2_38)             0.00       0.52 f
+  mod2/clu1/mod2/in2 (or2_20)              0.00       0.52 f
+  mod2/clu1/mod2/U1/Y (OR2X2)              0.04       0.56 f
+  mod2/clu1/mod2/out (or2_20)              0.00       0.56 f
+  mod2/clu1/mod3/in2 (and2_37)             0.00       0.56 f
+  mod2/clu1/mod3/U1/Y (AND2X2)             0.03       0.59 f
+  mod2/clu1/mod3/out (and2_37)             0.00       0.59 f
+  mod2/clu1/mod4/in2 (or2_19)              0.00       0.59 f
+  mod2/clu1/mod4/U1/Y (OR2X2)              0.04       0.63 f
+  mod2/clu1/mod4/out (or2_19)              0.00       0.63 f
+  mod2/clu1/mod5/in2 (and2_36)             0.00       0.63 f
+  mod2/clu1/mod5/U1/Y (AND2X2)             0.04       0.67 f
+  mod2/clu1/mod5/out (and2_36)             0.00       0.67 f
+  mod2/clu1/mod6/in2 (or2_18)              0.00       0.67 f
+  mod2/clu1/mod6/U1/Y (OR2X2)              0.04       0.70 f
+  mod2/clu1/mod6/out (or2_18)              0.00       0.70 f
+  mod2/clu1/U2/Y (BUFX2)                   0.04       0.74 f
+  mod2/clu1/CO<2> (clu_4bit_2)             0.00       0.74 f
+  mod2/CO<6> (clu_16bit)                   0.00       0.74 f
+  mod1/CI<7> (fulladder_16bit)             0.00       0.74 f
+  mod1/fulladder7/Cin (fulladder_8)        0.00       0.74 f
+  mod1/fulladder7/mod1/in2 (xor2_26)       0.00       0.74 f
+  mod1/fulladder7/mod1/U1/Y (XOR2X1)       0.04       0.78 r
+  mod1/fulladder7/mod1/out (xor2_26)       0.00       0.78 r
+  mod1/fulladder7/mod2/in2 (xor2_25)       0.00       0.78 r
+  mod1/fulladder7/mod2/U1/Y (XOR2X1)       0.03       0.81 f
+  mod1/fulladder7/mod2/out (xor2_25)       0.00       0.81 f
+  mod1/fulladder7/S (fulladder_8)          0.00       0.81 f
+  mod1/S<7> (fulladder_16bit)              0.00       0.81 f
+  OUT<7> (out)                             0.00       0.81 f
+  data arrival time                                   0.81
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.81
+  -----------------------------------------------------------
+  slack (MET)                                         0.09
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<6> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)       0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)        0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)       0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)        0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)       0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)        0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)       0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)         0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)              0.00       0.21 f
+  mod2/P<0> (clu_16bit)                    0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)              0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)             0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)             0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)             0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)              0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)              0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)              0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)             0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)             0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)             0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)              0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)              0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)              0.00       0.35 f
+  mod2/clu0/mod5/in2 (and2_49)             0.00       0.35 f
+  mod2/clu0/mod5/U1/Y (AND2X2)             0.03       0.38 f
+  mod2/clu0/mod5/out (and2_49)             0.00       0.38 f
+  mod2/clu0/mod6/in2 (or2_25)              0.00       0.38 f
+  mod2/clu0/mod6/U1/Y (OR2X2)              0.04       0.42 f
+  mod2/clu0/mod6/out (or2_25)              0.00       0.42 f
+  mod2/clu0/mod7/in2 (and2_48)             0.00       0.42 f
+  mod2/clu0/mod7/U1/Y (AND2X2)             0.04       0.45 f
+  mod2/clu0/mod7/out (and2_48)             0.00       0.45 f
+  mod2/clu0/mod8/in2 (or2_24)              0.00       0.45 f
+  mod2/clu0/mod8/U1/Y (OR2X2)              0.04       0.49 f
+  mod2/clu0/mod8/out (or2_24)              0.00       0.49 f
+  mod2/clu0/CO<3> (clu_4bit_3)             0.00       0.49 f
+  mod2/clu1/CI (clu_4bit_2)                0.00       0.49 f
+  mod2/clu1/mod1/in2 (and2_38)             0.00       0.49 f
+  mod2/clu1/mod1/U1/Y (AND2X2)             0.03       0.52 f
+  mod2/clu1/mod1/out (and2_38)             0.00       0.52 f
+  mod2/clu1/mod2/in2 (or2_20)              0.00       0.52 f
+  mod2/clu1/mod2/U1/Y (OR2X2)              0.04       0.56 f
+  mod2/clu1/mod2/out (or2_20)              0.00       0.56 f
+  mod2/clu1/mod3/in2 (and2_37)             0.00       0.56 f
+  mod2/clu1/mod3/U1/Y (AND2X2)             0.03       0.59 f
+  mod2/clu1/mod3/out (and2_37)             0.00       0.59 f
+  mod2/clu1/mod4/in2 (or2_19)              0.00       0.59 f
+  mod2/clu1/mod4/U1/Y (OR2X2)              0.04       0.63 f
+  mod2/clu1/mod4/out (or2_19)              0.00       0.63 f
+  mod2/clu1/U3/Y (BUFX2)                   0.04       0.67 f
+  mod2/clu1/CO<1> (clu_4bit_2)             0.00       0.67 f
+  mod2/CO<5> (clu_16bit)                   0.00       0.67 f
+  mod1/CI<6> (fulladder_16bit)             0.00       0.67 f
+  mod1/fulladder6/Cin (fulladder_9)        0.00       0.67 f
+  mod1/fulladder6/mod1/in2 (xor2_29)       0.00       0.67 f
+  mod1/fulladder6/mod1/U1/Y (XOR2X1)       0.04       0.71 r
+  mod1/fulladder6/mod1/out (xor2_29)       0.00       0.71 r
+  mod1/fulladder6/mod2/in2 (xor2_28)       0.00       0.71 r
+  mod1/fulladder6/mod2/U1/Y (XOR2X1)       0.03       0.74 f
+  mod1/fulladder6/mod2/out (xor2_28)       0.00       0.74 f
+  mod1/fulladder6/S (fulladder_9)          0.00       0.74 f
+  mod1/S<6> (fulladder_16bit)              0.00       0.74 f
+  OUT<6> (out)                             0.00       0.74 f
+  data arrival time                                   0.74
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.74
+  -----------------------------------------------------------
+  slack (MET)                                         0.16
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<5> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)       0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)        0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)       0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)        0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)       0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)        0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)       0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)         0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)              0.00       0.21 f
+  mod2/P<0> (clu_16bit)                    0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)              0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)             0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)             0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)             0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)              0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)              0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)              0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)             0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)             0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)             0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)              0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)              0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)              0.00       0.35 f
+  mod2/clu0/mod5/in2 (and2_49)             0.00       0.35 f
+  mod2/clu0/mod5/U1/Y (AND2X2)             0.03       0.38 f
+  mod2/clu0/mod5/out (and2_49)             0.00       0.38 f
+  mod2/clu0/mod6/in2 (or2_25)              0.00       0.38 f
+  mod2/clu0/mod6/U1/Y (OR2X2)              0.04       0.42 f
+  mod2/clu0/mod6/out (or2_25)              0.00       0.42 f
+  mod2/clu0/mod7/in2 (and2_48)             0.00       0.42 f
+  mod2/clu0/mod7/U1/Y (AND2X2)             0.04       0.45 f
+  mod2/clu0/mod7/out (and2_48)             0.00       0.45 f
+  mod2/clu0/mod8/in2 (or2_24)              0.00       0.45 f
+  mod2/clu0/mod8/U1/Y (OR2X2)              0.04       0.49 f
+  mod2/clu0/mod8/out (or2_24)              0.00       0.49 f
+  mod2/clu0/CO<3> (clu_4bit_3)             0.00       0.49 f
+  mod2/clu1/CI (clu_4bit_2)                0.00       0.49 f
+  mod2/clu1/mod1/in2 (and2_38)             0.00       0.49 f
+  mod2/clu1/mod1/U1/Y (AND2X2)             0.03       0.52 f
+  mod2/clu1/mod1/out (and2_38)             0.00       0.52 f
+  mod2/clu1/mod2/in2 (or2_20)              0.00       0.52 f
+  mod2/clu1/mod2/U1/Y (OR2X2)              0.04       0.56 f
+  mod2/clu1/mod2/out (or2_20)              0.00       0.56 f
+  mod2/clu1/U1/Y (BUFX2)                   0.04       0.60 f
+  mod2/clu1/CO<0> (clu_4bit_2)             0.00       0.60 f
+  mod2/CO<4> (clu_16bit)                   0.00       0.60 f
+  mod1/CI<5> (fulladder_16bit)             0.00       0.60 f
+  mod1/fulladder5/Cin (fulladder_10)       0.00       0.60 f
+  mod1/fulladder5/mod1/in2 (xor2_32)       0.00       0.60 f
+  mod1/fulladder5/mod1/U1/Y (XOR2X1)       0.04       0.64 r
+  mod1/fulladder5/mod1/out (xor2_32)       0.00       0.64 r
+  mod1/fulladder5/mod2/in2 (xor2_31)       0.00       0.64 r
+  mod1/fulladder5/mod2/U1/Y (XOR2X1)       0.03       0.67 f
+  mod1/fulladder5/mod2/out (xor2_31)       0.00       0.67 f
+  mod1/fulladder5/S (fulladder_10)         0.00       0.67 f
+  mod1/S<5> (fulladder_16bit)              0.00       0.67 f
+  OUT<5> (out)                             0.00       0.67 f
+  data arrival time                                   0.67
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.67
+  -----------------------------------------------------------
+  slack (MET)                                         0.23
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<4> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)       0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)        0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)       0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)        0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)       0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)        0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)       0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)         0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)              0.00       0.21 f
+  mod2/P<0> (clu_16bit)                    0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)              0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)             0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)             0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)             0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)              0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)              0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)              0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)             0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)             0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)             0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)              0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)              0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)              0.00       0.35 f
+  mod2/clu0/mod5/in2 (and2_49)             0.00       0.35 f
+  mod2/clu0/mod5/U1/Y (AND2X2)             0.03       0.38 f
+  mod2/clu0/mod5/out (and2_49)             0.00       0.38 f
+  mod2/clu0/mod6/in2 (or2_25)              0.00       0.38 f
+  mod2/clu0/mod6/U1/Y (OR2X2)              0.04       0.42 f
+  mod2/clu0/mod6/out (or2_25)              0.00       0.42 f
+  mod2/clu0/mod7/in2 (and2_48)             0.00       0.42 f
+  mod2/clu0/mod7/U1/Y (AND2X2)             0.04       0.45 f
+  mod2/clu0/mod7/out (and2_48)             0.00       0.45 f
+  mod2/clu0/mod8/in2 (or2_24)              0.00       0.45 f
+  mod2/clu0/mod8/U1/Y (OR2X2)              0.04       0.49 f
+  mod2/clu0/mod8/out (or2_24)              0.00       0.49 f
+  mod2/clu0/CO<3> (clu_4bit_3)             0.00       0.49 f
+  mod2/U4/Y (BUFX2)                        0.04       0.53 f
+  mod2/CO<3> (clu_16bit)                   0.00       0.53 f
+  mod1/CI<4> (fulladder_16bit)             0.00       0.53 f
+  mod1/fulladder4/Cin (fulladder_11)       0.00       0.53 f
+  mod1/fulladder4/mod1/in2 (xor2_35)       0.00       0.53 f
+  mod1/fulladder4/mod1/U1/Y (XOR2X1)       0.04       0.57 r
+  mod1/fulladder4/mod1/out (xor2_35)       0.00       0.57 r
+  mod1/fulladder4/mod2/in2 (xor2_34)       0.00       0.57 r
+  mod1/fulladder4/mod2/U1/Y (XOR2X1)       0.03       0.60 f
+  mod1/fulladder4/mod2/out (xor2_34)       0.00       0.60 f
+  mod1/fulladder4/S (fulladder_11)         0.00       0.60 f
+  mod1/S<4> (fulladder_16bit)              0.00       0.60 f
+  OUT<4> (out)                             0.00       0.60 f
+  data arrival time                                   0.60
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.60
+  -----------------------------------------------------------
+  slack (MET)                                         0.30
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<3> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)       0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)        0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)       0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)        0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)       0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)        0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)       0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)         0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)              0.00       0.21 f
+  mod2/P<0> (clu_16bit)                    0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)              0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)             0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)             0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)             0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)              0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)              0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)              0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)             0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)             0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)             0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)              0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)              0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)              0.00       0.35 f
+  mod2/clu0/mod5/in2 (and2_49)             0.00       0.35 f
+  mod2/clu0/mod5/U1/Y (AND2X2)             0.03       0.38 f
+  mod2/clu0/mod5/out (and2_49)             0.00       0.38 f
+  mod2/clu0/mod6/in2 (or2_25)              0.00       0.38 f
+  mod2/clu0/mod6/U1/Y (OR2X2)              0.04       0.42 f
+  mod2/clu0/mod6/out (or2_25)              0.00       0.42 f
+  mod2/clu0/U4/Y (BUFX2)                   0.04       0.45 f
+  mod2/clu0/CO<2> (clu_4bit_3)             0.00       0.45 f
+  mod2/CO<2> (clu_16bit)                   0.00       0.45 f
+  mod1/CI<3> (fulladder_16bit)             0.00       0.45 f
+  mod1/fulladder3/Cin (fulladder_12)       0.00       0.45 f
+  mod1/fulladder3/mod1/in2 (xor2_38)       0.00       0.45 f
+  mod1/fulladder3/mod1/U1/Y (XOR2X1)       0.04       0.49 r
+  mod1/fulladder3/mod1/out (xor2_38)       0.00       0.49 r
+  mod1/fulladder3/mod2/in2 (xor2_37)       0.00       0.49 r
+  mod1/fulladder3/mod2/U1/Y (XOR2X1)       0.03       0.53 f
+  mod1/fulladder3/mod2/out (xor2_37)       0.00       0.53 f
+  mod1/fulladder3/S (fulladder_12)         0.00       0.53 f
+  mod1/S<3> (fulladder_16bit)              0.00       0.53 f
+  OUT<3> (out)                             0.00       0.53 f
+  data arrival time                                   0.53
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.53
+  -----------------------------------------------------------
+  slack (MET)                                         0.37
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<2> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)       0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)        0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)       0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)        0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)       0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)        0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)       0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)         0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)              0.00       0.21 f
+  mod2/P<0> (clu_16bit)                    0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)              0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)             0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)             0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)             0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)              0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)              0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)              0.00       0.28 f
+  mod2/clu0/mod3/in2 (and2_50)             0.00       0.28 f
+  mod2/clu0/mod3/U1/Y (AND2X2)             0.03       0.31 f
+  mod2/clu0/mod3/out (and2_50)             0.00       0.31 f
+  mod2/clu0/mod4/in2 (or2_26)              0.00       0.31 f
+  mod2/clu0/mod4/U1/Y (OR2X2)              0.04       0.35 f
+  mod2/clu0/mod4/out (or2_26)              0.00       0.35 f
+  mod2/clu0/U1/Y (BUFX2)                   0.04       0.38 f
+  mod2/clu0/CO<1> (clu_4bit_3)             0.00       0.38 f
+  mod2/CO<1> (clu_16bit)                   0.00       0.38 f
+  mod1/CI<2> (fulladder_16bit)             0.00       0.38 f
+  mod1/fulladder2/Cin (fulladder_13)       0.00       0.38 f
+  mod1/fulladder2/mod1/in2 (xor2_41)       0.00       0.38 f
+  mod1/fulladder2/mod1/U1/Y (XOR2X1)       0.04       0.42 r
+  mod1/fulladder2/mod1/out (xor2_41)       0.00       0.42 r
+  mod1/fulladder2/mod2/in2 (xor2_40)       0.00       0.42 r
+  mod1/fulladder2/mod2/U1/Y (XOR2X1)       0.03       0.46 f
+  mod1/fulladder2/mod2/out (xor2_40)       0.00       0.46 f
+  mod1/fulladder2/S (fulladder_13)         0.00       0.46 f
+  mod1/S<2> (fulladder_16bit)              0.00       0.46 f
+  OUT<2> (out)                             0.00       0.46 f
+  data arrival time                                   0.46
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.46
+  -----------------------------------------------------------
+  slack (MET)                                         0.44
+
+
+  Startpoint: A<0> (input port clocked by vclk)
+  Endpoint: OUT<1> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  A<0> (in)                                0.02       0.12 r
+  mod1/A<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InA (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/mod4/in1 (xor2_45)       0.00       0.12 r
+  mod1/fulladder0/mod4/U7/Y (INVX1)        0.01       0.13 f
+  mod1/fulladder0/mod4/U3/Y (AND2X2)       0.03       0.16 f
+  mod1/fulladder0/mod4/U4/Y (INVX1)        0.00       0.16 r
+  mod1/fulladder0/mod4/U1/Y (AND2X2)       0.03       0.19 r
+  mod1/fulladder0/mod4/U2/Y (INVX1)        0.02       0.21 f
+  mod1/fulladder0/mod4/out (xor2_45)       0.00       0.21 f
+  mod1/fulladder0/P (fulladder_15)         0.00       0.21 f
+  mod1/P<0> (fulladder_16bit)              0.00       0.21 f
+  mod2/P<0> (clu_16bit)                    0.00       0.21 f
+  mod2/clu0/P<0> (clu_4bit_3)              0.00       0.21 f
+  mod2/clu0/mod1/in1 (and2_51)             0.00       0.21 f
+  mod2/clu0/mod1/U1/Y (AND2X2)             0.03       0.24 f
+  mod2/clu0/mod1/out (and2_51)             0.00       0.24 f
+  mod2/clu0/mod2/in2 (or2_27)              0.00       0.24 f
+  mod2/clu0/mod2/U1/Y (OR2X2)              0.04       0.28 f
+  mod2/clu0/mod2/out (or2_27)              0.00       0.28 f
+  mod2/clu0/U3/Y (BUFX2)                   0.04       0.31 f
+  mod2/clu0/CO<0> (clu_4bit_3)             0.00       0.31 f
+  mod2/CO<0> (clu_16bit)                   0.00       0.31 f
+  mod1/CI<1> (fulladder_16bit)             0.00       0.31 f
+  mod1/fulladder1/Cin (fulladder_14)       0.00       0.31 f
+  mod1/fulladder1/mod1/in2 (xor2_44)       0.00       0.31 f
+  mod1/fulladder1/mod1/U1/Y (XOR2X1)       0.04       0.35 r
+  mod1/fulladder1/mod1/out (xor2_44)       0.00       0.35 r
+  mod1/fulladder1/mod2/in2 (xor2_43)       0.00       0.35 r
+  mod1/fulladder1/mod2/U1/Y (XOR2X1)       0.03       0.39 f
+  mod1/fulladder1/mod2/out (xor2_43)       0.00       0.39 f
+  mod1/fulladder1/S (fulladder_14)         0.00       0.39 f
+  mod1/S<1> (fulladder_16bit)              0.00       0.39 f
+  OUT<1> (out)                             0.00       0.39 f
+  data arrival time                                   0.39
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.39
+  -----------------------------------------------------------
+  slack (MET)                                         0.51
+
+
+  Startpoint: B<0> (input port clocked by vclk)
+  Endpoint: OUT<0> (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  B<0> (in)                                0.02       0.12 r
+  mod1/B<0> (fulladder_16bit)              0.00       0.12 r
+  mod1/fulladder0/InB (fulladder_15)       0.00       0.12 r
+  mod1/fulladder0/U2/Y (INVX1)             0.01       0.13 f
+  mod1/fulladder0/U3/Y (INVX1)             0.02       0.15 r
+  mod1/fulladder0/mod1/in1 (xor2_47)       0.00       0.15 r
+  mod1/fulladder0/mod1/U1/Y (XOR2X1)       0.06       0.20 r
+  mod1/fulladder0/mod1/out (xor2_47)       0.00       0.20 r
+  mod1/fulladder0/mod2/in2 (xor2_46)       0.00       0.20 r
+  mod1/fulladder0/mod2/U1/Y (XOR2X1)       0.03       0.24 f
+  mod1/fulladder0/mod2/out (xor2_46)       0.00       0.24 f
+  mod1/fulladder0/S (fulladder_15)         0.00       0.24 f
+  mod1/S<0> (fulladder_16bit)              0.00       0.24 f
+  OUT<0> (out)                             0.00       0.24 f
+  data arrival time                                   0.24
+
+  clock vclk (rise edge)                   1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.10       0.90
+  data required time                                  0.90
+  -----------------------------------------------------------
+  data required time                                  0.90
+  data arrival time                                  -0.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.66
+
+
+1

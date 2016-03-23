@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version B-2008.09-SP3 for amd64 -- Jan 19, 2009
-#@ # Date:   Thu Mar 10 23:16:05 2016
-#@ # Run by: yudong@galapagos-12.cs.wisc.edu
+#@ # Date:   Wed Mar 23 04:34:52 2016
+#@ # Run by: xuyi@adelie-03.cs.wisc.edu
 #@ 
 
 source /s/synopsys-2009_03_09/@sys/B-2008.09-SP3/admin/setup/.synopsys_dc.setup
@@ -3478,7 +3478,7 @@ source /s/synopsys-2009_03_09/@sys/B-2008.09-SP3/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /s/synopsys-2009_03_09/@sys/B-2008.09-SP3/admin/setup/.synopsys_dc.setup
 
-source /u/y/u/yudong/.synopsys_dc.setup
+source /u/x/u/xuyi/.synopsys_dc.setup
 #@ # ###########################################################
 #@ #
 #@ # .synopsys_dc.setup 
@@ -3607,12 +3607,12 @@ source /u/y/u/yudong/.synopsys_dc.setup
 #@ set edifout_designs_library_name   "SYNOPSYS"
 #@ 
 #@ 
-#@ # -- End source /u/y/u/yudong/.synopsys_dc.setup
+#@ # -- End source /u/x/u/xuyi/.synopsys_dc.setup
 
-source -echo -verbose /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/hw2/hw2_2/synth/synth.tcl
+source -echo -verbose /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/hw2/hw2_2/synth/synth.tcl
 #@ echo "********** CS552 Reading files begin ********************"
 #@ set my_verilog_files [list alu.v and2_16bit.v and2.v cla_16bit.v clu_16bit.v clu_4bit.v fulladder_16bit.v fulladder.v inner_module.v inverter_16bit.v lsb_module.v msb_module.v mux2_1_16bit.v mux2_1.v mux4_1_16bit.v mux4_1.v nand2.v nor2.v not1_16bit.v not1.v or2_16bit.v or2.v sh_1.v sh_2.v sh_4.v sh_8.v shifter.v xor2_16bit.v xor2.v zero_detect.v  ]
-#@ set my_toplevel alu
+#@ set my_toplevel fulladder_16bit
 #@ define_design_lib WORK -path ./WORK
 #@ analyze -f verilog $my_verilog_files
 #@ elaborate $my_toplevel -architecture verilog

@@ -1,0 +1,28 @@
+ 
+****************************************
+Report : hierarchy
+Design : cla_16bit
+Version: B-2008.09-SP3
+Date   : Wed Mar 23 04:25:19 2016
+****************************************
+
+cla_16bit
+    and2
+        GTECH_AND2                 gtech
+    clu_16bit
+        clu_4bit
+            and2
+                ...
+            or2
+                GTECH_OR2          gtech
+    fulladder_16bit
+        fulladder
+            and2
+                ...
+            xor2
+                GTECH_XOR2         gtech
+    not1
+        GTECH_NOT                  gtech
+    or2
+        ...
+1

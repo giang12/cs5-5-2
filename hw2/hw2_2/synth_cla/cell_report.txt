@@ -1,0 +1,40 @@
+ 
+****************************************
+Report : cell
+Design : cla_16bit
+Version: B-2008.09-SP3
+Date   : Wed Mar 23 04:26:24 2016
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U1                        BUFX2           gscl45nm        2.346500  
+U2                        INVX1           gscl45nm        1.407900  
+U3                        INVX1           gscl45nm        1.407900  
+mod1                      fulladder_16bit                 312.084491
+                                                                    h
+mod2                      clu_16bit                       255.768494
+                                                                    h
+mod3                      not1_3                          1.407900  h
+mod4                      and2_74                         2.815800  h
+mod5                      not1_2                          1.407900  h
+mod6                      and2_73                         2.346500  h
+mod7                      and2_72                         2.815800  h
+mod8                      and2_71                         2.815800  h
+mod9                      not1_1                          1.407900  h
+mod10                     not1_0                          1.407900  h
+mod11                     and2_70                         2.346500  h
+mod12                     and2_69                         2.815800  h
+mod13                     and2_68                         2.815800  h
+mod14                     or2_29                          7.039500  h
+mod15                     or2_28                          2.815800  h
+--------------------------------------------------------------------------------
+Total 18 cells                                            607.274184
+1

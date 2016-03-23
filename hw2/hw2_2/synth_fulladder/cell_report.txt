@@ -1,0 +1,36 @@
+ 
+****************************************
+Report : cell
+Design : fulladder_16bit
+Version: B-2008.09-SP3
+Date   : Wed Mar 23 04:34:54 2016
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+fulladder0                fulladder_15                    16.425499 h
+fulladder1                fulladder_14                    16.425499 h
+fulladder2                fulladder_13                    16.425499 h
+fulladder3                fulladder_12                    16.425499 h
+fulladder4                fulladder_11                    16.425499 h
+fulladder5                fulladder_10                    16.425499 h
+fulladder6                fulladder_9                     16.425499 h
+fulladder7                fulladder_8                     16.425499 h
+fulladder8                fulladder_7                     16.425499 h
+fulladder9                fulladder_6                     16.425499 h
+fulladder10               fulladder_5                     16.425499 h
+fulladder11               fulladder_4                     16.425499 h
+fulladder12               fulladder_3                     16.425499 h
+fulladder13               fulladder_2                     16.425499 h
+fulladder14               fulladder_1                     16.425499 h
+fulladder15               fulladder_0                     16.425499 h
+--------------------------------------------------------------------------------
+Total 16 cells                                            262.807991
+1
