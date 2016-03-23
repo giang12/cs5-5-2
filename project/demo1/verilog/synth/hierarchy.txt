@@ -1,0 +1,177 @@
+Warning: Design 'proc' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : hierarchy
+Design : proc
+Version: B-2008.09-SP3
+Date   : Thu Mar 17 10:19:39 2016
+****************************************
+
+Information: This design contains unmapped logic. (RPT-7)
+Warning: 1 unresolved references are not included in this report. (RPT-2)
+
+proc
+    decode
+        btr_mod
+        control
+            GTECH_AND2                             gtech
+            GTECH_BUF                              gtech
+            GTECH_NOT                              gtech
+            GTECH_OR2                              gtech
+            GTECH_OR3                              gtech
+            GTECH_OR4                              gtech
+            GTECH_OR5                              gtech
+        ext_mod5_16
+            GTECH_BUF                              gtech
+            GTECH_NOT                              gtech
+        ext_mod8_16
+            GTECH_BUF                              gtech
+            GTECH_NOT                              gtech
+        ext_mod11_16
+            GTECH_BUF                              gtech
+            GTECH_NOT                              gtech
+        mux4_1_4bit
+            mux4_1
+                mux2_1
+                    nand2
+                        GTECH_AND2                 gtech
+                        GTECH_NOT                  gtech
+                    nor2
+                        GTECH_NOT                  gtech
+                        GTECH_OR2                  gtech
+                    not1
+                        GTECH_NOT                  gtech
+        rf
+            and2
+                GTECH_AND2                         gtech
+            decoder3_8
+                GTECH_NOT                          gtech
+                and3
+                    GTECH_AND2                     gtech
+            dff_16bit
+                dff
+                    GTECH_BUF                      gtech
+                    GTECH_NOT                      gtech
+                mux2_1_16bit
+                    mux2_1
+                        ...
+            mux8_1_16bit
+                mux2_1_16bit
+                    ...
+                mux4_1_16bit
+                    mux4_1
+                        ...
+        special_control
+            GTECH_AND2                             gtech
+            GTECH_BUF                              gtech
+            GTECH_NOT                              gtech
+    execution
+        alu
+            and2_16bit
+                and2
+                    ...
+            cla_16bit
+                and2
+                    ...
+                clu_16bit
+                    clu_4bit
+                        and2
+                            ...
+                        or2
+                            GTECH_OR2              gtech
+                fulladder_16bit
+                    fulladder
+                        and2
+                            ...
+                        xor2
+                            GTECH_XOR2             gtech
+                not1
+                    ...
+                or2
+                    ...
+            inverter_16bit
+                mux2_1
+                    ...
+                not1_16bit
+                    not1
+                        ...
+            mux2_1_16bit
+                ...
+            mux4_1_16bit
+                ...
+            or2_16bit
+                or2
+                    ...
+            shifter
+                sh_1
+                    inner_module
+                        mux2_1
+                            ...
+                    lsb_module
+                        mux2_1
+                            ...
+                    msb_module
+                        mux2_1
+                            ...
+                sh_2
+                    inner_module
+                        ...
+                    lsb_module
+                        ...
+                    msb_module
+                        ...
+                sh_4
+                    inner_module
+                        ...
+                    lsb_module
+                        ...
+                    msb_module
+                        ...
+                sh_8
+                    lsb_module
+                        ...
+                    msb_module
+                        ...
+            xor2_16bit
+                xor2
+                    ...
+            zero_detect
+                GTECH_NOT                          gtech
+                or2
+                    ...
+        cla_16bit
+            ...
+        cond_set
+            GTECH_AND2                             gtech
+            GTECH_BUF                              gtech
+            GTECH_NOT                              gtech
+            GTECH_OR2                              gtech
+        mux2_1_16bit
+            ...
+        mux8_1_16bit
+            ...
+        pc_ctr
+            GTECH_AND2                             gtech
+            GTECH_BUF                              gtech
+            GTECH_NOT                              gtech
+            GTECH_OR2                              gtech
+        sf_left8bit
+    fetch
+        cla_16bit
+            ...
+        memory2c
+            GTECH_AND2                             gtech
+            GTECH_BUF                              gtech
+            GTECH_NOT                              gtech
+            GTECH_OR2                              gtech
+        mux2_1_16bit
+            ...
+        reg_16bit
+            dff
+                ...
+            mux2_1_16bit
+                ...
+    writeback
+        mux8_1_16bit
+            ...
+1

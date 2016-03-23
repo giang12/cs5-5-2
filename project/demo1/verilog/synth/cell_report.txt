@@ -1,0 +1,39 @@
+ 
+****************************************
+Report : cell
+Design : proc
+Version: B-2008.09-SP3
+Date   : Wed Mar 16 23:00:00 2016
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U1                        INVX1           gscl45nm        1.407900  
+U2                        INVX1           gscl45nm        1.407900  
+U3                        INVX1           gscl45nm        1.407900  
+U4                        INVX1           gscl45nm        1.407900  
+U5                        INVX1           gscl45nm        1.407900  
+U6                        INVX1           gscl45nm        1.407900  
+U7                        INVX1           gscl45nm        1.407900  
+U8                        BUFX2           gscl45nm        2.346500  
+U10                       INVX8           gscl45nm        3.285100  
+decode0                   decode                          9242.394033
+                                                                    h, n
+exec                      execution                       26151.272700
+                                                                    h
+fetch0                    fetch                           16577.552955
+                                                                    h, n
+memory0                   memory                          16983.966737
+                                                                    h, n
+wb                        writeback                       2229.174963
+                                                                    h
+--------------------------------------------------------------------------------
+Total 14 cells                                            71199.848287
+1
