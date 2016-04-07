@@ -1,10 +1,12 @@
 module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Exception, Cin, invA, invB, sign, dump, instr, 
                 // register file 
-                clk, rst, read1data, read2data, writedata,
+                clk, rst, read1data, read2data, writedata, 
                 // ext module
                 instrEightExt, instrElevenExt, instrFiveExt,
                 // btr module
-                btr_out
+                btr_out,
+                // 04/06 update
+                RegWriteEN_in, RegWriteEN_out
                 );
     // control module
     input [15:0] instr;
@@ -22,9 +24,9 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
     assign read2data = reg2_data;
     wire [3:0] writeregsel; 
     wire err; // TODO ???
-    wire write;
-    
-    
+    //wire write;
+    input RegWriteEN_in;
+    output RegWriteEN_out;
   
     // ext modules
     output [15:0] instrEightExt, instrElevenExt, instrFiveExt; 
@@ -41,7 +43,7 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
                         .RegDataSrc(RegDataSrc), 
                         .ALUSrc1(ALUSrc1), 
                         .ALUSrc2(ALUSrc2), 
-                        .RegWriteEn(write), 
+                        .RegWriteEn(RegWriteEN_out), 
                         .MemEn(MemEn), 
                         .MemWr(MemWr), 
                         .SignedExt(SignedExt),  
@@ -70,7 +72,7 @@ module decode(  RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Ex
                         .read2regsel(instr[7:5]), 
                         .writeregsel(writeregsel[2:0]), 
                         .writedata(writedata),
-                        .write(write));
+                        .write(RegWriteEN_in));
 
     
     mux4_1_4bit mux0 (  // output

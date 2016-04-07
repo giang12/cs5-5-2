@@ -41,13 +41,13 @@ module proc (/*AUTOARG*/
     wire [15:0] write_data;
     wire [15:0] instr;
   
-    fetch fetch0(   .instr(instr), //TODO get
+    fetch fetch0(   .instr(instr),
                     .pcCurrent(pc), 
                     .pcPlusTwo(pc_plus_two), 
                     .pcNext(next_pc), 
                     .clk(clk), 
                     .rst(rst), 
-                    .dump(dump), // TODO get
+                    .dump(dump), 
                     .exception(Exception)// TODO: make sure expection output 0 in the very first clk cycle.
               );
     
@@ -68,7 +68,7 @@ module proc (/*AUTOARG*/
                     .invB(invB), 
                     .sign(sign), 
                     .dump(dump),
-                    .instr(instr), //TODO get
+                    .instr(instr), // get
                     // register file 
                     .read1data(read_data_1), 
                     .read2data(read_data_2), 
@@ -77,7 +77,10 @@ module proc (/*AUTOARG*/
                     .instrEightExt(imm_8_ext), 
                     .instrElevenExt(imm_11_ext), 
                     .instrFiveExt(imm_5_ext),
-                    .btr_out(btr_out)
+                    .btr_out(btr_out),
+                    // TODO: 
+                    .RegWriteEN_in(), //TODO: assign from output of M/WB stage
+                    .RegWriteEN_out() //TODO: assign to input of ID/EX stage
                 );        
 
     execution exec (
@@ -86,7 +89,7 @@ module proc (/*AUTOARG*/
                     .Out(Out), 
                     .set(set), 
                     // Inputs
-                    .instr(instr), //TODO get
+                    .instr(instr),
                     .pc_plus_two(pc_plus_two), 
                     .pc(pc), 
                     .read_data_1(read_data_1), 
@@ -111,7 +114,7 @@ module proc (/*AUTOARG*/
                     .writeData(read_data_2), 
                     .MemEn(MemEn), 
                     .MemWr(MemWr), 
-                    .halt(dump), //TODO ???
+                    .halt(dump),
                     .clk(clk), 
                     .rst(rst)
                 );
