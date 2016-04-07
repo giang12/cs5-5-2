@@ -1,0 +1,15 @@
+/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module and2
+
+Top level modules:
+	and2
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and16.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and16.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module and16
+
+Top level modules:
+	and16
+
+} {} {}}
