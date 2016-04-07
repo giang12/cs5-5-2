@@ -7,17 +7,6 @@
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
 # Loading project demo2
-# Compile of and16.v was successful.
-# Compile of and2.v was successful.
-# Compile of dff_8bit_tb.v was successful.
-# Compile of dff_8bit.v was successful.
-# Compile of dff.v was successful.
-# Compile of mux2_1_8bit.v was successful.
-# Compile of mux2_1.v was successful.
-# Compile of nor2.v was successful.
-# Compile of nand2.v was successful.
-# Compile of not1.v was successful.
-# Compile of regIDEX.v failed with 1 errors.
-# Compile of regIFID.v was successful.
-# 12 compiles, 1 failed with 1 error. 
-# Compile of regIDEX.v was successful.
+# Compile of regMemWB.v was successful.
+# Compile of regEXMem.v was successful.
+# 2 compiles, 0 failed with no errors. 

@@ -1,4 +1,11 @@
-/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1_8bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1_8bit.v
+/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regEXMem.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regEXMem.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module regEXMem
+
+Top level modules:
+	regEXMem
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1_8bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1_8bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module mux2_1_8bit
 
@@ -25,6 +32,13 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 
 Top level modules:
 	and2
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regMemWB.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regMemWB.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module regMemWB
+
+Top level modules:
+	regMemWB
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004

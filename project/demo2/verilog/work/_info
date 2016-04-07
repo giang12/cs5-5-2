@@ -56,6 +56,28 @@ OE;L;5.8b;17
 r1
 31
 o-work work
+vforward_unit
+IF[@zEKW;<7^QbCZQDEMcO3
+VR5;]O<8[g;:md7Z_4PN8J1
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1460063415
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/forward_unit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vhazard_detect
+IjaKjjU0PJO3k7EBXREQ:42
+V0a@FDnNV_eV38lm;K8GL82
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1460063217
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/hazard_detect.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
 vmux2_1
 IJQzE?n395T^D]Nm?BYHPm1
 VSMWlHGMLlT2J=DG7^^YGz3
@@ -111,6 +133,18 @@ OE;L;5.8b;17
 r1
 31
 o-work work
+vregEXMem
+IGO^[G9g^WDjhD8;3_2X>_2
+Vd_>QlMdzbR@m3UHNHDPZI2
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1460061461
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regEXMem.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+nreg@e@x@mem
 vregIDEX
 IHKA;c:;bEYDh_o8RzjHRj2
 VSZ]>Acn>MckEDA>=e6WRR2
@@ -135,3 +169,15 @@ r1
 31
 o-work work
 nreg@i@f@i@d
+vregMemWB
+I<M67@]4AO^E2koc`I7Jdh0
+VkPgJzUfC`@4dmkWfH9fEj0
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1460062172
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regMemWB.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+nreg@mem@w@b

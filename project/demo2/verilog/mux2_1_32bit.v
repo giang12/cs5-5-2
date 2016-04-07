@@ -1,0 +1,38 @@
+module mux2_1_32bit(out, in0, in1, sel);
+    input [31:0] in0, in1;
+    input sel;
+    output [31:0] out;
+    
+    mux2_1 mux0(.InA(in0[0]), .InB(in1[0]), .S(sel), .Out(out[0]));
+    mux2_1 mux1(.InA(in0[1]), .InB(in1[1]), .S(sel), .Out(out[1]));
+    mux2_1 mux2(.InA(in0[2]), .InB(in1[2]), .S(sel), .Out(out[2]));
+    mux2_1 mux3(.InA(in0[3]), .InB(in1[3]), .S(sel), .Out(out[3]));
+    mux2_1 mux4(.InA(in0[4]), .InB(in1[4]), .S(sel), .Out(out[4]));
+    mux2_1 mux5(.InA(in0[5]), .InB(in1[5]), .S(sel), .Out(out[5]));
+    mux2_1 mux6(.InA(in0[6]), .InB(in1[6]), .S(sel), .Out(out[6]));
+    mux2_1 mux7(.InA(in0[7]), .InB(in1[7]), .S(sel), .Out(out[7]));
+    mux2_1 mux8(.InA(in0[8]), .InB(in1[8]), .S(sel), .Out(out[8]));
+    mux2_1 mux9(.InA(in0[9]), .InB(in1[9]), .S(sel), .Out(out[9]));
+    mux2_1 mux10(.InA(in0[10]), .InB(in1[10]), .S(sel), .Out(out[10]));
+    mux2_1 mux11(.InA(in0[11]), .InB(in1[11]), .S(sel), .Out(out[11]));
+    mux2_1 mux12(.InA(in0[12]), .InB(in1[12]), .S(sel), .Out(out[12]));
+    mux2_1 mux13(.InA(in0[13]), .InB(in1[13]), .S(sel), .Out(out[13]));
+    mux2_1 mux14(.InA(in0[14]), .InB(in1[14]), .S(sel), .Out(out[14]));
+    mux2_1 mux15(.InA(in0[15]), .InB(in1[15]), .S(sel), .Out(out[15]));
+    mux2_1 mux16(.InA(in0[16]), .InB(in1[16]), .S(sel), .Out(out[16]));
+    mux2_1 mux17(.InA(in0[17]), .InB(in1[17]), .S(sel), .Out(out[17]));
+    mux2_1 mux18(.InA(in0[18]), .InB(in1[18]), .S(sel), .Out(out[18]));
+    mux2_1 mux19(.InA(in0[19]), .InB(in1[19]), .S(sel), .Out(out[19]));
+    mux2_1 mux20(.InA(in0[20]), .InB(in1[20]), .S(sel), .Out(out[20]));
+    mux2_1 mux21(.InA(in0[21]), .InB(in1[21]), .S(sel), .Out(out[21]));
+    mux2_1 mux22(.InA(in0[22]), .InB(in1[22]), .S(sel), .Out(out[22]));
+    mux2_1 mux23(.InA(in0[23]), .InB(in1[23]), .S(sel), .Out(out[23]));
+    mux2_1 mux24(.InA(in0[24]), .InB(in1[24]), .S(sel), .Out(out[24]));
+    mux2_1 mux25(.InA(in0[25]), .InB(in1[25]), .S(sel), .Out(out[25]));
+    mux2_1 mux26(.InA(in0[26]), .InB(in1[26]), .S(sel), .Out(out[26]));
+    mux2_1 mux27(.InA(in0[27]), .InB(in1[27]), .S(sel), .Out(out[27]));
+    mux2_1 mux28(.InA(in0[28]), .InB(in1[28]), .S(sel), .Out(out[28]));
+    mux2_1 mux29(.InA(in0[29]), .InB(in1[29]), .S(sel), .Out(out[29]));
+    mux2_1 mux30(.InA(in0[30]), .InB(in1[30]), .S(sel), .Out(out[30]));
+    mux2_1 mux31(.InA(in0[31]), .InB(in1[31]), .S(sel), .Out(out[31]));
+endmodule
