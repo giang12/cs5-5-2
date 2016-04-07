@@ -23,3 +23,115 @@ OE;L;5.8b;17
 r1
 31
 o-work work
+vdff
+IDX1IR`Dk[;SUJ;F<;6i_G1
+V;GC@fJC4l9bF1doI@Q2XK3
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1459969558
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff.v
+L0 6
+OE;L;5.8b;17
+r1
+31
+o-work work
+vdff_8bit
+ICYzeVU@hi=R95XIMbMVW31
+VYfn=V?7V>bZne0K0Ec`M[1
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1460042078
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vdff_8bit_tb
+IDeeeB60H=GZUoc^^jVKVB0
+V:<KnX`Q`L8d3l9F8_DkIm0
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1460042586
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit_tb.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vmux2_1
+IJQzE?n395T^D]Nm?BYHPm1
+VSMWlHGMLlT2J=DG7^^YGz3
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1459969562
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vmux2_1_8bit
+IS5_n3ALU8e2:L3<=Q58dl0
+VF]10Pa?DL4X0MOn4ijz=k1
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1460042197
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1_8bit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vnand2
+IoGQe8KlJG6lL=;F2U@=3<0
+VFj8;Tc7Ik2H]aWAK<K`3j0
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1459969562
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/nand2.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vnor2
+IeVGc6;ecazTJclTTHb4Yo0
+VZdJh_kKm_R<?]QOzTWLDa1
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1459969562
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/nor2.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vnot1
+IAW3>dGi2P]7QR1]WW>:9`0
+VU^@jNIE0HfBM^5S?8`C`@3
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1459969562
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/not1.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vregIDEX
+IHKA;c:;bEYDh_o8RzjHRj2
+VSZ]>Acn>MckEDA>=e6WRR2
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1460043881
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIDEX.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+nreg@i@d@e@x
+vregIFID
+I^>8aAV;QaUJAALN8jmUo?1
+V34AIPoV;:OU1F[hz25RcO3
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog
+w1460013072
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIFID.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+nreg@i@f@i@d

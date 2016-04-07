@@ -1,9 +1,65 @@
-/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and2.v
+/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1_8bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1_8bit.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module mux2_1_8bit
+
+Top level modules:
+	mux2_1_8bit
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/nand2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/nand2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module nand2
+
+Top level modules:
+	nand2
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module mux2_1
+
+Top level modules:
+	mux2_1
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and2.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module and2
 
 Top level modules:
 	and2
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module dff_8bit
+
+Top level modules:
+	dff_8bit
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module dff
+
+Top level modules:
+	dff
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIDEX.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIDEX.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module regIDEX
+
+Top level modules:
+	regIDEX
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/nor2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/nor2.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module nor2
+
+Top level modules:
+	nor2
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/not1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/not1.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module not1
+
+Top level modules:
+	not1
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and16.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/and16.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -11,5 +67,19 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 
 Top level modules:
 	and16
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIFID.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIFID.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module regIFID
+
+Top level modules:
+	regIFID
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit_tb.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit_tb.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module dff_8bit_tb
+
+Top level modules:
+	dff_8bit_tb
 
 } {} {}}

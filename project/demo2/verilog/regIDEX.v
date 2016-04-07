@@ -1,4 +1,60 @@
-module regIDEX();
+module regIDEX( 
+                // ********** data outputs ********
+                instr_out, 
+                pc_plus_two_out, 
+                read_data_1_out, 
+                read_data_2_out, 
+                imm_5_ext_out, 
+                imm_8_ext_out, 
+                btr_out_out, 
+                // regsiter control
+                clk, 
+                en, 
+                rst,
+                // ********* data inputs *******
+                instr_in,
+                pcPlusTwo_in,
+                read1data_in, 
+                read2data_in,
+                instrFiveExt_in,
+                instrEightExt_in,
+                btr_out_in,
+                // *********** control outputs *******
+                // EX
+                Op_out, 
+                ALUSrc1_out, 
+                ALUSrc2_out,
+                Cin_out, 
+                invA_out, 
+                invB_out, 
+                sign_out, 
+                jump_out, 
+                branch_out,
+                // M
+                MemEn_out, 
+                MemWr_out, 
+                dump_out,
+                // WB
+                RegDataSrc_out,
+                RegWriteEN_out,
+                // *********** control inputs *******
+                // EX
+                Op_in, 
+                ALUSrc1_in, 
+                ALUSrc2_in, 
+                Cin_in, 
+                invA_in, 
+                invB_in, 
+                sign_in, 
+                Jump_in, 
+                Branch_in,
+                // M
+                MemEn_in, 
+                MemWr_in, 
+                dump_in,
+                // WB
+                RegDataSrc_in,
+                RegWriteEN_in);
     // Register control
     input clk, en, rst;
         
@@ -38,6 +94,7 @@ module regIDEX();
     output [2:0] Op_out, ALUSrc1_out, ALUSrc2_out;
     input Cin_in, invA_in, invB_in, sign_in, Jump_in, Branch_in;
     output Cin_out, invA_out, invB_out, sign_out, jump_out, branch_out;
+    wire w1; //dummy out
 
     // M
     input MemEn_in, MemWr_in, dump_in;
@@ -48,7 +105,7 @@ module regIDEX();
     output [2:0] RegDataSrc_out; // has to propagate to the end of pipeline
     input RegWriteEN_in;
     output RegWriteEN_out;
-
+    wire w2; //dummy out
     
     // *********************** RegModules for Data ****************
  
@@ -62,6 +119,19 @@ module regIDEX();
 
 
     // *********************** RegModules for Control ****************
+    // TODO: check waveform
+    dff_16bit dff8( .out({ALUSrc1_out, ALUSrc2_out, Op_out, Cin_out, invA_out, invB_out, sign_out, jump_out, branch_out, w1}),
+                    // EX total 15bits 
+                    .in({ALUSrc1_in, ALUSrc2_in, Op_in, Cin_in, invA_in, invB_in, sign_in, Jump_in, Branch_in, 1'bx}),
+                    .en(en), 
+                    .rst(rst), 
+                    .clk(clk));
     
+    
+    dff_8bit dff9(  .out({MemEn_out, MemWr_out, dump_out, RegDataSrc_out, RegWriteEN_out, w2}), 
+                    .in({MemEn_in, MemWr_in, dump_in, RegDataSrc_in, RegWriteEN_in, 1'bx}), 
+                    .en(en), 
+                    .rst(rst), 
+                    .clk(clk));
     
 endmodule
