@@ -35,6 +35,7 @@ module regIDEX(
                 MemWr_out, 
                 dump_out,
                 // WB
+                RegDst_out,
                 RegDataSrc_out,
                 RegWriteEN_out,
                 // *********** control inputs *******
@@ -53,6 +54,7 @@ module regIDEX(
                 MemWr_in, 
                 dump_in,
                 // WB
+                RegDst_in,
                 RegDataSrc_in,
                 RegWriteEN_in);
     // Register control
@@ -94,7 +96,7 @@ module regIDEX(
     output [2:0] Op_out, ALUSrc1_out, ALUSrc2_out;
     input Cin_in, invA_in, invB_in, sign_in, Jump_in, Branch_in;
     output Cin_out, invA_out, invB_out, sign_out, jump_out, branch_out;
-    wire w1; //dummy out
+    //wire w1; //dummy out
 
     // M
     input MemEn_in, MemWr_in, dump_in;
@@ -105,7 +107,9 @@ module regIDEX(
     output [2:0] RegDataSrc_out; // has to propagate to the end of pipeline
     input RegWriteEN_in;
     output RegWriteEN_out;
-    wire w2; //dummy out
+    input [1:0] RegDst_in;
+    output [1:0] RegDst_out;
+    //wire w2; //dummy out
     
     // *********************** RegModules for Data ****************
  
@@ -120,16 +124,16 @@ module regIDEX(
 
     // *********************** RegModules for Control ****************
     // TODO: check waveform
-    dff_16bit dff8( .out({ALUSrc1_out, ALUSrc2_out, Op_out, Cin_out, invA_out, invB_out, sign_out, jump_out, branch_out, w1}),
+    dff_16bit dff8( .out({ALUSrc1_out, ALUSrc2_out, Op_out, Cin_out, invA_out, invB_out, sign_out, jump_out, branch_out, RegWriteEN_out}),
                     // EX total 15bits 
-                    .in({ALUSrc1_in, ALUSrc2_in, Op_in, Cin_in, invA_in, invB_in, sign_in, Jump_in, Branch_in, 1'bx}),
+                    .in({ALUSrc1_in, ALUSrc2_in, Op_in, Cin_in, invA_in, invB_in, sign_in, Jump_in, Branch_in, RegWriteEN_in}),
                     .en(en), 
                     .rst(rst), 
                     .clk(clk));
     
     
-    dff_8bit dff9(  .out({MemEn_out, MemWr_out, dump_out, RegDataSrc_out, RegWriteEN_out, w2}), 
-                    .in({MemEn_in, MemWr_in, dump_in, RegDataSrc_in, RegWriteEN_in, 1'bx}), 
+    dff_8bit dff9(  .out({MemEn_out, MemWr_out, dump_out, RegDataSrc_out, RegDst_out}), 
+                    .in({MemEn_in, MemWr_in, dump_in, RegDataSrc_in, RegDst_in}), 
                     .en(en), 
                     .rst(rst), 
                     .clk(clk));

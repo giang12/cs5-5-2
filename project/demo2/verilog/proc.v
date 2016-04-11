@@ -40,7 +40,9 @@ module proc (/*AUTOARG*/
     wire [15:0] mem_data_out; 
     wire [15:0] write_data;
     wire [15:0] instr;
-  
+    wire [1:0] RegDst;
+    wire RegWriteEN_in, RegWriteEN_out;
+ 
     fetch fetch0(   .instr(instr),
                     .pcCurrent(pc), 
                     .pcPlusTwo(pc_plus_two), 
@@ -52,6 +54,7 @@ module proc (/*AUTOARG*/
               );
     
     decode decode0 (  // control mod
+                    .RegDst(RegDst),
                     .RegDataSrc(RegDataSrc), 
                     .ALUSrc1(ALUSrc1), 
                     .ALUSrc2(ALUSrc2), 
@@ -79,8 +82,8 @@ module proc (/*AUTOARG*/
                     .instrFiveExt(imm_5_ext),
                     .btr_out(btr_out),
                     // TODO: 
-                    .RegWriteEN_in(), //TODO: assign from output of M/WB stage
-                    .RegWriteEN_out() //TODO: assign to input of ID/EX stage
+                    .RegWriteEN_in(RegWriteEN_in), //TODO: assign from output of M/WB stage
+                    .RegWriteEN_out(RegWriteEN_out) //TODO: assign to input of ID/EX stage
                 );        
 
     execution exec (

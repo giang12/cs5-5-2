@@ -8,6 +8,7 @@ module regMemWB(
                     pc_plus_two,
                     cond_set,
                     // control
+                    RegDst_out,
                     RegDataSrc_out,
                     RegWriteEN_out,
                     // data
@@ -19,6 +20,7 @@ module regMemWB(
                     pc_plus_two_in,
                     set_in,
                     //control
+                    RegDst_in,
                     RegDataSrc_in,
                     RegWriteEN_in
 
@@ -46,8 +48,10 @@ module regMemWB(
     output [2:0] RegDataSrc_out;
     input RegWriteEN_in;
     output RegWriteEN_out;
-
-
+    input [1:0] RegDst_in;
+    output [1:0] RegDst_out; 
+    
+    wire [1:0] w1; // dummy wire
     
     dff_16bit dff1(.out(instr), .in(instr_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff2(.out(mem_data_out), .in(readData_in), .en(en), .rst(rst), .clk(clk));
@@ -57,8 +61,8 @@ module regMemWB(
     dff_16bit dff6(.out(pc_plus_two), .in(pc_plus_two_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff7(.out(cond_set), .in(set_in), .en(en), .rst(rst), .clk(clk));
     
-    dff_8bit dff8(  .out({RegDataSrc_out, RegWriteEN_out, 4'bx}), 
-                    .in({RegDataSrc_in, RegWriteEN_in, 4'bx}), 
+    dff_8bit dff8(  .out({RegDataSrc_out, RegWriteEN_out, RegDst_out, w1}), 
+                    .in({RegDataSrc_in, RegWriteEN_in, RegDst_in, 2'bx}), 
                     .en(en), 
                     .rst(rst), 
                     .clk(clk));

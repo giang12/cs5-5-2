@@ -12,6 +12,7 @@ module regEXMem(
     MemEn_out, 
     MemWr_out, 
     halt_out,
+    RegDst_out,
     RegDataSrc_out,
     RegWriteEN_out,
     
@@ -28,6 +29,7 @@ module regEXMem(
     MemEn_in, 
     MemWr_in, 
     dump_in,
+    RegDst_in,
     RegDataSrc_in,
     RegWriteEN_in
     );
@@ -63,11 +65,14 @@ module regEXMem(
     output MemEn_out, MemWr_out, halt_out;
 
     // WB
+    input [1:0] RegDst_in;
+    output [1:0] RegDst_out;
     input [2:0] RegDataSrc_in;
     output [2:0] RegDataSrc_out; // has to propagate to the end of pipeline
     input RegWriteEN_in;
     output RegWriteEN_out;
-    wire w1; // dummy wire
+    
+    wire [6:0] w1; // dummy wire
 
     dff_16bit dff1(.out(pc_plus_two_out), .in(pc_plus_two_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff2(.out(imm_8_ext_out), .in(imm_8_ext_in), .en(en), .rst(rst), .clk(clk));
@@ -77,11 +82,11 @@ module regEXMem(
     dff_16bit dff6(.out(instr_out), .in(instr_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff7(.out(set_out), .in(set_in), .en(en), .rst(rst), .clk(clk));
 
-    dff_8bit(   .out({MemEn_out, MemWr_out, halt_out, RegWriteEN_out, RegDataSrc_out, w1}), 
-                .in({MemEn_in, MemWr_in, dump_in, RegWriteEN_in, RegDataSrc_in, 1'bx}), 
-                .en(en), 
-                .rst(rst), 
-                .clk(clk));
+    dff_16bit dff8( .out({MemEn_out, MemWr_out, halt_out, RegDst_out, RegWriteEN_out, RegDataSrc_out, w1}),
+                    .in({MemEn_in, MemWr_in, dump_in, RegDst_in, RegWriteEN_in, RegDataSrc_in, 7'bx}), 
+                    .en(en), 
+                    .rst(rst), 
+                    .clk(clk));
     
 endmodule
 
