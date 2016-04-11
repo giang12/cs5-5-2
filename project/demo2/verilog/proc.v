@@ -52,7 +52,21 @@ module proc (/*AUTOARG*/
                     .dump(dump), 
                     .exception(Exception)// TODO: make sure expection output 0 in the very first clk cycle.
               );
-    
+   
+     
+    // TODO: connect wires
+    regIFID regIFID0 (  
+                    .instr_out(), 
+                    .pcPlusTwo_out(), 
+                    .pcCurrent_out(), 
+                    .clk(), 
+                    .en(), 
+                    .rst(), 
+                    .pcPlusTwo_in(), 
+                    .pcCurrent_in(), 
+                    .instr_in()
+                );
+
     decode decode0 (  // control mod
                     .RegDst(RegDst),
                     .RegDataSrc(RegDataSrc), 
@@ -86,6 +100,69 @@ module proc (/*AUTOARG*/
                     .RegWriteEN_out(RegWriteEN_out) //TODO: assign to input of ID/EX stage
                 );        
 
+    // TODO: connect wire    
+    regIDEX regIDEX0 
+                ( 
+                // ********** data outputs ********
+                    .instr_out(), 
+                    .pc_plus_two_out(), 
+                    .read_data_1_out(), 
+                    .read_data_2_out(), 
+                    .imm_5_ext_out(), 
+                    .imm_8_ext_out(), 
+                    .btr_out_out(), 
+                    // regsiter control
+                    .clk(), 
+                    .en(), 
+                    .rst(),
+                    // ********* data inputs *******
+                    .instr_in(),
+                    .pcPlusTwo_in(),
+                    .read1data_in(), 
+                    .read2data_in(),
+                    .instrFiveExt_in(),
+                    .instrEightExt_in(),
+                    .btr_out_in(),
+                    // *********** control outputs *******
+                    // EX
+                    .Op_out(), 
+                    .ALUSrc1_out(), 
+                    .ALUSrc2_out(),
+                    .Cin_out(), 
+                    .invA_out(), 
+                    .invB_out(), 
+                    .sign_out(), 
+                    .jump_out(), 
+                    .branch_out(),
+                    // M
+                    .MemEn_out(), 
+                    .MemWr_out(), 
+                    .dump_out(),
+                    // WB
+                    .RegDst_out(),
+                    .RegDataSrc_out(),
+                    .RegWriteEN_out(),
+                    // *********** control inputs *******
+                    // EX
+                    .Op_in(), 
+                    .ALUSrc1_in(), 
+                    .ALUSrc2_in(), 
+                    .Cin_in(), 
+                    .invA_in(), 
+                    .invB_in(), 
+                    .sign_in(), 
+                    .Jump_in(), 
+                    .Branch_in(),
+                    // M
+                    .MemEn_in(), 
+                    .MemWr_in(), 
+                    .dump_in(),
+                    // WB
+                    .RegDst_in(),
+                    .RegDataSrc_in(),
+                    .RegWriteEN_in()
+                );
+
     execution exec (
                     // Outputs
                     .next_pc(next_pc), 
@@ -111,6 +188,42 @@ module proc (/*AUTOARG*/
                     .branch(branch)
                 );
 
+    // TODO: connect wire
+    regEXMem regEXMem0(
+                    // data
+                    .pc_plus_two_out(),
+                    .imm_8_ext_out(),
+                    .aluResult_out(),
+                    .writeData_out(),
+                    .btr_out_out(),
+                    .instr_out(),
+                    .set_out(),
+    
+                    // Control
+                    .MemEn_out(), 
+                    .MemWr_out(, 
+                    .halt_out(),
+                    .RegDst_out(),
+                    .RegDataSrc_out(),
+                    .RegWriteEN_out(),
+    
+                    // data
+                    .pc_plus_two_in(),
+                    .imm_8_ext_in(),
+                    .Out_in(),
+                    .read_data_2_in(),
+                    .btr_out_in(),
+                    .instr_in(),
+                    .set_in(),
+    
+                    // control
+                    .MemEn_in(), 
+                    .MemWr_in(), 
+                    .dump_in(),
+                    .RegDst_in(),
+                    .RegDataSrc_in(),
+                    .RegWriteEN_in()
+                );
 
     memory memory0( .readData(mem_data_out), 
                     .aluResult(Out), 
@@ -121,6 +234,34 @@ module proc (/*AUTOARG*/
                     .clk(clk), 
                     .rst(rst)
                 );
+
+    // TODO: connect wire
+    regMemWB regMemWB0 (
+                    // data
+                    .instr(),
+                    .mem_data_out(),
+                    .alu_out(),
+                    .imm_8_ext(),
+                    .btr_out(),
+                    .pc_plus_two(),
+                    .cond_set(),
+                    // control
+                    .RegDst_out(),
+                    .RegDataSrc_out(),
+                    .RegWriteEN_out(),
+                    // data
+                    .instr_in(),
+                    .readData_in(),
+                    .aluResult_in(),
+                    .imm_8_ext_in(),
+                    .btr_out_in(),
+                    .pc_plus_two_in(),
+                    .set_in(),
+                    //control
+                    .RegDst_in(),
+                    .RegDataSrc_in(),
+                    .RegWriteEN_in()
+    );
 
     writeback wb(   .write_data(write_data), 
                     .RegDataSrc(RegDataSrc), 

@@ -34,6 +34,29 @@ module decode(  RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, 
     output [15:0] btr_out;
     
     // modules initialization
+    
+    // TODO: connect wire
+    branch_cond_test bran_cond (
+                        .readData1(), 
+                        .readData2(), 
+                        .IFID_instr(), 
+                        .branch(), 
+                        .jump(), 
+                        .pcSrc()
+                );
+    
+    // TODO: connect wires
+    hazard_detect hazard_detect0 (
+                        .pcWriteEn(), 
+                        .IFIDWriteEn(), 
+                        .control_sel(), 
+                        .IDEX_Instr(), 
+                        .IFID_Instr(), 
+                        .IDEX_Mem_En(), 
+                        .IDEX_Mem_Wr()
+                );
+    // TODO: 2-1-16bit mux for either controls/0
+
     special_control special_control0(
                         .dump(dump),
                         .instr(instr[15:11])

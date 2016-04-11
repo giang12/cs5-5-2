@@ -45,6 +45,23 @@ module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_da
 
   assign Out = alu_out;
 
+
+  // forward_unit
+  // TODO: connect wires
+  forward_unit forward_u0 ( 
+            .ALUSel1(), 
+            .ALUSel2(), 
+            .IDEX_Instr(), 
+            .EXMEM_Instr(), 
+            .MEMWB_Instr(), 
+            .EXMEM_RegWriteEN(), 
+            .MEMWB_RegWriteEN(), 
+            .IDEX_ALUSrc1(), 
+            .IDEX_ALUSrc2(), 
+            .EXMEM_RegDst(), 
+            .MEMWB_RegDst()
+        ); 
+
   
   // ALU Related 
   sf_left8bit shifter_1(
