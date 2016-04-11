@@ -7,6 +7,5 @@
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
 # Loading project demo2
-# Compile of regMemWB.v was successful.
-# Compile of regEXMem.v was successful.
-# 2 compiles, 0 failed with no errors. 
+# Compile of hazard_detect.v failed with 1 errors.
+# Compile of hazard_detect.v was successful.

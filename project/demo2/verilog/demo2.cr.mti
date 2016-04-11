@@ -1,4 +1,11 @@
-/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regEXMem.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regEXMem.v
+/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/hazard_detect.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/hazard_detect.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module hazard_detect
+
+Top level modules:
+	hazard_detect
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regEXMem.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regEXMem.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module regEXMem
 
@@ -18,6 +25,13 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 
 Top level modules:
 	nand2
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/forward_unit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/forward_unit.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module forward_unit
+
+Top level modules:
+	forward_unit
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/mux2_1.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -68,6 +82,13 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	nor2
 
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIFID.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIFID.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module regIFID
+
+Top level modules:
+	regIFID
+
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/not1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/not1.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module not1
@@ -81,13 +102,6 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 
 Top level modules:
 	and16
-
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIFID.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/regIFID.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module regIFID
-
-Top level modules:
-	regIFID
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit_tb.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/dff_8bit_tb.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
