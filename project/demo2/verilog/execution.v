@@ -41,20 +41,67 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
 
   // forward_unit
   // TODO: connect wires
+  wire [1:0] forward_a;
+  wire [1:0] forward_b;
+  
+  input [15:0] IDEX_Instr;
+  input EXMEM_RegWriteEN;
+  input MEMWB_RegWriteEN;
+  input [2:0] EXMEM_DstRegNum;
+  input [2:0] MEMWB_DstRegNum;
+
   forward_unit forward_u0 ( 
-            .ALUSel1(), 
-            .ALUSel2(), 
-            .IDEX_Instr(), 
-            .EXMEM_Instr(), 
-            .MEMWB_Instr(), 
-            .EXMEM_RegWriteEN(), 
-            .MEMWB_RegWriteEN(), 
-            .IDEX_ALUSrc1(), 
-            .IDEX_ALUSrc2(), 
-            .EXMEM_RegDst(), 
-            .MEMWB_RegDst()
+            .ForwardA(forward_a), 
+            .ForwardB(forward_b), 
+            .IDEX_Instr(IDEX_Instr),   
+            .EXMEM_RegWriteEN(EXMEM_RegWriteEN), 
+            .MEMWB_RegWriteEN(MEMWB_RegWriteEN), 
+            .EXMEM_DstRegNum(EXMEM_DstRegNum), 
+            .MEMWB_DstRegNum(MEMWB_DstRegNum)
         ); 
 
+  wire [15:0] forwarded_data_a;
+  wire [15:0] forwarded_data_b;
+
+  mux4_1_16bit alu_fwdA_mux (.out(forwarded_data_a), .in0(alu_src_1), .in1(EXMEM_ALUOUT), .in2(WB_DATA), .in3(16'bx), .sel(forward_a));
+  mux4_1_16bit alu_fwdB_mux (.out(forwarded_data_b), .in0(alu_src_2), .in1(EXMEM_ALUOUT), .in2(WB_DATA), .in3(16'bx), .sel(forward_b));
+
+
+  wire [15:0] actual_alu_data_a;
+  wire [15:0] actual_alu_data_b;
+  
+
+  wire [15:0] forwarded_data_a_shifted;
+  wire [15:0] sixteen_minus_forwarded_data_b;
+
+  //TODO  selection signal logic 
+  mux2_1_16bit alu_actual_src_mux_a(.out(actual_alu_data_a), .in0(forwarded_data_a), .in1(forwarded_data_a_shifted), .sel());
+  mux2_1_16bit alu_actual_src_mux_b(.out(actual_alu_data_b), .in0(forwarded_data_b), .in1(sixteen_minus_forwarded_data_b), .sel());
+ 
+// shifter for shifting data after forwarded
+
+   sf_left8bit shifter_2(
+          // Outputs
+          .out(forwarded_data_a_shifted),
+          // Inputs
+          .in(forwarded_data_a)
+        );
+ // ror_amount for modify the shift amt data after forwarded
+   alu ror_amt_adder2(
+           // Outputs
+          .Out(sixteen_minus_forwarded_data_b),
+          .Ofl(ofl_disposal),
+          .Cout(cout_disposal),
+          .Z(zero_disposal),
+          // Inputs
+          .A(16'b0000_0000_0001_0000),
+          .B( {   {12{1'b0}} , {forwarded__data_b[3:0]}  }),
+          .Cin(1'b1),
+          .Op(3'b100),
+          .invA(1'b0),
+          .invB(1'b1),
+          .sign(1'b1)
+         ); 
   
   // ALU Related 
   sf_left8bit shifter_1(
