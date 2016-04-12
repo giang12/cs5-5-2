@@ -1,13 +1,27 @@
-# //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
-# //
-# //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
-# //                         All Rights Reserved.
-# //                   UNPUBLISHED, LICENSED SOFTWARE.
-# //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
-# //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
-# //
-# Loading project hw3_3
-# reading /afs/cs.wisc.edu/s/mentor-2004/common/modeltech-5.8b/linux/../modelsim.ini
-# Loading project demo2
-# reading /afs/cs.wisc.edu/s/mentor-2004/common/modeltech-5.8b/linux/../modelsim.ini
-# Loading project demo2
+# Compile of fetch.v was successful.
+# Compile of decode.v failed with 1 errors.
+# Compile of execution.v failed with 1 errors.
+# 3 compiles, 2 failed with 2 errors. 
+# Compile of decode.v failed with 1 errors.
+# Compile of execution.v failed with 1 errors.
+# 2 compiles, 2 failed with 2 errors. 
+# Compile of decode.v failed with 1 errors.
+# Compile of execution.v failed with 1 errors.
+# 2 compiles, 2 failed with 2 errors. 
+# Compile of decode.v failed with 1 errors.
+# Compile of execution.v failed with 1 errors.
+# 2 compiles, 2 failed with 2 errors. 
+# Compile of decode.v failed with 1 errors.
+# Compile of execution.v failed with 1 errors.
+# 2 compiles, 2 failed with 2 errors. 
+# Compile of decode.v failed with 1 errors.
+# Compile of execution.v failed with 1 errors.
+# 2 compiles, 2 failed with 2 errors. 
+# Compile of decode.v was successful.
+# Compile of execution.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error. 
+# Compile of execution.v failed with 1 errors.
+# Compile of execution.v was successful.
+# Compile of execution.v was successful.
+# Compile of decode.v was successful.
+# Compile of decode.v was successful.
