@@ -1,6 +1,7 @@
-module fetch(instr, pcCurrent, pcPlusTwo, pcNext, clk, rst, dump, exception);
+module fetch(instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, dump, exception);
     input clk, rst, dump;
     input exception;
+    input pcWriteEN;
     input [15:0] pcNext;
     output [15:0] pcPlusTwo; 
     output [15:0] pcCurrent; 
@@ -25,7 +26,7 @@ module fetch(instr, pcCurrent, pcPlusTwo, pcNext, clk, rst, dump, exception);
     //PC Reg
     reg_16bit pc0(          .out(pc_current), 
                             .in(next_pc), 
-                            .en(1'b1), // disable pc reg when dump ??
+                            .en(pcWriteEN), // disable pc reg when dump ??
                             .rst(rst), 
                             .clk(clk));
     // instruction mem

@@ -29,11 +29,7 @@ module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_da
   wire ofl;
   wire zero;
   wire [15:0] alu_src_1, alu_src_2;
-  wire [15:0] pc_plus_two_plus_imm_8_ext;
-  wire [15:0] pc_plus_two_plus_imm_11_ext;
-  wire [15:0] rs_plus_imm_8_ext;
   wire [2:0] pc_src;
-  wire [15:0] branch_target;
   wire ofl_disposal;
   wire cout_disposal;
   wire cout;
@@ -176,65 +172,6 @@ module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_da
 
   // Branch Related Part
 
-  mux2_1_16bit next_pc_mux(
-          // Outputs
-          .out(next_pc),
-          // Inputs
-          .sel(branch),
-          .in0(pc_plus_two),
-          .in1(branch_target)
-        );
-
-   cla_16bit adder0(
-          // Outputs
-          .OUT(rs_plus_imm_8_ext),
-          .Ofl(ofl_disposal),
-          .Cout(cout_disposal),
-          // Inputs
-          .A(read_data_1),
-          .B(imm_8_ext),
-          .CI(1'b0),
-          .sign(1'b1)
-        ); 
-
-  cla_16bit adder1(
-          // Outputs
-          .OUT(pc_plus_two_plus_imm_8_ext),
-          .Ofl(ofl_disposal),
-          .Cout(cout_disposal),
-         // Inputs
-          .A(pc_plus_two),
-          .B(imm_8_ext),
-          .CI(1'b0),
-          .sign(1'b1)
-        ); 
-
-  cla_16bit adder2(
-          // Outputs
-          .OUT(pc_plus_two_plus_imm_11_ext),
-          .Ofl(ofl_disposal),
-          .Cout(cout_disposal),
-         // Inputs
-          .A(pc_plus_two),
-          .B(imm_11_ext),
-          .CI(1'b0),
-          .sign(1'b1)
-        ); 
-
-  mux8_1_16bit branch_target_mux(
-          // Outputs
-          .out(branch_target),
-          // Inputs
-          .sel(pc_src),
-          .in0(pc),
-          .in1(pc_plus_two),
-          .in2(rs_plus_imm_8_ext),
-          .in3(pc_plus_two_plus_imm_8_ext),
-          .in4(pc_plus_two_plus_imm_11_ext),
-          .in5(16'bxxxx_xxxx_xxxx_xxxx),
-          .in6(16'bxxxx_xxxx_xxxx_xxxx),
-          .in7(16'bxxxx_xxxx_xxxx_xxxx)
-        );
 
 
 endmodule
