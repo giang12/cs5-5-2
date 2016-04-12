@@ -5,6 +5,7 @@ entity hazard_detect is
         pcwriteen       : out    vl_logic;
         ifidwriteen     : out    vl_logic;
         control_sel     : out    vl_logic;
+        validrt         : in     vl_logic;
         idex_instr      : in     vl_logic_vector(15 downto 0);
         ifid_instr      : in     vl_logic_vector(15 downto 0);
         idex_mem_en     : in     vl_logic;

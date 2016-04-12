@@ -9,6 +9,7 @@ entity regmemwb is
         btr_out         : out    vl_logic_vector(15 downto 0);
         pc_plus_two     : out    vl_logic_vector(15 downto 0);
         cond_set        : out    vl_logic_vector(15 downto 0);
+        regdst_out      : out    vl_logic_vector(1 downto 0);
         regdatasrc_out  : out    vl_logic_vector(2 downto 0);
         regwriteen_out  : out    vl_logic;
         instr_in        : in     vl_logic_vector(15 downto 0);
@@ -18,6 +19,7 @@ entity regmemwb is
         btr_out_in      : in     vl_logic_vector(15 downto 0);
         pc_plus_two_in  : in     vl_logic_vector(15 downto 0);
         set_in          : in     vl_logic_vector(15 downto 0);
+        regdst_in       : in     vl_logic_vector(1 downto 0);
         regdatasrc_in   : in     vl_logic_vector(2 downto 0);
         regwriteen_in   : in     vl_logic
     );

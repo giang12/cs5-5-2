@@ -12,6 +12,7 @@ entity regexmem is
         memen_out       : out    vl_logic;
         memwr_out       : out    vl_logic;
         halt_out        : out    vl_logic;
+        regdst_out      : out    vl_logic_vector(1 downto 0);
         regdatasrc_out  : out    vl_logic_vector(2 downto 0);
         regwriteen_out  : out    vl_logic;
         pc_plus_two_in  : in     vl_logic_vector(15 downto 0);
@@ -24,6 +25,7 @@ entity regexmem is
         memen_in        : in     vl_logic;
         memwr_in        : in     vl_logic;
         dump_in         : in     vl_logic;
+        regdst_in       : in     vl_logic_vector(1 downto 0);
         regdatasrc_in   : in     vl_logic_vector(2 downto 0);
         regwriteen_in   : in     vl_logic
     );
