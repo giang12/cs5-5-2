@@ -1,20 +1,17 @@
-module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_data_2, imm_5_ext, imm_8_ext, imm_11_ext, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, jump, branch);
+module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, imm_11_ext, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, jump, branch);
  
   input [15:0] instr;
-  input [15:0] pc_plus_two;
-  input [15:0] pc;
   input [15:0] read_data_1, read_data_2;
   input [15:0] imm_5_ext, imm_8_ext, imm_11_ext;
   input [2:0] ALUSrc1, ALUSrc2;
   input [2:0] Op;
   input Cin, invA, invB, sign;
-  input jump;
-  input branch;
+ 
+
 
   //NEED INPUT FOR 
   // write back data [15:0]
   
-  output [15:0] next_pc;
   output [15:0] Out; 
   output [15:0] set;
   //NEED OUTPUT FOR 
@@ -160,18 +157,5 @@ module execution(next_pc, Out, set, instr, pc_plus_two, pc, read_data_1, read_da
           .alu_out_msb(alu_out[15])
         );
 
-  pc_ctr pc_ctr0(
-          // Outputs
-          .pc_src(pc_src),
-          // Inputs
-          .instr(instr[12:11]),
-          .jump(jump),
-          .zero(zero),
-          .alu_out_msb(alu_out[15])
-        );
-
-  // Branch Related Part
-
-
-
+ 
 endmodule

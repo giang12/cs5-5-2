@@ -59,7 +59,7 @@ module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, J
     wire [15:0] reg1_data, reg2_data;
     assign read1data = reg1_data;
     assign read2data = reg2_data;
-    wire [2:0] writeregsel; 
+    wire [3:0] writeregsel; 
     wire err; // TODO ???
     //wire write;
     input RegWriteEN_in;
@@ -154,9 +154,9 @@ module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, J
                         // Inputs
                         .clk(clk), 
                         .rst(rst), 
-                        .read1regsel(instr[10:8]), 
-                        .read2regsel(instr[7:5]), 
-                        .writeregsel(writeregsel), 
+                        .read1regsel(MEMWB_Instr[10:8]), 
+                        .read2regsel(MEMWB_Instr[7:5]), 
+                        .writeregsel(writeregsel[2:0]), 
                         .writedata(writedata),
                         .write(MEMWB_RegWriteEN));
 
@@ -167,9 +167,9 @@ module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, J
                         .out(writeregsel),
                         // inputs
                         .sel(MEMWB_RegDst), 
-                        .in0({{1'bx},{instr[4:2]}}), 
-                        .in1({{1'bx},{instr[7:5]}}), 
-                        .in2({{1'bx},{instr[10:8]}}), 
+                        .in0({{1'bx},{MEMWB_Instr[4:2]}}), 
+                        .in1({{1'bx},{MEMWB_Instr[7:5]}}), 
+                        .in2({{1'bx},{MEMWB_Instr[10:8]}}), 
                         .in3({{1'bx},{3'b111}}));
 
 
