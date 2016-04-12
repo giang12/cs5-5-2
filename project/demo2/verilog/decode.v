@@ -1,13 +1,12 @@
-module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, Jump, Exception, Cin, invA, invB, sign, dump, instr, 
-                // register file 
+module decode( instr, 
+                // register files
                 clk, rst, read1data, read2data, writedata, 
                 // ext module
-                instrEightExt, instrElevenExt, instrFiveExt,
+                instrEightExt, instrFiveExt,
                 // btr module
                 btr_out,
-                // 04/06 update
-                RegWriteEN_in, RegWriteEN_out,
                 // 04/12 if_flush, actual control signals
+                // outputs
                 if_flush,
                 actual_control_signals,
                 next_pc,
@@ -21,19 +20,23 @@ module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, J
                 pc,
                 IDEX_Instr,
                 IDEX_Mem_En,
-                IDEX_Mem_Wr             
+                IDEX_Mem_Wr,            
                 MEMWB_Instr,
                 MEMWB_RegWriteEN,
                 MEMWB_RegDst);
 
     //rst signal to if/id register
 
+    // ext modules
+    output [15:0] instrEightExt, instrFiveExt; 
+    output [15:0] btr_out;
     output if_flush;
-    output [15:0] next_pc
-    output [31:0] actual_control_signals
-    output pc_WR_EN;
-    output if_ID_WR_EN;
-
+    output [15:0] next_pc;
+    output [31:0] actual_control_signals;
+    output pcWriteEn;
+    output IFIDWriteEn;
+    output [15:0] read1data, read2data;
+    
     input [15:0] pc_plus_two;
     input [15:0] pc;
    
@@ -41,33 +44,23 @@ module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, J
     input IDEX_Mem_En;
     input IDEX_Mem_Wr;
 
-  
-
-
     // control module
     input [15:0] instr;
-    output [2:0] RegDataSrc, ALUSrc1, ALUSrc2, Op;
-    output MemEn, MemWr, Branch, Jump, Exception, Cin, invA, invB, sign, dump;
-    output [1:0] RegDst;
-    wire [1:0] RegDst;
-    wire SignedExt; 
-
     // register file
     input clk, rst;
     input [15:0] writedata;
-    output [15:0] read1data, read2data;
+    input [15:0] MEMWB_Instr;
+    input MEMWB_RegWriteEN;
+    input [1:0] MEMWB_RegDst; 
+    
     wire [15:0] reg1_data, reg2_data;
     assign read1data = reg1_data;
     assign read2data = reg2_data;
     wire [3:0] writeregsel; 
     wire err; // TODO ???
-    //wire write;
-    input RegWriteEN_in;
-    output RegWriteEN_out;
+    
+    wire dump;
   
-    // ext modules
-    output [15:0] instrEightExt, instrElevenExt, instrFiveExt; 
-    output [15:0] btr_out;
     
     // modules initialization
     
@@ -79,7 +72,7 @@ module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, J
                         .instr(instr[12:11]), 
                         .branch(normal_control_signals[15]), 
                         .jump(normal_control_signals[16]), 
-                        .pc_src(pc_src)
+                        .pc_src(pc_src),
                         .if_flush(if_flush)
                 );
     
@@ -143,7 +136,8 @@ module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, J
                         // inputs
                         .instr1(instr[15:11]), 
                         .instr2(instr[1:0]));
-        assign normal_control_signals[31:25] = 7'bxxxxxxx;
+        assign normal_control_signals[31:26] = 6'bxxxxxx;
+        assign normal_control_signals[25] = dump;
 
     // 16 * 8 register file  // TODO  need change to self by passing reg
     rf regFile0 (
@@ -154,8 +148,8 @@ module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, J
                         // Inputs
                         .clk(clk), 
                         .rst(rst), 
-                        .read1regsel(MEMWB_Instr[10:8]), 
-                        .read2regsel(MEMWB_Instr[7:5]), 
+                        .read1regsel(instr[10:8]), 
+                        .read2regsel(instr[7:5]), 
                         .writeregsel(writeregsel[2:0]), 
                         .writedata(writedata),
                         .write(MEMWB_RegWriteEN));
@@ -173,10 +167,10 @@ module decode( RegDst, RegDataSrc, ALUSrc1, ALUSrc2, Op, MemEn, MemWr, Branch, J
                         .in3({{1'bx},{3'b111}}));
 
 
-    wire [15:0] imm_8_ext
+    wire [15:0] imm_8_ext;
     wire [15:0] imm_11_ext;
     assign instrEightExt = imm_8_ext;
-    assign instrEleventExt = imm_11_ext;  
+    //assign instrEleventExt = imm_11_ext;  
   
     ext_mod8_16 ext0 (  .out(imm_8_ext), 
                         .sel(normal_control_signals[14]), 

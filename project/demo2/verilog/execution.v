@@ -1,18 +1,25 @@
-module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, imm_11_ext, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, jump, branch);
+module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_ALUOUT);
  
   input [15:0] instr;
   input [15:0] read_data_1, read_data_2;
-  input [15:0] imm_5_ext, imm_8_ext, imm_11_ext;
+  input [15:0] imm_5_ext, imm_8_ext;
   input [2:0] ALUSrc1, ALUSrc2;
   input [2:0] Op;
-  input Cin, invA, invB, sign;
- 
+  input Cin, invA, invB, sign; 
+  
+  input [15:0] IDEX_Instr;
+  input EXMEM_RegWriteEN;
+  input MEMWB_RegWriteEN;
+  input [2:0] EXMEM_DstRegNum;
+  input [2:0] MEMWB_DstRegNum;
 
+  input [15:0] WB_DATA, EXMEM_ALUOUT;
+  
 
   //NEED INPUT FOR 
   // write back data [15:0]
   
-  output [15:0] Out; 
+  output [15:0] Out;
   output [15:0] set;
   //NEED OUTPUT FOR 
   // instr [15:0]
@@ -44,12 +51,6 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   wire [1:0] forward_a;
   wire [1:0] forward_b;
   
-  input [15:0] IDEX_Instr;
-  input EXMEM_RegWriteEN;
-  input MEMWB_RegWriteEN;
-  input [2:0] EXMEM_DstRegNum;
-  input [2:0] MEMWB_DstRegNum;
-
   forward_unit forward_u0 ( 
             .ForwardA(forward_a), 
             .ForwardB(forward_b), 
@@ -75,8 +76,8 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   wire [15:0] sixteen_minus_forwarded_data_b;
 
   //TODO  selection signal logic 
-  mux2_1_16bit alu_actual_src_mux_a(.out(actual_alu_data_a), .in0(forwarded_data_a), .in1(forwarded_data_a_shifted), .sel());
-  mux2_1_16bit alu_actual_src_mux_b(.out(actual_alu_data_b), .in0(forwarded_data_b), .in1(sixteen_minus_forwarded_data_b), .sel());
+  mux2_1_16bit alu_actual_src_mux_a(.out(actual_alu_data_a), .in0(forwarded_data_a), .in1(forwarded_data_a_shifted), .sel(1'b0));
+  mux2_1_16bit alu_actual_src_mux_b(.out(actual_alu_data_b), .in0(forwarded_data_b), .in1(sixteen_minus_forwarded_data_b), .sel(1'b0));
  
 // shifter for shifting data after forwarded
 
@@ -95,7 +96,7 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
           .Z(zero_disposal),
           // Inputs
           .A(16'b0000_0000_0001_0000),
-          .B( {   {12{1'b0}} , {forwarded__data_b[3:0]}  }),
+          .B( {   {12{1'b0}} , {forwarded_data_b[3:0]}  }),
           .Cin(1'b1),
           .Op(3'b100),
           .invA(1'b0),
@@ -203,6 +204,5 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
           .alu_src_2_msb(alu_src_2[15]),
           .alu_out_msb(alu_out[15])
         );
-
  
 endmodule

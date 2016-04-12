@@ -6,9 +6,8 @@
 # //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
+# Loading project hw3_3
+# reading /afs/cs.wisc.edu/s/mentor-2004/common/modeltech-5.8b/linux/../modelsim.ini
 # Loading project demo2
-# Compile of regIDEX.v was successful.
-# Compile of regMemWB.v was successful.
-# Compile of regEXMem.v was successful.
-# Compile of forward_unit.v was successful.
-# 4 compiles, 0 failed with no errors. 
+# reading /afs/cs.wisc.edu/s/mentor-2004/common/modeltech-5.8b/linux/../modelsim.ini
+# Loading project demo2
