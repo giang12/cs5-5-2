@@ -1,4 +1,11 @@
-/afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/mux2_1_8bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/mux2_1_8bit.v
+/afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/regEXMem.v {1 {vlog -work work /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/regEXMem.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module regEXMem
+
+Top level modules:
+	regEXMem
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/mux2_1_8bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/mux2_1_8bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module mux2_1_8bit
 
@@ -236,24 +243,7 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	proc_hier
 
-} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v {0 {vlog -work work /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module proc
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(68): 'EXMem_MemEn_out' already declared in this scope (proc).
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(161): near ",":  expecting: ')'
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(199): near ";":  expecting: ')'
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(271): near ";":  expecting: ')'
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(289): near "/":  expecting: '.' .*
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(290): near "/":  expecting: '.' .*
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(291): near "/":  expecting: '.' .*
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(292): near "/":  expecting: '.' .*
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(293): near "/":  expecting: '.' .*
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(294): near "/":  expecting: '.' .*
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(312): near ".":  expecting: ')'
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(313): near ".":  expecting: '(' IDENT
-** Error: /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/proc.v(314): near ")": syntax error
-
-} {4.0 17.0} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/and2.v {1 {vlog -work work /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/and2.v
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/and2.v {1 {vlog -work work /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/and2.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module and2
 
@@ -414,7 +404,14 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	mux2_1_32bit
 
-} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/regIDEX.v {0 vlog\ -work\ work\ /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/regIDEX.v\nModel\ Technology\ ModelSim\ SE\ vlog\ 5.8b\ Compiler\ 2004.01\ Jan\ 26\ 2004\n--\ Compiling\ module\ regIDEX\n**\ Error:\ /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/regIDEX.v(62):\ near\ \"\;\":\ \ expecting:\ ')'\ ','\n**\ Error:\ /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/regIDEX.v(150):\ near\ \")\":\ \ expecting:\ ','\ '\}'\n\n {4.0 6.0} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/control.v {1 {vlog -work work /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/control.v
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/regIDEX.v {1 {vlog -work work /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/regIDEX.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module regIDEX
+
+Top level modules:
+	regIDEX
+
+} {} {}} /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/control.v {1 {vlog -work work /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2/verilog/control.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module control
 

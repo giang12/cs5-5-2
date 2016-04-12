@@ -46,7 +46,7 @@ module proc (/*AUTOARG*/
 
     wire IFIDWriteEn, pcWriteEn;
     // decode
-    wire fluch2IFID;
+    wire flush2IFID;
     wire [15:0] pc2decode, pcPlusTwo2decdoe, instr2decode, instrFiveExt2IDEX, instrEightExt2IDEX, btr_out2IDEX;
     wire [31:0] control_signal;
     // IDEX 
@@ -84,7 +84,9 @@ module proc (/*AUTOARG*/
                     .exception(Exception)// TODO: make sure expection output 0 in the very first clk cycle.
               );
    
-     
+    
+    wire [15:0] IFID_instr_in;
+    mux2_1_16bit IFID_instr_mux(.out(IFID_instr_in), .in0(instr), .in1(16'b0000100000000000), .sel(flush2IFID));
     // TODO: connect wires
     regIFID regIFID0 (  
                     // outputs
@@ -94,12 +96,13 @@ module proc (/*AUTOARG*/
                     // inputs
                     .clk(clk), 
                     .en(IFIDWriteEn), 
-                    .rst(fluch2IFID), 
+                    .rst(rst), 
                     .pcPlusTwo_in(pc_plus_two), 
                     .pcCurrent_in(pc), 
-                    .instr_in(instr)
+                    .instr_in(IFID_instr_in)
                 );
   
+    
     decode decode0 ( 
                 .instr(instr2decode), // in
                 // register files
@@ -115,7 +118,7 @@ module proc (/*AUTOARG*/
                 .btr_out(btr_out2IDEX),
                 // 04/12 if_flush, actual control signals
                 // outputs
-                .if_flush(fluch2IFID),
+                .if_flush(flush2IFID),
                 .actual_control_signals(control_signal),
                 .next_pc(next_pc),
                 .pcWriteEn(pcWriteEn),
