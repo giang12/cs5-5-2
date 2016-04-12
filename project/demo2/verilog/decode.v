@@ -136,8 +136,14 @@ module decode( instr,
                         // inputs
                         .instr1(instr[15:11]), 
                         .instr2(instr[1:0]));
-        assign normal_control_signals[31:26] = 6'bxxxxxx;
+        assign normal_control_signals[31:29] = 3'bxxx;
         assign normal_control_signals[25] = dump;
+    
+    dst_reg_parser dst_reg_parser0 (
+                        .instr(instr), 
+                        .RegDst(normal_control_signals[1:0]),
+                        .Dst_Reg(normal_control_signals[28:26])
+                        );
 
     // 16 * 8 register file  // TODO  need change to self by passing reg
     rf regFile0 (

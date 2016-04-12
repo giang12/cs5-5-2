@@ -22,8 +22,10 @@ module regMemWB(
                     //control
                     RegDst_in,
                     RegDataSrc_in,
-                    RegWriteEN_in
-
+                    RegWriteEN_in,
+                    // dst_reg_num
+                    dst_reg_num_in,
+                    dst_reg_num_out; 
     );
     // Data Portion
 
@@ -52,7 +54,13 @@ module regMemWB(
     output [1:0] RegDst_out; 
     
     wire [1:0] w1; // dummy wire
-    
+   
+    // dst_reg_num
+    input [2:0] dst_reg_num_in;
+    output [2:0] dst_reg_num_out;
+    wire [4:0] w2;
+
+ 
     dff_16bit dff1(.out(instr), .in(instr_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff2(.out(mem_data_out), .in(readData_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff3(.out(alu_out), .in(aluResult_in), .en(en), .rst(rst), .clk(clk));
@@ -67,5 +75,11 @@ module regMemWB(
                     .rst(rst), 
                     .clk(clk));
 
+    
+    dff_8bit dff9(  .out({dst_reg_num_out, w2}), 
+                    .in({dst_reg_num_in, 5'bx}), 
+                    .en(en), 
+                    .rst(rst), 
+                    .clk(clk));
 endmodule
 

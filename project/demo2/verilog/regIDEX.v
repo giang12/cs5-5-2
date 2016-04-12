@@ -56,7 +56,11 @@ module regIDEX(
                 // WB
                 RegDst_in,
                 RegDataSrc_in,
-                RegWriteEN_in);
+                RegWriteEN_in,
+                // extra 
+                dst_reg_num_in, 
+                dst_reg_num_out;
+                );
     // Register control
     input clk, en, rst;
         
@@ -111,6 +115,10 @@ module regIDEX(
     output [1:0] RegDst_out;
     //wire w2; //dummy out
     
+    input [2:0] dst_reg_num_in; 
+    output [2:0] dst_reg_num_out;
+    wire [4:0] w1; 
+
     // *********************** RegModules for Data ****************
  
     dff_16bit dff1(.out(pc_plus_two_out), .in(pcPlusTwo_in), .en(en), .rst(rst), .clk(clk));
@@ -138,4 +146,9 @@ module regIDEX(
                     .rst(rst), 
                     .clk(clk));
     
+    dff_8bit dff10( .out({dst_reg_num_out, w1}), 
+                    .in({dst_reg)num_in, 5'bx}), 
+                    .en(en), 
+                    .rst(rst), 
+                    .clk(clk));
 endmodule

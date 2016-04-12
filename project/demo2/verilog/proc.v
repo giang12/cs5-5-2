@@ -69,8 +69,8 @@ module proc (/*AUTOARG*/
     wire [1:0] EXMem_RegDst_out;
     wire [2:0] EXMem_RegDataSrc_out;
 
-
-
+    // dst_reg_num
+    wire [2:0] IDEX_dst_reg_num_out, EXMem_dst_reg_num_in, EXMem_dst_reg_num_out, MemWB_dst_reg_num_in, MemWB_dst_reg_num_out;
     fetch fetch0(   // outputs
                     .instr(instr),
                     .pcCurrent(pc), 
@@ -193,7 +193,10 @@ module proc (/*AUTOARG*/
                     // WB
                     .RegDst_in(control_signal[1:0]),
                     .RegDataSrc_in(control_signal[4:2]),
-                    .RegWriteEN_in(control_signal[11])
+                    .RegWriteEN_in(control_signal[11]),
+                    // dst_reg_num
+                    .dst_reg_num_in(control_signal[28:26]),
+                    .dst_reg_num_out(IDEX_dst_reg_num_out); 
                 );
 
     // TODO: MemWB_RegWriteEN_out to executation
@@ -218,8 +221,8 @@ module proc (/*AUTOARG*/
                     .IDEX_Instr(IDEXinstrOut), 
                     .EXMEM_RegWriteEN(EXMem_RegWriteEN_out), 
                     .MEMWB_RegWriteEN(MemWB_RegWriteEN_out), 
-                    .EXMEM_DstRegNum(), // TODO 
-                    .MEMWB_DstRegNum(), 
+                    .EXMEM_DstRegNum(EXMem_dst_reg_num_out), // TODO 
+                    .MEMWB_DstRegNum(MemWB_dst_reg_num_out), 
                     .WB_DATA(write_data),
                     .EXMEM_ALUOUT(EXMem_aluResult_out)
                 );
@@ -262,7 +265,10 @@ module proc (/*AUTOARG*/
                     .dump_in(IDEX_dump_out),
                     .RegDst_in(IDEX_RegDst_out),
                     .RegDataSrc_in(IDEX_RegDataSrc_out),
-                    .RegWriteEN_in(IDEX_RegWriteEN_out)
+                    .RegWriteEN_in(IDEX_RegWriteEN_out),
+                     // Dst_reg_num
+                    .dst_reg_num_in(IDEX_dst_reg_num_out),
+                    .dst_reg_num_out(EXMem_dst_reg_num_out); 
                 );
 
 
@@ -302,6 +308,9 @@ module proc (/*AUTOARG*/
                     .RegDst_in(IDEX_RegDst_out),
                     .RegDataSrc_in(IDEX_RegDataSrc_out),
                     .RegWriteEN_in(IDEX_RegWriteEN_out)
+                     // Dst_reg_num
+                    .dst_reg_num_in(EXMem_dst_reg_num_out),
+                    .dst_reg_num_out(MemWB_dst_reg_num_out);
     );
 
     writeback wb(   .write_data(write_data), 
