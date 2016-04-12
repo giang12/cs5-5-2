@@ -59,7 +59,7 @@ module regIDEX(
                 RegWriteEN_in,
                 // extra 
                 dst_reg_num_in, 
-                dst_reg_num_out;
+                dst_reg_num_out
                 );
     // Register control
     input clk, en, rst;
@@ -147,7 +147,7 @@ module regIDEX(
                     .clk(clk));
     
     dff_8bit dff10( .out({dst_reg_num_out, w1}), 
-                    .in({dst_reg)num_in, 5'bx}), 
+                    .in({dst_reg_num_in, 5'bx}), 
                     .en(en), 
                     .rst(rst), 
                     .clk(clk));

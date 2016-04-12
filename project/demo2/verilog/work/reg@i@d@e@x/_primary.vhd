@@ -48,6 +48,8 @@ entity regidex is
         dump_in         : in     vl_logic;
         regdst_in       : in     vl_logic_vector(1 downto 0);
         regdatasrc_in   : in     vl_logic_vector(2 downto 0);
-        regwriteen_in   : in     vl_logic
+        regwriteen_in   : in     vl_logic;
+        dst_reg_num_in  : in     vl_logic_vector(2 downto 0);
+        dst_reg_num_out : out    vl_logic_vector(2 downto 0)
     );
 end regidex;

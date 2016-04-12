@@ -34,7 +34,7 @@ module regEXMem(
     RegWriteEN_in,
     // dst_reg_num
     dst_reg_num_in,
-    dst_reg_num_out;
+    dst_reg_num_out
     );
 
 

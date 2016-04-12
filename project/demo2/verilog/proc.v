@@ -65,7 +65,7 @@ module proc (/*AUTOARG*/
     // EXMem
     wire [15:0] EXMem_instr_out, EXMem_pc_plus_two_out, EXMem_imm_8_ext_out, EXMem_aluResult_out, EXMem_writeData_out, EXMem_btr_out_out, EXMem_set_out;
     wire EXMem_RegWriteEN_out; 
-    wire EXMem_MemEn_out, EXMem_MemEn_out, EXMem_halt_out;
+    wire EXMem_MemWr_out, EXMem_MemEn_out, EXMem_halt_out;
     wire [1:0] EXMem_RegDst_out;
     wire [2:0] EXMem_RegDataSrc_out;
 
@@ -158,7 +158,7 @@ module proc (/*AUTOARG*/
                     .btr_out_in(btr_out2IDEX),
                     // *********** control outputs *******
                     // EX
-                    .Op_out((Op), 
+                    .Op_out(Op), 
                     .ALUSrc1_out(ALUSrc1), 
                     .ALUSrc2_out(ALUSrc2),
                     .Cin_out(Cin), 
@@ -196,7 +196,7 @@ module proc (/*AUTOARG*/
                     .RegWriteEN_in(control_signal[11]),
                     // dst_reg_num
                     .dst_reg_num_in(control_signal[28:26]),
-                    .dst_reg_num_out(IDEX_dst_reg_num_out); 
+                    .dst_reg_num_out(IDEX_dst_reg_num_out)
                 );
 
     // TODO: MemWB_RegWriteEN_out to executation
@@ -268,7 +268,7 @@ module proc (/*AUTOARG*/
                     .RegWriteEN_in(IDEX_RegWriteEN_out),
                      // Dst_reg_num
                     .dst_reg_num_in(IDEX_dst_reg_num_out),
-                    .dst_reg_num_out(EXMem_dst_reg_num_out); 
+                    .dst_reg_num_out(EXMem_dst_reg_num_out) 
                 );
 
 
@@ -286,12 +286,12 @@ module proc (/*AUTOARG*/
     regMemWB regMemWB0 (
                     // data
                     .instr(MemWB_instr_out),
-                    /.mem_data_out(MemWB_mem_data_out),
-                    /.alu_out(MemWB_alu_out),
-                    /.imm_8_ext(MemWB_imm_8_ext),
-                    /.btr_out(MemWB_btr_out),
-                    /.pc_plus_two(MemWB_pc_plus_two),
-                    /.cond_set(MemWB_cond_set),
+                    .mem_data_out(MemWB_mem_data_out),
+                    .alu_out(MemWB_alu_out),
+                    .imm_8_ext(MemWB_imm_8_ext),
+                    .btr_out(MemWB_btr_out),
+                    .pc_plus_two(MemWB_pc_plus_two),
+                    .cond_set(MemWB_cond_set),
                     // control
                     .RegDst_out(MemWB_RegDst_out),
                     .RegDataSrc_out(RegDataSrc),
@@ -307,10 +307,10 @@ module proc (/*AUTOARG*/
                     //control
                     .RegDst_in(IDEX_RegDst_out),
                     .RegDataSrc_in(IDEX_RegDataSrc_out),
-                    .RegWriteEN_in(IDEX_RegWriteEN_out)
+                    .RegWriteEN_in(IDEX_RegWriteEN_out),
                      // Dst_reg_num
                     .dst_reg_num_in(EXMem_dst_reg_num_out),
-                    .dst_reg_num_out(MemWB_dst_reg_num_out);
+                    .dst_reg_num_out(MemWB_dst_reg_num_out)
     );
 
     writeback wb(   .write_data(write_data), 

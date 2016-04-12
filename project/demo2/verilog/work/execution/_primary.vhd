@@ -9,7 +9,6 @@ entity execution is
         read_data_2     : in     vl_logic_vector(15 downto 0);
         imm_5_ext       : in     vl_logic_vector(15 downto 0);
         imm_8_ext       : in     vl_logic_vector(15 downto 0);
-        imm_11_ext      : in     vl_logic_vector(15 downto 0);
         alusrc1         : in     vl_logic_vector(2 downto 0);
         alusrc2         : in     vl_logic_vector(2 downto 0);
         op              : in     vl_logic_vector(2 downto 0);
@@ -21,6 +20,8 @@ entity execution is
         exmem_regwriteen: in     vl_logic;
         memwb_regwriteen: in     vl_logic;
         exmem_dstregnum : in     vl_logic_vector(2 downto 0);
-        memwb_dstregnum : in     vl_logic_vector(2 downto 0)
+        memwb_dstregnum : in     vl_logic_vector(2 downto 0);
+        wb_data         : in     vl_logic_vector(15 downto 0);
+        exmem_aluout    : in     vl_logic_vector(15 downto 0)
     );
 end execution;
