@@ -19,13 +19,6 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	memory2c
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/ext_mod8_16.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/ext_mod8_16.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module ext_mod8_16
-
-Top level modules:
-	ext_mod8_16
-
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux4_1_4bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux4_1_4bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module mux4_1_4bit
@@ -68,33 +61,12 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	not1
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/fetch.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/fetch.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux4_1_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux4_1_16bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module fetch
+-- Compiling module mux4_1_16bit
 
 Top level modules:
-	fetch
-
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/reg_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/reg_16bit.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module reg_16bit
-
-Top level modules:
-	reg_16bit
-
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/proc_hier.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/proc_hier.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module proc_hier
-
-Top level modules:
-	proc_hier
-
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/pc_ctr.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/pc_ctr.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module pc_ctr
-
-Top level modules:
-	pc_ctr
+	mux4_1_16bit
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/nand2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/nand2.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -103,12 +75,26 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	nand2
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux4_1_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux4_1_16bit.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/pc_ctr.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/pc_ctr.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module mux4_1_16bit
+-- Compiling module pc_ctr
 
 Top level modules:
-	mux4_1_16bit
+	pc_ctr
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/proc_hier.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/proc_hier.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module proc_hier
+
+Top level modules:
+	proc_hier
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/reg_16bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/reg_16bit.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module reg_16bit
+
+Top level modules:
+	reg_16bit
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/reg_64bit.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/reg_64bit.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -131,13 +117,6 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	rf
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/ext_mod11_16.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/ext_mod11_16.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module ext_mod11_16
-
-Top level modules:
-	ext_mod11_16
-
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/memory.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/memory.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 -- Compiling module memory
@@ -152,19 +131,12 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	sf_left8bit
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/proc_hier_bench.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/proc_hier_bench.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/fulladder.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/fulladder.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module proc_hier_bench
+-- Compiling module fulladder
 
 Top level modules:
-	proc_hier_bench
-
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/xor2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/xor2.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module xor2
-
-Top level modules:
-	xor2
+	fulladder
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/or2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/or2.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -173,26 +145,12 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	or2
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/fulladder.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/fulladder.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/xor2.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/xor2.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module fulladder
+-- Compiling module xor2
 
 Top level modules:
-	fulladder
-
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/writeback.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/writeback.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module writeback
-
-Top level modules:
-	writeback
-
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/proc.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/proc.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module proc
-
-Top level modules:
-	proc
+	xor2
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux2_1.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo1/verilog/mux2_1.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
