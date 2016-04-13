@@ -2,6 +2,9 @@ library verilog;
 use verilog.vl_types.all;
 entity regmemwb is
     port(
+        clk             : in     vl_logic;
+        rst             : in     vl_logic;
+        en              : in     vl_logic;
         instr           : out    vl_logic_vector(15 downto 0);
         mem_data_out    : out    vl_logic_vector(15 downto 0);
         alu_out         : out    vl_logic_vector(15 downto 0);

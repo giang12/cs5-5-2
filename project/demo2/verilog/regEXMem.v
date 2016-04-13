@@ -1,4 +1,5 @@
 module regEXMem(
+    clk, rst, en,
     // data
     pc_plus_two_out,
     imm_8_ext_out,
@@ -37,7 +38,11 @@ module regEXMem(
     dst_reg_num_out
     );
 
-
+    
+    // reg control
+    //
+    input en, rst, clk;
+    
     // Data Portion
     // progagate to WB stage from ID/EX Reg 
     input [15:0] pc_plus_two_in;

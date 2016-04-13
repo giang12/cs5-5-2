@@ -26,7 +26,6 @@ module proc (/*AUTOARG*/
 
     wire [15:0] pc, pc_plus_two;
     wire MemEn, MemWr;
-    wire Exception;
     wire [2:0] RegDataSrc;
     wire [2:0] ALUSrc1, ALUSrc2;
     wire [2:0] Op;
@@ -78,10 +77,11 @@ module proc (/*AUTOARG*/
                     // inputs
                     .pcNext(next_pc), 
                     .pcWriteEN(pcWriteEn),  
+                    .pcSel(flush2IFID),
                     .clk(clk), 
                     .rst(rst), 
                     .dump(dump), 
-                    .exception(Exception)// TODO: make sure expection output 0 in the very first clk cycle.
+                    .exception(control_signal[17])// TODO: make sure expection output 0 in the very first clk cycle.
               );
    
     
@@ -149,7 +149,7 @@ module proc (/*AUTOARG*/
                     .btr_out_out(IDEX_btr_out_out), 
                     // regsiter control
                     .clk(clk), 
-                    .en(en), 
+                    .en(1'b1), 
                     .rst(rst),
                     // ********* data inputs *******
                     .instr_in(instr2decode),
@@ -234,6 +234,12 @@ module proc (/*AUTOARG*/
 
     // TODO: connect wire
     regEXMem regEXMem0(
+                    
+                    // reg control
+                    //
+                    .rst(rst),
+                    .en(1'b1),
+                    .clk(clk),
                     // data
                     .pc_plus_two_out(EXMem_pc_plus_two_out),
                     .imm_8_ext_out(EXMem_imm_8_ext_out),
@@ -287,6 +293,11 @@ module proc (/*AUTOARG*/
 
     // TODO: connect wire
     regMemWB regMemWB0 (
+                    // reg control
+                    //
+                    .rst(rst),
+                    .en(1'b1),
+                    .clk(clk),
                     // data
                     .instr(MemWB_instr_out),
                     .mem_data_out(MemWB_mem_data_out),
@@ -308,9 +319,9 @@ module proc (/*AUTOARG*/
                     .pc_plus_two_in(EXMem_pc_plus_two_out),
                     .set_in(EXMem_set_out),
                     //control
-                    .RegDst_in(IDEX_RegDst_out),
-                    .RegDataSrc_in(IDEX_RegDataSrc_out),
-                    .RegWriteEN_in(IDEX_RegWriteEN_out),
+                    .RegDst_in(EXMem_RegDst_out),
+                    .RegDataSrc_in(EXMem_RegDataSrc_out),
+                    .RegWriteEN_in(EXMem_RegWriteEN_out),
                      // Dst_reg_num
                     .dst_reg_num_in(EXMem_dst_reg_num_out),
                     .dst_reg_num_out(MemWB_dst_reg_num_out)

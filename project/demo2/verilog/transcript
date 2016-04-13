@@ -82,7 +82,5 @@
 run -all
 # Hello world...simulation starting
 # See verilogsim.log and verilogsim.ptrace for output
-# hmm....more than 100000 cycles of simulation...error?
-# 
-# ** Note: $finish    : clkrst.v(41)
-#    Time: 10 ms  Iteration: 0  Instance: /proc_hier_pbench/DUT/c0
+# ** Note: $finish    : proc_hier_pbench.v(115)
+#    Time: 1405 ns  Iteration: 0  Instance: /proc_hier_pbench

@@ -2,6 +2,7 @@ module special_control(instr, dump);
     input [4:0] instr;
     output dump;
     reg dump;
+
 always @ (instr)
 begin
     casex({instr})

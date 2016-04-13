@@ -1,4 +1,4 @@
-module regMemWB(
+module regMemWB(    clk, rst, en,
                     // data
                     instr,
                     mem_data_out,
@@ -27,6 +27,9 @@ module regMemWB(
                     dst_reg_num_in,
                     dst_reg_num_out 
     );
+    // reg control
+    //
+    input en, rst, clk;
     // Data Portion
 
     input [15:0] instr_in;

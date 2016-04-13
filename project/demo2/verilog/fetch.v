@@ -1,7 +1,8 @@
-module fetch(instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, dump, exception);
+module fetch(instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, dump, exception, pcSel);
     input clk, rst, dump;
     input exception;
     input pcWriteEN;
+    input pcSel;
     input [15:0] pcNext;
     output [15:0] pcPlusTwo; 
     output [15:0] pcCurrent; 
@@ -14,13 +15,13 @@ module fetch(instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, dump, exc
     wire [15:0] next_pc;
     // initialize modules
     
-    mux2_1_16bit next_pc_exception_handling_mux(
+    mux2_1_16bit next_pc_mux(
           // Outputs
           .out(next_pc),
           // Inputs
-          .sel(exception),
-          .in0(pcNext),
-          .in1(pc_current)
+          .sel(pcSel),
+          .in0(pcPlusTwo),
+          .in1(pcNext)
         );
    
     //PC Reg

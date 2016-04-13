@@ -18,9 +18,12 @@ module regIFID( instr_out,
     output [15:0] instr_out;
     output [15:0] pcPlusTwo_out;
     output [15:0] pcCurrent_out;
+  
+    wire [15:0] instr; 
+    assign instr = rst ? 16'b00001_xxxxxxxxxxx : instr_in;
     
     dff_16bit dff1(.out(pcPlusTwo_out), .in(pcPlusTwo_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff2(.out(pcCurrent_out), .in(pcCurrent_in), .en(en), .rst(rst), .clk(clk));
-    dff_16bit dff3(.out(instr_out), .in(instr_in), .en(en), .rst(rst), .clk(clk));
+    dff_16bit dff3(.out(instr_out), .in(instr), .en(en), .rst(1'b0), .clk(clk));
 
 endmodule

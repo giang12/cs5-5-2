@@ -85,8 +85,7 @@ module decode( instr,
   
         
  
-
-
+    // handle intialization of instr 00000000000
     
     
     wire control_signals_mux_sel;
@@ -109,7 +108,7 @@ module decode( instr,
 
     
     //not used for now~?
-    special_control special_control0(
+    special_control special_contro0(
                         .dump(dump),
                         .instr(instr[15:11])
                 );
