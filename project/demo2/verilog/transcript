@@ -39,12 +39,15 @@
 # Loading __work.special_control
 # Loading __work.control
 # Loading __work.dst_reg_parser
+# Loading __work.rf_bypass
 # Loading __work.rf
 # Loading __work.decoder3_8
 # Loading __work.and3
 # Loading __work.mux8_1_16bit
 # Loading __work.mux4_1_16bit
 # Loading __work.mux4_1
+# Loading __work.xor2_3bit
+# Loading __work.or3
 # Loading __work.mux4_1_4bit
 # Loading __work.ext_mod8_16
 # Loading __work.ext_mod11_16
@@ -76,43 +79,9 @@
 # Loading __work.memory
 # Loading __work.regMemWB
 # Loading __work.writeback
-# ** Warning: (vsim-3015) proc.v(137): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'read2data'.
-#         Region: /proc_hier_pbench/DUT/p0/decode0
-# ** Warning: (vsim-3015) proc.v(137): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'IDEX_Mem_En'.
-#         Region: /proc_hier_pbench/DUT/p0/decode0
-# ** Warning: (vsim-3015) proc.v(137): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'IDEX_Mem_Wr'.
-#         Region: /proc_hier_pbench/DUT/p0/decode0
-# ** Warning: (vsim-3015) decode.v(212): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'A'.
-#         Region: /proc_hier_pbench/DUT/p0/decode0/adder0
-# ** Warning: (vsim-3015) proc.v(203): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'MemEn_out'.
-#         Region: /proc_hier_pbench/DUT/p0/regIDEX0
-# ** Warning: (vsim-3015) proc.v(203): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'MemWr_out'.
-#         Region: /proc_hier_pbench/DUT/p0/regIDEX0
-# ** Warning: (vsim-3015) proc.v(203): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'dump_out'.
-#         Region: /proc_hier_pbench/DUT/p0/regIDEX0
-# ** Warning: (vsim-3015) regIDEX.v(126): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'.
-#         Region: /proc_hier_pbench/DUT/p0/regIDEX0/dff7
-# ** Warning: (vsim-3015) regIDEX.v(127): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'.
-#         Region: /proc_hier_pbench/DUT/p0/regIDEX0/dff3
-# ** Warning: (vsim-3015) regIDEX.v(129): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'.
-#         Region: /proc_hier_pbench/DUT/p0/regIDEX0/dff5
-# ** Warning: (vsim-3015) regIDEX.v(130): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'.
-#         Region: /proc_hier_pbench/DUT/p0/regIDEX0/dff6
-# ** Warning: (vsim-3015) proc.v(275): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'MemEn_in'.
-#         Region: /proc_hier_pbench/DUT/p0/regEXMem0
-# ** Warning: (vsim-3015) proc.v(275): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'MemWr_in'.
-#         Region: /proc_hier_pbench/DUT/p0/regEXMem0
-# ** Warning: (vsim-3015) proc.v(275): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'dump_in'.
-#         Region: /proc_hier_pbench/DUT/p0/regEXMem0
 run -all
 # Hello world...simulation starting
 # See verilogsim.log and verilogsim.ptrace for output
-# ** Warning: (vsim-7) Failed to open readmem file "loadfile_all.img" in read mode.
-# No such file or directory. (errno = ENOENT)    : memory2c.v(71)
-#    Time: 0 ns  Iteration: 1  Instance: /proc_hier_pbench/DUT/p0/fetch0/instrctionMem
-# ** Warning: (vsim-7) Failed to open readmem file "loadfile_all.img" in read mode.
-# No such file or directory. (errno = ENOENT)    : memory2c.v(71)
-#    Time: 0 ns  Iteration: 1  Instance: /proc_hier_pbench/DUT/p0/memory0/instrctionMem
 # hmm....more than 100000 cycles of simulation...error?
 # 
 # ** Note: $finish    : clkrst.v(41)

@@ -146,7 +146,7 @@ module decode( instr,
                         );
 
     // 16 * 8 register file  // TODO  need change to self by passing reg
-    rf regFile0 (
+    rf_bypass regFile0 (
                         // Outputs
                         .read1data(reg1_data), 
                         .read2data(reg2_data), 
@@ -205,7 +205,7 @@ module decode( instr,
           .Ofl(ofl_disposal),
           .Cout(cout_disposal),
           // Inputs
-          .A(read_data_1),
+          .A(reg1_data),
           .B(imm_8_ext),
           .CI(1'b0),
           .sign(1'b1)
