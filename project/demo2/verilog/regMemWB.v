@@ -25,7 +25,7 @@ module regMemWB(
                     RegWriteEN_in,
                     // dst_reg_num
                     dst_reg_num_in,
-                    dst_reg_num_out; 
+                    dst_reg_num_out 
     );
     // Data Portion
 

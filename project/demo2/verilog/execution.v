@@ -51,9 +51,13 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   wire [1:0] forward_a;
   wire [1:0] forward_b;
   
+
+  wire need_to_match_both;
+  match_both match0 (.opcode(IDEX_Instr[15:11]), .matchBoth(need_to_match_both));
   forward_unit forward_u0 ( 
             .ForwardA(forward_a), 
-            .ForwardB(forward_b), 
+            .ForwardB(forward_b),
+            .ValidRt(need_to_match_both), 
             .IDEX_Instr(IDEX_Instr),   
             .EXMEM_RegWriteEN(EXMEM_RegWriteEN), 
             .MEMWB_RegWriteEN(MEMWB_RegWriteEN), 
@@ -75,7 +79,13 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   wire [15:0] forwarded_data_a_shifted;
   wire [15:0] sixteen_minus_forwarded_data_b;
 
-  //TODO  selection signal logic 
+  wire alu_actual_src_mux_a_sel;
+  wire alu_actual_src_mux_b_sel;
+  assign alu_actual_src_mux_a_sel = (forward_a == 2'b00) ? 1'b0 :
+                                    (instr[15:11] == 5'b10010) ? 1'b1 : 1'b0;
+  assign alu_actual_src_mux_b_sel = (forward_b == 2'b00) ? 1'b0 :
+                                    (instr[15:11] == 5'b11010 && instr[1:0] == 2'b10 ) ? 1'b1 : 1'b0;
+ 
   mux2_1_16bit alu_actual_src_mux_a(.out(actual_alu_data_a), .in0(forwarded_data_a), .in1(forwarded_data_a_shifted), .sel(1'b0));
   mux2_1_16bit alu_actual_src_mux_b(.out(actual_alu_data_b), .in0(forwarded_data_b), .in1(sixteen_minus_forwarded_data_b), .sel(1'b0));
  

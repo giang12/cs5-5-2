@@ -1,27 +1,119 @@
-# Compile of fetch.v was successful.
-# Compile of decode.v failed with 1 errors.
-# Compile of execution.v failed with 1 errors.
-# 3 compiles, 2 failed with 2 errors. 
-# Compile of decode.v failed with 1 errors.
-# Compile of execution.v failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors. 
-# Compile of decode.v failed with 1 errors.
-# Compile of execution.v failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors. 
-# Compile of decode.v failed with 1 errors.
-# Compile of execution.v failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors. 
-# Compile of decode.v failed with 1 errors.
-# Compile of execution.v failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors. 
-# Compile of decode.v failed with 1 errors.
-# Compile of execution.v failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors. 
-# Compile of decode.v was successful.
-# Compile of execution.v failed with 1 errors.
-# 2 compiles, 1 failed with 1 error. 
-# Compile of execution.v failed with 1 errors.
-# Compile of execution.v was successful.
-# Compile of execution.v was successful.
-# Compile of decode.v was successful.
-# Compile of decode.v was successful.
+# vsim -lib __work -c proc_hier_pbench 
+# //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
+# //
+# //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
+# //                         All Rights Reserved.
+# //                   UNPUBLISHED, LICENSED SOFTWARE.
+# //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+# //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
+# //
+# Loading __work.proc_hier_pbench
+# Loading __work.proc_hier
+# Loading __work.clkrst
+# Loading __work.proc
+# Loading __work.fetch
+# Loading __work.mux2_1_16bit
+# Loading __work.mux2_1
+# Loading __work.not1
+# Loading __work.nand2
+# Loading __work.nor2
+# Loading __work.reg_16bit
+# Loading __work.dff
+# Loading __work.memory2c
+# Loading __work.cla_16bit
+# Loading __work.fulladder_16bit
+# Loading __work.fulladder
+# Loading __work.xor2
+# Loading __work.and2
+# Loading __work.clu_16bit
+# Loading __work.clu_4bit
+# Loading __work.or2
+# Loading __work.regIFID
+# Loading __work.dff_16bit
+# Loading __work.decode
+# Loading __work.branch_cond_test
+# Loading __work.and16
+# Loading __work.match_both
+# Loading __work.hazard_detect
+# Loading __work.mux2_1_32bit
+# Loading __work.special_control
+# Loading __work.control
+# Loading __work.dst_reg_parser
+# Loading __work.rf
+# Loading __work.decoder3_8
+# Loading __work.and3
+# Loading __work.mux8_1_16bit
+# Loading __work.mux4_1_16bit
+# Loading __work.mux4_1
+# Loading __work.mux4_1_4bit
+# Loading __work.ext_mod8_16
+# Loading __work.ext_mod11_16
+# Loading __work.ext_mod5_16
+# Loading __work.btr_mod
+# Loading __work.regIDEX
+# Loading __work.dff_8bit
+# Loading __work.mux2_1_8bit
+# Loading __work.execution
+# Loading __work.forward_unit
+# Loading __work.sf_left8bit
+# Loading __work.alu
+# Loading __work.inverter_16bit
+# Loading __work.not1_16bit
+# Loading __work.shifter
+# Loading __work.sh_1
+# Loading __work.msb_module
+# Loading __work.inner_module
+# Loading __work.lsb_module
+# Loading __work.sh_2
+# Loading __work.sh_4
+# Loading __work.sh_8
+# Loading __work.and2_16bit
+# Loading __work.or2_16bit
+# Loading __work.xor2_16bit
+# Loading __work.zero_detect
+# Loading __work.cond_set
+# Loading __work.regEXMem
+# Loading __work.memory
+# Loading __work.regMemWB
+# Loading __work.writeback
+# ** Warning: (vsim-3015) proc.v(137): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'read2data'.
+#         Region: /proc_hier_pbench/DUT/p0/decode0
+# ** Warning: (vsim-3015) proc.v(137): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'IDEX_Mem_En'.
+#         Region: /proc_hier_pbench/DUT/p0/decode0
+# ** Warning: (vsim-3015) proc.v(137): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'IDEX_Mem_Wr'.
+#         Region: /proc_hier_pbench/DUT/p0/decode0
+# ** Warning: (vsim-3015) decode.v(212): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'A'.
+#         Region: /proc_hier_pbench/DUT/p0/decode0/adder0
+# ** Warning: (vsim-3015) proc.v(203): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'MemEn_out'.
+#         Region: /proc_hier_pbench/DUT/p0/regIDEX0
+# ** Warning: (vsim-3015) proc.v(203): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'MemWr_out'.
+#         Region: /proc_hier_pbench/DUT/p0/regIDEX0
+# ** Warning: (vsim-3015) proc.v(203): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'dump_out'.
+#         Region: /proc_hier_pbench/DUT/p0/regIDEX0
+# ** Warning: (vsim-3015) regIDEX.v(126): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'.
+#         Region: /proc_hier_pbench/DUT/p0/regIDEX0/dff7
+# ** Warning: (vsim-3015) regIDEX.v(127): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'.
+#         Region: /proc_hier_pbench/DUT/p0/regIDEX0/dff3
+# ** Warning: (vsim-3015) regIDEX.v(129): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'.
+#         Region: /proc_hier_pbench/DUT/p0/regIDEX0/dff5
+# ** Warning: (vsim-3015) regIDEX.v(130): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'.
+#         Region: /proc_hier_pbench/DUT/p0/regIDEX0/dff6
+# ** Warning: (vsim-3015) proc.v(275): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'MemEn_in'.
+#         Region: /proc_hier_pbench/DUT/p0/regEXMem0
+# ** Warning: (vsim-3015) proc.v(275): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'MemWr_in'.
+#         Region: /proc_hier_pbench/DUT/p0/regEXMem0
+# ** Warning: (vsim-3015) proc.v(275): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'dump_in'.
+#         Region: /proc_hier_pbench/DUT/p0/regEXMem0
+run -all
+# Hello world...simulation starting
+# See verilogsim.log and verilogsim.ptrace for output
+# ** Warning: (vsim-7) Failed to open readmem file "loadfile_all.img" in read mode.
+# No such file or directory. (errno = ENOENT)    : memory2c.v(71)
+#    Time: 0 ns  Iteration: 1  Instance: /proc_hier_pbench/DUT/p0/fetch0/instrctionMem
+# ** Warning: (vsim-7) Failed to open readmem file "loadfile_all.img" in read mode.
+# No such file or directory. (errno = ENOENT)    : memory2c.v(71)
+#    Time: 0 ns  Iteration: 1  Instance: /proc_hier_pbench/DUT/p0/memory0/instrctionMem
+# hmm....more than 100000 cycles of simulation...error?
+# 
+# ** Note: $finish    : clkrst.v(41)
+#    Time: 10 ms  Iteration: 0  Instance: /proc_hier_pbench/DUT/c0
