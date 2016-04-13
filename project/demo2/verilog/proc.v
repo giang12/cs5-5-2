@@ -50,10 +50,10 @@ module proc (/*AUTOARG*/
     wire [15:0] pc2decode, pcPlusTwo2decdoe, instr2decode, instrFiveExt2IDEX, instrEightExt2IDEX, btr_out2IDEX;
     wire [31:0] control_signal;
     // IDEX 
-    wire [15:0] read1data1IDEX, read1data2IDEX, IDEXinstrOut, IDEX_MemEn_out, IDEX_MemWr_out, IDEX_dump_out, IDEX_read_data_1_out, IDEX_read_data_2_out, IDEX_imm_5_ext_out, IDEX_imm_8_ext_out, IDEX_btr_out_out, IDEX_pc_plus_two_out;
+    wire [15:0] read1data2IDEX, read2data2IDEX, IDEXinstrOut, IDEX_read_data_1_out, IDEX_read_data_2_out, IDEX_imm_5_ext_out, IDEX_imm_8_ext_out, IDEX_btr_out_out, IDEX_pc_plus_two_out;
     wire [1:0] IDEX_RegDst_out; 
     wire [2:0] IDEX_RegDataSrc_out;
-    wire IDEX_RegWriteEN_out;
+    wire IDEX_RegWriteEN_out, IDEX_MemEn_out, IDEX_MemWr_out, IDEX_dump_out;
     wire w1, w2; // dummy wires
     
     // MEMWB
@@ -154,8 +154,8 @@ module proc (/*AUTOARG*/
                     // ********* data inputs *******
                     .instr_in(instr2decode),
                     .pcPlusTwo_in(pcPlusTwo2decdoe),
-                    .read1data_in(read1data1IDEX), 
-                    .read2data_in(read1data2IDEX),
+                    .read1data_in(read1data2IDEX), 
+                    .read2data_in(read2data2IDEX),
                     .instrFiveExt_in(instrFiveExt2IDEX),
                     .instrEightExt_in(instrEightExt2IDEX),
                     .btr_out_in(btr_out2IDEX),

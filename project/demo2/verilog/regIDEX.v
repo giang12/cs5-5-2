@@ -123,11 +123,11 @@ module regIDEX(
  
     dff_16bit dff1(.out(pc_plus_two_out), .in(pcPlusTwo_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff2(.out(instr_out), .in(instr_in), .en(en), .rst(rst), .clk(clk));
-    dff_16bit dff7(.out(instrEightExt_out), .in(instrEightExt_in), .en(en), .rst(rst), .clk(clk));
-    dff_16bit dff3(.out(instrFiveExt_out), .in(instrFiveExt_in), .en(en), .rst(rst), .clk(clk));
+    dff_16bit dff7(.out(imm_8_ext_out), .in(instrEightExt_in), .en(en), .rst(rst), .clk(clk));
+    dff_16bit dff3(.out(imm_5_ext_out), .in(instrFiveExt_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff4(.out(btr_out_out), .in(btr_out_in), .en(en), .rst(rst), .clk(clk));
-    dff_16bit dff5(.out(read1data_out), .in(read1data_in), .en(en), .rst(rst), .clk(clk));
-    dff_16bit dff6(.out(read2data_out), .in(read2data_in), .en(en), .rst(rst), .clk(clk));
+    dff_16bit dff5(.out(read_data_1_out), .in(read1data_in), .en(en), .rst(rst), .clk(clk));
+    dff_16bit dff6(.out(read_data_2_out), .in(read2data_in), .en(en), .rst(rst), .clk(clk));
 
 
     // *********************** RegModules for Control ****************
