@@ -4,7 +4,13 @@ a) Write an assembly program to demonstrate why branch prediction is necessary a
 
 
 b) Write an explanation of your program and how branch prediction helps in p2.txt.
-
+  if there is no branch prediction, the beq instuction will cause a control harzard 
+  (you will not be able to fetch any new instruction until the evalution of the condition is done)
+  
+  in p2, by asssue the branch will not taken, the processor are able to fetch new instruction in each
+  clock cycle, and if the prediction is indeed correct, then, you avoid potential stall
 
 c) Will branch prediction always take only 1 cycle? Write your answer in p2.txt.
-
+  No, it dependents on at which stage you dectect the branch misprediction,
+  if it is in execution stage, then you might need to flush two instructions, in that case, it will
+  takes two cycle
