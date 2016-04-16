@@ -2,14 +2,11 @@ module decode( instr,
                 // register files
                 clk, rst, read1data, read2data, writedata, 
                 // ext module
-                instrEightExt, instrFiveExt,
-                // btr module
-                btr_out,
-                // 04/12 if_flush, actual control signals
+                instrEightExt, instrFiveExt, instrElevenExt,
+                
+                // 04/12  actual control signals
                 // outputs
-                if_flush,
                 actual_control_signals,
-                next_pc,
                 pcWriteEn,
                 IFIDWriteEn,
                 
@@ -28,10 +25,7 @@ module decode( instr,
     //rst signal to if/id register
 
     // ext modules
-    output [15:0] instrEightExt, instrFiveExt; 
-    output [15:0] btr_out;
-    output if_flush;
-    output [15:0] next_pc;
+    output [15:0] instrEightExt, instrFiveExt, instrElevenExt;
     output [31:0] actual_control_signals;
     output pcWriteEn;
     output IFIDWriteEn;
@@ -65,16 +59,6 @@ module decode( instr,
     // modules initialization
     
    
-    // branch_cond_test
-    wire [2:0] pc_src;
-    branch_cond_test bran_cond (
-                        .data(reg1_data),  
-                        .instr(instr[12:11]), 
-                        .branch(normal_control_signals[15]), 
-                        .jump(normal_control_signals[16]), 
-                        .pc_src(pc_src),
-                        .if_flush(if_flush)
-                );
     
 
     // match_both unit (test the formation of the instruction in the current
@@ -171,84 +155,16 @@ module decode( instr,
                         .in2({{1'bx},{MEMWB_Instr[10:8]}}), 
                         .in3({{1'bx},{3'b111}}));
 
-
-    wire [15:0] imm_8_ext;
-    wire [15:0] imm_11_ext;
-    assign instrEightExt = imm_8_ext;
-    //assign instrEleventExt = imm_11_ext;  
   
-    ext_mod8_16 ext0 (  .out(imm_8_ext), 
+    ext_mod8_16 ext0 (  .out(instrEightExt), 
                         .sel(normal_control_signals[14]), 
                         .in(instr[7:0]));
 
-    ext_mod11_16 ext1(  .out(imm_11_ext), 
+    ext_mod11_16 ext1(  .out(instrElevenExt), 
                         .sel(normal_control_signals[14]), 
                         .in(instr[10:0]));
 
     ext_mod5_16 ext2 (  .out(instrFiveExt), 
                         .sel(normal_control_signals[14]), 
                         .in(instr[4:0]));
-    btr_mod btr0 (
-                        .out(btr_out),
-                        .in(reg1_data)
-                    );
-
-  wire [15:0] pc_plus_two_plus_imm_8_ext;
-  wire [15:0] pc_plus_two_plus_imm_11_ext;
-  wire [15:0] rs_plus_imm_8_ext;
-
-
-   cla_16bit adder0(
-          // Outputs
-          .OUT(rs_plus_imm_8_ext),
-          .Ofl(ofl_disposal),
-          .Cout(cout_disposal),
-          // Inputs
-          .A(reg1_data),
-          .B(imm_8_ext),
-          .CI(1'b0),
-          .sign(1'b1)
-        ); 
-
-  cla_16bit adder1(
-          // Outputs
-          .OUT(pc_plus_two_plus_imm_8_ext),
-          .Ofl(ofl_disposal),
-          .Cout(cout_disposal),
-         // Inputs
-          .A(pc_plus_two),
-          .B(imm_8_ext),
-          .CI(1'b0),
-          .sign(1'b1)
-        ); 
-
-  cla_16bit adder2(
-          // Outputs
-          .OUT(pc_plus_two_plus_imm_11_ext),
-          .Ofl(ofl_disposal),
-          .Cout(cout_disposal),
-         // Inputs
-          .A(pc_plus_two),
-          .B(imm_11_ext),
-          .CI(1'b0),
-          .sign(1'b1)
-        ); 
-  
-
-  mux8_1_16bit branch_target_mux(
-          // Outputs
-          .out(next_pc),
-          // Inputs
-          .sel(pc_src),
-          .in0(pc),
-          .in1(pc_plus_two),
-          .in2(rs_plus_imm_8_ext),
-          .in3(pc_plus_two_plus_imm_8_ext),
-          .in4(pc_plus_two_plus_imm_11_ext),
-          .in5(16'bxxxx_xxxx_xxxx_xxxx),
-          .in6(16'bxxxx_xxxx_xxxx_xxxx),
-          .in7(16'bxxxx_xxxx_xxxx_xxxx)
-        );
-
-
 endmodule

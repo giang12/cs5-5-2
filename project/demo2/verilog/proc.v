@@ -33,9 +33,9 @@ module proc (/*AUTOARG*/
     wire Cin, invA, invB, sign, dump;
     wire [15:0] read_data_1, read_data_2;
     wire [15:0] imm_5_ext, imm_8_ext, imm_11_ext;
-    wire [15:0] btr_out;
     wire [15:0] next_pc;
-    wire [15:0] Out, set;
+    wire [15:0] btr_out; // but seems like no one is using this wire
+    wire [15:0] Out, set, btr__out;
     wire [15:0] mem_data_out; 
     wire [15:0] write_data;
     wire [15:0] instr;
@@ -45,15 +45,15 @@ module proc (/*AUTOARG*/
 
     wire IFIDWriteEn, pcWriteEn;
     // decode
-    wire flush2IFID;
-    wire [15:0] pc2decode, pcPlusTwo2decdoe, instr2decode, instrFiveExt2IDEX, instrEightExt2IDEX, btr_out2IDEX;
+    wire flush;
+    wire [15:0] pc2decode, pcPlusTwo2decdoe, instr2decode, instrFiveExt2IDEX, instrEightExt2IDEX, instrElevenExt2IDEX ;
     wire [31:0] control_signal;
     // IDEX 
-    wire [15:0] read1data2IDEX, read2data2IDEX, IDEXinstrOut, IDEX_read_data_1_out, IDEX_read_data_2_out, IDEX_imm_5_ext_out, IDEX_imm_8_ext_out, IDEX_btr_out_out, IDEX_pc_plus_two_out;
+    wire [15:0] read1data2IDEX, read2data2IDEX, IDEXinstrOut, IDEX_read_data_1_out, IDEX_read_data_2_out, IDEX_imm_5_ext_out, IDEX_imm_8_ext_out, IDEX_imm_11_ext_out , IDEX_pc_plus_two_out;
     wire [1:0] IDEX_RegDst_out; 
     wire [2:0] IDEX_RegDataSrc_out;
     wire IDEX_RegWriteEN_out, IDEX_MemEn_out, IDEX_MemWr_out, IDEX_dump_out;
-    wire w1, w2; // dummy wires
+    
     
     // MEMWB
     wire MemWB_RegWriteEN_out;
@@ -77,16 +77,17 @@ module proc (/*AUTOARG*/
                     // inputs
                     .pcNext(next_pc), 
                     .pcWriteEN(pcWriteEn),  
-                    .pcSel(flush2IFID),
+                    .pcSel(flush),
                     .clk(clk), 
                     .rst(rst), 
-                    .dump(dump), 
                     .exception(control_signal[17])// TODO: make sure expection output 0 in the very first clk cycle.
               );
    
     
     wire [15:0] IFID_instr_in;
-    mux2_1_16bit IFID_instr_mux(.out(IFID_instr_in), .in0(instr), .in1(16'b0000100000000000), .sel(flush2IFID));
+    wire [15:0] IDEX_instr_in;
+    mux2_1_16bit IFID_instr_mux(.out(IFID_instr_in), .in0(instr), .in1(16'b0000100000000000), .sel(flush)); 
+    mux2_1_16bit IDEX_instr_mux(.out(IDEX_instr_in), .in0(instr2decode), .in1(16'b0000100000000000), .sel(flush));
     // TODO: connect wires
     regIFID regIFID0 (  
                     // outputs
@@ -102,7 +103,7 @@ module proc (/*AUTOARG*/
                     .instr_in(IFID_instr_in)
                 );
   
-    
+    wire [31:0] actual_control_signals;
     decode decode0 ( 
                 .instr(instr2decode), // in
                 // register files
@@ -112,15 +113,12 @@ module proc (/*AUTOARG*/
                 .read2data(read2data2IDEX), 
                 .writedata(write_data), // in
                 // ext module
+                .instrElevenExt(instrElevenExt2IDEX),
                 .instrEightExt(instrEightExt2IDEX), 
                 .instrFiveExt(instrFiveExt2IDEX),
-                // btr module
-                .btr_out(btr_out2IDEX),
                 // 04/12 if_flush, actual control signals
                 // outputs
-                .if_flush(flush2IFID),
-                .actual_control_signals(control_signal),
-                .next_pc(next_pc),
+                .actual_control_signals(actual_control_signals),
                 .pcWriteEn(pcWriteEn),
                 .IFIDWriteEn(IFIDWriteEn),
                 
@@ -136,6 +134,13 @@ module proc (/*AUTOARG*/
                 .MEMWB_RegWriteEN(MemWB_RegWriteEN_out),
                 .MEMWB_RegDst(MemWB_RegDst_out));
 
+    // ALSO NEED TO FLUSH THE CONTROL IN IDEX
+    //
+    //
+    //
+
+     mux2_1_32bit mux_2_1_32bit_0 (.out(control_signal), .in0(actual_control_signals), .in1(32'b0000_0000_0000_0000_0000_0000_0000_0000), .sel(flush));
+
     // TODO: connect wire    
     regIDEX regIDEX0 
                 ( 
@@ -145,20 +150,20 @@ module proc (/*AUTOARG*/
                     .read_data_1_out(IDEX_read_data_1_out), 
                     .read_data_2_out(IDEX_read_data_2_out), 
                     .imm_5_ext_out(IDEX_imm_5_ext_out), 
-                    .imm_8_ext_out(IDEX_imm_8_ext_out), 
-                    .btr_out_out(IDEX_btr_out_out), 
+                    .imm_8_ext_out(IDEX_imm_8_ext_out),
+                    .imm_11_ext_out(IDEX_imm_11_ext_out), 
                     // regsiter control
                     .clk(clk), 
                     .en(1'b1), 
                     .rst(rst),
                     // ********* data inputs *******
-                    .instr_in(instr2decode),
+                    .instr_in(IDEX_instr_in),
                     .pcPlusTwo_in(pcPlusTwo2decdoe),
                     .read1data_in(read1data2IDEX), 
                     .read2data_in(read2data2IDEX),
                     .instrFiveExt_in(instrFiveExt2IDEX),
                     .instrEightExt_in(instrEightExt2IDEX),
-                    .btr_out_in(btr_out2IDEX),
+                    .instrElevenExt_in(instrElevenExt2IDEX),
                     // *********** control outputs *******
                     // EX
                     .Op_out(Op), 
@@ -168,8 +173,8 @@ module proc (/*AUTOARG*/
                     .invA_out(invA), 
                     .invB_out(invB), 
                     .sign_out(sign), 
-                    .jump_out(w1),
-                    .branch_out(w2),
+                    .jump_out(jump),
+                    .branch_out(branch),
                     // M
                     .MemEn_out(IDEX_MemEn_out), 
                     .MemWr_out(IDEX_MemWr_out), 
@@ -187,8 +192,8 @@ module proc (/*AUTOARG*/
                     .invA_in(control_signal[22]), 
                     .invB_in(control_signal[23]), 
                     .sign_in(control_signal[24]), 
-                    .Jump_in(1'bx), 
-                    .Branch_in(1'bx),
+                    .Jump_in(control_signal[16]), 
+                    .Branch_in(control_signal[15]),
                     // M
                     .MemEn_in(control_signal[12]), 
                     .MemWr_in(control_signal[13]), 
@@ -207,13 +212,21 @@ module proc (/*AUTOARG*/
     execution exec (
                     // Outputs
                     .Out(Out), 
-                    .set(set), 
+                    .set(set),
+                    .btr_out(btr__out),
+                    .flush(flush),
+                    .next_pc(next_pc),
+                    .data_to_mem(ex_data_to_mem),
                     // Inputs
                     .instr(IDEXinstrOut),
                     .read_data_1(IDEX_read_data_1_out), 
                     .read_data_2(IDEX_read_data_2_out), 
                     .imm_5_ext(IDEX_imm_5_ext_out), 
-                    .imm_8_ext(IDEX_imm_8_ext_out), 
+                    .imm_8_ext(IDEX_imm_8_ext_out),
+                    .imm_11_ext(IDEX_imm_11_ext_out),
+                    .pc_plus_two(IDEX_pc_plus_two_out),
+                    .branch(branch),
+                    .jump(jump), 
                     .ALUSrc1(ALUSrc1), 
                     .ALUSrc2(ALUSrc2), 
                     .Op(Op), 
@@ -227,11 +240,11 @@ module proc (/*AUTOARG*/
                     .EXMEM_DstRegNum(EXMem_dst_reg_num_out), // TODO 
                     .MEMWB_DstRegNum(MemWB_dst_reg_num_out), 
                     .WB_DATA(write_data),
-                    .EXMEM_ALUOUT(EXMem_aluResult_out)
+                    .EXMEM_DATA(EXMemFwdData)
                 );
 
     
-
+    wire [15:0] ex_data_to_mem;
     // TODO: connect wire
     regEXMem regEXMem0(
                     
@@ -263,8 +276,8 @@ module proc (/*AUTOARG*/
                     .pc_plus_two_in(IDEX_pc_plus_two_out),
                     .imm_8_ext_in(IDEX_imm_8_ext_out),
                     .Out_in(Out),
-                    .read_data_2_in(IDEX_read_data_2_out),
-                    .btr_out_in(IDEX_btr_out_out),
+                    .read_data_2_in(ex_data_to_mem),
+                    .btr_out_in(btr__out),
                     .instr_in(IDEXinstrOut),
                     .set_in(set),
     
@@ -279,7 +292,22 @@ module proc (/*AUTOARG*/
                     .dst_reg_num_in(IDEX_dst_reg_num_out),
                     .dst_reg_num_out(EXMem_dst_reg_num_out) 
                 );
-
+    wire [15:0] EXMemFwdData;
+    wire [2:0] EXMemFwdDataMuxSel;
+    assign EXMemFwdDataMuxSel = EXMem_RegDataSrc_out;
+    mux8_1_16bit EXMemFwdDataMux(
+                      .out(EXMemFwdData),
+                      .sel(EXMemFwdDataMuxSel),
+                      .in0(16'bxxxxxxxxxxxxxxxx),
+                      .in1(EXMem_aluResult_out),
+                      .in2(EXMem_imm_8_ext_out),
+                      .in3(EXMem_pc_plus_two_out),
+                      .in4(EXMem_set_out),
+                      .in5(EXMem_btr_out_out),
+                      .in6(16'bxxxxxxxxxxxxxxxx),
+                      .in7(16'bxxxxxxxxxxxxxxxx)
+                  );
+        
 
     memory memory0( .readData(mem_data_out), // TODO
                     .aluResult(EXMem_aluResult_out), 

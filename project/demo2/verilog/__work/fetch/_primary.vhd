@@ -9,7 +9,6 @@ entity fetch is
         pcwriteen       : in     vl_logic;
         clk             : in     vl_logic;
         rst             : in     vl_logic;
-        dump            : in     vl_logic;
         exception       : in     vl_logic;
         pcsel           : in     vl_logic
     );

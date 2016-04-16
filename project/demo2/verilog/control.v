@@ -257,7 +257,7 @@ begin
       begin
         RegDst <= 2'b00;
         RegDataSrc <= 3'b101;
-        ALUSrc1 <= 3'bxxx;
+        ALUSrc1 <= 3'b000;
         ALUSrc2 <= 3'bxxx;
         RegWriteEn <= 1'b1;
         MemEn <= 1'b0;
@@ -643,7 +643,7 @@ begin
       begin
         RegDst <= 2'bxx;
         RegDataSrc <= 3'bxxx;
-        ALUSrc1 <= 3'bxxx;
+        ALUSrc1 <= 3'b000;
         ALUSrc2 <= 3'bxxx;
         RegWriteEn <= 1'b0;
         MemEn <= 1'b0;
@@ -681,7 +681,7 @@ begin
       begin
         RegDst <= 2'b11;
         RegDataSrc <= 3'b011;
-        ALUSrc1 <= 3'bxxx;
+        ALUSrc1 <= 3'b000;
         ALUSrc2 <= 3'bxxx;
         RegWriteEn <= 1'b1;
         MemEn <= 1'b0;

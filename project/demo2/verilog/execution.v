@@ -1,8 +1,9 @@
-module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_ALUOUT);
+module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, imm_11_ext, pc_plus_two, branch, jump, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_DATA);
  
   input [15:0] instr;
   input [15:0] read_data_1, read_data_2;
-  input [15:0] imm_5_ext, imm_8_ext;
+  input [15:0] imm_5_ext, imm_8_ext, imm_11_ext, pc_plus_two;
+  input branch, jump;
   input [2:0] ALUSrc1, ALUSrc2;
   input [2:0] Op;
   input Cin, invA, invB, sign; 
@@ -13,7 +14,7 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   input [2:0] EXMEM_DstRegNum;
   input [2:0] MEMWB_DstRegNum;
 
-  input [15:0] WB_DATA, EXMEM_ALUOUT;
+  input [15:0] WB_DATA, EXMEM_DATA;
   
 
   //NEED INPUT FOR 
@@ -21,6 +22,10 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   
   output [15:0] Out;
   output [15:0] set;
+  output [15:0] btr_out;
+  output flush;
+  output [15:0] next_pc;
+  output [15:0] data_to_mem;
   //NEED OUTPUT FOR 
   // instr [15:0]
   // imm_8_ext [15:0]
@@ -45,7 +50,6 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
 
   assign Out = alu_out;
 
-
   // forward_unit
   // TODO: connect wires
   wire [1:0] forward_a;
@@ -68,13 +72,16 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   wire [15:0] forwarded_data_a;
   wire [15:0] forwarded_data_b;
 
-  mux4_1_16bit alu_fwdA_mux (.out(forwarded_data_a), .in0(alu_src_1), .in1(EXMEM_ALUOUT), .in2(WB_DATA), .in3(16'bx), .sel(forward_a));
-  mux4_1_16bit alu_fwdB_mux (.out(forwarded_data_b), .in0(alu_src_2), .in1(EXMEM_ALUOUT), .in2(WB_DATA), .in3(16'bx), .sel(forward_b));
+  mux4_1_16bit alu_fwdA_mux (.out(forwarded_data_a), .in0(alu_src_1), .in1(EXMEM_DATA), .in2(WB_DATA), .in3(16'bx), .sel(forward_a));
+  mux4_1_16bit alu_fwdB_mux (.out(forwarded_data_b), .in0(alu_src_2), .in1(EXMEM_DATA), .in2(WB_DATA), .in3(16'bx), .sel(forward_b));
+  mux4_1_16bit mem_data_fwd_mux (.out(data_to_mem), .in0(read_data_2), .in1(EXMEM_DATA), .in2(WB_DATA), .in3(16'bx), .sel(forward_b));
+
 
 
   wire [15:0] actual_alu_data_a;
   wire [15:0] actual_alu_data_b;
   
+  assign actual_alu_data_2 = actual_alu_data_b;
 
   wire [15:0] forwarded_data_a_shifted;
   wire [15:0] sixteen_minus_forwarded_data_b;
@@ -86,8 +93,8 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   assign alu_actual_src_mux_b_sel = (forward_b == 2'b00) ? 1'b0 :
                                     (instr[15:11] == 5'b11010 && instr[1:0] == 2'b10 ) ? 1'b1 : 1'b0;
  
-  mux2_1_16bit alu_actual_src_mux_a(.out(actual_alu_data_a), .in0(forwarded_data_a), .in1(forwarded_data_a_shifted), .sel(1'b0));
-  mux2_1_16bit alu_actual_src_mux_b(.out(actual_alu_data_b), .in0(forwarded_data_b), .in1(sixteen_minus_forwarded_data_b), .sel(1'b0));
+  mux2_1_16bit alu_actual_src_mux_a(.out(actual_alu_data_a), .in0(forwarded_data_a), .in1(forwarded_data_a_shifted), .sel(alu_actual_src_mux_a_sel));
+  mux2_1_16bit alu_actual_src_mux_b(.out(actual_alu_data_b), .in0(forwarded_data_b), .in1(sixteen_minus_forwarded_data_b), .sel(alu_actual_src_mux_b_sel));
  
 // shifter for shifting data after forwarded
 
@@ -184,6 +191,15 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
           .sign(1'b1)
         ); 
 
+  wire [15:0] alu_scr_b_last_level_value;
+  wire alu_src_b_last_level_mux_sel;
+  assign alu_src_b_last_level_mux_sel = (instr[15:11] == 5'b10000)? 1'b1 : (instr[15:11] == 5'b10011) ? 1'b1 : (instr[15:11] == 5'b10001) ? 1'b1 : 1'b0;
+  mux2_1_16bit alu_src_b_last_level_mux(
+        .out(alu_scr_b_last_level_value),
+        .in0(actual_alu_data_b),
+        .in1(imm_5_ext),
+        .sel(alu_src_b_last_level_mux_sel)
+    );
 
   alu alu0(
           // Outputs
@@ -192,14 +208,19 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
           .Cout(cout),
           .Z(zero),
           // Inputs
-          .A(alu_src_1),
-          .B(alu_src_2),
+          .A(actual_alu_data_a),
+          .B(alu_scr_b_last_level_value),
           .Cin(Cin),
           .Op(Op),
           .invA(invA),
           .invB(invB),
           .sign(sign)
         );
+
+    btr_mod btr0 (
+                        .out(btr_out),
+                        .in(actual_alu_data_a)
+                    );
 
   
   // Two other sub control units
@@ -210,9 +231,80 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
           .instr(instr[12:11]),
           .zero(zero),
           .cout(cout),
-          .alu_src_1_msb(alu_src_1[15]),
-          .alu_src_2_msb(alu_src_2[15]),
+          .alu_src_1_msb(actual_alu_data_a[15]),
+          .alu_src_2_msb(actual_alu_data_b[15]),
           .alu_out_msb(alu_out[15])
         );
+
+
+    // branch_cond_test
+    branch_cond_test bran_cond (
+                        .data(actual_alu_data_a),  
+                        .instr(instr[12:11]), 
+                        .branch(branch), 
+                        .jump(jump), 
+                        .pc_src(pc_src),
+                        .flush(flush)
+                );
  
+  wire [15:0] pc_plus_two_plus_imm_8_ext;
+  wire [15:0] pc_plus_two_plus_imm_11_ext;
+  wire [15:0] rs_plus_imm_8_ext;
+ 
+
+   cla_16bit adder0(
+          // Outputs
+          .OUT(rs_plus_imm_8_ext),
+          .Ofl(ofl_disposal),
+          .Cout(cout_disposal),
+          // Inputs
+          .A(actual_alu_data_a),
+          .B(imm_8_ext),
+          .CI(1'b0),
+          .sign(1'b1)
+        ); 
+
+  cla_16bit adder1(
+          // Outputs
+          .OUT(pc_plus_two_plus_imm_8_ext),
+          .Ofl(ofl_disposal),
+          .Cout(cout_disposal),
+         // Inputs
+          .A(pc_plus_two),
+          .B(imm_8_ext),
+          .CI(1'b0),
+          .sign(1'b1)
+        ); 
+
+  cla_16bit adder2(
+          // Outputs
+          .OUT(pc_plus_two_plus_imm_11_ext),
+          .Ofl(ofl_disposal),
+          .Cout(cout_disposal),
+         // Inputs
+          .A(pc_plus_two),
+          .B(imm_11_ext),
+          .CI(1'b0),
+          .sign(1'b1)
+        ); 
+  
+
+  mux8_1_16bit branch_target_mux(
+          // Outputs
+          .out(next_pc),
+          // Inputs
+          .sel(pc_src),
+          .in0(16'bxxxx_xxxx_xxxx_xxxx),
+          .in1(pc_plus_two),
+          .in2(rs_plus_imm_8_ext),
+          .in3(pc_plus_two_plus_imm_8_ext),
+          .in4(pc_plus_two_plus_imm_11_ext),
+          .in5(16'bxxxx_xxxx_xxxx_xxxx),
+          .in6(16'bxxxx_xxxx_xxxx_xxxx),
+          .in7(16'bxxxx_xxxx_xxxx_xxxx)
+        );
+
+
+
+
 endmodule

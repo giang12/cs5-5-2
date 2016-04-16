@@ -10,10 +10,8 @@ entity decode is
         writedata       : in     vl_logic_vector(15 downto 0);
         instreightext   : out    vl_logic_vector(15 downto 0);
         instrfiveext    : out    vl_logic_vector(15 downto 0);
-        btr_out         : out    vl_logic_vector(15 downto 0);
-        if_flush        : out    vl_logic;
+        instrelevenext  : out    vl_logic_vector(15 downto 0);
         actual_control_signals: out    vl_logic_vector(31 downto 0);
-        next_pc         : out    vl_logic_vector(15 downto 0);
         pcwriteen       : out    vl_logic;
         ifidwriteen     : out    vl_logic;
         pc_plus_two     : in     vl_logic_vector(15 downto 0);

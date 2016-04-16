@@ -1,5 +1,5 @@
-module fetch(instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, dump, exception, pcSel);
-    input clk, rst, dump;
+module fetch(instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, exception, pcSel);
+    input clk, rst;
     input exception;
     input pcWriteEN;
     input pcSel;
@@ -33,7 +33,7 @@ module fetch(instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, dump, exc
     // instruction mem
     memory2c instrctionMem( .data_out(instr),
                             .data_in(16'b0),
-                            .addr(pcCurrent),
+                            .addr(pc_current),
                             .enable(1'b1), // disable mem when dump
                             .wr(1'b0),
                             .createdump(1'b0),
