@@ -1,4 +1,4 @@
-module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_ALUOUT);
+module execution(Out, set, btr_out, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_DATA);
  
   input [15:0] instr;
   input [15:0] read_data_1, read_data_2;
@@ -13,7 +13,7 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   input [2:0] EXMEM_DstRegNum;
   input [2:0] MEMWB_DstRegNum;
 
-  input [15:0] WB_DATA, EXMEM_ALUOUT;
+  input [15:0] WB_DATA, EXMEM_DATA;
   
 
   //NEED INPUT FOR 
@@ -21,6 +21,7 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   
   output [15:0] Out;
   output [15:0] set;
+  output [15:0] btr_out;
   //NEED OUTPUT FOR 
   // instr [15:0]
   // imm_8_ext [15:0]
@@ -68,8 +69,8 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   wire [15:0] forwarded_data_a;
   wire [15:0] forwarded_data_b;
 
-  mux4_1_16bit alu_fwdA_mux (.out(forwarded_data_a), .in0(alu_src_1), .in1(EXMEM_ALUOUT), .in2(WB_DATA), .in3(16'bx), .sel(forward_a));
-  mux4_1_16bit alu_fwdB_mux (.out(forwarded_data_b), .in0(alu_src_2), .in1(EXMEM_ALUOUT), .in2(WB_DATA), .in3(16'bx), .sel(forward_b));
+  mux4_1_16bit alu_fwdA_mux (.out(forwarded_data_a), .in0(alu_src_1), .in1(EXMEM_DATA), .in2(WB_DATA), .in3(16'bx), .sel(forward_a));
+  mux4_1_16bit alu_fwdB_mux (.out(forwarded_data_b), .in0(alu_src_2), .in1(EXMEM_DATA), .in2(WB_DATA), .in3(16'bx), .sel(forward_b));
 
 
   wire [15:0] actual_alu_data_a;
@@ -86,8 +87,8 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
   assign alu_actual_src_mux_b_sel = (forward_b == 2'b00) ? 1'b0 :
                                     (instr[15:11] == 5'b11010 && instr[1:0] == 2'b10 ) ? 1'b1 : 1'b0;
  
-  mux2_1_16bit alu_actual_src_mux_a(.out(actual_alu_data_a), .in0(forwarded_data_a), .in1(forwarded_data_a_shifted), .sel(1'b0));
-  mux2_1_16bit alu_actual_src_mux_b(.out(actual_alu_data_b), .in0(forwarded_data_b), .in1(sixteen_minus_forwarded_data_b), .sel(1'b0));
+  mux2_1_16bit alu_actual_src_mux_a(.out(actual_alu_data_a), .in0(forwarded_data_a), .in1(forwarded_data_a_shifted), .sel(alu_actual_src_mux_a_sel));
+  mux2_1_16bit alu_actual_src_mux_b(.out(actual_alu_data_b), .in0(forwarded_data_b), .in1(sixteen_minus_forwarded_data_b), .sel(alu_actual_src_mux_b_sel));
  
 // shifter for shifting data after forwarded
 
@@ -192,14 +193,19 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
           .Cout(cout),
           .Z(zero),
           // Inputs
-          .A(alu_src_1),
-          .B(alu_src_2),
+          .A(actual_alu_data_a),
+          .B(actual_alu_data_b),
           .Cin(Cin),
           .Op(Op),
           .invA(invA),
           .invB(invB),
           .sign(sign)
         );
+
+    btr_mod btr0 (
+                        .out(btr_out),
+                        .in(actual_alu_data_a)
+                    );
 
   
   // Two other sub control units
@@ -210,9 +216,11 @@ module execution(Out, set, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext
           .instr(instr[12:11]),
           .zero(zero),
           .cout(cout),
-          .alu_src_1_msb(alu_src_1[15]),
-          .alu_src_2_msb(alu_src_2[15]),
+          .alu_src_1_msb(actual_alu_data_a[15]),
+          .alu_src_2_msb(actual_alu_data_a[15]),
           .alu_out_msb(alu_out[15])
         );
+
+
  
 endmodule

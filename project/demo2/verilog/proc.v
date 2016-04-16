@@ -33,9 +33,9 @@ module proc (/*AUTOARG*/
     wire Cin, invA, invB, sign, dump;
     wire [15:0] read_data_1, read_data_2;
     wire [15:0] imm_5_ext, imm_8_ext, imm_11_ext;
-    wire [15:0] btr_out;
     wire [15:0] next_pc;
-    wire [15:0] Out, set;
+    wire [15:0] btr_out; // but seems like no one is using this wire
+    wire [15:0] Out, set, btr__out;
     wire [15:0] mem_data_out; 
     wire [15:0] write_data;
     wire [15:0] instr;
@@ -207,7 +207,8 @@ module proc (/*AUTOARG*/
     execution exec (
                     // Outputs
                     .Out(Out), 
-                    .set(set), 
+                    .set(set),
+                    .btr_out(btr__out),
                     // Inputs
                     .instr(IDEXinstrOut),
                     .read_data_1(IDEX_read_data_1_out), 
@@ -227,7 +228,7 @@ module proc (/*AUTOARG*/
                     .EXMEM_DstRegNum(EXMem_dst_reg_num_out), // TODO 
                     .MEMWB_DstRegNum(MemWB_dst_reg_num_out), 
                     .WB_DATA(write_data),
-                    .EXMEM_ALUOUT(EXMem_aluResult_out)
+                    .EXMEM_DATA(EXMemFwdData)
                 );
 
     
@@ -264,7 +265,7 @@ module proc (/*AUTOARG*/
                     .imm_8_ext_in(IDEX_imm_8_ext_out),
                     .Out_in(Out),
                     .read_data_2_in(IDEX_read_data_2_out),
-                    .btr_out_in(IDEX_btr_out_out),
+                    .btr_out_in(btr__out),
                     .instr_in(IDEXinstrOut),
                     .set_in(set),
     
@@ -279,7 +280,22 @@ module proc (/*AUTOARG*/
                     .dst_reg_num_in(IDEX_dst_reg_num_out),
                     .dst_reg_num_out(EXMem_dst_reg_num_out) 
                 );
-
+    wire [15:0] EXMemFwdData;
+    wire [2:0] EXMemFwdDataMuxSel;
+    assign EXMemFwdDataMuxSel = EXMem_RegDataSrc_out;
+    mux8_1_16bit EXMemFwdDataMux(
+                      .out(EXMemFwdData),
+                      .sel(EXMemFwdDataMuxSel),
+                      .in0(16'bxxxxxxxxxxxxxxxx),
+                      .in1(EXMem_aluResult_out),
+                      .in2(EXMem_imm_8_ext_out),
+                      .in3(EXMem_pc_plus_two_out),
+                      .in4(EXMem_set_out),
+                      .in5(EXMem_btr_out_out),
+                      .in6(16'bxxxxxxxxxxxxxxxx),
+                      .in7(16'bxxxxxxxxxxxxxxxx)
+                  );
+        
 
     memory memory0( .readData(mem_data_out), // TODO
                     .aluResult(EXMem_aluResult_out), 
