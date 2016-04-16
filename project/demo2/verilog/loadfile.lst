@@ -1,11 +1,8 @@
-          // Original test: ./ullmer/hw4/problem6/st_2.asm
-          // Author: ullmer
+          // Original test: ./shojaei/hw4/problem6/xori_2.asm
+          // Author: shojaei
           // Test source code follows
           
           
-          //tests where only immediate 
-          //is 0 (mem address = 0x007f)
-0000 c07f lbi r0, 127
-0002 c1db lbi r1, -37
-0004 8021 st r1, r0, 1
-0006 0000 halt
+0000 c118 lbi r1, 24
+0002 5147 xori r2, r1, 7
+0004 0000 halt

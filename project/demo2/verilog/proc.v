@@ -217,6 +217,7 @@ module proc (/*AUTOARG*/
                     .btr_out(btr__out),
                     .flush(flush),
                     .next_pc(next_pc),
+                    .data_to_mem(ex_data_to_mem),
                     // Inputs
                     .instr(IDEXinstrOut),
                     .read_data_1(IDEX_read_data_1_out), 
@@ -244,7 +245,7 @@ module proc (/*AUTOARG*/
                 );
 
     
-
+    wire [15:0] ex_data_to_mem;
     // TODO: connect wire
     regEXMem regEXMem0(
                     
@@ -276,7 +277,7 @@ module proc (/*AUTOARG*/
                     .pc_plus_two_in(IDEX_pc_plus_two_out),
                     .imm_8_ext_in(IDEX_imm_8_ext_out),
                     .Out_in(Out),
-                    .read_data_2_in(IDEX_read_data_2_out),
+                    .read_data_2_in(ex_data_to_mem),
                     .btr_out_in(btr__out),
                     .instr_in(IDEXinstrOut),
                     .set_in(set),

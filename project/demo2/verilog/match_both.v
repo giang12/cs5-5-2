@@ -14,7 +14,7 @@ begin
       begin
         matchBoth <= 1'b0;
       end
-      5'b10xxx:
+      5'b101xx:
       begin
         matchBoth <= 1'b0;
       end
@@ -30,7 +30,24 @@ begin
       begin
         matchBoth <= 1'b1;
       end
-      
+      5'b10000:
+      begin
+        matchBoth <= 1'b1;
+      end
+      5'b10001:
+      begin
+        matchBoth <= 1'b0;
+      end
+      5'b10011:
+      begin
+        matchBoth <= 1'b1;
+      end
+      5'b10010:
+      begin
+        matchBoth <= 1'b0;
+      end
+   
+     
       default:
       begin
         matchBoth <= 1'bx;

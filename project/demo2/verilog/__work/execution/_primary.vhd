@@ -7,6 +7,7 @@ entity execution is
         btr_out         : out    vl_logic_vector(15 downto 0);
         flush           : out    vl_logic;
         next_pc         : out    vl_logic_vector(15 downto 0);
+        data_to_mem     : out    vl_logic_vector(15 downto 0);
         instr           : in     vl_logic_vector(15 downto 0);
         read_data_1     : in     vl_logic_vector(15 downto 0);
         read_data_2     : in     vl_logic_vector(15 downto 0);

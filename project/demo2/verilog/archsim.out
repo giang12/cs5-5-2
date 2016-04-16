@@ -5,13 +5,11 @@ Type "help" for more information
 
 Loading program...
 Executing...
-lbi r0, 127
-INUM:        0 PC: 0x0000 REG: 0 VALUE: 0x007f
-lbi r1, -37
-INUM:        1 PC: 0x0002 REG: 1 VALUE: 0xffdb
-st r1, r0, 1
-INUM:        2 PC: 0x0004 ADDR: 0x0080 VALUE: 0xffdb
+lbi r1, 24
+INUM:        0 PC: 0x0000 REG: 1 VALUE: 0x0018
+xori r2, r1, 7
+INUM:        1 PC: 0x0002 REG: 2 VALUE: 0x001f
 halt
 program halted
-INUM:        3 PC: 0x0006
+INUM:        2 PC: 0x0004
 Program Finished

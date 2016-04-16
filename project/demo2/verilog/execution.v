@@ -1,4 +1,4 @@
-module execution(Out, set, btr_out, flush, next_pc, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, imm_11_ext, pc_plus_two, branch, jump, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_DATA);
+module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, imm_11_ext, pc_plus_two, branch, jump, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_DATA);
  
   input [15:0] instr;
   input [15:0] read_data_1, read_data_2;
@@ -25,6 +25,7 @@ module execution(Out, set, btr_out, flush, next_pc, instr, read_data_1, read_dat
   output [15:0] btr_out;
   output flush;
   output [15:0] next_pc;
+  output [15:0] data_to_mem;
   //NEED OUTPUT FOR 
   // instr [15:0]
   // imm_8_ext [15:0]
@@ -48,7 +49,6 @@ module execution(Out, set, btr_out, flush, next_pc, instr, read_data_1, read_dat
   
 
   assign Out = alu_out;
-
 
   // forward_unit
   // TODO: connect wires
@@ -74,11 +74,14 @@ module execution(Out, set, btr_out, flush, next_pc, instr, read_data_1, read_dat
 
   mux4_1_16bit alu_fwdA_mux (.out(forwarded_data_a), .in0(alu_src_1), .in1(EXMEM_DATA), .in2(WB_DATA), .in3(16'bx), .sel(forward_a));
   mux4_1_16bit alu_fwdB_mux (.out(forwarded_data_b), .in0(alu_src_2), .in1(EXMEM_DATA), .in2(WB_DATA), .in3(16'bx), .sel(forward_b));
+  mux4_1_16bit mem_data_fwd_mux (.out(data_to_mem), .in0(read_data_2), .in1(EXMEM_DATA), .in2(WB_DATA), .in3(16'bx), .sel(forward_b));
+
 
 
   wire [15:0] actual_alu_data_a;
   wire [15:0] actual_alu_data_b;
   
+  assign actual_alu_data_2 = actual_alu_data_b;
 
   wire [15:0] forwarded_data_a_shifted;
   wire [15:0] sixteen_minus_forwarded_data_b;
@@ -188,6 +191,15 @@ module execution(Out, set, btr_out, flush, next_pc, instr, read_data_1, read_dat
           .sign(1'b1)
         ); 
 
+  wire [15:0] alu_scr_b_last_level_value;
+  wire alu_src_b_last_level_mux_sel;
+  assign alu_src_b_last_level_mux_sel = (instr[15:11] == 5'b10000)? 1'b1 : (instr[15:11] == 5'b10011) ? 1'b1 : (instr[15:11] == 5'b10001) ? 1'b1 : 1'b0;
+  mux2_1_16bit alu_src_b_last_level_mux(
+        .out(alu_scr_b_last_level_value),
+        .in0(actual_alu_data_b),
+        .in1(imm_5_ext),
+        .sel(alu_src_b_last_level_mux_sel)
+    );
 
   alu alu0(
           // Outputs
@@ -197,7 +209,7 @@ module execution(Out, set, btr_out, flush, next_pc, instr, read_data_1, read_dat
           .Z(zero),
           // Inputs
           .A(actual_alu_data_a),
-          .B(actual_alu_data_b),
+          .B(alu_scr_b_last_level_value),
           .Cin(Cin),
           .Op(Op),
           .invA(invA),
