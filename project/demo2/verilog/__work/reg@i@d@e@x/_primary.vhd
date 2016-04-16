@@ -8,7 +8,7 @@ entity regidex is
         read_data_2_out : out    vl_logic_vector(15 downto 0);
         imm_5_ext_out   : out    vl_logic_vector(15 downto 0);
         imm_8_ext_out   : out    vl_logic_vector(15 downto 0);
-        btr_out_out     : out    vl_logic_vector(15 downto 0);
+        imm_11_ext_out  : out    vl_logic_vector(15 downto 0);
         clk             : in     vl_logic;
         en              : in     vl_logic;
         rst             : in     vl_logic;
@@ -18,7 +18,7 @@ entity regidex is
         read2data_in    : in     vl_logic_vector(15 downto 0);
         instrfiveext_in : in     vl_logic_vector(15 downto 0);
         instreightext_in: in     vl_logic_vector(15 downto 0);
-        btr_out_in      : in     vl_logic_vector(15 downto 0);
+        instrelevenext_in: in     vl_logic_vector(15 downto 0);
         op_out          : out    vl_logic_vector(2 downto 0);
         alusrc1_out     : out    vl_logic_vector(2 downto 0);
         alusrc2_out     : out    vl_logic_vector(2 downto 0);

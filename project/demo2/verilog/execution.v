@@ -1,8 +1,9 @@
-module execution(Out, set, btr_out, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_DATA);
+module execution(Out, set, btr_out, flush, next_pc, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, imm_11_ext, pc_plus_two, branch, jump, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_DATA);
  
   input [15:0] instr;
   input [15:0] read_data_1, read_data_2;
-  input [15:0] imm_5_ext, imm_8_ext;
+  input [15:0] imm_5_ext, imm_8_ext, imm_11_ext, pc_plus_two;
+  input branch, jump;
   input [2:0] ALUSrc1, ALUSrc2;
   input [2:0] Op;
   input Cin, invA, invB, sign; 
@@ -22,6 +23,8 @@ module execution(Out, set, btr_out, instr, read_data_1, read_data_2, imm_5_ext, 
   output [15:0] Out;
   output [15:0] set;
   output [15:0] btr_out;
+  output flush;
+  output [15:0] next_pc;
   //NEED OUTPUT FOR 
   // instr [15:0]
   // imm_8_ext [15:0]
@@ -217,10 +220,79 @@ module execution(Out, set, btr_out, instr, read_data_1, read_data_2, imm_5_ext, 
           .zero(zero),
           .cout(cout),
           .alu_src_1_msb(actual_alu_data_a[15]),
-          .alu_src_2_msb(actual_alu_data_a[15]),
+          .alu_src_2_msb(actual_alu_data_b[15]),
           .alu_out_msb(alu_out[15])
         );
 
 
+    // branch_cond_test
+    branch_cond_test bran_cond (
+                        .data(actual_alu_data_a),  
+                        .instr(instr[12:11]), 
+                        .branch(branch), 
+                        .jump(jump), 
+                        .pc_src(pc_src),
+                        .flush(flush)
+                );
  
+  wire [15:0] pc_plus_two_plus_imm_8_ext;
+  wire [15:0] pc_plus_two_plus_imm_11_ext;
+  wire [15:0] rs_plus_imm_8_ext;
+ 
+
+   cla_16bit adder0(
+          // Outputs
+          .OUT(rs_plus_imm_8_ext),
+          .Ofl(ofl_disposal),
+          .Cout(cout_disposal),
+          // Inputs
+          .A(actual_alu_data_a),
+          .B(imm_8_ext),
+          .CI(1'b0),
+          .sign(1'b1)
+        ); 
+
+  cla_16bit adder1(
+          // Outputs
+          .OUT(pc_plus_two_plus_imm_8_ext),
+          .Ofl(ofl_disposal),
+          .Cout(cout_disposal),
+         // Inputs
+          .A(pc_plus_two),
+          .B(imm_8_ext),
+          .CI(1'b0),
+          .sign(1'b1)
+        ); 
+
+  cla_16bit adder2(
+          // Outputs
+          .OUT(pc_plus_two_plus_imm_11_ext),
+          .Ofl(ofl_disposal),
+          .Cout(cout_disposal),
+         // Inputs
+          .A(pc_plus_two),
+          .B(imm_11_ext),
+          .CI(1'b0),
+          .sign(1'b1)
+        ); 
+  
+
+  mux8_1_16bit branch_target_mux(
+          // Outputs
+          .out(next_pc),
+          // Inputs
+          .sel(pc_src),
+          .in0(16'bxxxx_xxxx_xxxx_xxxx),
+          .in1(pc_plus_two),
+          .in2(rs_plus_imm_8_ext),
+          .in3(pc_plus_two_plus_imm_8_ext),
+          .in4(pc_plus_two_plus_imm_11_ext),
+          .in5(16'bxxxx_xxxx_xxxx_xxxx),
+          .in6(16'bxxxx_xxxx_xxxx_xxxx),
+          .in7(16'bxxxx_xxxx_xxxx_xxxx)
+        );
+
+
+
+
 endmodule

@@ -6,7 +6,7 @@ module regIDEX(
                 read_data_2_out, 
                 imm_5_ext_out, 
                 imm_8_ext_out, 
-                btr_out_out, 
+                imm_11_ext_out, 
                 // regsiter control
                 clk, 
                 en, 
@@ -18,7 +18,7 @@ module regIDEX(
                 read2data_in,
                 instrFiveExt_in,
                 instrEightExt_in,
-                btr_out_in,
+                instrElevenExt_in,
                 // *********** control outputs *******
                 // EX
                 Op_out, 
@@ -76,18 +76,15 @@ module regIDEX(
     // //output  [15:0] pc;
     
     // from decode stage
-    input [15:0] instrEightExt_in, instrFiveExt_in;
-    //input  [15:0] instrElevenExt;
-    input [15:0] btr_out_in;
+    input [15:0] instrEightExt_in, instrFiveExt_in, instrElevenExt_in;
+
     input [15:0] read1data_in, read2data_in;
 
     // to until execution stage
     output [15:0] read_data_1_out, read_data_2_out;
-    output [15:0] imm_5_ext_out, imm_8_ext_out;
-    //output  [15:0] imm_11_ext;
+    output [15:0] imm_5_ext_out, imm_8_ext_out, imm_11_ext_out;
     
     // to until WB stage
-    output [15:0] btr_out_out;
     
     // ************************ Control Portion **********************
     // TODO: where to put Exception?? Through ID/EX register?? Or directly
@@ -125,7 +122,7 @@ module regIDEX(
     dff_16bit dff2(.out(instr_out), .in(instr_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff7(.out(imm_8_ext_out), .in(instrEightExt_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff3(.out(imm_5_ext_out), .in(instrFiveExt_in), .en(en), .rst(rst), .clk(clk));
-    dff_16bit dff4(.out(btr_out_out), .in(btr_out_in), .en(en), .rst(rst), .clk(clk));
+    dff_16bit dff4(.out(imm_11_ext_out), .in(instrElevenExt_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff5(.out(read_data_1_out), .in(read1data_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff6(.out(read_data_2_out), .in(read2data_in), .en(en), .rst(rst), .clk(clk));
 

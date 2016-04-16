@@ -31,8 +31,6 @@
 # Loading __work.regIFID
 # Loading __work.dff_16bit
 # Loading __work.decode
-# Loading __work.branch_cond_test
-# Loading __work.and16
 # Loading __work.match_both
 # Loading __work.hazard_detect
 # Loading __work.mux2_1_32bit
@@ -52,7 +50,6 @@
 # Loading __work.ext_mod8_16
 # Loading __work.ext_mod11_16
 # Loading __work.ext_mod5_16
-# Loading __work.btr_mod
 # Loading __work.regIDEX
 # Loading __work.dff_8bit
 # Loading __work.mux2_1_8bit
@@ -74,7 +71,10 @@
 # Loading __work.or2_16bit
 # Loading __work.xor2_16bit
 # Loading __work.zero_detect
+# Loading __work.btr_mod
 # Loading __work.cond_set
+# Loading __work.branch_cond_test
+# Loading __work.or16
 # Loading __work.regEXMem
 # Loading __work.memory
 # Loading __work.regMemWB
@@ -83,4 +83,4 @@ run -all
 # Hello world...simulation starting
 # See verilogsim.log and verilogsim.ptrace for output
 # ** Note: $finish    : proc_hier_pbench.v(115)
-#    Time: 1405 ns  Iteration: 0  Instance: /proc_hier_pbench
+#    Time: 1705 ns  Iteration: 0  Instance: /proc_hier_pbench
