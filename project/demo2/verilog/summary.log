@@ -1,4 +1,1 @@
-/u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/rand_simple/t_1_btr.asm SUCCESS CPI:1.7 CYCLES:55 ICOUNT:32 IHITRATE: 0 DHITRATE: 0
-/u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/rand_simple/t_2_btr.asm SUCCESS CPI:1.7 CYCLES:55 ICOUNT:32 IHITRATE: 0 DHITRATE: 0
-/u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/rand_simple/t_3_btr.asm SUCCESS CPI:1.7 CYCLES:55 ICOUNT:32 IHITRATE: 0 DHITRATE: 0
-/u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/rand_simple/t_4_btr.asm SUCCESS CPI:1.7 CYCLES:55 ICOUNT:32 IHITRATE: 0 DHITRATE: 0
+/u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/rand_complex/t_4_all.asm SUCCESS CPI:1.4 CYCLES:744 ICOUNT:537 IHITRATE: 0 DHITRATE: 0

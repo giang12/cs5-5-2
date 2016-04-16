@@ -80,7 +80,6 @@ module proc (/*AUTOARG*/
                     .pcSel(flush),
                     .clk(clk), 
                     .rst(rst), 
-                    .dump(dump), 
                     .exception(control_signal[17])// TODO: make sure expection output 0 in the very first clk cycle.
               );
    

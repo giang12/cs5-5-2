@@ -50,7 +50,7 @@ begin
      
       default:
       begin
-        matchBoth <= 1'bx;
+        matchBoth <= 1'b0;
       end
     endcase
 end
