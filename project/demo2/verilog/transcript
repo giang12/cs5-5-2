@@ -1,3 +1,4 @@
+# vsim -lib __work -c proc_hier_pbench 
 # //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
 # //
 # //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
@@ -6,10 +7,6 @@
 # //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
-<<<<<<< HEAD
-# vsim -view dataset=dump.wlf 
-# dump.wlf opened as dataset "dataset"
-=======
 # Loading __work.proc_hier_pbench
 # Loading __work.proc_hier
 # Loading __work.clkrst
@@ -87,4 +84,3 @@ run -all
 # See verilogsim.log and verilogsim.ptrace for output
 # ** Note: $finish    : proc_hier_pbench.v(115)
 #    Time: 15105 ns  Iteration: 0  Instance: /proc_hier_pbench
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e

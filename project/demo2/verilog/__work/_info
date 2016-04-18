@@ -52,15 +52,9 @@ r1
 31
 o+define+RANDSEED=3 -work __work
 vbranch_cond_test
-<<<<<<< HEAD
-Ig3@=H]PkkUNIFFPagdZa?0
-VCFh00SYmC0B[V@i>B2]mK0
-w1460510595
-=======
 I[QUlHzcMHHTZ<^>QXcG^H1
 V9lInz;a?5XM^2[>DWYLWO1
-w1460795903
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
+w1460817566
 Fbranch_cond_test.v
 L0 1
 OE;L;5.8b;17
@@ -140,11 +134,7 @@ o+define+RANDSEED=3 -work __work
 vcontrol
 Ib6CzPMd[QioO:TUJ^B2L40
 VL2@h0FjBX8ONBf5EQehfA3
-<<<<<<< HEAD
-w1459969557
-=======
-w1460808204
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
+w1460817566
 Fcontrol.v
 L0 1
 OE;L;5.8b;17
@@ -152,15 +142,9 @@ r1
 31
 o+define+RANDSEED=3 -work __work
 vdecode
-<<<<<<< HEAD
-Ig5f@=cz:_cQjhmG3Y:=Jj0
-VMg3fSYbeSkM^BnL[gMfDz0
-w1460529196
-=======
 IILB<BODinKjZ^aF3JmM?o1
 V@h_Wnnoo^R1h@kIXRgGSh3
-w1460791094
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
+w1460817566
 Fdecode.v
 L0 1
 OE;L;5.8b;17
@@ -228,15 +212,9 @@ r1
 31
 o+define+RANDSEED=3 -work __work
 vexecution
-<<<<<<< HEAD
-I<ZAFJGGADc=dKP>0Dnmzg3
-V2K59InbF6c:i<LRQVcckb3
-w1460510596
-=======
 ITWi7jG7VljJ?KcN`3]h?b0
 VkhSB^EL^6o<CfN0Xc0ejH0
-w1460806433
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
+w1460817566
 Fexecution.v
 L0 1
 OE;L;5.8b;17
@@ -274,15 +252,9 @@ r1
 31
 o+define+RANDSEED=3 -work __work
 vfetch
-<<<<<<< HEAD
-IWi17_Hc]9D8[1aU2[_2:M1
-VbGkakm6F=g`B4Z`2;D3=V0
-w1460529197
-=======
 I1gk;0P9emh@;UYhNPWM]n1
 V=h^V_1bOjHL2CzFQ@gl5A3
-w1460809999
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
+w1460817566
 Ffetch.v
 L0 1
 OE;L;5.8b;17
@@ -322,11 +294,7 @@ o+define+RANDSEED=3 -work __work
 vhazard_detect
 IRK?OUEPE`4]0Z_Y60eDGd1
 V5zn;G3_PUET2>aHbSUYc60
-<<<<<<< HEAD
 w1460447949
-=======
-w1460810959
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
 Fhazard_detect.v
 L0 1
 OE;L;5.8b;17
@@ -366,11 +334,7 @@ o+define+RANDSEED=3 -work __work
 vmatch_both
 IF>M>R9P3BYNfU9X?;2m9A1
 VI6@B^Bb9Jg6AoXYdBe2dZ0
-<<<<<<< HEAD
-w1460510596
-=======
-w1460810902
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
+w1460817566
 Fmatch_both.v
 L0 1
 OE;L;5.8b;17
@@ -530,7 +494,7 @@ o+define+RANDSEED=3 -work __work
 vor16
 I5QhS[3mJ2>F?dXI?eKlmh0
 VB7IHjiM_K]@P@mP@H7k9:3
-w1460795837
+w1460817566
 For16.v
 L0 1
 OE;L;5.8b;17
@@ -560,11 +524,7 @@ o+define+RANDSEED=3 -work __work
 vor3
 I=zS2og@mLjLme`1Q]iDLi0
 VX5X4;nOEK6L9?1Hf:5]Nc3
-<<<<<<< HEAD
 w1460513211
-=======
-w1460795866
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
 For3.v
 L0 1
 OE;L;5.8b;17
@@ -584,11 +544,7 @@ o+define+RANDSEED=3 -work __work
 vproc
 I^n6A9lECLlCEL=nT<^5zd3
 V=0;ejS?XJkcI=??BQI5CA0
-<<<<<<< HEAD
-w1460529197
-=======
-w1460810119
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
+w1460817566
 Fproc.v
 L0 4
 OE;L;5.8b;17
@@ -657,15 +613,9 @@ r1
 o+define+RANDSEED=3 -work __work
 nreg@e@x@mem
 vregIDEX
-<<<<<<< HEAD
-I7OzJEKX4TAJLZ8<zjleo=0
-VFh6Bai6YUc1GW6[YzP_NL1
-w1460513211
-=======
 IiML@I6lRUcJBI]_ELg2jT2
 V1iSf_:6NjCEJCM13QzKaQ1
-w1460785865
->>>>>>> b2f1bbdd45f3169d29ba18c9c3328a0f8443eb1e
+w1460817566
 FregIDEX.v
 L0 1
 OE;L;5.8b;17

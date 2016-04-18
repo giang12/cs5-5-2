@@ -70,6 +70,15 @@ module proc (/*AUTOARG*/
 
     // dst_reg_num
     wire [2:0] IDEX_dst_reg_num_out, EXMem_dst_reg_num_in, EXMem_dst_reg_num_out, MemWB_dst_reg_num_in, MemWB_dst_reg_num_out;
+    
+
+    wire [15:0] ex_data_to_mem;
+
+
+    wire [15:0] EXMemFwdData;
+    wire [2:0] EXMemFwdDataMuxSel;
+    assign EXMemFwdDataMuxSel = EXMem_RegDataSrc_out;
+
     fetch fetch0(   // outputs
                     .instr(instr),
                     .pcCurrent(pc), 
@@ -244,7 +253,6 @@ module proc (/*AUTOARG*/
                 );
 
     
-    wire [15:0] ex_data_to_mem;
     // TODO: connect wire
     regEXMem regEXMem0(
                     
@@ -292,9 +300,7 @@ module proc (/*AUTOARG*/
                     .dst_reg_num_in(IDEX_dst_reg_num_out),
                     .dst_reg_num_out(EXMem_dst_reg_num_out) 
                 );
-    wire [15:0] EXMemFwdData;
-    wire [2:0] EXMemFwdDataMuxSel;
-    assign EXMemFwdDataMuxSel = EXMem_RegDataSrc_out;
+    
     mux8_1_16bit EXMemFwdDataMux(
                       .out(EXMemFwdData),
                       .sel(EXMemFwdDataMuxSel),
