@@ -1,0 +1,54 @@
+ 
+****************************************
+Report : cell
+Design : proc
+Version: B-2008.09-SP3
+Date   : Mon Apr 18 00:00:36 2016
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+EXMemFwdDataMux           mux8_1_16bit_6                  2109.972763
+                                                                    h
+IDEX_instr_mux            mux2_1_16bit_52                 296.128294
+                                                                    h
+IFID_instr_mux            mux2_1_16bit_53                 297.536195
+                                                                    h
+U5                        INVX1           gscl45nm        1.407900  
+U6                        INVX1           gscl45nm        1.407900  
+U7                        INVX1           gscl45nm        1.407900  
+U9                        INVX8           gscl45nm        3.285100  
+U10                       INVX8           gscl45nm        3.285100  
+U11                       INVX8           gscl45nm        3.285100  
+U12                       INVX8           gscl45nm        3.285100  
+U13                       INVX8           gscl45nm        3.285100  
+decode0                   decode                          8794.681826
+                                                                    h, n
+exec                      execution                       34971.296722
+                                                                    h
+fetch0                    fetch                           15427.767953
+                                                                    h, n
+memory0                   memory                          12707.705217
+                                                                    h, n
+mux_2_1_32bit_0           mux2_1_32bit_1                  634.962890
+                                                                    h
+regEXMem0                 regEXMem                        3653.969724
+                                                                    h, n
+regIDEX0                  regIDEX                         4157.528611
+                                                                    h, n
+regIFID0                  regIFID                         1385.373572
+                                                                    h, n
+regMemWB0                 regMemWB                        3697.145322
+                                                                    h, n
+wb                        writeback                       2128.744764
+                                                                    h
+--------------------------------------------------------------------------------
+Total 21 cells                                            90283.463053
+1
