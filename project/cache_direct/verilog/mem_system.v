@@ -23,7 +23,6 @@ module mem_system(/*AUTOARG*/
     output CacheHit;
     output err;
 
-    
     wire cache_err, mem_err;
     assign err = cache_err | mem_err;
     
@@ -32,9 +31,6 @@ module mem_system(/*AUTOARG*/
     wire[4:0] tag_in;
     wire[7:0] index;
     wire[2:0] offset;
-    assign tag_in = Addr[15:11];
-    assign index = Addr[10:3];
-    assign offset = Addr[2:0];
 
     wire[15:0] data_in_cache;
 
@@ -43,27 +39,49 @@ module mem_system(/*AUTOARG*/
 
 
     // mem
+    wire[15:0] mem_addr;
     wire[15:0] data_out_mem;
     wire[3:0] busy_mem_out;
+    wire[1:0] mem_offset;
     wire busy;
     assign busy =   busy_mem_out[0] | busy_mem_out[1] | 
                     busy_mem_out[2] | busy_mem_out[3];
-
+    
 
     // cache
+    wire[1:0] cache_offset;
     wire hit, dirty, valid;
-
+    wire[15:0] cache_addr;
+    wire[15:0] cache_data_out;
+    wire[4:0] tag_out;
 
     // control logic
     wire write, comp, enable;
     wire wr, rd;
 
+
+    assign mem_addr =   (comp == 1) ? Addr : 
+                        (comp == 0 && write == 0) ? {Addr[15:8],tag_out,mem_offset,Addr[0]} :
+                        {Addr[15:3],mem_offset,Addr[0]};
+    assign cache_addr = (comp == 1) ? Addr: {Addr[15:3],cache_offset,Addr[0]};
+
+    assign DataOut = cache_data_out;
+
+    
+    assign tag_in = cache_addr[15:11];
+    assign index = cache_addr[10:3];
+    assign offset = cache_addr[2:0];
+    
+    assign CacheHit = hit; 
+    assign Done = 1'b1;
+    assign Stall = 1'b0; //TODO: cache stall???
+
    /* data_mem = 1, inst_mem = 0 *
     * needed for cache parameter */
     parameter mem_type = 0;
-    cache (0 + memtype) c0( // Outputs
-                            .tag_out              (),
-                            .data_out             (),
+    cache #(0 + mem_type) c0( // Outputs
+                            .tag_out              (tag_out),
+                            .data_out             (cache_data_out),
                             .hit                  (hit),
                             .dirty                (dirty),
                             .valid                (valid),
@@ -79,7 +97,7 @@ module mem_system(/*AUTOARG*/
                             .data_in              (data_in_cache),
                             .comp                 (comp),
                             .write                (write),
-                            .valid_in             ());
+                            .valid_in             (1'b1)); //TODO: ???
 
    four_bank_mem mem(       // Outputs
                             .data_out          (data_out_mem),
@@ -90,8 +108,8 @@ module mem_system(/*AUTOARG*/
                             .clk               (clk),
                             .rst               (rst),
                             .createdump        (createdump),
-                            .addr              (),
-                            .data_in           (),
+                            .addr              (mem_addr),
+                            .data_in           (cache_data_out),
                             .wr                (wr),
                             .rd                (rd));
 
@@ -102,9 +120,11 @@ module mem_system(/*AUTOARG*/
                             // outputs
                             .next_state(nxt_state), 
                             // to mem
+                            .mem_offset(mem_offset),
                             .wr(wr), 
                             .rd(rd),
                             // to cache
+                            .cache_offset(cache_offset),
                             .write(write), 
                             .comp(comp),
                             .enable(enable),
@@ -113,7 +133,7 @@ module mem_system(/*AUTOARG*/
                             // from mem_system
                             .Rd(Rd), 
                             .Wr(Wr),
-                            .busy(busy),
+                            .stall(Stall),
                             // from cache
                             .valid(valid), 
                             .dirty(dirty), 
