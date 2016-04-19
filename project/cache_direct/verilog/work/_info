@@ -57,10 +57,10 @@ r1
 31
 o-work work
 vmem_system
-IWGNilWP5D2lSoI6VILzcX3
+I3GB5c]=]K]hc55?:J3[d>2
 V2n_?fzW0cX>UcGKJ^2h0z0
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog
-w1461056297
+w1461092904
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/mem_system.v
 L0 5
 OE;L;5.8b;17
@@ -71,7 +71,7 @@ vmem_system_hier
 I3RWRHV3M_A4Yol>QYmESW1
 V99B;oOInQUPolBk;5UmmZ1
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog
-w1240583293
+w1461060122
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/mem_system_hier.v
 L0 5
 OE;L;5.8b;17
@@ -82,7 +82,7 @@ vmem_system_perfbench
 Ib2BIQWafiHE?26UNo6>mk2
 VKlRBU5:hT_2ie37fNCmF?3
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog
-w1240583293
+w1461059321
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/mem_system_perfbench.v
 L0 7
 OE;L;5.8b;17
@@ -188,11 +188,22 @@ OE;L;5.8b;17
 r1
 31
 o-work work
-vstatelogic
-I_e2j[OTgLh5klHjHYz8n]0
-VW23OjUbkB36N[jW9T^CC41
+vreg1bit
+I4AG3Wj[hBAIQOZHGcDdGg2
+V`Eihl=of6d0cjn^`<ImZf3
 d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog
-w1461057617
+w1461102116
+F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/reg1bit.v
+L0 1
+OE;L;5.8b;17
+r1
+31
+o-work work
+vstatelogic
+I^Klg?gYdN6ih^UKIc8KaN1
+VSgiBeQ`=Q]HS@F=j5YR_Y0
+d/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog
+w1461099052
 F/afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/statelogic.v
 L0 1
 OE;L;5.8b;17

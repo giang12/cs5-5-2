@@ -36,9 +36,14 @@ module mem_system(/*AUTOARG*/
 
     // state regsiter
     wire[3:0] nxt_state, curr_state;
+    
+
+wire WR; 
+    assign WR = (Wr == 1'b1) ? 1 : WR;
 
 
     // mem
+    wire stall;
     wire[15:0] mem_addr;
     wire[15:0] data_out_mem;
     wire[3:0] busy_mem_out;
@@ -59,7 +64,9 @@ module mem_system(/*AUTOARG*/
     wire write, comp, enable;
     wire wr, rd;
 
-
+    wire cache_stall;
+    wire potentialHit;
+    
     assign mem_addr =   (comp == 1) ? Addr : 
                         (comp == 0 && write == 0) ? {Addr[15:8],tag_out,mem_offset,Addr[0]} :
                         {Addr[15:3],mem_offset,Addr[0]};
@@ -72,10 +79,12 @@ module mem_system(/*AUTOARG*/
     assign index = cache_addr[10:3];
     assign offset = cache_addr[2:0];
     
-    assign CacheHit = hit; 
-    assign Done = 1'b1;
-    assign Stall = 1'b0; //TODO: cache stall???
-
+    assign CacheHit = hit & valid & potentialHit; 
+    assign Done = hit & valid;
+    //assign Done = 1'b1;
+    assign Stall = cache_stall; //TODO: cache stall???
+    
+     
    /* data_mem = 1, inst_mem = 0 *
     * needed for cache parameter */
     parameter mem_type = 0;
@@ -101,7 +110,7 @@ module mem_system(/*AUTOARG*/
 
    four_bank_mem mem(       // Outputs
                             .data_out          (data_out_mem),
-                            .stall             (Stall),
+                            .stall             (stall),
                             .busy              (busy_mem_out),
                             .err               (mem_err),
                             // Inputs
@@ -118,6 +127,7 @@ module mem_system(/*AUTOARG*/
 
     statelogic fsm_logic( 
                             // outputs
+                            .potentialHit(potentialHit),
                             .next_state(nxt_state), 
                             // to mem
                             .mem_offset(mem_offset),
@@ -128,12 +138,15 @@ module mem_system(/*AUTOARG*/
                             .write(write), 
                             .comp(comp),
                             .enable(enable),
+                            .cache_stall(cache_stall),
                             // inputs
                             .state(curr_state), 
                             // from mem_system
                             .Rd(Rd), 
+                            //.Rd(stable_Rd), 
                             .Wr(Wr),
-                            .stall(Stall),
+                            //.Wr(stable_Wr),
+                            .stall(stall),
                             // from cache
                             .valid(valid), 
                             .dirty(dirty), 
@@ -153,7 +166,20 @@ module mem_system(/*AUTOARG*/
                             .in0(data_out_mem), 
                             .in1(DataIn), 
                             .sel(comp));
-   
+    
+    // Wr
+    reg1bit reg1 (          .dff_out(stable_Wr), 
+                            .in(Wr), 
+                            .en(Wr), 
+                            .clk(clk), 
+                            .rst(rst));
+    // Rd
+    reg1bit reg2 (          .dff_out(stable_Rd), 
+                            .in(Rd), 
+                            .en(Rd), 
+                            .clk(clk), 
+                            .rst(rst));
+       
 endmodule // mem_system
 
 // DUMMY LINE FOR REV CONTROL :9:

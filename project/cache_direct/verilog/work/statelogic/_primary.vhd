@@ -10,6 +10,7 @@ entity statelogic is
         write           : out    vl_logic;
         comp            : out    vl_logic;
         enable          : out    vl_logic;
+        cache_stall     : out    vl_logic;
         state           : in     vl_logic_vector(3 downto 0);
         \Rd\            : in     vl_logic;
         \Wr\            : in     vl_logic;
