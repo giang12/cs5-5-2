@@ -192,7 +192,7 @@ begin
             potentialHit <= 1'b0;
         end
         // WR to IDLE, valid = 1, hit = 1
-        10'bxx110x_0001:
+        10'bxx11xx_0001:
         begin
             comp <= 1'b1;
             write <= 1'b1;
@@ -295,7 +295,8 @@ begin
         
 
         // RD to IDLE, valid = 1, hit = 1
-        10'bxx110x_0010:
+        // 04/19 10'bxx110x_0010: if it is hit, dont care about dirty.
+        10'bxx11xx_0010:
         begin    
             comp <= 1'b1;
             write <= 1'b0;
