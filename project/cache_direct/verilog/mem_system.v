@@ -68,7 +68,7 @@ wire WR;
     wire potentialHit;
     
     assign mem_addr =   (comp == 1) ? Addr : 
-                        (comp == 0 && write == 0) ? {Addr[15:8],tag_out,mem_offset,Addr[0]} :
+                        (comp == 0 && write == 0) ? {tag_out,Addr[10:3],mem_offset,Addr[0]} :
                         {Addr[15:3],mem_offset,Addr[0]};
     assign cache_addr = (comp == 1) ? Addr: {Addr[15:3],cache_offset,Addr[0]};
 
