@@ -1,0 +1,15 @@
+cache.v
+dff.v
+final_memory.syn.v
+four_bank_mem.v
+memc.v
+mem_system.v
+memv.v
+mux2_1_16bit.v
+mux2_1.v
+nand2.v
+nor2.v
+not1.v
+reg1bit.v
+statelogic.v
+statereg.v

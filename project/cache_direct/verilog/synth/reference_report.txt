@@ -1,0 +1,39 @@
+ 
+****************************************
+Report : reference
+Design : mem_system
+Version: B-2008.09-SP3
+Date   : Wed Apr 20 02:06:40 2016
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1             gscl45nm       2.346500      16     37.543999  
+AND2X2             gscl45nm       2.815800       3      8.447400  
+AOI22X1            gscl45nm       3.285100       2      6.570200  
+BUFX2              gscl45nm       2.346500       5     11.732500  
+INVX1              gscl45nm       1.407900      31     43.644899  
+INVX2              gscl45nm       1.877200       2      3.754400  
+INVX8              gscl45nm       3.285100       6     19.710600  
+OAI21X1            gscl45nm       2.815800       2      5.631600  
+OR2X1              gscl45nm       2.346500       1      2.346500  
+OR2X2              gscl45nm       2.815800       1      2.815800  
+cache_cache_id0               46210.093168       1  46210.093168  h, n
+four_bank_mem                 21373.329508       1  21373.329508  h, n
+mux2_1_16bit                    275.009793       1    275.009793  h
+statelogic                      412.514692       1    412.514692  h
+statereg                         63.824799       1     63.824799  h, n
+-----------------------------------------------------------------------------
+Total 15 references                                 68476.969858
+1
