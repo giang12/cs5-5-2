@@ -29,16 +29,6 @@ The cache's storage as well as the memory has already been designed for you. You
                         +-------------------+
 
 
-Timing:
-    |            |            |            |            |            |
-    | addr       | addr etc   | read data  |            | new addr   |
-    | data_in    | OK to any  | available  |            | etc. is    |
-    | wr, rd     |*diffferent*|            |            | OK to      |
-    | enable     | bank       |            |            | *same*     |
-    |            |            |            |            | bank       |
-                  <----bank busy; any new request to--->
-                       the *same* bank will stall
-
 
 ![four-bank-mem-ios](four-bank-mem-io.png)
 
@@ -66,6 +56,7 @@ If input "create_dump" is true on rising clock, contents of memory will be dumpe
 ## Cache Interface and Organization
 
 This figure shows the external interface to the module. Each signal is described in the table below.
+
                          +-------------------+
                          |                   |
            enable >------|                   |
