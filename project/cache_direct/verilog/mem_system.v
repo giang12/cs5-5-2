@@ -38,10 +38,6 @@ module mem_system(/*AUTOARG*/
     wire[3:0] nxt_state, curr_state;
     
 
-wire WR; 
-    assign WR = (Wr == 1'b1) ? 1 : WR;
-
-
     // mem
     wire stall;
     wire[15:0] mem_addr;
@@ -67,6 +63,7 @@ wire WR;
     wire cache_stall;
     wire potentialHit;
     
+    // assign address for WB / read from memory to cache.
     assign mem_addr =   (comp == 1) ? Addr : 
                         (comp == 0 && write == 0) ? {tag_out,Addr[10:3],mem_offset,Addr[0]} :
                         {Addr[15:3],mem_offset,Addr[0]};
@@ -123,8 +120,6 @@ wire WR;
                             .rd                (rd));
 
    
-    // your code here
-
     statelogic fsm_logic( 
                             // outputs
                             .potentialHit(potentialHit),
@@ -143,9 +138,7 @@ wire WR;
                             .state(curr_state), 
                             // from mem_system
                             .Rd(Rd), 
-                            //.Rd(stable_Rd), 
                             .Wr(Wr),
-                            //.Wr(stable_Wr),
                             .stall(stall),
                             // from cache
                             .valid(valid), 
@@ -166,19 +159,6 @@ wire WR;
                             .in0(data_out_mem), 
                             .in1(DataIn), 
                             .sel(comp));
-    
-    // Wr
-    reg1bit reg1 (          .dff_out(stable_Wr), 
-                            .in(Wr), 
-                            .en(Wr), 
-                            .clk(clk), 
-                            .rst(rst));
-    // Rd
-    reg1bit reg2 (          .dff_out(stable_Rd), 
-                            .in(Rd), 
-                            .en(Rd), 
-                            .clk(clk), 
-                            .rst(rst));
        
 endmodule // mem_system
 
