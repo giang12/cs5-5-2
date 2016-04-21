@@ -4,87 +4,229 @@
 
 module mem_system(/*AUTOARG*/
    // Outputs
-   DataOut, Done, Stall, CacheHit, err, 
+   DataOut, Done, Stall, CacheHit, err,
    // Inputs
    Addr, DataIn, Rd, Wr, createdump, clk, rst
    );
    
-   input [15:0] Addr;
-   input [15:0] DataIn;
-   input        Rd;
-   input        Wr;
-   input        createdump;
-   input        clk;
-   input        rst;
-   
-   output [15:0] DataOut;
-   output Done;
-   output Stall;
-   output CacheHit;
-   output err;
+    input [15:0] Addr;
+    input [15:0] DataIn;
+    input        Rd;
+    input        Wr;
+    input        createdump;
+    input        clk;
+    input        rst;
+    
+    output [15:0] DataOut;
+    output Done;
+    output Stall;
+    output CacheHit;
+    output err;
 
+    wire cache_err, mem_err;
+    
+    
+    // phrase adress
+    wire[4:0] tag_in;
+    wire[7:0] index;
+    wire[2:0] offset;
+
+    wire[15:0] data_in_cache;
+
+    // state regsiter
+    wire[3:0] nxt_state, curr_state;
+    
+
+    // mem
+    wire stall;
+    wire[15:0] mem_addr;
+    wire[15:0] data_out_mem;
+    wire[3:0] busy_mem_out;
+    wire[1:0] mem_offset;
+    wire busy;
+    assign busy =   busy_mem_out[0] | busy_mem_out[1] | 
+                    busy_mem_out[2] | busy_mem_out[3];
+    
+
+    // cache
+    wire[1:0] cache_offset;
+    wire[15:0] cache_addr;
+
+    // control logic
+    wire write, comp, enable;
+    wire wr, rd;
+
+    wire cache_stall;
+    wire potentialHit;
+    
+
+    // 2-way-set cache
+    wire[15:0] cache_dataout, cache2_dataout, cache1_dataout;
+    wire[4:0] cache_tagout, cache2_tagout, cache1_tagout;
+    wire cache_hit, cache_valid;
+    wire cache_dirty, cache2_dirty, cache1_dirty;
+    wire cache1_hit, cache2_hit, cache1_valid, cache2_valid, cache1hit, cache2hit;
+    wire[1:0] cache_en;
+    wire cache1_en, cache2_en;
+    wire data_sel;
+    wire w1, w2;
+    wire cache1_err, cache2_err;
+    assign cache_err = cache1_err | cache2_err;
+    assign err = cache_err | mem_err;
+    
+    // assign address for WB / read from memory to cache.
+    assign mem_addr =   (comp == 1) ? Addr : 
+                        (comp == 0 && write == 0) ? {cache_tagout,Addr[10:3],mem_offset,Addr[0]} :
+                        {Addr[15:3],mem_offset,Addr[0]};
+    assign cache_addr = (comp == 1) ? Addr: {Addr[15:3],cache_offset,Addr[0]};
+
+    assign DataOut = cache_dataout;
+
+    
+    assign tag_in = cache_addr[15:11];
+    assign index = cache_addr[10:3];
+    assign offset = cache_addr[2:0];
+    
+    assign CacheHit = cache_hit & cache_valid & potentialHit; 
+    assign Done = cache_hit & cache_valid;
+    //assign Done = 1'b1;
+    assign Stall = cache_stall; // cache stall???
+    
+     
    /* data_mem = 1, inst_mem = 0 *
     * needed for cache parameter */
-   parameter mem_type = 0;
-   cache (0 + memtype) c0(// Outputs
-                          .tag_out              (),
-                          .data_out             (),
-                          .hit                  (),
-                          .dirty                (),
-                          .valid                (),
-                          .err                  (),
-                          // Inputs
-                          .enable               (),
-                          .clk                  (),
-                          .rst                  (),
-                          .createdump           (),
-                          .tag_in               (),
-                          .index                (),
-                          .offset               (),
-                          .data_in              (),
-                          .comp                 (),
-                          .write                (),
-                          .valid_in             ());
-   cache (2 + memtype) c1(// Outputs
-                          .tag_out              (),
-                          .data_out             (),
-                          .hit                  (),
-                          .dirty                (),
-                          .valid                (),
-                          .err                  (),
-                          // Inputs
-                          .enable               (),
-                          .clk                  (),
-                          .rst                  (),
-                          .createdump           (),
-                          .tag_in               (),
-                          .index                (),
-                          .offset               (),
-                          .data_in              (),
-                          .comp                 (),
-                          .write                (),
-                          .valid_in             ());
+    parameter mem_type = 0;
 
-   four_bank_mem mem(// Outputs
-                     .data_out          (),
-                     .stall             (),
-                     .busy              (),
-                     .err               (),
-                     // Inputs
-                     .clk               (),
-                     .rst               (),
-                     .createdump        (),
-                     .addr              (),
-                     .data_in           (),
-                     .wr                (),
-                     .rd                ());
-   
-   // your code here
+    // cache1hit & cache2hit use to get valid data_sel signal
+    // cache1_hit & cache2_hit are signals output directly from cache (raw
+    // data)    
+    
+    wire[1:0] random;
+    assign w2 = (nxt_state == 4'b0001 || nxt_state == 4'b0010) ? ~w1 : w1;
+    
+    assign random = (w1 == 1'b1) ? 2'b01 : 2'b10;
+    
+    assign cache1hit = cache1_hit & cache1_valid;
+    assign cache2hit = cache2_hit & cache2_valid;
+    
+    assign cache_en =   (enable == 1 && cache1_valid == 1 && cache2_valid == 0) ? 2'b01 :
+                        (enable == 1 && cache1_valid == 0 && cache2_valid == 1) ? 2'b10 :
+                        (enable == 1 && cache1_valid == 0 && cache2_valid == 0) ? 2'b10 :
+                        (enable == 1 && cache1_valid == 1 && cache2_valid == 1) ? random : 2'b00; //TODO: pesudo mdoule
+                
+    assign cache1_en = cache_en[1] | comp;
+    assign cache2_en = cache_en[0] | comp;
+
+    assign data_sel = (cache1hit | cache2hit) ? cache2hit : cache_en[0];
+    
+    // 2 way set-assoctive cache outputs
+    assign cache_dataout = (data_sel == 1'b1) ? cache2_dataout : cache1_dataout;
+    assign cache_tagout = (data_sel == 1'b1) ? cache2_tagout : cache1_tagout;
+    assign cache_hit = (data_sel == 1'b1) ? cache2_hit : cache1_hit;
+    assign cache_valid = (data_sel == 1'b1) ? cache2_valid : cache1_valid;
+    assign cache_dirty = (data_sel == 1'b1) ? cache2_dirty : cache1_dirty;
+    
+    
+    dff victimway (.q(w1), .d(w2), .clk(clk), .rst(rst));
+    
+
+    cache #(0 + mem_type) c0( // Outputs
+                            .tag_out              (cache1_tagout),
+                            .data_out             (cache1_dataout),
+                            .hit                  (cache1_hit),
+                            .dirty                (cache1_dirty),
+                            .valid                (cache1_valid),
+                            .err                  (cache1_err),
+                            // Inputs
+                            .enable               (cache1_en),
+                            .clk                  (clk),
+                            .rst                  (rst),
+                            .createdump           (createdump),
+                            .tag_in               (tag_in),
+                            .index                (index),
+                            .offset               (offset),
+                            .data_in              (data_in_cache),
+                            .comp                 (comp),
+                            .write                (write),
+                            .valid_in             (1'b1)); //TODO: ???
 
    
+   cache #(2 + mem_type) c1(// Outputs
+                            .tag_out              (cache2_tagout),
+                            .data_out             (cache2_dataout),
+                            .hit                  (cache2_hit),
+                            .dirty                (cache2_dirty),
+                            .valid                (cache2_valid),
+                            .err                  (cache2_err),
+                            // Inputs
+                            .enable               (cache2_en),
+                            .clk                  (clk),
+                            .rst                  (rst),
+                            .createdump           (createdump),
+                            .tag_in               (tag_in),
+                            .index                (index),
+                            .offset               (offset),
+                            .data_in              (data_in_cache),
+                            .comp                 (comp),
+                            .write                (write),
+                            .valid_in             (1'b1));
+
+
+    four_bank_mem mem(       // Outputs
+                            .data_out          (data_out_mem),
+                            .stall             (stall),
+                            .busy              (busy_mem_out),
+                            .err               (mem_err),
+                            // Inputs
+                            .clk               (clk),
+                            .rst               (rst),
+                            .createdump        (createdump),
+                            .addr              (mem_addr),
+                            .data_in           (cache_dataout),
+                            .wr                (wr),
+                            .rd                (rd));
+
+   
+    statelogic fsm_logic( 
+                            // outputs
+                            .potentialHit(potentialHit),
+                            .next_state(nxt_state), 
+                            // to mem
+                            .mem_offset(mem_offset),
+                            .wr(wr), 
+                            .rd(rd),
+                            // to cache
+                            .cache_offset(cache_offset),
+                            .write(write), 
+                            .comp(comp),
+                            .enable(enable),
+                            .cache_stall(cache_stall),
+                            // inputs
+                            .state(curr_state), 
+                            // from mem_system
+                            .Rd(Rd), 
+                            .Wr(Wr),
+                            .stall(stall),
+                            // from cache
+                            .valid(cache_valid), 
+                            .dirty(cache_dirty), 
+                            .hit(cache_hit));
+      
+
+    statereg state_reg  (   // output
+                            .state(curr_state), 
+                            // input
+                            .next_state(nxt_state), 
+                            .Clk(clk), 
+                            .Reset(rst));
+
+
+    
+    mux2_1_16bit mux0    (  .out(data_in_cache), 
+                            .in0(data_out_mem), 
+                            .in1(DataIn), 
+                            .sel(comp));
+       
 endmodule // mem_system
-
-   
-
 
 // DUMMY LINE FOR REV CONTROL :9:
