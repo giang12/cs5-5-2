@@ -108,14 +108,21 @@ module mem_system(/*AUTOARG*/
     
     assign cache1hit = cache1_hit & cache1_valid;
     assign cache2hit = cache2_hit & cache2_valid;
-    
+   
+    wire current_req_way_0_out;    
+    dff current_req_way_0 (.q(current_req_way_0_out), .d(cache_en[0]), .clk(clk), .rst(rst));
+    wire current_req_way_1_out;    
+    dff current_req_way_1 (.q(current_req_way_1_out), .d(cache_en[1]), .clk(clk), .rst(rst));
+
+
     assign cache_en =   (enable == 1 && cache1_valid == 1 && cache2_valid == 0) ? 2'b01 :
                         (enable == 1 && cache1_valid == 0 && cache2_valid == 1) ? 2'b10 :
                         (enable == 1 && cache1_valid == 0 && cache2_valid == 0) ? 2'b10 :
                         (enable == 1 && cache1_valid == 1 && cache2_valid == 1) ? random : 2'b00; //TODO: pesudo mdoule
                 
-    assign cache1_en = cache_en[1] | comp;
-    assign cache2_en = cache_en[0] | comp;
+    assign cache1_en = (curr_state == 4'b1110 || curr_state == 4'b0001) ? current_req_way_1_out :(cache_en[1] | comp);
+    assign cache2_en = (curr_state == 4'b1110 || curr_state == 4'b0001) ? current_req_way_0_out :(cache_en[0] | comp);
+
 
     assign data_sel = (cache1hit | cache2hit) ? cache2hit : cache_en[0];
     
