@@ -93,7 +93,7 @@ module mem_system(/*AUTOARG*/
     assign offset = cache_addr[2:0];
     
     assign CacheHit = cache_hit & cache_valid & potentialHit; 
-    assign Done = cache_hit & cache_valid;
+    assign Done = (curr_state == 4'b1110 || curr_state == 4'b1111) ? 1: (cache_hit & cache_valid);
     //assign Done = 1'b1;
     assign Stall = cache_stall; // cache stall???
     
@@ -115,29 +115,50 @@ module mem_system(/*AUTOARG*/
     assign cache2hit = cache2_hit & cache2_valid;
 
    
-    wire current_req_way_0_out;    
-    dff current_req_way_0 (.q(current_req_way_0_out), .d(cache_en[0]), .clk(clk), .rst(rst));
-    wire current_req_way_1_out;    
-    dff current_req_way_1 (.q(current_req_way_1_out), .d(cache_en[1]), .clk(clk), .rst(rst));
+    wire wb_current_req_way_0_out;    
+    dff wb_current_req_way_0 (.q(wb_current_req_way_0_out), .d(cache_en[0]), .clk(clk), .rst(rst));
+    wire wb_current_req_way_1_out;    
+    dff wb_current_req_way_1 (.q(wb_current_req_way_1_out), .d(cache_en[1]), .clk(clk), .rst(rst));
 
 
-    assign cache_en =   (enable == 1 && cache1_valid == 1 && cache2_valid == 0) ? 2'b01 :
-                        (enable == 1 && cache1_valid == 0 && cache2_valid == 1) ? 2'b10 :
-                        (enable == 1 && cache1_valid == 0 && cache2_valid == 0) ? 2'b10 :
-                        (enable == 1 && cache1_valid == 1 && cache2_valid == 1) ? random : 2'b00; //TODO: pesudo mdoule
+    wire cmp_current_req_way_0_out;    
+    dff cmp_current_req_way_0 (.q(cmp_current_req_way_0_out), .d(cache2hit), .clk(clk), .rst(rst));
+    wire cmp_current_req_way_1_out;    
+    dff cmp_current_req_way_1 (.q(cmp_current_req_way_1_out), .d(cache1hit), .clk(clk), .rst(rst));
+
+    wire way_0_valid_out;    
+    dff  way_0_valid(.q(way_0_valid_out), .d( (curr_state == 1'b0000) ? cache1_valid : way_0_valid_out), .clk(clk), .rst(rst));
+    wire way_1_valid_out;    
+    dff  way_1_valid(.q(way_1_valid_out), .d( (curr_state == 1'b0000) ? cache2_valid : way_1_valid_out), .clk(clk), .rst(rst));
+
+
+
+
+    //assign cache_en =   (enable == 1 && cache1_valid == 1 && cache2_valid == 0) ? 2'b01 :
+    //                    (enable == 1 && cache1_valid == 0 && cache2_valid == 1) ? 2'b10 :
+    //                    (enable == 1 && cache1_valid == 0 && cache2_valid == 0) ? 2'b10 :
+    //                    (enable == 1 && cache1_valid == 1 && cache2_valid == 1) ? random : 2'b00; //TODO: pesudo mdoule
+    
+    assign cache_en =   (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 0) ? 2'b01 :
+                        (enable == 1 && way_0_valid_out == 0 && way_1_valid_out == 1) ? 2'b10 :
+                        (enable == 1 && way_0_valid_out == 0 && way_1_valid_out == 0) ? 2'b10 :
+                        (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 1) ? random : 2'b00; //TODO: pesudo mdoule
                 
-    assign cache1_en = (curr_state == 4'b1110 || curr_state == 4'b0001) ? current_req_way_1_out :(cache_en[1] | comp);
-    assign cache2_en = (curr_state == 4'b1110 || curr_state == 4'b0001) ? current_req_way_0_out :(cache_en[0] | comp);
+    assign cache1_en = (curr_state == 4'b1110) ? wb_current_req_way_1_out : 
+                                    ((curr_state == 4'b0001) ? cmp_current_req_way_1_out :  (cache_en[1] | comp));
+    assign cache2_en = (curr_state == 4'b1110) ? wb_current_req_way_0_out : 
+                                    ((curr_state == 4'b0001) ? cmp_current_req_way_0_out :  (cache_en[0] | comp));
 
 
-    assign data_sel = (cache1hit | cache2hit) ? cache2hit : cache_en[0];
+
+    assign data_sel = (cache1hit | cache2hit) ? cache2hit : cache2_en;
     
     // 2 way set-assoctive cache outputs
 
     assign cache_dataout = (data_sel == 1'b1) ? cache2_dataout : cache1_dataout;
     assign cache_tagout = (data_sel == 1'b1) ? cache2_tagout : cache1_tagout;
     assign cache_hit = (data_sel == 1'b1) ? cache2_hit : cache1_hit;
-    assign cache_valid = (data_sel == 1'b1) ? cache2_valid : cache1_valid;
+    assign cache_valid = (data_sel == 1'b1) ? way_1_valid_out : way_0_valid_out;
     assign cache_dirty = (data_sel == 1'b1) ? cache2_dirty : cache1_dirty;
     
     
