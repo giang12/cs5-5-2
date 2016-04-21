@@ -71,6 +71,11 @@ module mem_system(/*AUTOARG*/
     wire data_sel;
     wire w1, w2;
     wire cache1_err, cache2_err;
+    //wire write1, write2;
+    
+    //assign write1 = (cache1hit == 1'b1) ? write : 1'b0;
+    //assign write2 = (cache2hit == 1'b1) ? write : 1'b0;
+
     assign cache_err = cache1_err | cache2_err;
     assign err = cache_err | mem_err;
     
@@ -108,6 +113,7 @@ module mem_system(/*AUTOARG*/
     
     assign cache1hit = cache1_hit & cache1_valid;
     assign cache2hit = cache2_hit & cache2_valid;
+
    
     wire current_req_way_0_out;    
     dff current_req_way_0 (.q(current_req_way_0_out), .d(cache_en[0]), .clk(clk), .rst(rst));
@@ -127,6 +133,7 @@ module mem_system(/*AUTOARG*/
     assign data_sel = (cache1hit | cache2hit) ? cache2hit : cache_en[0];
     
     // 2 way set-assoctive cache outputs
+
     assign cache_dataout = (data_sel == 1'b1) ? cache2_dataout : cache1_dataout;
     assign cache_tagout = (data_sel == 1'b1) ? cache2_tagout : cache1_tagout;
     assign cache_hit = (data_sel == 1'b1) ? cache2_hit : cache1_hit;
