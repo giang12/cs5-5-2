@@ -93,7 +93,7 @@ module mem_system(/*AUTOARG*/
     assign offset = cache_addr[2:0];
     
     assign CacheHit = cache_hit & cache_valid & potentialHit; 
-    assign Done = (curr_state == 4'b1110 || curr_state == 4'b1111) ? 1: (cache_hit & cache_valid);
+    assign Done = (curr_state == 4'b1110 || curr_state == 4'b1111) ? 1'b1: ( (curr_state == 4'b0001 || curr_state == 4'b0010) ? (cache_hit & cache_valid) : 1'b0 );
     //assign Done = 1'b1;
     assign Stall = cache_stall; // cache stall???
     
@@ -127,9 +127,9 @@ module mem_system(/*AUTOARG*/
     dff cmp_current_req_way_1 (.q(cmp_current_req_way_1_out), .d(cache1hit), .clk(clk), .rst(rst));
 
     wire way_0_valid_out;    
-    dff  way_0_valid(.q(way_0_valid_out), .d( (curr_state == 1'b0000) ? cache1_valid : way_0_valid_out), .clk(clk), .rst(rst));
+    dff  way_0_valid(.q(way_0_valid_out), .d( (curr_state == 4'b0000) ? cache1_valid : way_0_valid_out), .clk(clk), .rst(rst));
     wire way_1_valid_out;    
-    dff  way_1_valid(.q(way_1_valid_out), .d( (curr_state == 1'b0000) ? cache2_valid : way_1_valid_out), .clk(clk), .rst(rst));
+    dff  way_1_valid(.q(way_1_valid_out), .d( (curr_state == 4'b0000) ? cache2_valid : way_1_valid_out), .clk(clk), .rst(rst));
 
 
 
