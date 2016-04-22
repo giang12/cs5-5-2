@@ -75,12 +75,12 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	cache
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/memv.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/memv.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/four_bank_mem.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/four_bank_mem.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module memv
+-- Compiling module four_bank_mem
 
 Top level modules:
-	memv
+	four_bank_mem
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/memv.syn.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/memv.syn.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -89,26 +89,12 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 Top level modules:
 	memv
 
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/four_bank_mem.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/four_bank_mem.v
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/memv.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/memv.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module four_bank_mem
+-- Compiling module memv
 
 Top level modules:
-	four_bank_mem
-
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/statelogic.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/statelogic.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module statelogic
-
-Top level modules:
-	statelogic
-
-} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/mem_system_perfbench.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/mem_system_perfbench.v
-Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
--- Compiling module mem_system_perfbench
-
-Top level modules:
-	mem_system_perfbench
+	memv
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/mem_system_ref.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/mem_system_ref.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
@@ -116,6 +102,13 @@ Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
 
 Top level modules:
 	mem_system_ref
+
+} {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/mem_system_perfbench.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/mem_system_perfbench.v
+Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004
+-- Compiling module mem_system_perfbench
+
+Top level modules:
+	mem_system_perfbench
 
 } {} {}} /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/dff.v {1 {vlog -work work /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/cache_direct/verilog/dff.v
 Model Technology ModelSim SE vlog 5.8b Compiler 2004.01 Jan 26 2004

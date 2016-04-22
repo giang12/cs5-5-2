@@ -27,6 +27,15 @@
 # Loading __work.mem_system_ref
 run -all
 # Using trace file                                                                                                                                                                                                                                                        mem.addr2
-# ** Fatal: (vsim-3603) Zero-delay oscillation loop detected at time 1001 ns.
+# LOG: ReQNum    0 Cycle       12 ReqCycle        3 Wr Addr 0x015e Value 0x000c
+# 
+# ERROR! Request dropped
+# LOG: ReqNum    1 Cycle       21 ReqCycle       12 Rd Addr 0x095e RefValue 0xda35
+# 
+# ERROR! Request dropped
+# LOG: Done all Requests:          2 Replies:          2 Cycles:         21 Hits:          0
+# Test status: FAIL
+# Break at mem_system_perfbench.v line 200
+# Stopped at mem_system_perfbench.v line 200 
 # 
 # <EOF> 
