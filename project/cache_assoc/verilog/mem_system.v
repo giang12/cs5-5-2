@@ -131,6 +131,11 @@ module mem_system(/*AUTOARG*/
     wire way_1_valid_out;    
     dff  way_1_valid(.q(way_1_valid_out), .d( (curr_state == 4'b0000) ? cache2_valid : way_1_valid_out), .clk(clk), .rst(rst));
 
+    wire way_0_dirty_out;    
+    dff  way_0_dirty(.q(way_0_dirty_out), .d( (curr_state == 4'b0000) ? cache1_dirty : way_0_dirty_out), .clk(clk), .rst(rst));
+    wire way_1_dirty_out;    
+    dff  way_1_dirty(.q(way_1_dirty_out), .d( (curr_state == 4'b0000) ? cache2_dirty : way_1_dirty_out), .clk(clk), .rst(rst));
+
 
 
 
@@ -145,9 +150,9 @@ module mem_system(/*AUTOARG*/
                         (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 1) ? random : 2'b00; //TODO: pesudo mdoule
                 
     assign cache1_en = (curr_state == 4'b1110) ? wb_current_req_way_1_out : 
-                                    ((curr_state == 4'b0001) ? cmp_current_req_way_1_out :  (cache_en[1] | comp));
+                                    ((curr_state == 4'b0001) ? cmp_current_req_way_1_out : ( (curr_state == 4'b0000)  ? 1'b1 : (cache_en[1] | comp)));
     assign cache2_en = (curr_state == 4'b1110) ? wb_current_req_way_0_out : 
-                                    ((curr_state == 4'b0001) ? cmp_current_req_way_0_out :  (cache_en[0] | comp));
+                                    ((curr_state == 4'b0001) ? cmp_current_req_way_0_out : ( (curr_state == 4'b0000)  ? 1'b1 : (cache_en[0] | comp)));
 
 
 
@@ -159,7 +164,7 @@ module mem_system(/*AUTOARG*/
     assign cache_tagout = (data_sel == 1'b1) ? cache2_tagout : cache1_tagout;
     assign cache_hit = (data_sel == 1'b1) ? cache2_hit : cache1_hit;
     assign cache_valid = (data_sel == 1'b1) ? way_1_valid_out : way_0_valid_out;
-    assign cache_dirty = (data_sel == 1'b1) ? cache2_dirty : cache1_dirty;
+    assign cache_dirty = (data_sel == 1'b1) ? way_1_dirty_out : way_0_dirty_out;
     
     
     dff victimway (.q(w1), .d(w2), .clk(clk), .rst(rst));
