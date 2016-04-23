@@ -151,9 +151,12 @@ module mem_system(/*AUTOARG*/
     //                    (enable == 1 && cache1_valid == 0 && cache2_valid == 0) ? 2'b10 :
     //                    (enable == 1 && cache1_valid == 1 && cache2_valid == 1) ? random : 2'b00; //TODO: pesudo mdoule
     
-    assign cache_en =   (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 0) ? 2'b01 :
-                        (enable == 1 && way_0_valid_out == 0 && way_1_valid_out == 1) ? 2'b10 :
-                        (enable == 1 && way_0_valid_out == 0 && way_1_valid_out == 0) ? 2'b10 :
+    assign cache_en =   (enable == 1 && cache1_valid == 1 && cache2_valid == 0 && curr_state ==4'b000) ? 2'b01 :
+                        (enable == 1 && cache1_valid == 0 && cache2_valid == 1 && curr_state ==4'b000) ? 2'b10 :
+                        (enable == 1 && cache1_valid == 0 && cache2_valid == 0 && curr_state ==4'b000) ? 2'b10 :                        
+                        (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 0 && curr_state !=4'b000) ? 2'b01 :
+                        (enable == 1 && way_0_valid_out == 0 && way_1_valid_out == 1 && curr_state !=4'b000) ? 2'b10 :
+                        (enable == 1 && way_0_valid_out == 0 && way_1_valid_out == 0 && curr_state !=4'b000) ? 2'b10 :
                         (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 1 && curr_state == 4'b000) ? ~random :
                         (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 1 && curr_state !=4'b000) ? random : 2'b00; //TODO: pesudo mdoule
                 
@@ -170,7 +173,7 @@ module mem_system(/*AUTOARG*/
 
     assign cache_dataout = (data_sel == 1'b1) ? cache2_dataout : cache1_dataout;
     assign cache_tagout = (data_sel == 1'b1) ? cache2_tagout : cache1_tagout;
-    assign cache_hit = (data_sel == 1'b1) ? cache2_hit : cache1_hit;
+    assign cache_hit = (data_sel == 1'b1) ? cache2hit : cache1hit;
     assign cache_valid = overall_valid_out;
     assign cache_dirty = overall_dirty_out;
     
