@@ -154,7 +154,8 @@ module mem_system(/*AUTOARG*/
     assign cache_en =   (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 0) ? 2'b01 :
                         (enable == 1 && way_0_valid_out == 0 && way_1_valid_out == 1) ? 2'b10 :
                         (enable == 1 && way_0_valid_out == 0 && way_1_valid_out == 0) ? 2'b10 :
-                        (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 1) ? random : 2'b00; //TODO: pesudo mdoule
+                        (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 1 && curr_state == 4'b000) ? ~random :
+                        (enable == 1 && way_0_valid_out == 1 && way_1_valid_out == 1 && curr_state !=4'b000) ? random : 2'b00; //TODO: pesudo mdoule
                 
     assign cache1_en = (curr_state == 4'b1110) ? wb_current_req_way_1_out : 
                                     ((curr_state == 4'b0001) ? cmp_current_req_way_1_out : ( (curr_state == 4'b0000)  ? 1'b1 : (cache_en[1] | comp)));
@@ -163,7 +164,7 @@ module mem_system(/*AUTOARG*/
 
 
 
-    assign data_sel = (cache1hit | cache2hit) ? cache2hit : cache2_en;
+    assign data_sel = (cache1hit | cache2hit) ? cache2hit : cache_en[0];
     
     // 2 way set-assoctive cache outputs
 
