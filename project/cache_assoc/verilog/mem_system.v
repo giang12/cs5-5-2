@@ -137,6 +137,13 @@ module mem_system(/*AUTOARG*/
     dff  way_1_dirty(.q(way_1_dirty_out), .d( (curr_state == 4'b0000) ? cache2_dirty : way_1_dirty_out), .clk(clk), .rst(rst));
 
 
+    wire overall_dirty_out;    
+    dff  overall_dirty(.q(overall_dirty_out), .d( (curr_state == 4'b0000) ? ( (data_sel == 1'b1) ? cache2_dirty : cache1_dirty) : overall_dirty_out), .clk(clk), .rst(rst));
+
+ wire overall_valid_out;    
+    dff  overall_valid(.q(overall_valid_out), .d( (curr_state == 4'b0000) ? ( (data_sel == 1'b1) ? cache2_valid : cache1_dirty) : overall_valid_out), .clk(clk), .rst(rst));
+
+
 
 
     //assign cache_en =   (enable == 1 && cache1_valid == 1 && cache2_valid == 0) ? 2'b01 :
@@ -163,8 +170,8 @@ module mem_system(/*AUTOARG*/
     assign cache_dataout = (data_sel == 1'b1) ? cache2_dataout : cache1_dataout;
     assign cache_tagout = (data_sel == 1'b1) ? cache2_tagout : cache1_tagout;
     assign cache_hit = (data_sel == 1'b1) ? cache2_hit : cache1_hit;
-    assign cache_valid = (data_sel == 1'b1) ? way_1_valid_out : way_0_valid_out;
-    assign cache_dirty = (data_sel == 1'b1) ? way_1_dirty_out : way_0_dirty_out;
+    assign cache_valid = overall_valid_out;
+    assign cache_dirty = overall_dirty_out;
     
     
     dff victimway (.q(w1), .d(w2), .clk(clk), .rst(rst));
