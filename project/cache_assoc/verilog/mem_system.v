@@ -141,7 +141,7 @@ module mem_system(/*AUTOARG*/
     dff  overall_dirty(.q(overall_dirty_out), .d( (curr_state == 4'b0000) ? ( (data_sel == 1'b1) ? cache2_dirty : cache1_dirty) : overall_dirty_out), .clk(clk), .rst(rst));
 
  wire overall_valid_out;    
-    dff  overall_valid(.q(overall_valid_out), .d( (curr_state == 4'b0000) ? ( (data_sel == 1'b1) ? cache2_valid : cache1_dirty) : overall_valid_out), .clk(clk), .rst(rst));
+    dff  overall_valid(.q(overall_valid_out), .d( (curr_state == 4'b0000) ? ( (data_sel == 1'b1) ? cache2_valid : cache1_valid) : overall_valid_out), .clk(clk), .rst(rst));
 
 
 
