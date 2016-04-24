@@ -1,3 +1,4 @@
+# vsim -lib __work -c mem_system_randbench 
 # //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
 # //
 # //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
@@ -6,10 +7,6 @@
 # //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
-<<<<<<< HEAD
-# vsim -view dataset=dump.wlf 
-# dump.wlf opened as dataset "dataset"
-=======
 # Loading __work.mem_system_randbench
 # Loading __work.mem_system_hier
 # Loading __work.clkrst
@@ -16033,4 +16030,3 @@ run -all
 # Stopped at mem_system_randbench.v line 331 
 # 
 # <EOF> 
->>>>>>> 45fbdf4ab4d75bd9fc82e76127b8cc2b4e1b2808
