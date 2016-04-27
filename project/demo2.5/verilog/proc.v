@@ -40,18 +40,22 @@ module proc (/*AUTOARG*/
     wire [15:0] instr;
     wire [1:0] RegDst;
     wire RegWriteEN_in, RegWriteEN_out;
- 
+    wire fetch_err_out; 
 
     wire IFIDWriteEn, pcWriteEn;
     // decode
     wire flush;
     wire [15:0] pc2decode, pcPlusTwo2decdoe, instr2decode, instrFiveExt2IDEX, instrEightExt2IDEX, instrElevenExt2IDEX ;
     wire [31:0] control_signal;
+    // IFID
+    wire IFID_err_out;
+
     // IDEX 
     wire [15:0] read1data2IDEX, read2data2IDEX, IDEXinstrOut, IDEX_read_data_1_out, IDEX_read_data_2_out, IDEX_imm_5_ext_out, IDEX_imm_8_ext_out, IDEX_imm_11_ext_out , IDEX_pc_plus_two_out;
     wire [1:0] IDEX_RegDst_out; 
     wire [2:0] IDEX_RegDataSrc_out;
     wire IDEX_RegWriteEN_out, IDEX_MemEn_out, IDEX_MemWr_out, IDEX_dump_out;
+    wire IDEX_err_out;
     
     
     // MEMWB
@@ -66,6 +70,7 @@ module proc (/*AUTOARG*/
     wire EXMem_MemWr_out, EXMem_MemEn_out, EXMem_halt_out;
     wire [1:0] EXMem_RegDst_out;
     wire [2:0] EXMem_RegDataSrc_out;
+    wire EXMem_err_out;
 
     // dst_reg_num
     wire [2:0] IDEX_dst_reg_num_out, EXMem_dst_reg_num_in, EXMem_dst_reg_num_out, MemWB_dst_reg_num_in, MemWB_dst_reg_num_out;
@@ -81,7 +86,8 @@ module proc (/*AUTOARG*/
     fetch fetch0(   // outputs
                     .instr(instr),
                     .pcCurrent(pc), 
-                    .pcPlusTwo(pc_plus_two), 
+                    .pcPlusTwo(pc_plus_two),
+                    .err(fetch_err_out), 
                     // inputs
                     .pcNext(next_pc), 
                     .pcWriteEN(pcWriteEn & (~control_signal[25]) | flush),  
@@ -101,14 +107,16 @@ module proc (/*AUTOARG*/
                     // outputs
                     .instr_out(instr2decode), 
                     .pcPlusTwo_out(pcPlusTwo2decdoe), 
-                    .pcCurrent_out(pc2decode), 
+                    .pcCurrent_out(pc2decode),
+                    .err_out(IFID_err_out), 
                     // inputs
                     .clk(clk), 
                     .en(IFIDWriteEn), 
                     .rst(rst), 
                     .pcPlusTwo_in(pc_plus_two), 
                     .pcCurrent_in(pc), 
-                    .instr_in(IFID_instr_in)
+                    .instr_in(IFID_instr_in),
+                    .err_in(fetch_err_out)
                 );
   
     wire [31:0] actual_control_signals;
@@ -187,6 +195,7 @@ module proc (/*AUTOARG*/
                     .MemEn_out(IDEX_MemEn_out), 
                     .MemWr_out(IDEX_MemWr_out), 
                     .dump_out(IDEX_dump_out),
+                    .err_out(IDEX_err_out),
                     // WB
                     .RegDst_out(IDEX_RegDst_out),
                     .RegDataSrc_out(IDEX_RegDataSrc_out),
@@ -206,6 +215,7 @@ module proc (/*AUTOARG*/
                     .MemEn_in(control_signal[12]), 
                     .MemWr_in(control_signal[13]), 
                     .dump_in(control_signal[25]),
+                    .err_in(IFID_err_out),
                     // WB
                     .RegDst_in(control_signal[1:0]),
                     .RegDataSrc_in(control_signal[4:2]),
@@ -278,6 +288,7 @@ module proc (/*AUTOARG*/
                     .RegDst_out(EXMem_RegDst_out),
                     .RegDataSrc_out(EXMem_RegDataSrc_out),
                     .RegWriteEN_out(EXMem_RegWriteEN_out),
+                    .err_out(EXMem_err_out),
     
                     // data
                     .pc_plus_two_in(IDEX_pc_plus_two_out),
@@ -295,6 +306,7 @@ module proc (/*AUTOARG*/
                     .RegDst_in(IDEX_RegDst_out),
                     .RegDataSrc_in(IDEX_RegDataSrc_out),
                     .RegWriteEN_in(IDEX_RegWriteEN_out),
+                    .err_in(IDEX_err_out),
                      // Dst_reg_num
                     .dst_reg_num_in(IDEX_dst_reg_num_out),
                     .dst_reg_num_out(EXMem_dst_reg_num_out) 
@@ -314,7 +326,12 @@ module proc (/*AUTOARG*/
                   );
         
     wire data_memory_dump; 
-    assign err = 1'b0;
+    wire instr_mem_err, data_mem_err;
+    assign data_mem_err = 1'b0; //TODO: wire up data_mem_err soon
+
+    assign instr_mem_err = EXMem_err_out;
+    assign err = instr_mem_err | data_mem_err;
+    
     memory memory0( .readData(mem_data_out), // TODO
                     .aluResult(EXMem_aluResult_out), 
                     .writeData(EXMem_writeData_out), 

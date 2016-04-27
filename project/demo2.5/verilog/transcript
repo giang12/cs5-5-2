@@ -30,6 +30,8 @@
 # Loading __work.or2
 # Loading __work.regIFID
 # Loading __work.dff_16bit
+# Loading __work.dff_8bit
+# Loading __work.mux2_1_8bit
 # Loading __work.decode
 # Loading __work.match_both
 # Loading __work.hazard_detect
@@ -51,8 +53,6 @@
 # Loading __work.ext_mod11_16
 # Loading __work.ext_mod5_16
 # Loading __work.regIDEX
-# Loading __work.dff_8bit
-# Loading __work.mux2_1_8bit
 # Loading __work.execution
 # Loading __work.forward_unit
 # Loading __work.sf_left8bit
@@ -83,4 +83,4 @@ run -all
 # Hello world...simulation starting
 # See verilogsim.log and verilogsim.ptrace for output
 # ** Note: $finish    : proc_hier_pbench.v(115)
-#    Time: 15105 ns  Iteration: 0  Instance: /proc_hier_pbench
+#    Time: 3805 ns  Iteration: 0  Instance: /proc_hier_pbench

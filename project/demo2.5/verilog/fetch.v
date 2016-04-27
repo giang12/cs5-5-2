@@ -1,4 +1,4 @@
-module fetch(instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, exception, pcSel);
+module fetch(instr, pcCurrent, pcPlusTwo, err, pcNext, pcWriteEN, clk, rst, exception, pcSel);
     input clk, rst;
     input exception;
     input pcWriteEN;
@@ -7,7 +7,8 @@ module fetch(instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, exception
     output [15:0] pcPlusTwo; 
     output [15:0] pcCurrent; 
     output [15:0] instr;
-    
+    output err;
+ 
     wire [15:0] instr_from_memory;
     wire [15:0] pc_current;
     assign pcCurrent = pc_current;

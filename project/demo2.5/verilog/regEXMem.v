@@ -16,6 +16,7 @@ module regEXMem(
     RegDst_out,
     RegDataSrc_out,
     RegWriteEN_out,
+    err_out,
     
     // data
     pc_plus_two_in,
@@ -33,6 +34,7 @@ module regEXMem(
     RegDst_in,
     RegDataSrc_in,
     RegWriteEN_in,
+    err_in,
     // dst_reg_num
     dst_reg_num_in,
     dst_reg_num_out
@@ -69,8 +71,8 @@ module regEXMem(
     // Control Portion
 
     // M
-    input MemEn_in, MemWr_in, dump_in;
-    output MemEn_out, MemWr_out, halt_out;
+    input MemEn_in, MemWr_in, dump_in, err_in;
+    output MemEn_out, MemWr_out, halt_out, err_out;
 
     // WB
     input [1:0] RegDst_in;
@@ -80,7 +82,7 @@ module regEXMem(
     input RegWriteEN_in;
     output RegWriteEN_out;
     
-    wire [3:0] w1; // dummy wire
+    wire [2:0] w1; // dummy wire
 
     // dst_reg_num
     input [2:0] dst_reg_num_in;
@@ -95,8 +97,8 @@ module regEXMem(
     dff_16bit dff6(.out(instr_out), .in(instr_in), .en(en), .rst(rst), .clk(clk));
     dff_16bit dff7(.out(set_out), .in(set_in), .en(en), .rst(rst), .clk(clk));
 
-    dff_16bit dff8( .out({MemEn_out, MemWr_out, halt_out, RegDst_out, RegWriteEN_out, RegDataSrc_out, dst_reg_num_out, w1}),
-                    .in({MemEn_in, MemWr_in, dump_in, RegDst_in, RegWriteEN_in, RegDataSrc_in, dst_reg_num_in, 4'bx}), 
+    dff_16bit dff8( .out({MemEn_out, MemWr_out, halt_out, RegDst_out, RegWriteEN_out, RegDataSrc_out, dst_reg_num_out, err_out, w1}),
+                    .in({MemEn_in, MemWr_in, dump_in, RegDst_in, RegWriteEN_in, RegDataSrc_in, dst_reg_num_in, err_in ,3'bx}), 
                     .en(en), 
                     .rst(rst), 
                     .clk(clk));
