@@ -19,7 +19,7 @@
 # Loading __work.nor2
 # Loading __work.reg_16bit
 # Loading __work.dff
-# Loading __work.memory2c_align
+# Loading __work.stallmem
 # Loading __work.cla_16bit
 # Loading __work.fulladder_16bit
 # Loading __work.fulladder
@@ -77,10 +77,17 @@
 # Loading __work.or16
 # Loading __work.regEXMem
 # Loading __work.memory
+# Loading __work.memory2c_align
 # Loading __work.regMemWB
 # Loading __work.writeback
 run -all
+# Using seed           0
+# rand_pat=12153524 00010010000101010011010100100100
 # Hello world...simulation starting
 # See verilogsim.log and verilogsim.ptrace for output
 # ** Note: $finish    : proc_hier_pbench.v(115)
+<<<<<<< HEAD
 #    Time: 3805 ns  Iteration: 0  Instance: /proc_hier_pbench
+=======
+#    Time: 9805 ns  Iteration: 0  Instance: /proc_hier_pbench
+>>>>>>> 28ea7fb19eacd13cea3a04fac6f034b1ef746d1e

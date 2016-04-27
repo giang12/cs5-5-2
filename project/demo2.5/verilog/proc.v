@@ -83,14 +83,26 @@ module proc (/*AUTOARG*/
     wire [2:0] EXMemFwdDataMuxSel;
     assign EXMemFwdDataMuxSel = EXMem_RegDataSrc_out;
 
+    wire fetch_done;
+    wire fetch_stall;
+    wire fetch_cache_hit;
+    wire fetch_err;
+
     fetch fetch0(   // outputs
                     .instr(instr),
                     .pcCurrent(pc), 
                     .pcPlusTwo(pc_plus_two),
+<<<<<<< HEAD
                     .err(fetch_err_out), 
+=======
+                    .done(fetch_done),
+                    .stall(fetch_stall),
+                    .cache_hit(fetch_cache_hit),
+                    .err(fetch_err),
+>>>>>>> 28ea7fb19eacd13cea3a04fac6f034b1ef746d1e
                     // inputs
                     .pcNext(next_pc), 
-                    .pcWriteEN(pcWriteEn & (~control_signal[25]) | flush),  
+                    .pcWriteEN(pcWriteEn & (~control_signal[25])),  
                     .pcSel(flush),
                     .clk(clk), 
                     .rst(rst), 

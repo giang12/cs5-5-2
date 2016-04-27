@@ -2,6 +2,10 @@ library verilog;
 use verilog.vl_types.all;
 entity fetch is
     port(
+        done            : out    vl_logic;
+        stall           : out    vl_logic;
+        cache_hit       : out    vl_logic;
+        err             : out    vl_logic;
         instr           : out    vl_logic_vector(15 downto 0);
         pccurrent       : out    vl_logic_vector(15 downto 0);
         pcplustwo       : out    vl_logic_vector(15 downto 0);
