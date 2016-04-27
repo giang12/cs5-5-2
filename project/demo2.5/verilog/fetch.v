@@ -56,7 +56,7 @@ module fetch(done, stall, cache_hit, err, instr, pcCurrent, pcPlusTwo, pcNext, p
                             .rst(rst), 
                             .clk(clk));
     // instruction mem
-    stallmem instrctionMem( 
+    mem_system instrctionMem( 
                             .DataOut(instr_from_memory),
                             .Done(done),
                             .Stall(stall),
