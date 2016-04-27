@@ -7,4 +7,3 @@
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
 # vsim -view dataset=dump.wlf 
-# dump.wlf opened as dataset "dataset"
