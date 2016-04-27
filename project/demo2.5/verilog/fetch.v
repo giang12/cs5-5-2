@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+module fetch(instr, pcCurrent, pcPlusTwo, err, pcNext, pcWriteEN, clk, rst, exception, pcSel);
+=======
 module fetch(done, stall, cache_hit, err, instr, pcCurrent, pcPlusTwo, pcNext, pcWriteEN, clk, rst, exception, pcSel);
+>>>>>>> 28ea7fb19eacd13cea3a04fac6f034b1ef746d1e
     input clk, rst;
     input exception;
     input pcWriteEN;
@@ -7,11 +11,16 @@ module fetch(done, stall, cache_hit, err, instr, pcCurrent, pcPlusTwo, pcNext, p
     output [15:0] pcPlusTwo; 
     output [15:0] pcCurrent; 
     output [15:0] instr;
+<<<<<<< HEAD
+    output err;
+ 
+=======
     output done;
     output stall;
     output cache_hit;
     output err;
 
+>>>>>>> 28ea7fb19eacd13cea3a04fac6f034b1ef746d1e
     wire [15:0] instr_from_memory;
     wire [15:0] pc_current;
     assign pcCurrent = pc_current;

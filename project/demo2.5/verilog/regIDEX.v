@@ -34,6 +34,7 @@ module regIDEX(
                 MemEn_out, 
                 MemWr_out, 
                 dump_out,
+                err_out,
                 // WB
                 RegDst_out,
                 RegDataSrc_out,
@@ -53,6 +54,7 @@ module regIDEX(
                 MemEn_in, 
                 MemWr_in, 
                 dump_in,
+                err_in,
                 // WB
                 RegDst_in,
                 RegDataSrc_in,
@@ -100,8 +102,8 @@ module regIDEX(
     //wire w1; //dummy out
 
     // M
-    input MemEn_in, MemWr_in, dump_in;
-    output MemEn_out, MemWr_out, dump_out;
+    input MemEn_in, MemWr_in, dump_in, err_in;
+    output MemEn_out, MemWr_out, dump_out, err_out;
     
     // WB
     input [2:0] RegDataSrc_in;
@@ -114,7 +116,7 @@ module regIDEX(
     
     input [2:0] dst_reg_num_in; 
     output [2:0] dst_reg_num_out;
-    wire [4:0] w1; 
+    wire [3:0] w1; 
 
     // *********************** RegModules for Data ****************
  
@@ -143,8 +145,8 @@ module regIDEX(
                     .rst(rst), 
                     .clk(clk));
     
-    dff_8bit dff10( .out({dst_reg_num_out, w1}), 
-                    .in({dst_reg_num_in, 5'bx}), 
+    dff_8bit dff10( .out({dst_reg_num_out, err_out, w1}), 
+                    .in({dst_reg_num_in, err_in, 4'bx}), 
                     .en(en), 
                     .rst(rst), 
                     .clk(clk));
