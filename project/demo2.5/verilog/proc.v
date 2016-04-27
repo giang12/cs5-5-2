@@ -12,7 +12,6 @@ module proc (/*AUTOARG*/
    input rst;
 
    output err;
-
    // None of the above lines can be modified
 
    // OR all the err ouputs for every sub-module and assign it as this
@@ -85,7 +84,7 @@ module proc (/*AUTOARG*/
                     .pcPlusTwo(pc_plus_two), 
                     // inputs
                     .pcNext(next_pc), 
-                    .pcWriteEN(pcWriteEn),  
+                    .pcWriteEN(pcWriteEn & (~control_signal[25]) | flush),  
                     .pcSel(flush),
                     .clk(clk), 
                     .rst(rst), 
@@ -314,7 +313,8 @@ module proc (/*AUTOARG*/
                       .in7(16'bxxxxxxxxxxxxxxxx)
                   );
         
-
+    wire data_memory_dump; 
+    assign err = 1'b0;
     memory memory0( .readData(mem_data_out), // TODO
                     .aluResult(EXMem_aluResult_out), 
                     .writeData(EXMem_writeData_out), 
@@ -322,7 +322,8 @@ module proc (/*AUTOARG*/
                     .MemWr(EXMem_MemWr_out), 
                     .halt(EXMem_halt_out),
                     .clk(clk), 
-                    .rst(rst)
+                    .rst(rst),
+                    .data_memory_dump(data_memory_dump)
                 );
 
     // TODO: connect wire
