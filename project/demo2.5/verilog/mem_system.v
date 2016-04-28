@@ -95,7 +95,7 @@ module mem_system(/*AUTOARG*/
     assign CacheHit = cache_hit & cache_valid & potentialHit; 
     assign Done = (curr_state == 4'b1110 || curr_state == 4'b1111) ? 1'b1: ( (curr_state == 4'b0001 || curr_state == 4'b0010) ? (cache_hit & cache_valid) : 1'b0 );
     //assign Done = 1'b1;
-    assign Stall = ~Done; // cache stall???
+    assign Stall = (Wr == 0 && Rd == 0 ) ? 1'b0 : (~Done); // cache stall???
     
      
    /* data_mem = 1, inst_mem = 0 *

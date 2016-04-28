@@ -88,21 +88,22 @@ module proc (/*AUTOARG*/
     wire fetch_cache_hit;
     wire fetch_err;
 
+    wire data_mem_done;
+    wire data_mem_stall;
+    wire data_mem_cache_hit;
+    wire data_mem_err;
+ 
     fetch fetch0(   // outputs
                     .instr(instr),
                     .pcCurrent(pc), 
                     .pcPlusTwo(pc_plus_two),
-<<<<<<< HEAD
-                    .err(fetch_err_out), 
-=======
                     .done(fetch_done),
                     .stall(fetch_stall),
                     .cache_hit(fetch_cache_hit),
                     .err(fetch_err),
->>>>>>> 28ea7fb19eacd13cea3a04fac6f034b1ef746d1e
                     // inputs
                     .pcNext(next_pc), 
-                    .pcWriteEN(pcWriteEn & (~control_signal[25])),  
+                    .pcWriteEN(pcWriteEn & (~control_signal[25]) & (~data_mem_stall)),  
                     .pcSel(flush),
                     .clk(clk), 
                     .rst(rst), 
@@ -123,7 +124,7 @@ module proc (/*AUTOARG*/
                     .err_out(IFID_err_out), 
                     // inputs
                     .clk(clk), 
-                    .en(IFIDWriteEn), 
+                    .en(IFIDWriteEn & (~data_mem_stall)), 
                     .rst(rst), 
                     .pcPlusTwo_in(pc_plus_two), 
                     .pcCurrent_in(pc), 
@@ -182,7 +183,7 @@ module proc (/*AUTOARG*/
                     .imm_11_ext_out(IDEX_imm_11_ext_out), 
                     // regsiter control
                     .clk(clk), 
-                    .en(1'b1), 
+                    .en(~data_mem_stall), 
                     .rst(rst),
                     // ********* data inputs *******
                     .instr_in(IDEX_instr_in),
@@ -280,7 +281,7 @@ module proc (/*AUTOARG*/
                     // reg control
                     //
                     .rst(rst),
-                    .en(1'b1),
+                    .en(~data_mem_stall),
                     .clk(clk),
                     // data
                     .pc_plus_two_out(EXMem_pc_plus_two_out),
@@ -338,13 +339,20 @@ module proc (/*AUTOARG*/
                   );
         
     wire data_memory_dump; 
-    wire instr_mem_err, data_mem_err;
+    wire instr_mem_err;
     assign data_mem_err = 1'b0; //TODO: wire up data_mem_err soon
 
     assign instr_mem_err = EXMem_err_out;
     assign err = instr_mem_err | data_mem_err;
     
-    memory memory0( .readData(mem_data_out), // TODO
+   
+
+    memory memory0( 
+                    .done(data_mem_done),
+                    .stall(data_mem_stall),
+                    .cache_hit(data_mem_cache_hit),
+                    .err(data_mem_err),
+                    .readData(mem_data_out),
                     .aluResult(EXMem_aluResult_out), 
                     .writeData(EXMem_writeData_out), 
                     .MemEn(EXMem_MemEn_out), 
@@ -360,7 +368,7 @@ module proc (/*AUTOARG*/
                     // reg control
                     //
                     .rst(rst),
-                    .en(1'b1),
+                    .en(~data_mem_stall),
                     .clk(clk),
                     // data
                     .instr(MemWB_instr_out),
@@ -383,9 +391,9 @@ module proc (/*AUTOARG*/
                     .pc_plus_two_in(EXMem_pc_plus_two_out),
                     .set_in(EXMem_set_out),
                     //control
-                    .RegDst_in(EXMem_RegDst_out),
-                    .RegDataSrc_in(EXMem_RegDataSrc_out),
-                    .RegWriteEN_in(EXMem_RegWriteEN_out),
+                    .RegDst_in( (data_mem_stall == 1'b0) ? EXMem_RegDst_out : 2'b00),
+                    .RegDataSrc_in( (data_mem_stall == 1'b0) ? EXMem_RegDataSrc_out : 3'b000),
+                    .RegWriteEN_in( (data_mem_stall == 1'b0) ? EXMem_RegWriteEN_out : 1'b0),
                      // Dst_reg_num
                     .dst_reg_num_in(EXMem_dst_reg_num_out),
                     .dst_reg_num_out(MemWB_dst_reg_num_out)
