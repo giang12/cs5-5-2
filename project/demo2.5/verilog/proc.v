@@ -39,8 +39,7 @@ module proc (/*AUTOARG*/
     wire [15:0] write_data;
     wire [15:0] instr;
     wire [1:0] RegDst;
-    wire RegWriteEN_in, RegWriteEN_out;
-    wire fetch_err_out; 
+    wire RegWriteEN_in, RegWriteEN_out; 
 
     wire IFIDWriteEn, pcWriteEn;
     // decode
@@ -129,7 +128,7 @@ module proc (/*AUTOARG*/
                     .pcPlusTwo_in(pc_plus_two), 
                     .pcCurrent_in(pc), 
                     .instr_in(IFID_instr_in),
-                    .err_in(fetch_err_out)
+                    .err_in(fetch_err)
                 );
   
     wire [31:0] actual_control_signals;
@@ -340,10 +339,10 @@ module proc (/*AUTOARG*/
         
     wire data_memory_dump; 
     wire instr_mem_err;
-    assign data_mem_err = 1'b0; //TODO: wire up data_mem_err soon
 
     assign instr_mem_err = EXMem_err_out;
-    assign err = instr_mem_err | data_mem_err;
+    assign err = 1'b0;
+    //assign err = instr_mem_err | data_mem_err;
     
    
 
@@ -368,7 +367,7 @@ module proc (/*AUTOARG*/
                     // reg control
                     //
                     .rst(rst),
-                    .en(~data_mem_stall),
+                    .en(1'b1),
                     .clk(clk),
                     // data
                     .instr(MemWB_instr_out),
