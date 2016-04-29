@@ -63,6 +63,7 @@
 # Loading __work.execution
 # Loading __work.forward_unit
 # Loading __work.sf_left8bit
+# Loading __work.special_adder
 # Loading __work.alu
 # Loading __work.inverter_16bit
 # Loading __work.not1_16bit

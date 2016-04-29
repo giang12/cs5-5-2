@@ -18,7 +18,7 @@ module branch_cond_test(data, instr, branch, jump, pc_src, flush);
 always @ (branch, jump, instr, zero, data[15])
 begin
     casex({branch,jump,instr,zero,data[15]})
-      6'b0xxxxx:
+      6'b00xxxx:
       begin
         pc_src <= 3'b001;
         flush <= 1'b0;
@@ -81,6 +81,11 @@ begin
       6'b1111xx:
       begin
         pc_src <= 3'b010;
+        flush <= 1'b1;
+      end
+      6'b01xxxx:
+      begin
+        pc_src <= 3'b101;
         flush <= 1'b1;
       end
       

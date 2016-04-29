@@ -105,21 +105,11 @@ module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_dat
           .in(forwarded_data_a)
         );
  // ror_amount for modify the shift amt data after forwarded
-   alu ror_amt_adder2(
-           // Outputs
-          .Out(sixteen_minus_forwarded_data_b),
-          .Ofl(ofl_disposal),
-          .Cout(cout_disposal),
-          .Z(zero_disposal),
-          // Inputs
-          .A(16'b0000_0000_0001_0000),
-          .B( {   {12{1'b0}} , {forwarded_data_b[3:0]}  }),
-          .Cin(1'b1),
-          .Op(3'b100),
-          .invA(1'b0),
-          .invB(1'b1),
-          .sign(1'b1)
-         ); 
+ 
+  special_adder ror_amt_adder2(
+          .in(forwarded_data_b[3:0]),
+          .out(sixteen_minus_forwarded_data_b)
+  );
   
   // ALU Related 
   sf_left8bit shifter_1(
@@ -159,38 +149,19 @@ module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_dat
           .in7(16'bxxxx_xxxx_xxxx_xxxx)
         );
 
-  alu ror_amt_adder0(
-           // Outputs
-          .Out(sixteen_minus_read_data_2_3_0_zero_ext),
-          .Ofl(ofl_disposal),
-          .Cout(cout_disposal),
-          .Z(zero_disposal),
-          // Inputs
-          .A(16'b0000_0000_0001_0000),
-          .B( {   {12{1'b0}} , {read_data_2[3:0]}  }),
-          .Cin(1'b1),
-          .Op(3'b100),
-          .invA(1'b0),
-          .invB(1'b1),
-          .sign(1'b1)
-         ); 
 
-  alu ror_amt_adder1(
-          // Outputs
-          .Out(sixteen_minus_imm_5_ext_3_0_zero_ext),
-          .Ofl(ofl_disposal),
-          .Cout(cout_disposal),
-          .Z(zero_disposal),
-          // Inputs
-          .A(16'b0000_0000_0001_0000),
-          .B( {   {12{1'b0}} , {imm_5_ext[3:0]}  }),
-          .Cin(1'b1),
-          .Op(3'b100),
-          .invA(1'b0),
-          .invB(1'b1),
-          .sign(1'b1)
-        ); 
+  special_adder ror_amt_adder0(
+          .in(read_data_2[3:0]),
+          .out(sixteen_minus_read_data_2_3_0_zero_ext)
+  );
 
+  special_adder ror_amt_adder1(
+          .in(imm_5_ext[3:0]),
+          .out(sixteen_minus_imm_5_ext_3_0_zero_ext)
+  );
+
+
+  
   wire [15:0] alu_scr_b_last_level_value;
   wire alu_src_b_last_level_mux_sel;
   assign alu_src_b_last_level_mux_sel = (instr[15:11] == 5'b10000)? 1'b1 : (instr[15:11] == 5'b10011) ? 1'b1 : (instr[15:11] == 5'b10001) ? 1'b1 : 1'b0;
@@ -299,7 +270,7 @@ module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_dat
           .in2(rs_plus_imm_8_ext),
           .in3(pc_plus_two_plus_imm_8_ext),
           .in4(pc_plus_two_plus_imm_11_ext),
-          .in5(16'bxxxx_xxxx_xxxx_xxxx),
+          .in5(16'b0000_0000_0000_0010),
           .in6(16'bxxxx_xxxx_xxxx_xxxx),
           .in7(16'bxxxx_xxxx_xxxx_xxxx)
         );

@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version B-2008.09-SP3 for amd64 -- Jan 19, 2009
-#@ # Date:   Sun Apr 17 23:51:45 2016
-#@ # Run by: xuyi@macaroni-05.cs.wisc.edu
+#@ # Date:   Thu Apr 28 18:21:05 2016
+#@ # Run by: yudong@adelie-01.cs.wisc.edu
 #@ 
 
 source /s/synopsys-2009_03_09/@sys/B-2008.09-SP3/admin/setup/.synopsys_dc.setup
@@ -3478,7 +3478,7 @@ source /s/synopsys-2009_03_09/@sys/B-2008.09-SP3/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /s/synopsys-2009_03_09/@sys/B-2008.09-SP3/admin/setup/.synopsys_dc.setup
 
-source /u/x/u/xuyi/.synopsys_dc.setup
+source /u/y/u/yudong/.synopsys_dc.setup
 #@ # ###########################################################
 #@ #
 #@ # .synopsys_dc.setup 
@@ -3607,11 +3607,11 @@ source /u/x/u/xuyi/.synopsys_dc.setup
 #@ set edifout_designs_library_name   "SYNOPSYS"
 #@ 
 #@ 
-#@ # -- End source /u/x/u/xuyi/.synopsys_dc.setup
+#@ # -- End source /u/y/u/yudong/.synopsys_dc.setup
 
-source -echo -verbose /afs/cs.wisc.edu/u/x/u/xuyi/private/cs552/project/demo2/verilog/synth/synth.tcl
+source -echo -verbose /afs/cs.wisc.edu/u/y/u/yudong/private/cs552/coll/cs552/project/demo2.5/verilog/synth/synth.tcl
 #@ echo "********** CS552 Reading files begin ********************"
-#@ set my_verilog_files [list alu.v and16.v and2_16bit.v and2.v and3.v btr_mod.v cla_16bit.v clu_16bit.v clu_4bit.v cond_set.v control.v decoder3_8.v decode.v dff_16bit.v dff_8bit.v dff.v dst_reg_parser.v execution.v ext_mod11_16.v ext_mod5_16.v ext_mod8_16.v fetch.v forward_unit.v fulladder_16bit.v fulladder.v hazard_detect.v inner_module.v inverter_16bit.v lsb_module.v match_both.v memory2c.syn.v memory.v msb_module.v mux2_1_16bit.v mux2_1_32bit.v mux2_1_8bit.v mux2_1.v mux4_1_16bit.v mux4_1_4bit.v mux4_1.v mux8_1_16bit.v nand2.v nor2.v not1_16bit.v not1.v or16.v or2_16bit.v or2.v or3.v pc_ctr.v proc.v reg_16bit.v reg_64bit.v regEXMem.v regIDEX.v regIFID.v regMemWB.v rf_bypass.v rf.v sf_left8bit.v sh_1.v sh_2.v sh_4.v sh_8.v shifter.v special_control.v writeback.v xor2_16bit.v xor2_3bit.v xor2.v zero_detect.v branch_cond_test.v   ]
+#@ set my_verilog_files [list alu.v and16.v and2_16bit.v and2.v and3.v branch_cond_test.v btr_mod.v cache.v cla_16bit.v clu_16bit.v clu_4bit.v cond_set_old.v cond_set.v control.v decoder3_8.v decode.v dff_16bit.v dff_8bit.v dff.v dst_reg_parser.v execution.v ext_mod11_16.v ext_mod5_16.v ext_mod8_16.v fetch.v forward_unit.v four_bank_mem.v fulladder_16bit.v fulladder.v hazard_detect.v inner_module.v inverter_16bit.v lsb_module.v match_both.v memc.syn.v memory.v mem_system_ref.v mem_system.v memv.syn.v msb_module.v mux2_1_16bit.v mux2_1_32bit.v mux2_1_8bit.v mux2_1.v mux4_1_16bit.v mux4_1_4bit.v mux4_1.v mux8_1_16bit.v nand2.v nor2.v not1_16bit.v not1.v or16.v or2_16bit.v or2.v or3.v pc_ctr.v proc.v reg_16bit.v reg_64bit.v regEXMem.v regIDEX.v regIFID.v regMemWB.v rf_bypass.v rf.v sf_left8bit.v sh_1.v sh_2.v sh_4.v sh_8.v shifter.v special_adder.v special_control.v statelogic.v statereg.v writeback.v xor2_16bit.v xor2_3bit.v xor2.v zero_detect.v final_memory.syn.v  ]
 #@ set my_toplevel proc
 #@ define_design_lib WORK -path ./WORK
 #@ analyze -f verilog $my_verilog_files

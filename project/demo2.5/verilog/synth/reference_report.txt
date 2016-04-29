@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : reference
+Design : proc
+Version: B-2008.09-SP3
+Date   : Thu Apr 28 18:32:06 2016
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+BUFX2              gscl45nm       2.346500       6     14.079000  
+INVX1              gscl45nm       1.407900       8     11.263200  
+INVX2              gscl45nm       1.877200       1      1.877200  
+INVX4              gscl45nm       3.285100       1      3.285100  
+INVX8              gscl45nm       3.285100       8     26.280800  
+NOR2X1             gscl45nm       2.346500       5     11.732500  
+NOR3X1             gscl45nm       2.815800       1      2.815800  
+OR2X2              gscl45nm       2.815800       2      5.631600  
+decode                         8867.892623       1   8867.892623  h, n
+execution                     18204.615960       1  18204.615960  h
+fetch                         125621.283485
+                                                 1  125621.283485 h, n
+memory                        119434.971066
+                                                 1  119434.971066 h, n
+mux2_1_16bit_53                 297.536195       1    297.536195  h
+mux2_1_16bit_54                 303.637095       1    303.637095  h
+mux2_1_32bit_1                  594.133789       1    594.133789  h
+mux8_1_16bit_6                 2101.525364       1   2101.525364  h
+regEXMem                       3889.089026       1   3889.089026  h, n
+regIDEX                        4349.003017       1   4349.003017  h, n
+regIFID                        1688.541367       1   1688.541367  h, n
+regMemWB                       3728.119123       1   3728.119123  h, n
+writeback                      2169.104564       1   2169.104564  h
+-----------------------------------------------------------------------------
+Total 21 references                                 291326.417872
+1
