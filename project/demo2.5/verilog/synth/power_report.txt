@@ -8,7 +8,7 @@ Report : power
         -analysis_effort low
 Design : proc
 Version: B-2008.09-SP3
-Date   : Thu Apr 28 18:32:11 2016
+Date   : Sat Apr 30 08:07:01 2016
 ****************************************
 
 
@@ -30,11 +30,11 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  = 185.1905 mW  (100%)
-  Net Switching Power  = 301.9674 uW    (0%)
+  Cell Internal Power  = 185.1998 mW  (100%)
+  Net Switching Power  = 316.4758 uW    (0%)
                          ---------
-Total Dynamic Power    = 185.4925 mW  (100%)
+Total Dynamic Power    = 185.5163 mW  (100%)
 
-Cell Leakage Power     =   1.5073 mW
+Cell Leakage Power     =   1.5011 mW
 
 1

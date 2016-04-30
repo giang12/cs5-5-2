@@ -3,7 +3,7 @@
 Report : hierarchy
 Design : proc
 Version: B-2008.09-SP3
-Date   : Thu Apr 28 17:30:36 2016
+Date   : Sat Apr 30 07:57:03 2016
 ****************************************
 
 Information: This design contains unmapped logic. (RPT-7)
@@ -105,25 +105,19 @@ proc
             and2_16bit
                 and2
                     ...
-            cla_16bit
-                and2
-                    ...
-                clu_16bit
-                    clu_4bit
-                        and2
-                            ...
-                        or2
-                            GTECH_OR2                  gtech
-                fulladder_16bit
+            fast_adder_wrapper
+                GTECH_BUF                              gtech
+                GTECH_NOT                              gtech
+                GTECH_XOR2                             gtech
+                fast_adder
+                    carry_look_ahead
+                        GTECH_AND2                     gtech
+                        GTECH_OR2                      gtech
                     fulladder
                         and2
                             ...
                         xor2
                             ...
-                not1
-                    ...
-                or2
-                    ...
             inverter_16bit
                 mux2_1
                     ...
@@ -136,7 +130,7 @@ proc
                 ...
             or2_16bit
                 or2
-                    ...
+                    GTECH_OR2                          gtech
             shifter
                 sh_1
                     inner_module
@@ -184,13 +178,13 @@ proc
             or16
                 GTECH_OR2                              gtech
         btr_mod
-        cla_16bit
-            ...
         cond_set
             GTECH_AND2                                 gtech
             GTECH_BUF                                  gtech
             GTECH_NOT                                  gtech
             GTECH_OR2                                  gtech
+        fast_adder
+            ...
         forward_unit
             GTECH_AND2                                 gtech
             GTECH_BUF                                  gtech
@@ -213,7 +207,7 @@ proc
         GTECH_AND2                                     gtech
         GTECH_NOT                                      gtech
         GTECH_OR2                                      gtech
-        cla_16bit
+        fast_adder
             ...
         mem_system
             GTECH_AND2                                 gtech

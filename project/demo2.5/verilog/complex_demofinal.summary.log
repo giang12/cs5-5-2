@@ -4,7 +4,7 @@
 /u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/complex_demofinal/alignTest4.asm SUCCESS CPI:6.9 CYCLES:55 ICOUNT:8 IHITRATE: 80.0 DHITRATE: 50.0
 /u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/complex_demofinal/branchTest.asm SUCCESS CPI:8.9 CYCLES:187 ICOUNT:21 IHITRATE: 61.5 DHITRATE: 0
 /u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/complex_demofinal/cacheTest.asm SUCCESS CPI:4.2 CYCLES:535 ICOUNT:128 IHITRATE: 86.8 DHITRATE: 66.7
-/u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/complex_demofinal/complex_exception_test.asm FAILED
+/u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/complex_demofinal/complex_exception_test.asm SUCCESS CPI:0.0 CYCLES: ICOUNT: IHITRATE: 0 DHITRATE: 0
 /u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/complex_demofinal/extraCreditTest.asm FAILED
 /u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/complex_demofinal/finalTest2.asm SUCCESS CPI:3.5 CYCLES:1601 ICOUNT:457 IHITRATE: 97.6 DHITRATE: 85.3
 /u/k/a/karu/courses/cs552/spring2013/handouts/testprograms/public/complex_demofinal/firstTest.asm SUCCESS CPI:4.2 CYCLES:171 ICOUNT:41 IHITRATE: 75.0 DHITRATE: 0

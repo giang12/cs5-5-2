@@ -223,40 +223,34 @@ module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_dat
   wire [15:0] rs_plus_imm_8_ext;
  
 
-   cla_16bit adder0(
+   fast_adder adder0(
           // Outputs
-          .OUT(rs_plus_imm_8_ext),
-          .Ofl(ofl_disposal),
+          .S(rs_plus_imm_8_ext),
           .Cout(cout_disposal),
           // Inputs
           .A(actual_alu_data_a),
           .B(imm_8_ext),
-          .CI(1'b0),
-          .sign(1'b1)
+          .Cin(1'b0)
         ); 
 
-  cla_16bit adder1(
+  fast_adder adder1(
           // Outputs
-          .OUT(pc_plus_two_plus_imm_8_ext),
-          .Ofl(ofl_disposal),
+          .S(pc_plus_two_plus_imm_8_ext),
           .Cout(cout_disposal),
          // Inputs
           .A(pc_plus_two),
           .B(imm_8_ext),
-          .CI(1'b0),
-          .sign(1'b1)
+          .Cin(1'b0)
         ); 
 
-  cla_16bit adder2(
+  fast_adder adder2(
           // Outputs
-          .OUT(pc_plus_two_plus_imm_11_ext),
-          .Ofl(ofl_disposal),
+          .S(pc_plus_two_plus_imm_11_ext),
           .Cout(cout_disposal),
          // Inputs
           .A(pc_plus_two),
           .B(imm_11_ext),
-          .CI(1'b0),
-          .sign(1'b1)
+          .Cin(1'b0)
         ); 
   
 

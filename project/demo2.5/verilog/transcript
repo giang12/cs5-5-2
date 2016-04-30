@@ -1,3 +1,4 @@
+# vsim -lib __work -c proc_hier_pbench 
 # //  ModelSim SE 5.8b Jan 01 2004 Linux 2.6.32-573.7.1.el6.x86_64
 # //
 # //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
@@ -6,5 +7,87 @@
 # //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
-# vsim -view dataset=dump.wlf 
-# dump.wlf opened as dataset "dataset"
+# Loading __work.proc_hier_pbench
+# Loading __work.proc_hier
+# Loading __work.clkrst
+# Loading __work.proc
+# Loading __work.fetch
+# Loading __work.mux2_1_16bit
+# Loading __work.mux2_1
+# Loading __work.not1
+# Loading __work.nand2
+# Loading __work.nor2
+# Loading __work.reg_16bit
+# Loading __work.dff
+# Loading __work.mem_system
+# Loading __work.cache
+# Loading __work.memc
+# Loading __work.memv
+# Loading __work.four_bank_mem
+# Loading __work.final_memory
+# Loading __work.statelogic
+# Loading __work.statereg
+# Loading __work.fast_adder
+# Loading __work.fulladder
+# Loading __work.xor2
+# Loading __work.and2
+# Loading __work.carry_look_ahead
+# Loading __work.regIFID
+# Loading __work.dff_16bit
+# Loading __work.dff_8bit
+# Loading __work.mux2_1_8bit
+# Loading __work.decode
+# Loading __work.match_both
+# Loading __work.hazard_detect
+# Loading __work.mux2_1_32bit
+# Loading __work.special_control
+# Loading __work.control
+# Loading __work.dst_reg_parser
+# Loading __work.rf_bypass
+# Loading __work.rf
+# Loading __work.decoder3_8
+# Loading __work.and3
+# Loading __work.mux8_1_16bit
+# Loading __work.mux4_1_16bit
+# Loading __work.mux4_1
+# Loading __work.xor2_3bit
+# Loading __work.or3
+# Loading __work.mux4_1_4bit
+# Loading __work.ext_mod8_16
+# Loading __work.ext_mod11_16
+# Loading __work.ext_mod5_16
+# Loading __work.regIDEX
+# Loading __work.execution
+# Loading __work.forward_unit
+# Loading __work.sf_left8bit
+# Loading __work.special_adder
+# Loading __work.alu
+# Loading __work.inverter_16bit
+# Loading __work.not1_16bit
+# Loading __work.shifter
+# Loading __work.sh_1
+# Loading __work.msb_module
+# Loading __work.inner_module
+# Loading __work.lsb_module
+# Loading __work.sh_2
+# Loading __work.sh_4
+# Loading __work.sh_8
+# Loading __work.and2_16bit
+# Loading __work.or2_16bit
+# Loading __work.or2
+# Loading __work.xor2_16bit
+# Loading __work.fast_adder_wrapper
+# Loading __work.zero_detect
+# Loading __work.btr_mod
+# Loading __work.cond_set
+# Loading __work.branch_cond_test
+# Loading __work.or16
+# Loading __work.regEXMem
+# Loading __work.memory
+# Loading __work.regMemWB
+# Loading __work.writeback
+run -all
+# Hello world...simulation starting
+# See verilogsim.log and verilogsim.ptrace for output
+# ** Note: $finish    : proc_hier_pbench.v(115)
+#    Time: 1805 ns  Iteration: 0  Instance: /proc_hier_pbench

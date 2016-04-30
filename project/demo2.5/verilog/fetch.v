@@ -71,11 +71,9 @@ module fetch(done, stall, cache_hit, err, instr, pcCurrent, pcPlusTwo, pcNext, p
                             .rst(rst),
                             .err(err));
     
-    cla_16bit adder0(       .OUT(pcPlusTwo),
-                            .Ofl(Ofl_dummy),
+    fast_adder adder0(      .S(pcPlusTwo),
                             .Cout(Cout_dummy),
                             .A(pc_current),
                             .B(16'b0000_0000_0000_0010), // pc + 2
-                            .CI(1'b0),
-                            .sign(1'b1));
+                            .Cin(1'b0));
 endmodule

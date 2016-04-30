@@ -80,3 +80,6 @@ xor2_3bit.v
 xor2.v
 zero_detect.v
 final_memory.v
+fast_adder.v
+fast_adder_wrapper.v
+carry_look_ahead.v
