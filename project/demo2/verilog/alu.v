@@ -26,7 +26,7 @@ module alu (A, B, Cin, Op, invA, invB, sign, Out, Ofl, Cout, Z);
         or2_16bit mod5(.out(or_out), .in1(A_out), .in2(B_out)); 
         xor2_16bit mod6(.out(xor_out), .in1(A_out), .in2(B_out)); 
          
-        cla_16bit mod7(.OUT(adder_out), .Ofl(Ofl), .Cout(Cout), .A(A_out), .B(B_out), .CI(Cin), .sign(sign));
+        fast_adder_wrapper mod7(.OUT(adder_out), .Ofl(Ofl), .Cout(Cout), .A(A_out), .B(B_out), .CI(Cin), .sign(sign));
         
         mux4_1_16bit mod8(.out(mux4_1_out), .sel(Op[1:0]), .in0(adder_out), .in1(or_out), .in2(xor_out), .in3(and_out));
         

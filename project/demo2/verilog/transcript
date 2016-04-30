@@ -70,6 +70,9 @@
 # Loading __work.and2_16bit
 # Loading __work.or2_16bit
 # Loading __work.xor2_16bit
+# Loading __work.fast_adder_wrapper
+# Loading __work.fast_adder
+# Loading __work.carry_look_ahead
 # Loading __work.zero_detect
 # Loading __work.btr_mod
 # Loading __work.cond_set
@@ -83,4 +86,4 @@ run -all
 # Hello world...simulation starting
 # See verilogsim.log and verilogsim.ptrace for output
 # ** Note: $finish    : proc_hier_pbench.v(115)
-#    Time: 15105 ns  Iteration: 0  Instance: /proc_hier_pbench
+#    Time: 805 ns  Iteration: 0  Instance: /proc_hier_pbench
