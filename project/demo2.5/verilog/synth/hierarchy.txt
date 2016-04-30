@@ -3,84 +3,78 @@
 Report : hierarchy
 Design : proc
 Version: B-2008.09-SP3
-Date   : Sat Apr 30 07:57:03 2016
+Date   : Sat Apr 30 09:24:04 2016
 ****************************************
 
 Information: This design contains unmapped logic. (RPT-7)
 
 proc
-    GTECH_AND2                                         gtech
-    GTECH_BUF                                          gtech
-    GTECH_NOT                                          gtech
-    GTECH_XOR2                                         gtech
+    GTECH_AND2                                               gtech
+    GTECH_BUF                                                gtech
+    GTECH_NOT                                                gtech
+    GTECH_XOR2                                               gtech
     decode
         control
-            GTECH_AND2                                 gtech
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
-            GTECH_OR2                                  gtech
-            GTECH_OR3                                  gtech
-            GTECH_OR4                                  gtech
-            GTECH_OR5                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
+            GTECH_OR2                                        gtech
+            GTECH_OR3                                        gtech
+            GTECH_OR4                                        gtech
+            GTECH_OR5                                        gtech
         dst_reg_parser
-            GTECH_AND2                                 gtech
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
-            GTECH_OR2                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
+            GTECH_OR2                                        gtech
         ext_mod5_16
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
         ext_mod8_16
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
         ext_mod11_16
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
         hazard_detect
-            GTECH_AND2                                 gtech
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
-            GTECH_OR2                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
+            GTECH_OR2                                        gtech
         match_both
-            GTECH_AND2                                 gtech
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
-            GTECH_OR2                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
+            GTECH_OR2                                        gtech
         mux2_1_32bit
             mux2_1
-                nand2
-                    GTECH_AND2                         gtech
-                    GTECH_NOT                          gtech
-                nor2
-                    GTECH_NOT                          gtech
-                    GTECH_OR2                          gtech
-                not1
-                    GTECH_NOT                          gtech
+                GTECH_BUF                                    gtech
+                GTECH_NOT                                    gtech
         mux4_1_4bit
             mux4_1
                 mux2_1
                     ...
         rf_bypass
             and2
-                GTECH_AND2                             gtech
+                GTECH_AND2                                   gtech
             mux2_1_16bit
                 mux2_1
                     ...
             not1
-                ...
+                GTECH_NOT                                    gtech
             or3
-                GTECH_OR2                              gtech
+                GTECH_OR2                                    gtech
             rf
                 and2
                     ...
                 decoder3_8
-                    GTECH_NOT                          gtech
+                    GTECH_NOT                                gtech
                     and3
-                        GTECH_AND2                     gtech
+                        GTECH_AND2                           gtech
                 dff_16bit
                     dff
-                        GTECH_BUF                      gtech
-                        GTECH_NOT                      gtech
+                        GTECH_BUF                            gtech
+                        GTECH_NOT                            gtech
                     mux2_1_16bit
                         ...
                 mux8_1_16bit
@@ -91,28 +85,28 @@ proc
                             ...
             xor2_3bit
                 xor2
-                    GTECH_XOR2                         gtech
+                    GTECH_XOR2                               gtech
         special_control
-            GTECH_AND2                                 gtech
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
     execution
-        GTECH_AND2                                     gtech
-        GTECH_BUF                                      gtech
-        GTECH_NOT                                      gtech
-        GTECH_OR2                                      gtech
+        GTECH_AND2                                           gtech
+        GTECH_BUF                                            gtech
+        GTECH_NOT                                            gtech
+        GTECH_OR2                                            gtech
         alu
             and2_16bit
                 and2
                     ...
             fast_adder_wrapper
-                GTECH_BUF                              gtech
-                GTECH_NOT                              gtech
-                GTECH_XOR2                             gtech
+                GTECH_BUF                                    gtech
+                GTECH_NOT                                    gtech
+                GTECH_XOR2                                   gtech
                 fast_adder
                     carry_look_ahead
-                        GTECH_AND2                     gtech
-                        GTECH_OR2                      gtech
+                        GTECH_AND2                           gtech
+                        GTECH_OR2                            gtech
                     fulladder
                         and2
                             ...
@@ -130,7 +124,7 @@ proc
                 ...
             or2_16bit
                 or2
-                    GTECH_OR2                          gtech
+                    GTECH_OR2                                gtech
             shifter
                 sh_1
                     inner_module
@@ -165,30 +159,30 @@ proc
                 xor2
                     ...
             zero_detect
-                GTECH_NOT                              gtech
+                GTECH_NOT                                    gtech
                 or2
                     ...
         branch_cond_test
-            GTECH_AND2                                 gtech
-            GTECH_NOT                                  gtech
-            GTECH_OR2                                  gtech
-            GTECH_OR3                                  gtech
-            GTECH_OR4                                  gtech
-            GTECH_OR5                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_NOT                                        gtech
+            GTECH_OR2                                        gtech
+            GTECH_OR3                                        gtech
+            GTECH_OR4                                        gtech
+            GTECH_OR5                                        gtech
             or16
-                GTECH_OR2                              gtech
+                GTECH_OR2                                    gtech
         btr_mod
         cond_set
-            GTECH_AND2                                 gtech
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
-            GTECH_OR2                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
+            GTECH_OR2                                        gtech
         fast_adder
             ...
         forward_unit
-            GTECH_AND2                                 gtech
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
         match_both
             ...
         mux2_1_16bit
@@ -199,57 +193,57 @@ proc
             ...
         sf_left8bit
         special_adder
-            GTECH_AND2                                 gtech
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
-            GTECH_OR2                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
+            GTECH_OR2                                        gtech
     fetch
-        GTECH_AND2                                     gtech
-        GTECH_NOT                                      gtech
-        GTECH_OR2                                      gtech
+        GTECH_AND2                                           gtech
+        GTECH_NOT                                            gtech
+        GTECH_OR2                                            gtech
         fast_adder
             ...
         mem_system
-            GTECH_AND2                                 gtech
-            GTECH_BUF                                  gtech
-            GTECH_NOT                                  gtech
-            GTECH_OR2                                  gtech
-            GTECH_OR3                                  gtech
-            GTECH_OR4                                  gtech
-            GTECH_OR5                                  gtech
+            GTECH_AND2                                       gtech
+            GTECH_BUF                                        gtech
+            GTECH_NOT                                        gtech
+            GTECH_OR2                                        gtech
+            GTECH_OR3                                        gtech
+            GTECH_OR4                                        gtech
+            GTECH_OR5                                        gtech
             cache_cache_id0
-                GTECH_AND2                             gtech
-                GTECH_BUF                              gtech
-                GTECH_NOT                              gtech
-                GTECH_OR2                              gtech
+                GTECH_AND2                                   gtech
+                GTECH_BUF                                    gtech
+                GTECH_NOT                                    gtech
+                GTECH_OR2                                    gtech
                 memc_Size1
-                    GTECH_AND2                         gtech
-                    GTECH_AND3                         gtech
-                    GTECH_BUF                          gtech
-                    GTECH_NOT                          gtech
-                    GTECH_OR2                          gtech
+                    GTECH_AND2                               gtech
+                    GTECH_AND3                               gtech
+                    GTECH_BUF                                gtech
+                    GTECH_NOT                                gtech
+                    GTECH_OR2                                gtech
                 memc_Size5
-                    GTECH_AND2                         gtech
-                    GTECH_AND3                         gtech
-                    GTECH_BUF                          gtech
-                    GTECH_NOT                          gtech
-                    GTECH_OR2                          gtech
+                    GTECH_AND2                               gtech
+                    GTECH_AND3                               gtech
+                    GTECH_BUF                                gtech
+                    GTECH_NOT                                gtech
+                    GTECH_OR2                                gtech
                 memc_Size16
-                    GTECH_AND2                         gtech
-                    GTECH_AND3                         gtech
-                    GTECH_BUF                          gtech
-                    GTECH_NOT                          gtech
-                    GTECH_OR2                          gtech
+                    GTECH_AND2                               gtech
+                    GTECH_AND3                               gtech
+                    GTECH_BUF                                gtech
+                    GTECH_NOT                                gtech
+                    GTECH_OR2                                gtech
                 memv
-                    GTECH_AND2                         gtech
-                    GTECH_BUF                          gtech
-                    GTECH_NOT                          gtech
-                    GTECH_OR2                          gtech
+                    GTECH_AND2                               gtech
+                    GTECH_BUF                                gtech
+                    GTECH_NOT                                gtech
+                    GTECH_OR2                                gtech
             cache_cache_id2
-                GTECH_AND2                             gtech
-                GTECH_BUF                              gtech
-                GTECH_NOT                              gtech
-                GTECH_OR2                              gtech
+                GTECH_AND2                                   gtech
+                GTECH_BUF                                    gtech
+                GTECH_NOT                                    gtech
+                GTECH_OR2                                    gtech
                 memc_Size1
                     ...
                 memc_Size5
@@ -261,29 +255,29 @@ proc
             dff
                 ...
             four_bank_mem
-                GTECH_AND2                             gtech
-                GTECH_NOT                              gtech
-                GTECH_OR2                              gtech
+                GTECH_AND2                                   gtech
+                GTECH_NOT                                    gtech
+                GTECH_OR2                                    gtech
                 dff
                     ...
                 final_memory
-                    GTECH_AND2                         gtech
-                    GTECH_AND8                         gtech
-                    GTECH_BUF                          gtech
-                    GTECH_NOT                          gtech
-                    GTECH_OR2                          gtech
+                    GTECH_AND2                               gtech
+                    GTECH_AND8                               gtech
+                    GTECH_BUF                                gtech
+                    GTECH_NOT                                gtech
+                    GTECH_OR2                                gtech
                     dff
                         ...
             mux2_1_16bit
                 ...
             statelogic
-                GTECH_AND2                             gtech
-                GTECH_BUF                              gtech
-                GTECH_NOT                              gtech
-                GTECH_OR2                              gtech
-                GTECH_OR3                              gtech
-                GTECH_OR4                              gtech
-                GTECH_OR5                              gtech
+                GTECH_AND2                                   gtech
+                GTECH_BUF                                    gtech
+                GTECH_NOT                                    gtech
+                GTECH_OR2                                    gtech
+                GTECH_OR3                                    gtech
+                GTECH_OR4                                    gtech
+                GTECH_OR5                                    gtech
             statereg
                 dff
                     ...
@@ -295,9 +289,9 @@ proc
             mux2_1_16bit
                 ...
     memory
-        GTECH_AND2                                     gtech
-        GTECH_NOT                                      gtech
-        GTECH_OR2                                      gtech
+        GTECH_AND2                                           gtech
+        GTECH_NOT                                            gtech
+        GTECH_OR2                                            gtech
         mem_system
             ...
     mux2_1_16bit
@@ -319,8 +313,8 @@ proc
         dff_16bit
             ...
     regIFID
-        GTECH_BUF                                      gtech
-        GTECH_NOT                                      gtech
+        GTECH_BUF                                            gtech
+        GTECH_NOT                                            gtech
         dff_8bit
             ...
         dff_16bit

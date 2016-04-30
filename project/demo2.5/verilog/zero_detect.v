@@ -1,6 +1,7 @@
 module zero_detect(out, in);
     input [15:0] in;
     output out;
+//    assign out = (in == 16'b0000_0000_0000_0000) ? 1'b1 : 1'b0;
     wire w0, w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14;
     
     assign out = ~w14;

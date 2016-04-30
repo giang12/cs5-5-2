@@ -10,21 +10,139 @@ SIMLOG:: Cycle          12 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0    
 SIMLOG:: Cycle          13 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
 SIMLOG:: Cycle          14 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
 SIMLOG:: Cycle          15 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
-SIMLOG:: Cycle          16 PC:     zzzz I:     zzzz R: 1   1     0018 M: 0 0     xxxx     0000
-SIMLOG:: Cycle          17 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     001f     0000
-SIMLOG:: Cycle          18 PC:     zzzz I:     zzzz R: 1   2     001f M: 0 0     xxxx     0000
-SIMLOG:: Cycle          19 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          16 PC:     zzzz I:     zzzz R: 1   0     0005 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          17 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0000     0000
+SIMLOG:: Cycle          18 PC:     zzzz I:     zzzz R: 1   0     0000 M: 0 0     xxxx     0005
+SIMLOG:: Cycle          19 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0000     0005
+SIMLOG:: Cycle          20 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0000     0000
+SIMLOG:: Cycle          21 PC:     zzzz I:     zzzz R: 0   0     0000 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          22 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          23 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          24 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          25 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          26 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          27 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          28 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          29 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          30 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          31 PC:     zzzz I:     zzzz R: 1   1     ffff M: 0 0     xxxx     0000
+SIMLOG:: Cycle          32 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     ffff     0000
+SIMLOG:: Cycle          33 PC:     zzzz I:     zzzz R: 1   2     0001 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          34 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0001     0000
+SIMLOG:: Cycle          35 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0000     0000
+SIMLOG:: Cycle          36 PC:     zzzz I:     zzzz R: 0   0     0000 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          37 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          38 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          39 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          40 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          41 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          42 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          43 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          44 PC:     zzzz I:     zzzz R: 1   3     0000 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          45 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0056     0001
+SIMLOG:: Cycle          46 PC:     zzzz I:     zzzz R: 1   3     0056 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          47 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          48 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          49 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          50 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          51 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          52 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          53 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          54 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          55 PC:     zzzz I:     zzzz R: 1   4     0000 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          56 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     005a     0001
+SIMLOG:: Cycle          57 PC:     zzzz I:     zzzz R: 1   4     005a M: 0 0     xxxx     0000
+SIMLOG:: Cycle          58 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0056     005a
+SIMLOG:: Cycle          59 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     0056     005a
+SIMLOG:: Cycle          60 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     0056     005a
+SIMLOG:: Cycle          61 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     0056     005a
+SIMLOG:: Cycle          62 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     0056     005a
+SIMLOG:: Cycle          63 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     0056     005a
+SIMLOG:: Cycle          64 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     0056     005a
+SIMLOG:: Cycle          65 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     0056     005a
+SIMLOG:: Cycle          66 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 1     0056     005a
+SIMLOG:: Cycle          67 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          68 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0001
+SIMLOG:: Cycle          69 PC:     zzzz I:     zzzz R: 1   5     0055 M: 0 0     aa00     0000
+SIMLOG:: Cycle          70 PC:     zzzz I:     zzzz R: 1   5     aa00 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          71 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     005a     aa00
+SIMLOG:: Cycle          72 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     005a     aa00
+SIMLOG:: Cycle          73 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     005a     aa00
+SIMLOG:: Cycle          74 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     005a     aa00
+SIMLOG:: Cycle          75 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     005a     aa00
+SIMLOG:: Cycle          76 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     005a     aa00
+SIMLOG:: Cycle          77 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     005a     aa00
+SIMLOG:: Cycle          78 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 0     005a     aa00
+SIMLOG:: Cycle          79 PC:     zzzz I:     zzzz R: 0   x     0000 M: 0 1     005a     aa00
+SIMLOG:: Cycle          80 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          81 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0055     0056
+SIMLOG:: Cycle          82 PC:     zzzz I:     zzzz R: 1   3     0055 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          83 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0056     0000
+SIMLOG:: Cycle          84 PC:     zzzz I:     zzzz R: 0   6     005a M: 1 0     0056     0000
+SIMLOG:: Cycle          85 PC:     zzzz I:     zzzz R: 1   6     005a M: 0 0     xxxx     0000
+SIMLOG:: Cycle          86 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          87 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          88 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          89 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          90 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          91 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle          92 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     005a     0000
+SIMLOG:: Cycle          93 PC:     zzzz I:     zzzz R: 0   7     aa00 M: 1 0     005a     0000
+SIMLOG:: Cycle          94 PC:     zzzz I:     zzzz R: 1   7     aa00 M: 0 0     xxxx     0000
+SIMLOG:: Cycle          95 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     005c     aa00
+SIMLOG:: Cycle          96 PC:     zzzz I:     zzzz R: 0   6     0000 M: 0 1     005c     aa00
+SIMLOG:: Cycle          97 PC:     zzzz I:     zzzz R: 1   6     005c M: 0 0     005e     005a
+SIMLOG:: Cycle          98 PC:     zzzz I:     zzzz R: 1   6     005e M: 0 0     xxxx     0000
+SIMLOG:: Cycle          99 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         100 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     0060     aa00
+SIMLOG:: Cycle         101 PC:     zzzz I:     zzzz R: 0   6     0000 M: 0 0     0060     aa00
+SIMLOG:: Cycle         102 PC:     zzzz I:     zzzz R: 0   6     0000 M: 0 0     0060     aa00
+SIMLOG:: Cycle         103 PC:     zzzz I:     zzzz R: 0   6     0000 M: 0 0     0060     aa00
+SIMLOG:: Cycle         104 PC:     zzzz I:     zzzz R: 0   6     0000 M: 0 0     0060     aa00
+SIMLOG:: Cycle         105 PC:     zzzz I:     zzzz R: 0   6     0000 M: 0 0     0060     aa00
+SIMLOG:: Cycle         106 PC:     zzzz I:     zzzz R: 0   6     0000 M: 0 0     0060     aa00
+SIMLOG:: Cycle         107 PC:     zzzz I:     zzzz R: 0   6     0000 M: 0 0     0060     aa00
+SIMLOG:: Cycle         108 PC:     zzzz I:     zzzz R: 0   6     0000 M: 0 1     0060     aa00
+SIMLOG:: Cycle         109 PC:     zzzz I:     zzzz R: 1   6     0060 M: 0 0     xxxx     0000
+SIMLOG:: Cycle         110 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         111 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         112 PC:     zzzz I:     zzzz R: 1   0     0000 M: 0 0     xxxx     0000
+SIMLOG:: Cycle         113 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         114 PC:     zzzz I:     zzzz R: 1   7     0034 M: 0 0     0000     0000
+SIMLOG:: Cycle         115 PC:     zzzz I:     zzzz R: 0   0     0000 M: 0 0     xxxx     0000
+SIMLOG:: Cycle         116 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         117 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         118 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         119 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         120 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         121 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         122 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         123 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         124 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         125 PC:     zzzz I:     zzzz R: 1   7     004a M: 0 0     0000     0000
+SIMLOG:: Cycle         126 PC:     zzzz I:     zzzz R: 0   0     0000 M: 0 0     xxxx     0000
+SIMLOG:: Cycle         127 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         128 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         129 PC:     zzzz I:     zzzz R: 1   7     0038 M: 0 0     0000     0000
+SIMLOG:: Cycle         130 PC:     zzzz I:     zzzz R: 0   0     0000 M: 0 0     xxxx     0000
+SIMLOG:: Cycle         131 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         132 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         133 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         134 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         135 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         136 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
+SIMLOG:: Cycle         137 PC:     zzzz I:     zzzz R: 0   x     xxxx M: 0 0     xxxx     0000
 SIMLOG:: Processor halted
 
-SIMLOG:: sim_cycles          19
+SIMLOG:: sim_cycles         137
 
-SIMLOG:: inst_count           3
+SIMLOG:: inst_count          25
 
-SIMLOG:: dcachehit_count           0
+SIMLOG:: dcachehit_count           3
 
-SIMLOG:: icachehit_count           3
+SIMLOG:: icachehit_count          25
 
-SIMLOG:: dcachereq_count           0
+SIMLOG:: dcachereq_count           6
 
-SIMLOG:: icachereq_count           4
+SIMLOG:: icachereq_count          34
 
