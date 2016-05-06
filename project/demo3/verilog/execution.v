@@ -1,4 +1,4 @@
-module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, imm_11_ext, pc_plus_two, branch, jump, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_DATA);
+module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_data_1, read_data_2, imm_5_ext, imm_8_ext, imm_11_ext, pc_plus_two, branch, jump, ALUSrc1, ALUSrc2, Op, Cin, invA, invB, sign, IDEX_Instr, EXMEM_RegWriteEN, MEMWB_RegWriteEN, EXMEM_DstRegNum, MEMWB_DstRegNum, WB_DATA, EXMEM_DATA, rst, clk);
  
   input [15:0] instr;
   input [15:0] read_data_1, read_data_2;
@@ -7,7 +7,7 @@ module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_dat
   input [2:0] ALUSrc1, ALUSrc2;
   input [2:0] Op;
   input Cin, invA, invB, sign; 
-  
+  input rst, clk; 
   input [15:0] IDEX_Instr;
   input EXMEM_RegWriteEN;
   input MEMWB_RegWriteEN;
@@ -23,7 +23,10 @@ module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_dat
   output [15:0] Out;
   output [15:0] set;
   output [15:0] btr_out;
+  wire normal_flush;
   output flush;
+
+  assign flush = normal_flush | ((instr[15:11] == 5'b00011 || instr[15:11] == 5'b00000)? 1'b1 : 1'b0);
   output [15:0] next_pc;
   output [15:0] data_to_mem;
   //NEED OUTPUT FOR 
@@ -214,7 +217,7 @@ module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_dat
                         .branch(branch), 
                         .jump(jump), 
                         .pc_src(pc_src),
-                        .flush(flush)
+                        .flush(normal_flush)
                 );
  
   wire [15:0] pc_plus_two_plus_imm_8_ext;
@@ -252,22 +255,29 @@ module execution(Out, set, btr_out, flush, next_pc, data_to_mem, instr, read_dat
           .Cin(1'b0)
         ); 
   
+  wire [15:0] epc_out;
 
   mux8_1_16bit branch_target_mux(
           // Outputs
           .out(next_pc),
           // Inputs
-          .sel(pc_src),
+          .sel( (instr[15:11] == 5'b00000)? 3'b001 :((instr[15:11] == 5'b00011) ? 3'b110 : pc_src)),
           .in0(16'bxxxx_xxxx_xxxx_xxxx),
           .in1(pc_plus_two),
           .in2(rs_plus_imm_8_ext),
           .in3(pc_plus_two_plus_imm_8_ext),
           .in4(pc_plus_two_plus_imm_11_ext),
           .in5(16'b0000_0000_0000_0010),
-          .in6(16'bxxxx_xxxx_xxxx_xxxx),
+          .in6(epc_out),
           .in7(16'bxxxx_xxxx_xxxx_xxxx)
         );
-
+  reg_16bit epc(
+                  .out(epc_out),
+                  .in(pc_plus_two),
+                  .en((pc_src == 3'b101) ? 1'b1 : 1'b0),
+                  .rst(rst),
+                  .clk(clk)
+              );
 
 
 

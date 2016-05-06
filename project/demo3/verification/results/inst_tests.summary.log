@@ -126,7 +126,7 @@
 /u/k/a/karu//courses/cs552/spring2013/handouts/testprograms/public/inst_tests/seq_7.asm SUCCESS CPI:5.2 CYCLES:21 ICOUNT:4 IHITRATE: 75.0 DHITRATE: 0
 /u/k/a/karu//courses/cs552/spring2013/handouts/testprograms/public/inst_tests/seq_8.asm SUCCESS CPI:5.2 CYCLES:21 ICOUNT:4 IHITRATE: 75.0 DHITRATE: 0
 /u/k/a/karu//courses/cs552/spring2013/handouts/testprograms/public/inst_tests/seq_9.asm SUCCESS CPI:5.2 CYCLES:21 ICOUNT:4 IHITRATE: 75.0 DHITRATE: 0
-/u/k/a/karu//courses/cs552/spring2013/handouts/testprograms/public/inst_tests/siic_0.asm FAILED
+/u/k/a/karu//courses/cs552/spring2013/handouts/testprograms/public/inst_tests/siic_0.asm SUCCESS CPI:9.8 CYCLES:49 ICOUNT:5 IHITRATE: 75.0 DHITRATE: 0
 /u/k/a/karu//courses/cs552/spring2013/handouts/testprograms/public/inst_tests/slbi_0.asm SUCCESS CPI:6.3 CYCLES:19 ICOUNT:3 IHITRATE: 75.0 DHITRATE: 0
 /u/k/a/karu//courses/cs552/spring2013/handouts/testprograms/public/inst_tests/slbi_1.asm SUCCESS CPI:6.3 CYCLES:19 ICOUNT:3 IHITRATE: 75.0 DHITRATE: 0
 /u/k/a/karu//courses/cs552/spring2013/handouts/testprograms/public/inst_tests/slbi_2.asm SUCCESS CPI:6.3 CYCLES:19 ICOUNT:3 IHITRATE: 75.0 DHITRATE: 0

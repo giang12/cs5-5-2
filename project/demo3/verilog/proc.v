@@ -270,7 +270,9 @@ module proc (/*AUTOARG*/
                     .EXMEM_DstRegNum(EXMem_dst_reg_num_out), // TODO 
                     .MEMWB_DstRegNum(MemWB_dst_reg_num_out), 
                     .WB_DATA(write_data),
-                    .EXMEM_DATA(EXMemFwdData)
+                    .EXMEM_DATA(EXMemFwdData),
+                    .clk(clk),
+                    .rst(rst)
                 );
 
     
