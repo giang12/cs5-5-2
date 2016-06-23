@@ -16,6 +16,7 @@ The CS 552 term project is the complete functional design of a microprocessor ca
 
 The project will be completed in groups of two.  
 
+[Click for Final Report](552FinalReport.v3.pdf)
 
 ## Tentive Schedule: 
 
